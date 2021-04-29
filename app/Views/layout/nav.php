@@ -1,0 +1,227 @@
+ <!-- Collect the nav links, forms, and other content for toggling -->
+ <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+     <ul class="nav navbar-nav">
+         <?php if (session()->get('level') == "1") { ?>
+             <li><a href="<?= base_url('admin') ?>"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="<?= base_url('pengumuman') ?>"><i class="fa fa-bullhorn"></i> Pengumuman</a></li>
+                     <li><a href="<?= base_url('data_kelas') ?>"><i class="fa fa-institution"></i> Kelas</a></li>
+                     <li><a href="<?= base_url('data_materi') ?>"><i class="fa fa-book"></i> Materi</a></li>
+                     <li><a href="<?= base_url('data_rps') ?>"><i class="fa fa-file-text"></i> Rencana Pembelajaran Semester (RPS)</a></li>
+                     <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Rekap Absensi</a></li>
+                     <li><a href="<?= base_url('data_pembayaran') ?>"><i class="fa fa-money"></i> Pembayaran</a></li>
+                     <li><a href="<?= base_url('bio_guru') ?>"><i class="fa fa-user"></i> Dewan Guru</a></a></li>
+                     <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Santri</a></a></li>
+                     <li><a href="<?= base_url('data_rapor') ?>"><i class="fa fa-archive"></i> Rapor</a></a></li>
+                     <li><a href="<?= base_url('file_surat') ?>"><i class="fa fa-send"></i> Surat</a></a></li>
+                     <li><a href="<?= base_url('data_pesan') ?>"><i class="fa fa-envelope"></i> Pesan</a></a></li>
+                 </ul>
+             </li>
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="<?= base_url('data_user') ?>"><i class="fa fa-cogs"></i> User Management</a></li>
+                 </ul>
+             </li>
+             <li><a href="#"><i class="fa fa-info-circle"></i> About</a></li>
+         <?php } elseif (session()->get('level') == "2") { ?>
+             <!-----Menu Halaman Guru------>
+             <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Beranda</a></li>
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">General <span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="<?= base_url('bio_guru') ?>"><i class="fa fa-users"></i> Biodata Guru</a></li>
+                 </ul>
+             </li>
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Data Santri</a></li>
+                     <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Rekap Absensi</a></li>
+                     <li><a href="<?= base_url('data_rps') ?>"><i class="fa fa-file-text"></i> RPS</a></li>
+                 </ul>
+             </li>
+
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nilai <span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="<?= base_url('data_nilai/index') ?>"><i class="fa fa-circle-o"></i> Materi Pokok</a></li>
+                     <li><a href="<?= base_url('data_nilai/konsepPraktikum') ?>"><i class="fa fa-circle-o"></i> Pemahaman Konsep & Praktikum</a></li>
+                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Sikap & Perilaku</a></li>
+                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Lima Sukses Santri</a></li>
+                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Kegiatan Ekstrakurikuler</a></li>
+                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Keaktifan dalam Kegiatan</a></li>
+                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Prestasi Kuliah</a></li>
+                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Catatan dan Saran Pengurus</a></li>
+                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Keputusan</a></li>
+                 </ul>
+             </li>
+
+         <?php } elseif (session()->get('level') == "3") { ?>
+             <!-----Menu Halaman Guru------>
+             <li><a href="<?= base_url('santri/index') ?>"><i class="fa fa-home"></i> Beranda</a></li>
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">General <span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="<?= base_url('santri/biodata_santri') ?>"><i class="fa fa-users"></i> Biodata Santri</a></li>
+                 </ul>
+             </li>
+
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Akademik <span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="<?= base_url('santri/rps') ?>"><i class="fa fa-file-text"></i> Rencana Pembelajaran Semester (RPS)</a></li>
+                     <li><a href="<?= base_url('santri/jadwal_agenda') ?>"><i class="fa fa-calendar-check-o"></i> Jadwal Agenda PPM</a></li>
+                     <li><a href="<?= base_url('santri/absen_kbm') ?>"><i class="fa  fa-pencil"></i> Absensi KBM</a></li>
+                 </ul>
+             </li>
+
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pembayaran <span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="<?= base_url('santri/pembayaran_ppm') ?>"><i class="fa fa-money"></i> Pembayaran PPM</a></li>
+                 </ul>
+             </li>
+         <?php } ?>
+     </ul>
+ </div>
+ <!-- /.navbar-collapse -->
+ <!-- Navbar Right Menu -->
+
+ <div class="navbar-custom-menu">
+     <ul class="nav navbar-nav">
+
+         <?php if (session()->get('level') == "2") { ?>
+             <div class="navbar-custom-menu">
+                 <ul class="nav navbar-nav">
+                     <!-- Messages: style can be found in dropdown.less-->
+                     <li class="dropdown messages-menu">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                             <i class="fa fa-envelope-o"></i>
+                             <span class="label label-success">#</span>
+                         </a>
+                         <ul class="dropdown-menu">
+                             <li class="header">You have # messages</li>
+                             <li>
+                                 <!-- inner menu: contains the actual data -->
+                                 <ul class="menu">
+                                     <li>
+                                         <!-- start message -->
+                                         <a href="#">
+                                             <div class="pull-left">
+                                                 <img src="<?= base_url('foto/' . session()->get('foto')) ?>" class=" img-circle" alt="User Image">
+                                             </div>
+                                             <h4>
+                                                 Support Team
+                                                 <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                             </h4>
+                                             <p>#</p>
+                                         </a>
+                                     </li>
+                                     <!-- end message -->
+                                 </ul>
+                             </li>
+                             <li class="footer"><a href="<?= base_url('data_pesan') ?>">See All Messages</a></li>
+                         </ul>
+                     </li>
+                 </ul>
+             </div>
+         <?php } ?>
+
+         <?php if (session()->get('level') == "3") { ?>
+             <div class="navbar-custom-menu">
+                 <ul class="nav navbar-nav">
+                     <!-- Messages: style can be found in dropdown.less-->
+                     <li class="dropdown messages-menu">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                             <i class="fa fa-envelope-o"></i>
+                             <span class="label label-success">#</span>
+                         </a>
+                         <ul class="dropdown-menu">
+                             <li class="header">You have # messages</li>
+                             <li>
+                                 <!-- inner menu: contains the actual data -->
+                                 <ul class="menu">
+                                     <li>
+                                         <!-- start message -->
+                                         <a href="#">
+                                             <div class="pull-left">
+                                                 <img src="<?= base_url('foto/' . session()->get('foto')) ?>" class=" img-circle" alt="User Image">
+                                             </div>
+                                             <h4>
+                                                 Support Team
+                                                 <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                             </h4>
+                                             <p>#</p>
+                                         </a>
+                                     </li>
+                                     <!-- end message -->
+                                 </ul>
+                             </li>
+                             <li class="footer"><a href="<?= base_url('data_pesan') ?>">See All Messages</a></li>
+                         </ul>
+                     </li>
+                 </ul>
+             </div>
+         <?php } ?>
+
+         <?php if (session()->get('username') == "") { ?>
+             <li><a href="<?= base_url('auth/index') ?>"><i class="fa fa-sign-in"></i> Login</a></li>
+         <?php } else { ?>
+
+             <!-- User Account Menu -->
+             <li class="dropdown user user-menu">
+                 <!-- Menu Toggle Button -->
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <!-- The user image in the navbar-->
+                     <img src="<?= base_url('foto/' . session()->get('foto')) ?>" class="user-image" alt="User Image">
+                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                     <span class="hidden-xs"><?= session()->get('nama') ?></span>
+                 </a>
+                 <ul class="dropdown-menu">
+                     <!-- The user image in the menu -->
+                     <li class="user-header">
+                         <img src="<?= base_url('foto/' . session()->get('foto')) ?>" class=" img-circle" alt="User Image">
+
+                         <p>
+                             <?php if (session()->get('level') == 1) {
+                                    echo "Admin";
+                                } else if (session()->get('level') == 2) {
+                                    echo "Guru";
+                                } else if (session()->get('level') == 3) {
+                                    echo session()->get('username');
+                                } ?> /
+                             <?= session()->get('nama')  ?>
+                             <small><?= date('d M Y') ?></small>
+                         </p>
+                     </li>
+                     <!-- Menu Footer-->
+                     <li class="user-footer">
+                         <div class="pull-left">
+                             <a href="<?= base_url('auth/changepassword') ?>" class="btn btn-default btn-flat">Ubah Password</a>
+                         </div>
+                         <div class="pull-right">
+                             <a href="<?= base_url('auth/logout') ?>" onclick="return confirm('Apakah anda yakin ingin keluar ');" class="btn btn-default btn-flat">Logout</a>
+                         </div>
+                     </li>
+                 </ul>
+             </li>
+         <?php } ?>
+
+     </ul>
+ </div>
+ <!-- /.navbar-custom-menu -->
+ </div>
+ <!-- /.container-fluid -->
+ </nav>
+ </header>
+
+ <!-- Full Width Column -->
+ <div class="content-wrapper">
+     <div class="container">
+         <!-- Content Header (Page header) -->
+
+         <!-- Main content -->
+         <section class="content">
