@@ -10,6 +10,7 @@ use App\Models\ModelMateri;
 use App\Models\ModelPengumuman;
 use App\Models\ModelPembayaran;
 use App\Models\ModelUserManagement;
+use App\Models\ModelAdmin;
 
 class Admin extends BaseController
 {
@@ -21,6 +22,7 @@ class Admin extends BaseController
     protected $ModelPengumuman;
     protected $ModelPembayaran;
     protected $ModelUserManagement;
+    protected $ModelAdmin;
 
     public function __construct()
     {
@@ -32,6 +34,7 @@ class Admin extends BaseController
         $this->ModelPengumuman = new ModelPengumuman();
         $this->ModelPembayaran = new ModelPembayaran();
         $this->ModelUserManagement = new ModelUserManagement();
+        $this->ModelAdmin = new ModelAdmin();
     }
 
     public function index()
@@ -68,14 +71,14 @@ class Admin extends BaseController
         return view("layout/wrapper", $data);
     }
 
-    // public function viewchartJK($NIS)
-    // {
-    //     $data = [
-    //         'title' => 'View Chart JK',
-    //         'chartJK' => $this->ModelAdmin->allData($NIS),
-    //         'isi'    => 'admin/v_viewchartJK'
-    //     ];
+    public function viewChartJK()
+    {
+        $data = [
+            'title' => 'View Chart JK',
+            'chartjk' => $this->ModelAdmin->allData(),
+            'isi'    => 'admin/v_viewchartJK'
+        ];
 
-    //     return view("layout/wrapper", $data);
-    // }
+        return view("layout/wrapper", $data);
+    }
 }
