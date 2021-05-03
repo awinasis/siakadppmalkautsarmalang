@@ -6,12 +6,12 @@
              <?= $title; ?>
          </h1>
          <br><br>
-         <?php if (session()->get('level') == "1") { ?>
+         <?php if (session()->get('level') == "Admin") { ?>
              <ol class="breadcrumb">
                  <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                  <li class="active">Data Santri</li>
              </ol>
-         <?php } else if (session()->get('level') == "2") { ?>
+         <?php } else if (session()->get('level') == "Guru") { ?>
              <ol class="breadcrumb">
                  <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Home</a></li>
                  <li class="active">Data Santri</li>
@@ -24,7 +24,7 @@
              <div class="box box-success box-solid">
                  <div class="box-header with-border">
                      <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3>
-                     <?php if (session()->get('level') == "1") { ?>
+                     <?php if (session()->get('level') == "Admin") { ?>
                          <div class="box-tools pull-right">
                              <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
                          </div>
@@ -57,11 +57,11 @@
                                      <th class="text-center">Universitas</th>
                                      <th class="text-center">Fakultas</th>
                                      <th class="text-center">Jurusan/Prodi</th>
-                                     <th class="text-center">Kelas Santri</th>
+                                     <th class="text-center">kelas Santri</th>
                                      <th class="text-center">Angkatan Santri</th>
                                      <th class="text-center">Nama Ayah</th>
                                      <th class="text-center">No.Telp Orang tua</th>
-                                     <?php if (session()->get('level') == "1") { ?>
+                                     <?php if (session()->get('level') == "Admin") { ?>
                                          <th width="150px" class="text-center">Action</th>
                                      <?php } ?>
                                  </tr>
@@ -87,12 +87,12 @@
                                          <td><?= $value['nama_ayah'] ?></td>
                                          <td><?= $value['noTelp_ortu'] ?></td>
 
-                                         <?php if (session()->get('level') == "1") { ?>
+                                         <?php if (session()->get('level') == "Admin") { ?>
                                              <td class="text-center">
                                                  <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_santri'] ?>"><i class="fa fa-edit"></i></button>
                                                  <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_santri'] ?>"><i class="fa fa-trash"></i></button>
                                              </td>
-                                         <?php } elseif (session()->get('level') == "2") { ?>
+                                         <?php } elseif (session()->get('level') == "Guru") { ?>
                                          <?php } ?>
                                      </tr>
                                  <?php } ?>
@@ -189,14 +189,19 @@
 
                      <div class="form-group row">
                          <div class="col-lg-8">
-                             <label class="form-control-label">Kelas Santri</label>
+                             <label class="form-control-label">kelas Santri</label>
                              <select name="kelas_santri" class="form-control" id="kelas_santri" required>
                                  <option value="">- Pilih -</option>
-                                 <option value="Pegon Bacaan">Pegon Bacaan</option>
-                                 <option value="Lambatan">Lambatan</option>
-                                 <option value="Cepatan">Cepatan</option>
-                                 <option value="Pra Saringan dan Saringan">Pra Saringan dan Saringan</option>
-                                 <option value="Hadist Besar">Hadist Besar</option>
+                                 <option value="Qiraah">Qiraah</option>
+                                 <option value="kitabah">kitabah</option>
+                                 <option value="Reguler">Reguler</option>
+                                 <option value="Mubtadin">Mubtadin</option>
+                                 <option value="Mutawasithin">Mutawasithin</option>
+                                 <option value="Muntahin">Muntahin</option>
+                                 <option value="Al-Taannii">Al-Taannii</option>
+                                 <option value="Al-Sarii">Al-Sarii</option>
+                                 <option value="Al-Idlofi">Al-Idlofi</option>
+                                 <option value="Hadits Besar">Hadits Besar</option>
                              </select>
                          </div>
                      </div>
@@ -313,22 +318,28 @@
                              <input name="jurusan_prodi" value="<?= $value['jurusan_prodi'] ?>" class="form-control" placeholder="jurusan_prodi" required>
                          </div>
 
-                         <div class="form-group">
-                             <label class="form-control-label">Kelas Santri</label>
-                             <select name="kelas_santri" class="form-control" id="kelas_santri" required>
-                                 <option value="">- Pilih -</option>
-                                 <option value="Pegon Bacaan" <?= $value['kelas_santri'] == "Pegon Bacaan" ? "selected" : ""; ?>>Pegon Bacaan</option>
-                                 <option value="Lambatan" <?= $value['kelas_santri'] == "Lambatan" ? "selected" : ""; ?>>Lambatan</option>
-                                 <option value="Cepatan" <?= $value['kelas_santri'] == "Cepatan" ? "selected" : ""; ?>>Cepatan</option>
-                                 <option value="Pra Saringan dan Saringan" <?= $value['kelas_santri'] == "Pra Saringan dan Saringan" ? "selected" : ""; ?>>Pra Saringan dan Saringan</option>
-                                 <option value="Hadist Besar" <?= $value['kelas_santri'] == "Hadist Besar" ? "selected" : ""; ?>>Hadist Besar</option>
-                             </select>
+                         <div class="form-group row">
+                             <div class="col-lg-8">
+                                 <label class="form-control-label">kelas Santri</label>
+                                 <select name="kelas_santri" class="form-control" id="kelas_santri" required>
+                                     <option value="Qiraah" <?= $value['kelas_santri'] == "Qiraah" ? "selected" : ""; ?>>Qiraah</option>
+                                     <option value="kitabah" <?= $value['kelas_santri'] == "kitabah" ? "selected" : ""; ?>>kitabah</option>
+                                     <option value="Reguler" <?= $value['kelas_santri'] == "Reguler" ? "selected" : ""; ?>>Reguler</option>
+                                     <option value="Mubtadin" <?= $value['kelas_santri'] == "Mubtadin" ? "selected" : ""; ?>>Mubtadin</option>
+                                     <option value="Mutawasithin" <?= $value['kelas_santri'] == "Mutawasithin" ? "selected" : ""; ?>>Mutawasithin</option>
+                                     <option value="Muntahin" <?= $value['kelas_santri'] == "Muntahin" ? "selected" : ""; ?>>Muntahin</option>
+                                     <option value="Al-Taannii" <?= $value['kelas_santri'] == "Al-Taannii" ? "selected" : ""; ?>>Al-Taannii</option>
+                                     <option value="Al-Sarii" <?= $value['kelas_santri'] == "Al-Sarii" ? "selected" : ""; ?>>Al-Sarii</option>
+                                     <option value="Al-Idlofi" <?= $value['kelas_santri'] == "Al-Idlofi" ? "selected" : ""; ?>>Al-Idlofi</option>
+                                     <option value="Hadits Besar" <?= $value['kelas_santri'] == "Hadits Besar" ? "selected" : ""; ?>>Hadits Besar</option>
+                                 </select>
+                             </div>
                          </div>
 
                          <div class="form-group row">
                              <div class="col-lg-4">
                                  <label>Angkatan Santri</label>
-                                 <input name="angkatan_santri" value="<?= $value['angkatan_santri'] ?>" class="form-control" placeholder="angkatan santri" required>
+                                 <input name="angkatan_santri" type="number" value="<?= $value['angkatan_santri'] ?>" class="form-control" placeholder="angkatan santri" required>
                              </div>
                          </div>
 

@@ -67,4 +67,15 @@ class Admin extends BaseController
 
         return view("layout/wrapper", $data);
     }
+
+    // public function viewchartJK($NIS)
+    // {
+    //     $data = [
+    //         'title' => 'View Chart JK',
+    //         'chartJK' => $this->ModelAdmin->allData($NIS),
+    //         'isi'    => 'admin/v_viewchartJK'
+    //     ];
+
+    //     return view("layout/wrapper", $data);
+    // }
 }
