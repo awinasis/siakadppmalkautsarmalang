@@ -37,7 +37,7 @@ class Bio_Guru extends BaseController
         $data = [
             'nama_guru' => $this->request->getPost('nama_guru'),
             'Tempat_lahir' => $this->request->getPost('tempat_lahir'),
-            'Tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+            'Tanggal_lahir' => date('d-m-Y'),
             'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'alamat_asal_daerah' => $this->request->getPost('alamat_asal_daerah'),
             'noTelp' => $this->request->getPost('noTelp'),

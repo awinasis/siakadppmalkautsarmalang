@@ -6,6 +6,7 @@ use App\Models\ModelAbsensi;
 use App\Models\ModelSantri;
 use App\Models\ModelKelas;
 use App\Models\ModelMateri;
+use App\Models\ModelGuru;
 
 class Guru extends BaseController
 {
@@ -14,6 +15,7 @@ class Guru extends BaseController
     protected $ModelKelas;
     protected $ModelAbsensi;
     protected $ModelMateri;
+    protected $ModelGuru;
 
     public function __construct()
     {
@@ -21,6 +23,7 @@ class Guru extends BaseController
         $this->ModelSantri = new ModelSantri();
         $this->ModelKelas = new ModelKelas();
         $this->ModelMateri = new ModelMateri();
+        $this->ModelGuru = new ModelGuru();
     }
 
     public function index()

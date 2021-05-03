@@ -22,55 +22,106 @@
      <div class="row">
          <div class="col-sm-12">
              <div class="box box-success box-solid">
-                 <div class="with-border">
-                     <!-- <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3> -->
-                     <!-- /.box-tools -->
-                     <?php if (session()->get('level') == "Guru") { ?>
-                         <div class="box-tools pull-right">
-                             <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
-                         </div>
-                     <?php } ?>
-                 </div>
-                 <!-- /.box-header -->
-                 <div class="box-body">
-                     <?php
-                        if (session()->getFlashdata('pesan')) {
-                            echo '<div class="alert alert-success" role="alert">';
-                            echo session()->getFlashdata('pesan');
-                            echo '</div>';
-                        }
-                        ?>
+                 <?php if (session()->get('level') == "Guru") { ?>
+                     <div class="box-header with-border">
+                         <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3>
+                         <!-- /.box-tools -->
+                         <?php if (session()->get('level') == "Guru") { ?>
+                             <div class="box-tools pull-right">
+                                 <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
+                             </div>
+                         <?php } ?>
+                     </div>
+                     <!-- /.box-header -->
+                     <div class="box-body">
+                         <?php
+                            if (session()->getFlashdata('pesan')) {
+                                echo '<div class="alert alert-success" role="alert">';
+                                echo session()->getFlashdata('pesan');
+                                echo '</div>';
+                            }
+                            ?>
 
-                     <div class="table-responsive">
-                         <table class="table table-striped">
-                             <thead>
-                                 <tr>
-                                     <th width="50px" class="text-center">No</th>
-                                     <th class="text-center">Kelas</th>
-                                     <?php if (session()->get('level') == "Guru") { ?>
-                                         <th width="150px" class="text-center">Action</th>
-                                     <?php } ?>
-                                 </tr>
-                             </thead>
-                             <tbody>
-                                 <?php $no = 1;
-                                    foreach ($kelas as $key => $value) { ?>
+                         <div class="table-responsive">
+                             <table id="example1" class="table table-bordered table-striped">
+                                 <thead>
                                      <tr>
-                                         <td class="text-center"><?= $no++; ?></td>
-                                         <td><?= $value['kelas'] ?></td>
+                                         <th width="50px" class="text-center">No</th>
+                                         <th class="text-center">Kelas</th>
                                          <?php if (session()->get('level') == "Guru") { ?>
-                                             <td class="text-center">
-                                                 <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_kelas'] ?>"><i class="fa fa-edit"></i></button>
-                                                 <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_kelas'] ?>"><i class="fa fa-trash"></i></button>
-                                             </td>
+                                             <th width="150px" class="text-center">Action</th>
                                          <?php } ?>
                                      </tr>
-                                 <?php } ?>
-                             </tbody>
-                         </table>
+                                 </thead>
+                                 <tbody>
+                                     <?php $no = 1;
+                                        foreach ($kelas as $key => $value) { ?>
+                                         <tr>
+                                             <td class="text-center"><?= $no++; ?></td>
+                                             <td><?= $value['kelas'] ?></td>
+                                             <?php if (session()->get('level') == "Guru") { ?>
+                                                 <td class="text-center">
+                                                     <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_kelas'] ?>"><i class="fa fa-edit"></i></button>
+                                                     <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_kelas'] ?>"><i class="fa fa-trash"></i></button>
+                                                 </td>
+                                             <?php } ?>
+                                         </tr>
+                                     <?php } ?>
+                                 </tbody>
+                             </table>
+                         </div>
                      </div>
-                 </div>
-                 <!-- /.box-body -->
+                     <!-- /.box-body -->
+                 <?php } elseif (session()->get('level') == "Admin") { ?>
+                     <div class="with-border">
+                         <!-- /.box-tools -->
+                         <?php if (session()->get('level') == "Guru") { ?>
+                             <div class="box-tools pull-right">
+                                 <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
+                             </div>
+                         <?php } ?>
+                     </div>
+                     <!-- /.box-header -->
+                     <div class="box-body">
+                         <?php
+                            if (session()->getFlashdata('pesan')) {
+                                echo '<div class="alert alert-success" role="alert">';
+                                echo session()->getFlashdata('pesan');
+                                echo '</div>';
+                            }
+                            ?>
+
+                         <div class="table-responsive">
+                             <table class="table table-striped">
+                                 <thead>
+                                     <tr>
+                                         <th width="50px" class="text-center">No</th>
+                                         <th class="text-center">Kelas</th>
+                                         <?php if (session()->get('level') == "Guru") { ?>
+                                             <th width="150px" class="text-center">Action</th>
+                                         <?php } ?>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <?php $no = 1;
+                                        foreach ($kelas as $key => $value) { ?>
+                                         <tr>
+                                             <td class="text-center"><?= $no++; ?></td>
+                                             <td><?= $value['kelas'] ?></td>
+                                             <?php if (session()->get('level') == "Guru") { ?>
+                                                 <td class="text-center">
+                                                     <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_kelas'] ?>"><i class="fa fa-edit"></i></button>
+                                                     <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_kelas'] ?>"><i class="fa fa-trash"></i></button>
+                                                 </td>
+                                             <?php } ?>
+                                         </tr>
+                                     <?php } ?>
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                     <!-- /.box-body -->
+                 <?php } ?>
              </div>
              <!-- /.box -->
          </div>

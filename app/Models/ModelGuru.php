@@ -32,6 +32,13 @@ class ModelGuru extends Model
             ->delete($data);
     }
 
+    public function detail_data($id_guru)
+    {
+        return $this->db->table('tbl_guru')
+            ->where('id_guru', $id_guru)
+            ->get()->getRowArray();
+    }
+
     public function get_guru_count()
     {
         $query = $this->db->table('tbl_guru')->countAll();
