@@ -22,8 +22,8 @@
      <div class="row">
          <div class="col-sm-12">
              <div class="box box-success box-solid">
-                 <div class="box-header with-border">
-                     <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3>
+                 <div class="with-border">
+                     <!-- <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3> -->
                      <!-- /.box-tools -->
                      <?php if (session()->get('level') == "Guru") { ?>
                          <div class="box-tools pull-right">
@@ -42,7 +42,7 @@
                         ?>
 
                      <div class="table-responsive">
-                         <table id="example1" class="table table-bordered table-striped">
+                         <table class="table table-striped">
                              <thead>
                                  <tr>
                                      <th width="50px" class="text-center">No</th>
