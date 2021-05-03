@@ -1,7 +1,7 @@
  <!-- Collect the nav links, forms, and other content for toggling -->
  <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
      <ul class="nav navbar-nav">
-         <?php if (session()->get('level') == "1") { ?>
+         <?php if (session()->get('level') == "Admin") { ?>
              <li><a href="<?= base_url('admin') ?>"><i class="fa fa-tachometer"></i> Dashboard</a></li>
              <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
@@ -26,7 +26,7 @@
                  </ul>
              </li>
              <li><a href="#"><i class="fa fa-info-circle"></i> About</a></li>
-         <?php } elseif (session()->get('level') == "2") { ?>
+         <?php } elseif (session()->get('level') == "Guru") { ?>
              <!-----Menu Halaman Guru------>
              <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Beranda</a></li>
              <li class="dropdown">
@@ -39,6 +39,8 @@
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
                  <ul class="dropdown-menu" role="menu">
                      <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Data Santri</a></li>
+                     <li><a href="<?= base_url('data_kelas') ?>"><i class="fa fa-institution"></i> Kelas</a></li>
+                     <li><a href="<?= base_url('data_materi') ?>"><i class="fa fa-book"></i> Materi</a></li>
                      <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Rekap Absensi</a></li>
                      <li><a href="<?= base_url('data_rps') ?>"><i class="fa fa-file-text"></i> RPS</a></li>
                  </ul>
@@ -49,17 +51,17 @@
                  <ul class="dropdown-menu" role="menu">
                      <li><a href="<?= base_url('data_nilai/index') ?>"><i class="fa fa-circle-o"></i> Materi Pokok</a></li>
                      <li><a href="<?= base_url('data_nilai/konsepPraktikum') ?>"><i class="fa fa-circle-o"></i> Pemahaman Konsep & Praktikum</a></li>
-                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Sikap & Perilaku</a></li>
-                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Lima Sukses Santri</a></li>
-                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Kegiatan Ekstrakurikuler</a></li>
-                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Keaktifan dalam Kegiatan</a></li>
-                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Prestasi Kuliah</a></li>
-                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Catatan dan Saran Pengurus</a></li>
-                     <li><a href="<?= base_url('data_nilai') ?>"><i class="fa fa-circle-o"></i> Keputusan</a></li>
+                     <li><a href="<?= base_url('data_nilai/sikapPerilaku') ?>"><i class="fa fa-circle-o"></i> Sikap & Perilaku</a></li>
+                     <li><a href="<?= base_url('data_nilai/limaSuksesSantri') ?>"><i class="fa fa-circle-o"></i> Lima Sukses Santri</a></li>
+                     <li><a href="<?= base_url('data_nilai/ekstrakurikuler') ?>"><i class="fa fa-circle-o"></i> Kegiatan Ekstrakurikuler</a></li>
+                     <li><a href="<?= base_url('data_nilai/keaktifanKegiatan') ?>"><i class="fa fa-circle-o"></i> Keaktifan dalam Kegiatan</a></li>
+                     <li><a href="<?= base_url('data_nilai/prestasiKuliah') ?>"><i class="fa fa-circle-o"></i> Prestasi Kuliah</a></li>
+                     <li><a href="<?= base_url('data_nilai/catatanSaranPengurus') ?>"><i class="fa fa-circle-o"></i> Catatan dan Saran Pengurus</a></li>
+                     <li><a href="<?= base_url('data_nilai/keputusan') ?>"><i class="fa fa-circle-o"></i> Keputusan</a></li>
                  </ul>
              </li>
 
-         <?php } elseif (session()->get('level') == "3") { ?>
+         <?php } elseif (session()->get('level') == "Santri") { ?>
              <!-----Menu Halaman Guru------>
              <li><a href="<?= base_url('santri/index') ?>"><i class="fa fa-home"></i> Beranda</a></li>
              <li class="dropdown">
@@ -93,7 +95,7 @@
  <div class="navbar-custom-menu">
      <ul class="nav navbar-nav">
 
-         <?php if (session()->get('level') == "2") { ?>
+         <?php if (session()->get('level') == "Guru") { ?>
              <div class="navbar-custom-menu">
                  <ul class="nav navbar-nav">
                      <!-- Messages: style can be found in dropdown.less-->
@@ -130,7 +132,7 @@
              </div>
          <?php } ?>
 
-         <?php if (session()->get('level') == "3") { ?>
+         <?php if (session()->get('level') == "Santri") { ?>
              <div class="navbar-custom-menu">
                  <ul class="nav navbar-nav">
                      <!-- Messages: style can be found in dropdown.less-->
@@ -186,11 +188,11 @@
                          <img src="<?= base_url('foto/' . session()->get('foto')) ?>" class=" img-circle" alt="User Image">
 
                          <p>
-                             <?php if (session()->get('level') == 1) {
+                             <?php if (session()->get('level') == "Admin") {
                                     echo "Admin";
-                                } else if (session()->get('level') == 2) {
+                                } else if (session()->get('level') == "Guru") {
                                     echo "Guru";
-                                } else if (session()->get('level') == 3) {
+                                } else if (session()->get('level') == "Santri") {
                                     echo session()->get('username');
                                 } ?> /
                              <?= session()->get('nama')  ?>

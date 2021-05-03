@@ -24,7 +24,7 @@ class Auth extends BaseController
 
     public function cek_login()
     {
-        $level = $this->request->getPost('level');
+        // $level = $this->request->getPost('level');
 
         if ($this->validate([
             'username' => [
@@ -35,13 +35,13 @@ class Auth extends BaseController
                 ]
             ],
 
-            'level' => [
-                'label' => 'Level',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} wajib diisi !!'
-                ]
-            ],
+            // 'level' => [
+            //     'label' => 'Level',
+            //     'rules' => 'required',
+            //     'errors' => [
+            //         'required' => '{field} wajib diisi !!'
+            //     ]
+            // ],
 
             'password' => [
                 'label' => 'Password',
@@ -59,59 +59,28 @@ class Auth extends BaseController
 
             $cek_user = $this->ModelAuth->login_user($username, $password);
 
-            if (($cek_user['username'])) {
-
-                if ($cek_user) {
-                    //jika data benar
-                    session()->set('log', true);
-                    session()->set('username', $cek_user['username']);
-                    session()->set('nama', $cek_user['nama_user']);
-                    session()->set('foto', $cek_user['foto']);
-                    session()->set('level', $level);
-                    //login
+            if (($cek_user['username'] == $username) && ($cek_user['password'] == $password)) {
+                //jika data benar
+                session()->set('log', true);
+                session()->set('username', $cek_user['username']);
+                session()->set('nama', $cek_user['nama_user']);
+                session()->set('foto', $cek_user['foto']);
+                session()->set('level', $cek_user['level']);
+                //login
+                if ($cek_user["level"] == "Admin") {
                     return redirect()->to(base_url('/admin'));
-                } else {
-                    //jika data tidak sesuai
-                    session()->setFlashdata('pesan', 'Login gagal ! Username or Password salah !!');
-                    return redirect()->to(base_url('auth/index'));
-                }
-            } else if ($level == 2) {
-                $cek_user = $this->ModelAuth->login_user($username, $password);
-                if ($cek_user) {
-                    //jika data benar
-                    session()->set('log', true);
-                    session()->set('username', $cek_user['username']);
-                    session()->set('nama', $cek_user['nama_user']);
-                    session()->set('foto', $cek_user['foto']);
-                    session()->set('level', $level);
-                    //login
+                } else if ($cek_user["level"] == "Guru") {
                     return redirect()->to(base_url('/guru'));
-                } else {
-                    //jika data tidak sesuai
-                    session()->setFlashdata('pesan', 'Login gagal ! Username or Password salah !!');
-                    return redirect()->to(base_url('auth/index'));
-                }
-            } else if ($level == 3) {
-                $cek_user = $this->ModelAuth->login_user($username, $password);
-                if ($cek_user) {
-                    //jika data benar
-                    session()->set('log', true);
-                    session()->set('username', $cek_user['username']);
-                    session()->set('nama', $cek_user['nama_user']);
-                    session()->set('foto', $cek_user['foto']);
-                    session()->set('level', $level);
-                    //login
+                } else if ($cek_user["level"] == "Santri") {
                     return redirect()->to(base_url('/santri'));
                 } else {
-                    //jika data tidak sesuai
                     session()->setFlashdata('pesan', 'Login gagal ! Username or Password salah !!');
-                    return redirect()->to(base_url('auth/index'));
+                    return view('auth/index');
                 }
+            } else {
+                session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+                return redirect()->to(base_url('auth/auth'));
             }
-        } else {
-            //jika tidak valid
-            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('auth/index'));
         }
     }
 

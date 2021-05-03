@@ -25,6 +25,9 @@
                                 <tr>
                                     <td>
                                         <table class="table table-striped">
+                                            <div>
+                                                <canvas id="doughnut-chart-santri" height="180"></canvas>
+                                            </div>
                                             <?php
                                             $konek = mysqli_connect("localhost", "root", "", "db_siakad_ppmalkautsar");
                                             ?>
@@ -35,29 +38,27 @@
                                                         <th class="text-center">No</th>
                                                         <th class="text-center">NIS</th>
                                                         <th class="text-center">Nama Santri</th>
-                                                        <th class="text-center">Jenis Kelamin</th>
+                                                        <th class="text-center">L/P</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <?php
                                                     $no = 1;
-                                                    $data = mysqli_query($konek, "SELECT * FROM tbl_santri WHERE jenis_kelamin='L'");
-                                                    while ($dt = mysqli_fetch_array($data)) {
+                                                    $jumlah = null;
+                                                    $data = mysqli_query($konek, "SELECT * FROM tbl_santri WHERE jenis_kelamin='Laki-Laki'");
+                                                    while ($d = mysqli_fetch_array($data)) {
                                                     ?>
                                                         <tr>
                                                             <td class="text-center"><?php echo $no++; ?></td>
-                                                            <td><?php echo $dt['NIS']; ?></td>
-                                                            <td>
-                                                                <?php
-                                                                $data = mysqli_query($konek, "SELECT * FROM tbl_santri WHERE jenis_kelamin='Laki-Laki'");
-                                                                while ($dt = mysqli_fetch_array($data)) {
-                                                                ?>
-                                                            </td>
+                                                            <td><?php echo $d['NIS']; ?></td>
+                                                            <td><?php echo $d['nama_santri']; ?></td>
+                                                            <td class="text-center"><?php echo $d['jenis_kelamin'] ?></td>
                                                         </tr>
-                                                    <?php } ?>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                 </tbody>
                                             </table>
-                                        <?php } ?>
                                         </table>
                                     </td>
                                 </tr>
