@@ -13,6 +13,11 @@ class ModelNilai extends Model
             ->get()->getResultArray();
     }
 
+    public function addData($data)
+    {
+        $this->db->table('tbl_nilaimateri')->insert($data);
+    }
+
     public function allData1()
     {
         return $this->db->table('tbl_nilaikonseppraktikum')

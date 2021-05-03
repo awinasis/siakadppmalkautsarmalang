@@ -67,7 +67,7 @@
              <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">General <span class="caret"></span></a>
                  <ul class="dropdown-menu" role="menu">
-                     <li><a href="<?= base_url('santri/biodata_santri') ?>"><i class="fa fa-users"></i> Biodata Santri</a></li>
+                     <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Biodata Santri</a></li>
                  </ul>
              </li>
 
