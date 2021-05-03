@@ -8,15 +8,9 @@ class ModelAdmin extends Model
 {
     public function allData()
     {
-        return $this->db->table('tbl_chart')
-            ->orderBy('id_chart', 'DESC')
+        return $this->db->table('tbl_jk')
+            ->join('tbl_santri', 'tbl_santri.id_santri = tbl_jk.id_santri')
+            ->orderBy('id_santri', 'ASC')
             ->get()->getResultArray();
-    }
-
-    public function detail_data($NIS)
-    {
-        return $this->db->table('tbl_santri')
-            ->where('NIS', $NIS)
-            ->get()->getRowArray();
     }
 }
