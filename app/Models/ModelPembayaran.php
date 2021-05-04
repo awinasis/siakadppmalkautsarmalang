@@ -37,4 +37,11 @@ class ModelPembayaran extends Model
         $query = $this->db->table('tbl_pembayaran')->countAll();
         return $query;
     }
+
+    public function get_pembayaran_by_id($data)
+    {
+        return $this->db->table('tbl_pembayaran')
+        ->where('NIS', $data)
+        ->get()->getResultArray();
+    }
 }
