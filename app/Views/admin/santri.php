@@ -2,7 +2,7 @@
  <div class="content-wrapper">
      <!-- Content Header (Page header) -->
      <section class="content-header">
-         <h1>
+         <h1 style="color:MediumSeaGreen; font-family:timesnewrohman;">
              <?= $title; ?>
          </h1>
          <br><br>
@@ -19,94 +19,94 @@
          <?php } ?>
      </section>
 
-     <?php if (session()->get('level') == "Admin") { ?>
-         <div class="row">
-             <div class="col-sm-12">
-                 <div class="box box-success box-solid">
-                     <div class="box-header with-border">
-                         <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3>
-                         <?php if (session()->get('level') == "Admin") { ?>
-                             <div class="box-tools pull-right">
-                                 <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
-                             </div>
-                         <?php } ?>
-                         <!-- /.box-tools -->
-                     </div>
-                     <!-- /.box-header -->
-                     <div class="box-body">
-                         <?php
-                            if (session()->getFlashdata('pesan')) {
-                                echo '<div class="alert alert-success" role="alert">';
-                                echo session()->getFlashdata('pesan');
-                                echo '</div>';
-                            }
-                            ?>
+     <div class="row">
+         <div class="col-sm-12">
+             <div class="box box-success box-solid">
+                 <div class="box-header with-border">
+                     <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3>
+                     <?php if (session()->get('level') == "Admin") { ?>
+                         <div class="box-tools pull-right">
+                             <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
+                         </div>
+                     <?php } ?>
+                     <!-- /.box-tools -->
+                 </div>
+                 <!-- /.box-header -->
+                 <div class="box-body">
+                     <?php
+                        if (session()->getFlashdata('pesan')) {
+                            echo '<div class="alert alert-success" role="alert">';
+                            echo session()->getFlashdata('pesan');
+                            echo '</div>';
+                        }
+                        ?>
 
-                         <div class="table-responsive">
-                             <table id="example1" class="table table-bordered table-striped">
-                                 <thead>
+                     <div class="table-responsive">
+                         <table id="example1" class="table table-bordered table-striped">
+                             <thead>
+                                 <tr>
+                                     <th width="50px" class="text-center">No</th>
+                                     <th class="text-center">NIS</th>
+                                     <th class="text-center">Nama Santri</th>
+                                     <th class="text-center">Tempat Lahir</th>
+                                     <th class="text-center">Tanggal Lahir</th>
+                                     <th class="text-center">Jenis Kelamin</th>
+                                     <th class="text-center">Alamat</th>
+                                     <th class="text-center">Email</th>
+                                     <th class="text-center">No.Telp</th>
+                                     <th class="text-center">Universitas</th>
+                                     <th class="text-center">Fakultas</th>
+                                     <th class="text-center">Jurusan/Prodi</th>
+                                     <th class="text-center">kelas Santri</th>
+                                     <th class="text-center">Angkatan Santri</th>
+                                     <th class="text-center">Nama Ayah</th>
+                                     <th class="text-center">No.Telp Orang tua</th>
+                                     <?php if (session()->get('level') == "Admin") { ?>
+                                         <th width="150px" class="text-center">Action</th>
+                                     <?php } ?>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <?php $no = 1;
+                                    foreach ($santri as $key => $value) { ?>
                                      <tr>
-                                         <th width="50px" class="text-center">No</th>
-                                         <th class="text-center">NIS</th>
-                                         <th class="text-center">Nama Santri</th>
-                                         <th class="text-center">Tempat Lahir</th>
-                                         <th class="text-center">Tanggal Lahir</th>
-                                         <th class="text-center">Jenis Kelamin</th>
-                                         <th class="text-center">Alamat</th>
-                                         <th class="text-center">Email</th>
-                                         <th class="text-center">No.Telp</th>
-                                         <th class="text-center">Universitas</th>
-                                         <th class="text-center">Fakultas</th>
-                                         <th class="text-center">Jurusan/Prodi</th>
-                                         <th class="text-center">kelas Santri</th>
-                                         <th class="text-center">Angkatan Santri</th>
-                                         <th class="text-center">Nama Ayah</th>
-                                         <th class="text-center">No.Telp Orang tua</th>
+                                         <td class="text-center"><?= $no++; ?></td>
+                                         <td><?= $value['NIS'] ?></td>
+                                         <td><?= $value['nama_santri'] ?></td>
+                                         <td><?= $value['tempat_lahir'] ?></td>
+                                         <td><?= $value['tanggal_lahir'] ?></td>
+                                         <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
+                                         <td><?= $value['alamat'] ?></td>
+                                         <td><?= $value['email'] ?></td>
+                                         <td><?= $value['noTelp'] ?></td>
+                                         <td><?= $value['universitas'] ?></td>
+                                         <td><?= $value['fakultas'] ?></td>
+                                         <td><?= $value['jurusan_prodi'] ?></td>
+                                         <td><?= $value['kelas_santri'] ?></td>
+                                         <td><?= $value['angkatan_santri'] ?></td>
+                                         <td><?= $value['nama_ayah'] ?></td>
+                                         <td><?= $value['noTelp_ortu'] ?></td>
+
                                          <?php if (session()->get('level') == "Admin") { ?>
-                                             <th width="150px" class="text-center">Action</th>
+                                             <td class="text-center">
+                                                 <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_santri'] ?>"><i class="fa fa-edit"></i></button>
+                                                 <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_santri'] ?>"><i class="fa fa-trash"></i></button>
+                                             </td>
                                          <?php } ?>
                                      </tr>
-                                 </thead>
-                                 <tbody>
-                                     <?php $no = 1;
-                                        foreach ($santri as $key => $value) { ?>
-                                         <tr>
-                                             <td class="text-center"><?= $no++; ?></td>
-                                             <td><?= $value['NIS'] ?></td>
-                                             <td><?= $value['nama_santri'] ?></td>
-                                             <td><?= $value['tempat_lahir'] ?></td>
-                                             <td><?= $value['tanggal_lahir'] ?></td>
-                                             <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
-                                             <td><?= $value['alamat'] ?></td>
-                                             <td><?= $value['email'] ?></td>
-                                             <td><?= $value['noTelp'] ?></td>
-                                             <td><?= $value['universitas'] ?></td>
-                                             <td><?= $value['fakultas'] ?></td>
-                                             <td><?= $value['jurusan_prodi'] ?></td>
-                                             <td><?= $value['kelas_santri'] ?></td>
-                                             <td><?= $value['angkatan_santri'] ?></td>
-                                             <td><?= $value['nama_ayah'] ?></td>
-                                             <td><?= $value['noTelp_ortu'] ?></td>
-
-                                             <?php if (session()->get('level') == "Admin") { ?>
-                                                 <td class="text-center">
-                                                     <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_santri'] ?>"><i class="fa fa-edit"></i></button>
-                                                     <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_santri'] ?>"><i class="fa fa-trash"></i></button>
-                                                 </td>
-                                             <?php } elseif (session()->get('level') == "Guru") { ?>
-                                             <?php } ?>
-                                         </tr>
-                                     <?php } ?>
-                                 </tbody>
-                             </table>
-                         </div>
+                                 <?php } ?>
+                             </tbody>
+                         </table>
                      </div>
-                     <!-- /.box-body -->
                  </div>
-                 <!-- /.box -->
+                 <!-- /.box-body -->
              </div>
+             <!-- /.box -->
          </div>
+     </div>
 
+
+     <?php if (session()->get('level') == "Admin") { ?>
          <!-- modal add -->
          <div class="modal fade" id="add">
              <div class="modal-dialog">
@@ -401,6 +401,7 @@
                  <div class="col-xs-12">
                      <div class="row">
                          <div class="col-sm-12">
+                             <h2 class="page-header" style="color:MediumSeaGreen; font-family:timesnewrohman;"><b>Biodata Santri</b></h2>
                              <table class="table table-bordered">
                                  <tbody>
                                      <?php $no = 1;

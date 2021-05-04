@@ -2,7 +2,7 @@
  <div class="content-wrapper">
      <!-- Content Header (Page header) -->
      <section class="content-header">
-         <h1>
+         <h1 style="color:MediumSeaGreen; font-family:timesnewrohman;">
              <?= $title; ?>
          </h1>
          <br><br>
@@ -56,7 +56,7 @@
                                          <td><?= $value['NIS'] ?></td>
                                          <td class="text-center"><?= $value['periode_pembayaran'] ?></td>
                                          <td><?= $value['keterangan'] ?></td>
-                                         <td class="text-center"><?= $value['tagihan'] ?></td>
+                                         <td class="text-center"><?= $value['tagihan'] ?>'`</td>
                                          <td class="text-center"><?= $value['terbayar'] ?></td>
                                          <td><?= $value['status'] ?></td>
 

@@ -79,7 +79,7 @@ class Auth extends BaseController
                 }
             } else {
                 session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
-                return redirect()->to(base_url('auth/auth'));
+                return redirect()->to(base_url('auth/index'));
             }
         }
     }

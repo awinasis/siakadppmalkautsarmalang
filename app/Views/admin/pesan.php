@@ -2,7 +2,7 @@
  <div class="content-wrapper">
      <!-- Content Header (Page header) -->
      <section class="content-header">
-         <h1>
+         <h1 style="color:MediumSeaGreen; font-family:timesnewrohman;">
              <?= $title; ?>
          </h1>
          <br><br>
@@ -82,13 +82,13 @@
                         ?>
 
                      <div class="form-group">
-                         <label>Pesan</label>
-                         <textarea class="form-control" id="pesan" name="pesan" style="height: 100px" required></textarea>
+                         <label>Tanggal</label>
+                         <input type="date" class="form-control" id="tanggal" name="tanggal" required>
                      </div>
 
                      <div class="form-group">
-                         <label>Tanggal</label>
-                         <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                         <label>Pesan</label>
+                         <textarea class="form-control" id="pesan" name="pesan" style="height: 100px" required></textarea>
                      </div>
 
                      <div class="modal-footer">
@@ -116,15 +116,14 @@
                          <?php
                             echo form_open('data_pesan/edit/' . $value['id_pesan']);
                             ?>
+                         <div class="form-group">
+                             <label>Tanggal</label>
+                             <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= $value['tanggal'] ?>" required>
+                         </div>
 
                          <div class="form-group">
                              <label>Pesan</label>
                              <textarea class="form-control" id="pesan" name="pesan" style="height: 100px" required><?= htmlentities($value['pesan']); ?></textarea>
-                         </div>
-
-                         <div class="form-group">
-                             <label>Tanggal</label>
-                             <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= $value['tanggal'] ?>" required>
                          </div>
 
                          <div class="modal-footer">

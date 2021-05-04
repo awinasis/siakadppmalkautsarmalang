@@ -94,10 +94,18 @@ class Bio_Santri extends BaseController
 
     public function viewBiodataSantri($id_santri)
     {
+        if (session()->get('level') == "Santri") {
+            $reportSantri = $this->ModelSantri->orderBy('id_santri', 'desc')->findAll();
+        } else {
+            $reportSantri = $this->ModelSantri->where('id_santri', session()->get('id_santri'))->orderBy('id_santri', 'desc')->findAll();
+        }
+        $reportSantri = $this->ModelSantri->findAll();
+
         $data = [
             'title' => 'Biodata Santri',
             'santri' => $this->ModelSantri->detail_data($id_santri),
-            'isi'    => 'admin/v_bioSantri'
+            'isi'    => 'admin/v_bioSantri',
+            'reportSantri' => $reportSantri
         ];
 
         return view("layout/wrapper", $data);
