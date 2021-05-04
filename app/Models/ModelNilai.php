@@ -25,11 +25,21 @@ class ModelNilai extends Model
             ->get()->getResultArray();
     }
 
+    public function addData1($data)
+    {
+        $this->db->table('tbl_nilaikonseppraktikum')->insert($data);
+    }
+
     public function allData2()
     {
         return $this->db->table('tbl_nilaisikapperilaku')
             ->orderBy('id_sp', 'DESC')
             ->get()->getResultArray();
+    }
+
+    public function addData2($data)
+    {
+        $this->db->table('tbl_nilaisikapperilaku')->insert($data);
     }
 
     public function allData3()
@@ -39,6 +49,11 @@ class ModelNilai extends Model
             ->get()->getResultArray();
     }
 
+    public function addData3($data)
+    {
+        $this->db->table('tbl_nilailimasuksessantri')->insert($data);
+    }
+
     public function allData4()
     {
         return $this->db->table('tbl_nilaiekstrakurikuler')
@@ -46,11 +61,21 @@ class ModelNilai extends Model
             ->get()->getResultArray();
     }
 
+    public function addData4($data)
+    {
+        $this->db->table('tbl_nilaiekstrakurikuler')->insert($data);
+    }
+
     public function allData5()
     {
         return $this->db->table('tbl_nilai')
             ->orderBy('id_', 'DESC')
             ->get()->getResultArray();
+    }
+
+    public function addData5($data)
+    {
+        $this->db->table('tbl_nilaimateri')->insert($data);
     }
 
     public function allData6()

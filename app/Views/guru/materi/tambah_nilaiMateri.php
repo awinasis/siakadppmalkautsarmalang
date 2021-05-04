@@ -2,13 +2,14 @@
  <div class="content-wrapper">
      <!-- Content Header (Page header) -->
      <section class="content-header">
-         <h1>
+         <h1 style="color:MediumSeaGreen; font-family:timesnewrohman;">
              <?= $title; ?>
          </h1>
          <br><br>
 
          <ol class="breadcrumb">
-             <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+             <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Home</a></li>
+             <li><a href="<?= base_url('data_nilai/index') ?>">Nilai Materi</a></li>
              <li class="active">Nilai Santri</li>
          </ol>
      </section>
@@ -17,7 +18,7 @@
          <div class="col-sm-12">
              <div class="box box-gray box-solid">
                  <div class="box-header with-border">
-                     <h3 class="box-title"><i class="fa  fa-table"></i> <?= $title; ?></h3>
+                     <h3 class="box-title"><i class="fa  fa-table"></i></h3>
                      <div class="box-body">
                          <div class="table-responsive">
                              <table class="table table-bordered table-striped with-check">
@@ -68,24 +69,44 @@
                                              <td class="text-center"><?= $value['NIS'] ?></td>
                                              <td><?= $value['nama_santri'] ?></td>
                                              <td><?= $value['jenis_kelamin'] ?></td>
-                                             <td>
-                                                 <div class="form-group row">
-                                                     <div class="col-lg-2">
-                                                         <div class="form-group">
-                                                             <select name="nilai1" id="nilai1">
-                                                                 <?php for ($i = 0; $i <= 100; $i++) {
-                                                                        echo $i;
-                                                                    } ?>
-                                                             </select>
-                                                         </div>
-                                                     </div>
-                                                 </div>%
-                                             </td>
-                                             <td></td>
+                                             <td><input name="nilai1" class="form-control" required>%</td>
+                                             <td><input name="nilai2" class="form-control" required>%</td>
+                                             <td><input name="nilai3" class="form-control" required>%</td>
+                                             <td><input name="nilai4" class="form-control" required>%</td>
+                                             <td><input name="nilai5" class="form-control" required>%</td>
+                                             <td><input name="nilai6" class="form-control" required>%</td>
+                                             <td><input name="nilai7" class="form-control" required>%</td>
+                                             <td><input name="nilai8" class="form-control" required>%</td>
+                                             <td><input name="nilai9" class="form-control" required>%</td>
+                                             <td><input name="nilai10" class="form-control" required>%</td>
+                                             <td><input name="nilai11" class="form-control" required>%</td>
+                                             <td><input name="nilai12" class="form-control" required>%</td>
+                                             <td><input name="nilai13" class="form-control" required>%</td>
+                                             <td><input name="nilai14" class="form-control" required>%</td>
+                                             <td><input name="nilai15" class="form-control" required>%</td>
+                                             <td><input name="nilai16" class="form-control" required>%</td>
+                                             <td><input name="nilai17" class="form-control" required>%</td>
+                                             <td><input name="nilai18" class="form-control" required>%</td>
+                                             <td><input name="nilai19" class="form-control" required>%</td>
+                                             <td><input name="nilai20" class="form-control" required>%</td>
+                                             <td><input name="nilai21" class="form-control" required>%</td>
+                                             <td><input name="nilai22" class="form-control" required>%</td>
+                                             <td><input name="nilai23" class="form-control" required>%</td>
+                                             <td><input name="nilai24" class="form-control" required>%</td>
+                                             <td><input name="nilai25" class="form-control" required>%</td>
+                                             <td><input name="nilai26" class="form-control" required>%</td>
+                                             <td><input name="nilai27" class="form-control" required>%</td>
+                                             <td><input name="nilai28" class="form-control" required>%</td>
+                                             <td><input name="nilai29" class="form-control" required>%</td>
+                                             <td><input name="nilai30" class="form-control" required>%</td>
+                                             <td><input name="nilai31" class="form-control" required>%</td>
                                          </tr>
                                      <?php } ?>
                                  </tbody>
                              </table>
+                         </div>
+                         <div class="modal-footer">
+                             <button type="submit" class="btn btn-primary">Simpan</button>
                          </div>
                      </div>
                  </div>

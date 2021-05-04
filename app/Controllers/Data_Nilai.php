@@ -15,7 +15,7 @@ class Data_Nilai extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Nilai',
+            'title' => 'Nilai Materi Pokok',
             'nilai' => $this->ModelNilai->allData(),
             'isi'    => 'guru/view_nilaiMateri',
         ];
@@ -26,53 +26,31 @@ class Data_Nilai extends BaseController
     public function tambahNilaiMateri()
     {
         $data = [
-            'NIS' => $this->request->getPost('NIS'),
-            'nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
-            'nilai1' => $this->request->getPost('nilai1'),
-            'nilai2' => $this->request->getPost('nilai2'),
-            'nilai3' => $this->request->getPost('nilai3'),
-            'nilai4' => $this->request->getPost('nilai4'),
-            'nilai5' => $this->request->getPost('nilai5'),
-            'nilai6' => $this->request->getPost('nilai6'),
-            'nilai7' => $this->request->getPost('nilai7'),
-            'nilai8' => $this->request->getPost('nilai8'),
-            'nilai9' => $this->request->getPost('nilai9'),
-            'nilai10' => $this->request->getPost('nilai10'),
-            'nilai11' => $this->request->getPost('nilai11'),
-            'nilai12' => $this->request->getPost('nilai12'),
-            'nilai13' => $this->request->getPost('nilai13'),
-            'nilai14' => $this->request->getPost('nilai14'),
-            'nilai15' => $this->request->getPost('nilai15'),
-            'nilai16' => $this->request->getPost('nilai16'),
-            'nilai17' => $this->request->getPost('nilai17'),
-            'nilai18' => $this->request->getPost('nilai18'),
-            'nilai19' => $this->request->getPost('nilai19'),
-            'nilai20' => $this->request->getPost('nilai20'),
-            'nilai21' => $this->request->getPost('nilai21'),
-            'nilai22' => $this->request->getPost('nilai22'),
-            'nilai23' => $this->request->getPost('nilai23'),
-            'nilai24' => $this->request->getPost('nilai24'),
-            'nilai25' => $this->request->getPost('nilai25'),
-            'nilai26' => $this->request->getPost('nilai26'),
-            'nilai27' => $this->request->getPost('nilai27'),
-            'nilai28' => $this->request->getPost('nilai28'),
-            'nilai29' => $this->request->getPost('nilai29'),
-            'nilai30' => $this->request->getPost('nilai30'),
-            'nilai31' => $this->request->getPost('nilai31'),
+            'title' => 'Tambah Nilai Materi',
+            'nilai' => $this->ModelNilai->allData(),
+            'isi'    => 'guru/materi/tambah_nilaiMateri',
         ];
-        $this->ModelNilai->addData($data);
 
-        session()->setFlashdata('pesan', 'Data berhasil di tambahkan !!');
-        return redirect()->to(base_url('data_nilai'));
+        return view("layout/wrapper", $data);
     }
 
     public function konsepPraktikum()
     {
         $data = [
-            'title' => 'Nilai',
+            'title' => 'Nilai Pemahaman Konsep & Praktikum',
             'nilai' => $this->ModelNilai->allData1(),
             'isi'    => 'guru/view_nilaiKonsepPraktikum',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function tambahNilaiKonsepPraktikum()
+    {
+        $data = [
+            'title' => 'Tambah Nilai Konsep & Praktikum',
+            'nilai' => $this->ModelNilai->allData1(),
+            'isi'    => 'guru/konsep_praktikum/tambah_nilaiKonsepPraktikum',
         ];
 
         return view("layout/wrapper", $data);
@@ -81,9 +59,20 @@ class Data_Nilai extends BaseController
     public function sikapPerilaku()
     {
         $data = [
-            'title' => 'Nilai',
+            'title' => 'Nilai Sikap & Perilaku',
             'nilai' => $this->ModelNilai->allData2(),
             'isi'    => 'guru/view_nilaiSikapPerilaku',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function tambahNilaiSikapPerilaku()
+    {
+        $data = [
+            'title' => 'Tambah Nilai Sikap & Perilaku',
+            'nilai' => $this->ModelNilai->allData2(),
+            'isi'    => 'guru/sikap_perilaku/tambah_nilaiSikapPerilaku',
         ];
 
         return view("layout/wrapper", $data);
@@ -92,9 +81,20 @@ class Data_Nilai extends BaseController
     public function limaSuksesSantri()
     {
         $data = [
-            'title' => 'Nilai',
+            'title' => 'Nilai 5 Sukses Santri',
             'nilai' => $this->ModelNilai->allData3(),
             'isi'    => 'guru/view_nilaiLimaSuksesSantri',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function tambahNilaiLimaSuksesSantri()
+    {
+        $data = [
+            'title' => 'Tambah Nilai 5 Sukses Santri',
+            'nilai' => $this->ModelNilai->allData4(),
+            'isi'    => 'guru/5_sukses_santri/tambah_nilaiLimaSuksesSantri',
         ];
 
         return view("layout/wrapper", $data);
@@ -103,9 +103,20 @@ class Data_Nilai extends BaseController
     public function ekstrakurikuler()
     {
         $data = [
-            'title' => 'Nilai',
+            'title' => 'Nilai Ekstrakurikuler',
             'nilai' => $this->ModelNilai->allData4(),
             'isi'    => 'guru/view_nilaiEkstrakurikuler',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function tambahNilaiEkstrakurikuler()
+    {
+        $data = [
+            'title' => 'Tambah Nilai Ekstrakurikuler',
+            'nilai' => $this->ModelNilai->allData4(),
+            'isi'    => 'guru/ekstrakurikuler/tambah_nilaiEkstrakurikuler',
         ];
 
         return view("layout/wrapper", $data);

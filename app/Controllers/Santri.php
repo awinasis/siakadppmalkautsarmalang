@@ -18,26 +18,11 @@ class Santri extends BaseController
 
     public function index()
     {
-        // if (session()->get('level') == "Admin") {
-        //     $reportAbsen = $this->ModelAbsensi->orderBy('NIS', 'desc')->findAll();
-        // } else {
-        //     $reportAbsen = $this->ModelAbsensi->where('NIS', session()->get('id_santri'))->orderBy('id_santri', 'desc')->findAll();
-        // }
-        // $reportAbsen = $this->ModelAbsensi->findAll();
-
-        // if (session()->get('level') == "Guru") {
-        //     $reportSantri = $this->ModelSantri->orderBy('NIS', 'desc')->findAll();
-        // } else {
-        //     $reportSantri = $this->ModelSantri->where('NIS', session()->get('id_santri'))->orderBy('id_santri', 'desc')->findAll();
-        // }
-        // $reportSantri = $this->ModelSantri->findAll();
         // $pengumuman = $this->ModelPengumuman->where('visible_news', "1")->orderBy('tgl_dibuat', 'desc')->findAll();
         $data = [
             'title' => 'Santri',
             'isi'    => 'santri',
             // 'pengumuman' => $pengumuman
-            // 'reportAbsen' => $reportAbsen,
-            // 'reportSantri' => $reportSantri
         ];
 
         return view("layout/wrapper", $data);

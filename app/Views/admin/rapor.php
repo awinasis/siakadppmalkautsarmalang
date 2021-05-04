@@ -2,7 +2,7 @@
  <div class="content-wrapper">
      <!-- Content Header (Page header) -->
      <section class="content-header">
-         <h1>
+         <h1 style="color:MediumSeaGreen; font-family:timesnewrohman;">
              <?= $title; ?>
          </h1>
          <br><br>
@@ -86,10 +86,10 @@
                         ?>
 
                      <div class="form-group row">
-                        <div class="col-lg-6">
-                            <label>NIS</label>
-                            <input name="NIS" type="number" class="form-control" placeholder="NIS" required>
-                        </div>
+                         <div class="col-lg-6">
+                             <label>NIS</label>
+                             <input name="NIS" type="number" class="form-control" placeholder="NIS" required>
+                         </div>
                      </div>
 
                      <div class="form-group">
@@ -124,10 +124,10 @@
                             ?>
 
                          <div class="form-group row">
-                         <div class="col-lg-6">
-                             <label>NIS</label>
-                             <input name="NIS" type="number" value="<?= $value['NIS'] ?>" class="form-control">
-                         </div>
+                             <div class="col-lg-6">
+                                 <label>NIS</label>
+                                 <input name="NIS" type="number" value="<?= $value['NIS'] ?>" class="form-control">
+                             </div>
                          </div>
 
                          <div class="form-group">

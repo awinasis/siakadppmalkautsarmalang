@@ -52,10 +52,8 @@
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="col-xs-8 ml-8">
-            <div class="checkbox icheck">
-                <label>
-                    <input type="checkbox">
-                    Remember Me </label>
+            <div class="checkbox icheck">&nbsp;
+                <label><input type="checkbox">Remember Me </label>
             </div>
         </div>
         <br>

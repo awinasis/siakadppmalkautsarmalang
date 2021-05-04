@@ -2,14 +2,21 @@
  <div class="content-wrapper">
      <!-- Content Header (Page header) -->
      <section class="content-header">
-         <h1>
+         <h1 style="color:MediumSeaGreen; font-family:timesnewrohman;">
              <?= $title; ?>
          </h1>
          <br><br>
-         <ol class="breadcrumb">
-             <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-             <li class="active">Data Guru</li>
-         </ol>
+         <?php if (session()->get('level') == "Guru") { ?>
+             <ol class="breadcrumb">
+                 <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Home</a></li>
+                 <li class="active">Data Guru</li>
+             </ol>
+         <?php } elseif (session()->get('level') == "Admin") { ?>
+             <ol class="breadcrumb">
+                 <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                 <li class="active">Data Guru</li>
+             </ol>
+         <?php } ?>
      </section>
 
      <?php if (session()->get('level') == "Admin") { ?>
@@ -235,6 +242,7 @@
                  <div class="col-xs-12">
                      <div class="row">
                          <div class="col-sm-12">
+                             <h2 class="page-header" style="color:MediumSeaGreen; font-family:courier;"><b>Biodata Guru</b></h2>
                              <table class="table table-bordered">
                                  <tbody>
                                      <?php $no = 1;
