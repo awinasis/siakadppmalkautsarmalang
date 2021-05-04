@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2021 at 12:04 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.27
+-- Generation Time: May 04, 2021 at 10:48 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -408,6 +409,7 @@ INSERT INTO `tbl_nilaisikapperilaku` (`id_sp`, `NIS`, `nama_santri`, `jenis_kela
 CREATE TABLE `tbl_pembayaran` (
   `id_pembayaran` int(3) NOT NULL,
   `NIS` varchar(15) NOT NULL,
+  `nama_santri` varchar(30) NOT NULL,
   `periode_pembayaran` year(4) NOT NULL,
   `keterangan` varchar(30) NOT NULL,
   `tagihan` varchar(25) NOT NULL,
@@ -419,9 +421,9 @@ CREATE TABLE `tbl_pembayaran` (
 -- Dumping data for table `tbl_pembayaran`
 --
 
-INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `NIS`, `periode_pembayaran`, `keterangan`, `tagihan`, `terbayar`, `status`) VALUES
-(1, '201903002', 2021, 'Pembayaran Uang KBM', '2.640.000', '2.6.40.000', 'LUNAS'),
-(2, '201903007', 2021, 'Pembayaran Uang PPM', '2.640.000', '0', 'BELUM LUNAS');
+INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `NIS`, `nama_santri`, `periode_pembayaran`, `keterangan`, `tagihan`, `terbayar`, `status`) VALUES
+(1, '201903002', 'Abdullah Winasis', 2021, 'Pembayaran Uang KBM', '2.640.000', '2.6.40.000', 'LUNAS'),
+(2, '201903003', 'Muhammad Andy Herdiansyah', 2021, 'Pembayaran Uang PPM', '2.640.000', '0', 'BELUM LUNAS');
 
 -- --------------------------------------------------------
 
@@ -665,7 +667,8 @@ ALTER TABLE `tbl_nilaisikapperilaku`
 --
 ALTER TABLE `tbl_pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
-  ADD UNIQUE KEY `NIS` (`NIS`);
+  ADD UNIQUE KEY `NIS` (`NIS`),
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
 -- Indexes for table `tbl_pengumuman`
