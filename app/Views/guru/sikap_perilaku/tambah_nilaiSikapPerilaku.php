@@ -178,7 +178,7 @@
                              </table>
                          </div>
                          <div class="modal-footer">
-                             <button type="submit" class="btn btn-primary">Simpan</button>
+                             <a href="<?= base_url('data_nilai/sikapPerilaku') ?>" type="submit" class="btn btn-primary">Simpan</a>
                          </div>
                      </div>
                  </div>

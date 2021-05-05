@@ -73,23 +73,28 @@ class ModelNilai extends Model
             ->get()->getResultArray();
     }
 
-    public function addData5($data)
-    {
-        $this->db->table('tbl_nilaimateri')->insert($data);
-    }
-
     public function allData6()
     {
-        return $this->db->table('tbl_nilai')
-            ->orderBy('id_', 'DESC')
+        return $this->db->table('tbl_nilaiindeksprestasi')
+            ->orderBy('id_ip', 'DESC')
             ->get()->getResultArray();
+    }
+
+    public function addData6($data)
+    {
+        $this->db->table('tbl_')->insert($data);
     }
 
     public function allData7()
     {
-        return $this->db->table('tbl_nilai')
-            ->orderBy('id_', 'DESC')
+        return $this->db->table('tbl_catatanSaranPengurus')
+            ->orderBy('id_cs', 'DESC')
             ->get()->getResultArray();
+    }
+
+    public function addData7($data)
+    {
+        $this->db->table('tbl_catatanSaranPengurus')->insert($data);
     }
 
     public function allData8()
