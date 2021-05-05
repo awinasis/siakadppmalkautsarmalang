@@ -93,7 +93,7 @@ class Data_Nilai extends BaseController
     {
         $data = [
             'title' => 'Tambah Nilai 5 Sukses Santri',
-            'nilai' => $this->ModelNilai->allData4(),
+            'nilai' => $this->ModelNilai->allData3(),
             'isi'    => 'guru/5_sukses_santri/tambah_nilaiLimaSuksesSantri',
         ];
 
@@ -138,7 +138,18 @@ class Data_Nilai extends BaseController
         $data = [
             'title' => 'Nilai',
             'nilai' => $this->ModelNilai->allData6(),
-            'isi'    => 'guru/view_nilaiPrestasiKuliah',
+            'isi'    => 'guru/view_nilaiPrestasi',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function tambahNilaiIP()
+    {
+        $data = [
+            'title' => 'Tambah Nilai IP',
+            'nilai' => $this->ModelNilai->allData6(),
+            'isi'    => 'guru/prestasi/tambah_nilaiIP',
         ];
 
         return view("layout/wrapper", $data);
@@ -147,9 +158,20 @@ class Data_Nilai extends BaseController
     public function catatanSaranPengurus()
     {
         $data = [
-            'title' => 'Nilai',
+            'title' => 'Catatan & Saran Pengurus',
             'nilai' => $this->ModelNilai->allData7(),
             'isi'    => 'guru/view_nilaiCatatanSaranPengurus',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function tambahCatatanSaran()
+    {
+        $data = [
+            'title' => 'Tambah Catatan & Saran Pengurus',
+            'nilai' => $this->ModelNilai->allData7(),
+            'isi'    => 'guru/catatan_saran/tambah_CatatanSaran',
         ];
 
         return view("layout/wrapper", $data);

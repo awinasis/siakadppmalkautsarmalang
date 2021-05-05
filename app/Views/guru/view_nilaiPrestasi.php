@@ -17,7 +17,7 @@
              <div class="box box-gray box-solid">
                  <div class="box-header with-border">
                      <!-- <div class="box-tools pull-left"> -->
-                     <a href="<?= base_url('data_nilai/tambahCatatanSaran/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
+                     <a href="<?= base_url('data_nilai/tambahNilaiIP/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
                  </div>
                  <br>
                  <div class="box-body">
@@ -29,11 +29,19 @@
                                      <th rowspan='2'>NIS</th>
                                      <th rowspan='2'>Nama</th>
                                      <th rowspan='2'>L/P</th>
-                                     <th class="text-center">Catatan & Saran Pengurus</th>
-                                     <th rowspan="2" class="text-center">Action</th>
+                                     <th class="text-center" colspan=" 9">Nilai Indeks Prestasi (IP)</th>
+                                     <th class="text-center" rowspan="2">Action</th>
                                  </tr>
                                  <tr>
-                                     <th class="text-center">Deskripsi</th>
+                                     <th class="text-center">Smt 1</th>
+                                     <th class="text-center">Smt 2</th>
+                                     <th class="text-center">Smt 3</th>
+                                     <th class="text-center">Smt 4</th>
+                                     <th class="text-center">Smt 5</th>
+                                     <th class="text-center">Smt 6</th>
+                                     <th class="text-center">Smt 7</th>
+                                     <th class="text-center">Smt 8</th>
+                                     <th class="text-center">Smt > 8</th>
                                  </tr>
                              </thead>
                              <tbody>
@@ -44,10 +52,19 @@
                                          <td class="text-center"><?= $value['NIS'] ?></td>
                                          <td><?= $value['nama_santri'] ?></td>
                                          <td><?= $value['jenis_kelamin'] ?></td>
-                                         <td><?= $value['catatan_saran'] ?></td>
+                                         <td><?= $value['nilai_IP1'] ?></td>
+                                         <td><?= $value['nilai_IP2'] ?></td>
+                                         <td><?= $value['nilai_IP3'] ?></td>
+                                         <td><?= $value['nilai_IP4'] ?></td>
+                                         <td><?= $value['nilai_IP5'] ?></td>
+                                         <td><?= $value['nilai_IP6'] ?></td>
+                                         <td><?= $value['nilai_IP7'] ?></td>
+                                         <td><?= $value['nilai_IP8'] ?></td>
+                                         <td><?= $value['nilai_IP9'] ?></td>
+
                                          <td class="text-center">
-                                             <button class="btn btn-warning btn-sm" <?= $value['id_cs'] ?>><i class="fa fa-edit"> Edit</i></button>
-                                             <button class="btn btn-danger btn-sm" <?= $value['id_cs'] ?>><i class="fa fa-trash"> Delete</i></button>
+                                             <button class="btn btn-warning btn-sm" <?= $value['id_ip'] ?>><i class="fa fa-edit"> Edit</i></button>
+                                             <button class="btn btn-danger btn-sm" <?= $value['id_ip'] ?>><i class="fa fa-trash"> Delete</i></button>
                                          </td>
                                      </tr>
                                  <?php } ?>
@@ -58,4 +75,5 @@
              </div>
          </div>
      </div>
+ </div>
  </div>
