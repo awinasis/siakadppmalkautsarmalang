@@ -29,6 +29,7 @@ class Data_Rapor extends BaseController
         $data = [
             'NIS' => $this->request->getPost('NIS'),
             'nama_santri' => $this->request->getPost('nama_santri'),
+            'Jenis_Kelamin' => $this->request->getPost('jenis_kelamin'),
         ];
         $this->ModelRapor->addData($data);
 
@@ -42,6 +43,7 @@ class Data_Rapor extends BaseController
             'id_rapor' => $id_rapor,
             'NIS' => $this->request->getPost('NIS'),
             'nama_santri' => $this->request->getPost('nama_santri'),
+            'Jenis_Kelamin' => $this->request->getPost('jenis_kelamin'),
         ];
         $this->ModelRapor->editData($data);
         session()->setFlashdata('pesan', 'Data berhasil di update !!');

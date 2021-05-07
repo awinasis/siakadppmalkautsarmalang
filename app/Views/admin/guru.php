@@ -179,7 +179,7 @@
                                  <div class="col-lg-8">
                                      <label class="form-control-label">Jenis Kelamin</label>
                                      <div class="form-group">
-                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" <?= $value['jenis_kelamin'] == "L" ? "checked" : ""; ?> required required> L
+                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" <?= $value['jenis_kelamin'] == "L" ? "checked" : ""; ?> required> L
                                          <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P" <?= $value['jenis_kelamin'] == "P" ? "checked" : ""; ?> required> P
                                      </div>
                                  </div>
