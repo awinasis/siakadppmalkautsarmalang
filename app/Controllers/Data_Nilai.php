@@ -34,6 +34,52 @@ class Data_Nilai extends BaseController
         return view("layout/wrapper", $data);
     }
 
+    public function addNilaiMateri()
+    {
+        $data = [
+            'NIS' => $this->request->getPost('NIS'),
+            'nama_santri' => $this->request->getPost('nama_santri'),
+            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'Nilai1' => $this->request->getPost('nilai1'),
+            'Nilai2' => $this->request->getPost('nilai2'),
+            'Nilai3' => $this->request->getPost('nilai3'),
+            'Nilai4' => $this->request->getPost('nilai4'),
+            'Nilai5' => $this->request->getPost('nilai5'),
+            'Nilai6' => $this->request->getPost('nilai6'),
+            'Nilai7' => $this->request->getPost('nilai7'),
+            'Nilai8' => $this->request->getPost('nilai8'),
+            'Nilai9' => $this->request->getPost('nilai9'),
+            'Nilai10' => $this->request->getPost('nilai10'),
+            'Nilai11' => $this->request->getPost('nilai11'),
+            'Nilai12' => $this->request->getPost('nilai12'),
+            'Nilai13' => $this->request->getPost('nilai13'),
+            'Nilai14' => $this->request->getPost('nilai14'),
+            'Nilai15' => $this->request->getPost('nilai15'),
+            'Nilai16' => $this->request->getPost('nilai16'),
+            'Nilai17' => $this->request->getPost('nilai17'),
+            'Nilai18' => $this->request->getPost('nilai18'),
+            'Nilai19' => $this->request->getPost('nilai19'),
+            'Nilai20' => $this->request->getPost('nilai20'),
+            'Nilai21' => $this->request->getPost('nilai21'),
+            'Nilai22' => $this->request->getPost('nilai22'),
+            'Nilai23' => $this->request->getPost('nilai23'),
+            'Nilai24' => $this->request->getPost('nilai24'),
+            'Nilai25' => $this->request->getPost('nilai25'),
+            'Nilai26' => $this->request->getPost('nilai26'),
+            'Nilai27' => $this->request->getPost('nilai27'),
+            'Nilai28' => $this->request->getPost('nilai28'),
+            'Nilai29' => $this->request->getPost('nilai29'),
+            'Nilai30' => $this->request->getPost('nilai30'),
+            'Nilai31' => $this->request->getPost('nilai31'),
+        ];
+        $this->ModelNilai->addData($data);
+
+        session()->setFlashdata('pesan', 'Nilai berhasil di tambahkan !!');
+        return redirect()->to(base_url('data_nilai/index'));
+    }
+
+    //------------------------------------------------ 2 --------------------------------------------------// 
+
     public function konsepPraktikum()
     {
         $data = [
@@ -55,6 +101,8 @@ class Data_Nilai extends BaseController
 
         return view("layout/wrapper", $data);
     }
+
+    //------------------------------------------------ 3 --------------------------------------------------// 
 
     public function sikapPerilaku()
     {
@@ -78,6 +126,8 @@ class Data_Nilai extends BaseController
         return view("layout/wrapper", $data);
     }
 
+    //------------------------------------------------ 4 --------------------------------------------------// 
+
     public function limaSuksesSantri()
     {
         $data = [
@@ -99,6 +149,8 @@ class Data_Nilai extends BaseController
 
         return view("layout/wrapper", $data);
     }
+
+    //------------------------------------------------ 5 --------------------------------------------------// 
 
     public function ekstrakurikuler()
     {
@@ -122,6 +174,8 @@ class Data_Nilai extends BaseController
         return view("layout/wrapper", $data);
     }
 
+    //------------------------------------------------ 6 --------------------------------------------------// 
+
     public function keaktifanKegiatan()
     {
         $data = [
@@ -132,6 +186,8 @@ class Data_Nilai extends BaseController
 
         return view("layout/wrapper", $data);
     }
+
+    //------------------------------------------------ 7 --------------------------------------------------// 
 
     public function prestasiKuliah()
     {
@@ -155,6 +211,8 @@ class Data_Nilai extends BaseController
         return view("layout/wrapper", $data);
     }
 
+    //------------------------------------------------ 8 --------------------------------------------------// 
+
     public function catatanSaranPengurus()
     {
         $data = [
@@ -176,6 +234,8 @@ class Data_Nilai extends BaseController
 
         return view("layout/wrapper", $data);
     }
+
+    //------------------------------------------------ 9 --------------------------------------------------// 
 
     public function Keputusan()
     {

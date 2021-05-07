@@ -20,47 +20,48 @@
                      <a href="<?= base_url('data_nilai/tambahNilaiMateri/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
                  </div>
                  <br>
+
                  <div class="box-body">
                      <div class="table-responsive">
-                         <table class="table table-bordered table-striped with-check">
+                         <table id="example2" class="table table-bordered table-striped">
                              <thead>
                                  <tr>
-                                     <th rowspan='2'>No.</th>
-                                     <th rowspan='2'>NIS</th>
-                                     <th rowspan='2'>Nama</th>
-                                     <th rowspan='2'>L/P</th>
-                                     <th rowspan='2'>Bacaan Surah Al-Baqarah</th>
-                                     <th rowspan='2'>Bacaan Surah Al-Mulk s/d Al-Nas</th>
-                                     <th rowspan='2'>Thaharah</th>
-                                     <th rowspan='2'>Tajwid</th>
-                                     <th rowspan='2'>Adab Pencari Ilmu</th>
-                                     <th rowspan='2'>Huruf Hijaiyah</th>
-                                     <th rowspan='2'>Khat wa Imla'</th>
-                                     <th rowspan='2'>Kitabah Pegon</th>
-                                     <th rowspan='2'>Tuntunan Tata Krama</th>
-                                     <th rowspan='2'>Makna Al-Quran Juz 1 s.d 30</th>
-                                     <th rowspan='2'>Bacaan Al-Quran</th>
-                                     <th rowspan='2'>Kitab Al-Shalat</th>
-                                     <th rowspan='2'>Kitab Al-Adab</th>
-                                     <th rowspan='2'>Kitab Al-Adillah</th>
-                                     <th rowspan='2'>Kitab Al-Shaum</th>
-                                     <th rowspan='2'>Kitab Manasik wa Al-Jihad</th>
-                                     <th rowspan='2'>Kitab Shifat Al-Jannah wa Al-Nar</th>
-                                     <th rowspan='2'>Kitab Al-Da'awat</th>
-                                     <th rowspan='2'>Kitab Al-Janaiz</th>
-                                     <th rowspan='2'>Kitab Al-Shalat Al-Nawafil</th>
-                                     <th rowspan='2'>Kitab Al-Ahkam</th>
-                                     <th rowspan='2'>Kitab Al-Imarah</th>
-                                     <th rowspan='2'>Kitab Al-Haji</th>
-                                     <th rowspan='2'>Kitab Manasik Al-Haji</th>
-                                     <th rowspan='2'>Kitab Al-Jihad</th>
-                                     <th rowspan='2'>Kitab Al-Imarah min Kanzil Al-'ummal</th>
-                                     <th rowspan='2'>Kumpulan Khutbah</th>
-                                     <th rowspan='2'>Kitab Al-Faraidl</th>
-                                     <th rowspan='2'>Kitab Hidayah Al-Mustafidz fi Al-Tajwid</th>
-                                     <th rowspan='2'>Kitab Mabadi Fi al-Sharfi wa al-Nahwi</th>
-                                     <th rowspan='2'>Kitab Wujubu Luzumu Al-Jama'ah</th>
-                                     <th rowspan="2">Action</th>
+                                     <th>No.</th>
+                                     <th>NIS</th>
+                                     <th>Nama</th>
+                                     <th>L/P</th>
+                                     <th>Bacaan Surah Al-Baqarah</th>
+                                     <th>Bacaan Surah Al-Mulk s/d Al-Nas</th>
+                                     <th>Thaharah</th>
+                                     <th>Tajwid</th>
+                                     <th>Adab Pencari Ilmu</th>
+                                     <th>Huruf Hijaiyah</th>
+                                     <th>Khat wa Imla'</th>
+                                     <th>Kitabah Pegon</th>
+                                     <th>Tuntunan Tata Krama</th>
+                                     <th>Makna Al-Quran Juz 1 s.d 30</th>
+                                     <th>Bacaan Al-Quran</th>
+                                     <th>Kitab Al-Shalat</th>
+                                     <th>Kitab Al-Adab</th>
+                                     <th>Kitab Al-Adillah</th>
+                                     <th>Kitab Al-Shaum</th>
+                                     <th>Kitab Manasik wa Al-Jihad</th>
+                                     <th>Kitab Shifat Al-Jannah wa Al-Nar</th>
+                                     <th>Kitab Al-Da'awat</th>
+                                     <th>Kitab Al-Janaiz</th>
+                                     <th>Kitab Al-Shalat Al-Nawafil</th>
+                                     <th>Kitab Al-Ahkam</th>
+                                     <th>Kitab Al-Imarah</th>
+                                     <th>Kitab Al-Haji</th>
+                                     <th>Kitab Manasik Al-Haji</th>
+                                     <th>Kitab Al-Jihad</th>
+                                     <th>Kitab Al-Imarah min Kanzil Al-'ummal</th>
+                                     <th>Kumpulan Khutbah</th>
+                                     <th>Kitab Al-Faraidl</th>
+                                     <th>Kitab Hidayah Al-Mustafidz fi Al-Tajwid</th>
+                                     <th>Kitab Mabadi Fi al-Sharfi wa al-Nahwi</th>
+                                     <th>Kitab Wujubu Luzumu Al-Jama'ah</th>
+                                     <th>Action</th>
                                  </tr>
                              </thead>
                              <tbody>
@@ -116,5 +117,4 @@
              </div>
          </div>
      </div>
- </div>
  </div>

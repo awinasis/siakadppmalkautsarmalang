@@ -36,13 +36,14 @@
                  </ul>
              </li>
              <li class="dropdown">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Akademik <span class="caret"></span></a>
                  <ul class="dropdown-menu" role="menu">
                      <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Data Santri</a></li>
                      <li><a href="<?= base_url('data_kelas') ?>"><i class="fa fa-institution"></i> Kelas</a></li>
                      <li><a href="<?= base_url('data_materi') ?>"><i class="fa fa-book"></i> Materi</a></li>
                      <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Rekap Absensi</a></li>
                      <li><a href="<?= base_url('data_rps') ?>"><i class="fa fa-file-text"></i> RPS</a></li>
+                     <li><a href="<?= base_url('data_rapor') ?>"><i class="fa fa-archive"></i> Rapor</a></li>
                  </ul>
              </li>
 

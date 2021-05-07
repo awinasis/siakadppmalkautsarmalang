@@ -26,6 +26,7 @@ class Data_Pembayaran extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
+            'Nama_Santri' => $this->request->getPost('nama_santri'),
             'Periode_pembayaran' => $this->request->getPost('periode_pembayaran'),
             'Keterangan' => $this->request->getPost('keterangan'),
             'Tagihan' => $this->request->getPost('tagihan'),
@@ -43,6 +44,7 @@ class Data_Pembayaran extends BaseController
         $data = [
             'id_pembayaran' => $id_pembayaran,
             'NIS' => $this->request->getPost('NIS'),
+            'Nama_Santri' => $this->request->getPost('nama_santri'),
             'Periode_pembayaran' => $this->request->getPost('periode_pembayaran'),
             'Keterangan' => $this->request->getPost('keterangan'),
             'Tagihan' => $this->request->getPost('tagihan'),

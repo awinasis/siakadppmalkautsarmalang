@@ -36,7 +36,7 @@
                          <table id="example1" class="table table-bordered table-striped">
                              <thead>
                                  <tr>
-                                 <th width="50px" class="text-center">No</th>
+                                     <th width="50px" class="text-center">No</th>
                                      <th class="text-center">NIS</th>
                                      <th class="text-center">Nama Santri</th>
                                      <th class="text-center">Periode Pembayaran</th>
@@ -51,7 +51,7 @@
                                  <?php $no = 1;
                                     foreach ($pembayaran as $key => $value) { ?>
                                      <tr>
-                                        <td class="text-center"><?= $no++; ?></td>
+                                         <td class="text-center"><?= $no++; ?></td>
                                          <td><?= $value['NIS'] ?></td>
                                          <td><?= $value['nama_santri'] ?></td>
                                          <td class="text-center"><?= $value['periode_pembayaran'] ?></td>
