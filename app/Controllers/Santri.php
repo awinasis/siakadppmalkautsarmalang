@@ -35,12 +35,15 @@ class Santri extends BaseController
         // $reportSantri = $this->ModelSantri->findAll();
         // $pengumuman = $this->ModelPengumuman->where('visible_news', "1")->orderBy('tgl_dibuat', 'desc')->findAll();
         $data = [
-            'title' => 'Santri',
+            'title' => 'Pengumuman',
+            'pengumuman' => $this->ModelPengumuman->allData(),
             'isi'    => 'santri',
             // 'pengumuman' => $pengumuman
             // 'reportAbsen' => $reportAbsen,
             // 'reportSantri' => $reportSantri
         ];
+
+        
 
         return view("layout/wrapper", $data);
     }
