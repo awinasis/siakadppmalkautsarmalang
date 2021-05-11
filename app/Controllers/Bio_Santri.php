@@ -104,7 +104,7 @@ class Bio_Santri extends BaseController
         $data = [
             'title' => 'Biodata Santri',
             'santri' => $this->ModelSantri->detail_data($id_santri),
-            'isi'    => 'admin/v_bioSantri',
+            'isi'    => 'santri/v_bioSantri',
             'reportSantri' => $reportSantri
         ];
 

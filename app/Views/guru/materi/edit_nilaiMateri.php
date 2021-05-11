@@ -73,37 +73,37 @@
                                              <td class="text-center"><?= $value['NIS'] ?></td>
                                              <td><?= $value['nama_santri'] ?></td>
                                              <td><?= $value['jenis_kelamin'] ?></td>
-                                             <td><input name="nilai1" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai2" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai3" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai4" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai5" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai6" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai7" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai8" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai9" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai10" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai11" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai12" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai13" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai14" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai15" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai16" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai17" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai18" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai19" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai20" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai21" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai22" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai23" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai24" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai25" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai26" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai27" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai28" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai29" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai30" class="form-control" type="number" required>%</td>
-                                             <td><input name="nilai31" class="form-control" type="number" required>%</td>
+                                             <td><input name="nilai1" class="form-control" type="number" value="<?= $value['nilai1'] ?>">%</td>
+                                             <td><input name="nilai2" class="form-control" type="number" value="<?= $value['nilai2'] ?>">%</td>
+                                             <td><input name="nilai3" class="form-control" type="number" value="<?= $value['nilai3'] ?>">%</td>
+                                             <td><input name="nilai4" class="form-control" type="number" value="<?= $value['nilai4'] ?>">%</td>
+                                             <td><input name="nilai5" class="form-control" type="number" value="<?= $value['nilai5'] ?>">%</td>
+                                             <td><input name="nilai6" class="form-control" type="number" value="<?= $value['nilai6'] ?>">%</td>
+                                             <td><input name="nilai7" class="form-control" type="number" value="<?= $value['nilai7'] ?>">%</td>
+                                             <td><input name="nilai8" class="form-control" type="number" value="<?= $value['nilai8'] ?>">%</td>
+                                             <td><input name="nilai9" class="form-control" type="number" value="<?= $value['nilai9'] ?>">%</td>
+                                             <td><input name="nilai10" class="form-control" type="number" value="<?= $value['nilai10'] ?>">%</td>
+                                             <td><input name="nilai11" class="form-control" type="number" value="<?= $value['nilai11'] ?>">%</td>
+                                             <td><input name="nilai12" class="form-control" type="number" value="<?= $value['nilai12'] ?>">%</td>
+                                             <td><input name="nilai13" class="form-control" type="number" value="<?= $value['nilai13'] ?>">%</td>
+                                             <td><input name="nilai14" class="form-control" type="number" value="<?= $value['nilai14'] ?>">%</td>
+                                             <td><input name="nilai15" class="form-control" type="number" value="<?= $value['nilai15'] ?>">%</td>
+                                             <td><input name="nilai16" class="form-control" type="number" value="<?= $value['nilai16'] ?>">%</td>
+                                             <td><input name="nilai17" class="form-control" type="number" value="<?= $value['nilai17'] ?>">%</td>
+                                             <td><input name="nilai18" class="form-control" type="number" value="<?= $value['nilai18'] ?>">%</td>
+                                             <td><input name="nilai19" class="form-control" type="number" value="<?= $value['nilai19'] ?>">%</td>
+                                             <td><input name="nilai20" class="form-control" type="number" value="<?= $value['nilai20'] ?>">%</td>
+                                             <td><input name="nilai21" class="form-control" type="number" value="<?= $value['nilai21'] ?>">%</td>
+                                             <td><input name="nilai22" class="form-control" type="number" value="<?= $value['nilai22'] ?>">%</td>
+                                             <td><input name="nilai23" class="form-control" type="number" value="<?= $value['nilai23'] ?>">%</td>
+                                             <td><input name="nilai24" class="form-control" type="number" value="<?= $value['nilai24'] ?>">%</td>
+                                             <td><input name="nilai25" class="form-control" type="number" value="<?= $value['nilai25'] ?>">%</td>
+                                             <td><input name="nilai26" class="form-control" type="number" value="<?= $value['nilai26'] ?>">%</td>
+                                             <td><input name="nilai27" class="form-control" type="number" value="<?= $value['nilai27'] ?>">%</td>
+                                             <td><input name="nilai28" class="form-control" type="number" value="<?= $value['nilai28'] ?>">%</td>
+                                             <td><input name="nilai29" class="form-control" type="number" value="<?= $value['nilai29'] ?>">%</td>
+                                             <td><input name="nilai30" class="form-control" type="number" value="<?= $value['nilai30'] ?>">%</td>
+                                             <td><input name="nilai31" class="form-control" type="number" value="<?= $value['nilai31'] ?>">%</td>
                                          </tr>
                                      <?php } ?>
                                  </tbody>

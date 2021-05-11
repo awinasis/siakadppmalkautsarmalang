@@ -78,6 +78,47 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/index'));
     }
 
+    public function editNilaiMateri($id_nm)
+    {
+        $data = [
+            'id_nm' => $id_nm,
+            'Nilai1' => $this->request->getPost('nilai1'),
+            'Nilai2' => $this->request->getPost('nilai2'),
+            'Nilai3' => $this->request->getPost('nilai3'),
+            'Nilai4' => $this->request->getPost('nilai4'),
+            'Nilai5' => $this->request->getPost('nilai5'),
+            'Nilai6' => $this->request->getPost('nilai6'),
+            'Nilai7' => $this->request->getPost('nilai7'),
+            'Nilai8' => $this->request->getPost('nilai8'),
+            'Nilai9' => $this->request->getPost('nilai9'),
+            'Nilai10' => $this->request->getPost('nilai10'),
+            'Nilai11' => $this->request->getPost('nilai11'),
+            'Nilai12' => $this->request->getPost('nilai12'),
+            'Nilai13' => $this->request->getPost('nilai13'),
+            'Nilai14' => $this->request->getPost('nilai14'),
+            'Nilai15' => $this->request->getPost('nilai15'),
+            'Nilai16' => $this->request->getPost('nilai16'),
+            'Nilai17' => $this->request->getPost('nilai17'),
+            'Nilai18' => $this->request->getPost('nilai18'),
+            'Nilai19' => $this->request->getPost('nilai19'),
+            'Nilai20' => $this->request->getPost('nilai20'),
+            'Nilai21' => $this->request->getPost('nilai21'),
+            'Nilai22' => $this->request->getPost('nilai22'),
+            'Nilai23' => $this->request->getPost('nilai23'),
+            'Nilai24' => $this->request->getPost('nilai24'),
+            'Nilai25' => $this->request->getPost('nilai25'),
+            'Nilai26' => $this->request->getPost('nilai26'),
+            'Nilai27' => $this->request->getPost('nilai27'),
+            'Nilai28' => $this->request->getPost('nilai28'),
+            'Nilai29' => $this->request->getPost('nilai29'),
+            'Nilai30' => $this->request->getPost('nilai30'),
+            'Nilai31' => $this->request->getPost('nilai31'),
+        ];
+        $this->ModelNilai->editData($data);
+        session()->setFlashdata('pesan', 'Data berhasil di update !!');
+        return redirect()->to(base_url('data_nilai/index'));
+    }
+
     //------------------------------------------------ 2 --------------------------------------------------// 
 
     public function konsepPraktikum()

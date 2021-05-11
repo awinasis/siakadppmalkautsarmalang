@@ -20,39 +20,24 @@ class Santri extends BaseController
 
     public function index()
     {
-        // if (session()->get('level') == "Admin") {
-        //     $reportAbsen = $this->ModelAbsensi->orderBy('NIS', 'desc')->findAll();
-        // } else {
-        //     $reportAbsen = $this->ModelAbsensi->where('NIS', session()->get('id_santri'))->orderBy('id_santri', 'desc')->findAll();
-        // }
-        // $reportAbsen = $this->ModelAbsensi->findAll();
-
-        // if (session()->get('level') == "Guru") {
-        //     $reportSantri = $this->ModelSantri->orderBy('NIS', 'desc')->findAll();
-        // } else {
-        //     $reportSantri = $this->ModelSantri->where('NIS', session()->get('id_santri'))->orderBy('id_santri', 'desc')->findAll();
-        // }
-        // $reportSantri = $this->ModelSantri->findAll();
         // $pengumuman = $this->ModelPengumuman->where('visible_news', "1")->orderBy('tgl_dibuat', 'desc')->findAll();
         $data = [
             'title' => 'Pengumuman',
             'pengumuman' => $this->ModelPengumuman->allData(),
             'isi'    => 'santri',
             // 'pengumuman' => $pengumuman
-            // 'reportAbsen' => $reportAbsen,
-            // 'reportSantri' => $reportSantri
         ];
-
-        
-
         return view("layout/wrapper", $data);
     }
 
     public function biodata_santri()
     {
+        $nis = session()->get('username');
         $data = [
-            'title' => 'santri',
-            'isi'    => 'santri/v_bioSantri'
+            'title' => 'Santri',
+            'isi'    => 'santri/v_bioSantri',
+            'santri' => $this->ModelSantri->get_bioSantri_by_id($nis),
+            'nis' => $nis
         ];
 
         return view("layout/wrapper", $data);

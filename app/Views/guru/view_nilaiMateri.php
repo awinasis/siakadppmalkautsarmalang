@@ -23,14 +23,18 @@
 
                  <div class="box-body">
                      <div class="table-responsive">
-                         <table id="example2" class="table table-bordered table-striped">
+                         <table class="table table-bordered table-striped">
                              <thead>
                                  <tr>
-                                     <th>No.</th>
-                                     <th>NIS</th>
-                                     <th>Nama</th>
-                                     <th>L/P</th>
-                                     <th>Bacaan Surah Al-Baqarah</th>
+                                     <th rowspan="2">No.</th>
+                                     <th rowspan="2">NIS</th>
+                                     <th rowspan="2">Nama</th>
+                                     <th rowspan="2">L/P</th>
+                                     <th class="text-center" colspan=" 31">Pencapaian Materi</th>
+                                     <th rowspan="2" class="text-center">Action</th>
+                                 </tr>
+                                 <tr>
+                                     <th rowspan="2">Bacaan Surah Al-Baqarah</th>
                                      <th>Bacaan Surah Al-Mulk s/d Al-Nas</th>
                                      <th>Thaharah</th>
                                      <th>Tajwid</th>
@@ -61,7 +65,6 @@
                                      <th>Kitab Hidayah Al-Mustafidz fi Al-Tajwid</th>
                                      <th>Kitab Mabadi Fi al-Sharfi wa al-Nahwi</th>
                                      <th>Kitab Wujubu Luzumu Al-Jama'ah</th>
-                                     <th>Action</th>
                                  </tr>
                              </thead>
                              <tbody>
