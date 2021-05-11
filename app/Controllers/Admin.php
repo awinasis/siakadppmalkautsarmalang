@@ -71,12 +71,23 @@ class Admin extends BaseController
         return view("layout/wrapper", $data);
     }
 
-    public function viewChartJK()
+    public function viewChartJK_L()
     {
         $data = [
             'title' => 'View Chart JK',
             'chartjk' => $this->ModelAdmin->allData(),
-            'isi'    => 'admin/v_viewchartJK'
+            'isi'    => 'admin/v_viewchartJK_L'
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function viewChartJK_P()
+    {
+        $data = [
+            'title' => 'View Chart JK',
+            'chartjk' => $this->ModelAdmin->allData(),
+            'isi'    => 'admin/v_viewchartJK_P'
         ];
 
         return view("layout/wrapper", $data);

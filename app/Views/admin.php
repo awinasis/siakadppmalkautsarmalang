@@ -214,8 +214,8 @@
                 <!-- /.box-body -->
                 <div class="box-footer no-padding">
                     <ul class="nav nav-pills nav-stacked">
-                        <li><a href="<?= base_url('admin/viewChartJK/') ?>">Laki-Laki <span class="pull-right text-blue"><i class="fa fa-info-circle fa-2x"></i></span></a></li>
-                        <li><a href="<?= base_url('') ?>">Perempuan <span class="pull-right text-blue"><i class="fa fa-info-circle fa-2x"></i></span></a></li>
+                        <li><a href="<?= base_url('admin/viewChartJK_L/') ?>">Laki-Laki <span class="pull-right text-blue"><i class="fa fa-info-circle fa-2x"></i></span></a></li>
+                        <li><a href="<?= base_url('admin/viewChartJK_P/') ?>">Perempuan <span class="pull-right text-blue"><i class="fa fa-info-circle fa-2x"></i></span></a></li>
                     </ul>
                 </div>
             </div>
