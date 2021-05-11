@@ -249,10 +249,7 @@
                                         foreach ($guru as $key => $value) { ?>
                                          <tr>
                                          <tr>
-                                             <th width="100px">No</th>
-                                             <th width="30px">:</th>
-                                             <td><?= $no++; ?></td>
-                                             <th width="120px">Nama Guru</th>
+                                             <th width="100px">Nama Guru</th>
                                              <th width="30px">:</th>
                                              <td><?= $value['nama_guru'] ?></td>
                                          </tr>
