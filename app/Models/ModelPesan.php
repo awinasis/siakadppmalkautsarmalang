@@ -38,7 +38,14 @@ class ModelPesan extends Model
             ->delete($data);
     }
 
-    public function get_pengumuman_count()
+    public function get_pesan_by_id($data)
+    {
+        return $this->db->table('tbl_pesan')
+            ->where('NIS', $data)
+            ->get()->getResultArray();
+    }
+
+    public function get_pesan_count()
     {
         $query = $this->db->table('tbl_pesan')->countAll();
         return $query;

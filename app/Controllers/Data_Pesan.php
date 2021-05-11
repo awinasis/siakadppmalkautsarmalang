@@ -25,6 +25,8 @@ class Data_Pesan extends BaseController
     public function add()
     {
         $data = [
+            'NIS' => $this->request->getPost('NIS'),
+            'nama_santri' => $this->request->getPost('nama_santri'),
             'Pesan' => $this->request->getPost('pesan'),
             'Tanggal' => $this->request->getPost('tanggal'),
         ];
@@ -38,6 +40,8 @@ class Data_Pesan extends BaseController
     {
         $data = [
             'id_pesan' => $id_pesan,
+            'NIS' => $this->request->getPost('NIS'),
+            'nama_santri' => $this->request->getPost('nama_santri'),
             'Pesan' => $this->request->getPost('pesan'),
             'Tanggal' => $this->request->getPost('tanggal'),
         ];
