@@ -80,6 +80,17 @@
                      <?php
                         echo form_open('data_pesan/add');
                         ?>
+                     <div class="form-group row">
+                         <div class="col-sm-6">
+                             <label>NIS</label>
+                             <input type="number" class="form-control" id="NIS" name="NIS" required>
+                         </div>
+                     </div>
+
+                     <div class="form-group">
+                         <label>Nama Santri</label>
+                         <input class="form-control" id="nama_santri" name="nama_santri" required>
+                     </div>
 
                      <div class="form-group">
                          <label>Tanggal</label>
@@ -116,6 +127,19 @@
                          <?php
                             echo form_open('data_pesan/edit/' . $value['id_pesan']);
                             ?>
+
+                         <div class="form-group row">
+                             <div class="col-sm-6">
+                                 <label>NIS</label>
+                                 <input type="number" class="form-control" id="NIS" name="NIS" value="<?= $value['NIS'] ?>" required>
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <label>Nama Santri</label>
+                             <input class="form-control" id="nama_santri" name="nama_santri" value="<?= $value['nama_santri'] ?>" required>
+                         </div>
+
                          <div class="form-group">
                              <label>Tanggal</label>
                              <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= $value['tanggal'] ?>" required>

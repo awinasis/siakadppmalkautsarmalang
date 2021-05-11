@@ -52,16 +52,20 @@
                                          <th class="text-center">Tempat Lahir</th>
                                          <th class="text-center">Tanggal Lahir</th>
                                          <th class="text-center">Jenis Kelamin</th>
+                                         <th class="text-center">Gol. Darah</th>
                                          <th class="text-center">Alamat</th>
                                          <th class="text-center">Email</th>
                                          <th class="text-center">No.Telp</th>
+                                         <th class="text-center">Status</th>
                                          <th class="text-center">Universitas</th>
                                          <th class="text-center">Fakultas</th>
                                          <th class="text-center">Jurusan/Prodi</th>
                                          <th class="text-center">kelas Santri</th>
                                          <th class="text-center">Angkatan Santri</th>
                                          <th class="text-center">Nama Ayah</th>
-                                         <th class="text-center">No.Telp Orang tua</th>
+                                         <th class="text-center">No.Telp Ayah</th>
+                                         <th class="text-center">Nama Ibu</th>
+                                         <th class="text-center">No.Telp Ibu</th>
                                          <?php if (session()->get('level') == "Admin") { ?>
                                              <th width="150px" class="text-center">Action</th>
                                          <?php } ?>
@@ -72,21 +76,25 @@
                                         foreach ($santri as $key => $value) { ?>
                                          <tr>
                                              <td class="text-center"><?= $no++; ?></td>
-                                             <td><?= $value['NIS'] ?></td>
+                                             <td class="text-center"><?= $value['NIS'] ?></td>
                                              <td><?= $value['nama_santri'] ?></td>
-                                             <td><?= $value['tempat_lahir'] ?></td>
-                                             <td><?= $value['tanggal_lahir'] ?></td>
+                                             <td class="text-center"><?= $value['tempat_lahir'] ?></td>
+                                             <td class="text-center"><?= $value['tanggal_lahir'] ?></td>
                                              <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
-                                             <td><?= $value['alamat'] ?></td>
-                                             <td><?= $value['email'] ?></td>
-                                             <td><?= $value['noTelp'] ?></td>
-                                             <td><?= $value['universitas'] ?></td>
-                                             <td><?= $value['fakultas'] ?></td>
-                                             <td><?= $value['jurusan_prodi'] ?></td>
-                                             <td><?= $value['kelas_santri'] ?></td>
-                                             <td><?= $value['angkatan_santri'] ?></td>
+                                             <td class="text-center"><?= $value['gol_darah'] ?></td>
+                                             <td class="text-center"><?= $value['alamat'] ?></td>
+                                             <td class="text-center"><?= $value['email'] ?></td>
+                                             <td class="text-center"><?= $value['noTelp'] ?></td>
+                                             <td class="text-center"><?= $value['status'] ?></td>
+                                             <td class="text-center"><?= $value['universitas'] ?></td>
+                                             <td class="text-center"><?= $value['fakultas'] ?></td>
+                                             <td class="text-center"><?= $value['jurusan_prodi'] ?></td>
+                                             <td class="text-center"><?= $value['kelas_santri'] ?></td>
+                                             <td class="text-center"><?= $value['angkatan_santri'] ?></td>
                                              <td><?= $value['nama_ayah'] ?></td>
-                                             <td><?= $value['noTelp_ortu'] ?></td>
+                                             <td class="text-center"><?= $value['noTelp_ayah'] ?></td>
+                                             <td><?= $value['nama_ibu'] ?></td>
+                                             <td class="text-center"><?= $value['noTelp_ibu'] ?></td>
 
                                              <?php if (session()->get('level') == "Admin") { ?>
                                                  <td class="text-center">
@@ -133,16 +141,20 @@
                                          <th class="text-center">Tempat Lahir</th>
                                          <th class="text-center">Tanggal Lahir</th>
                                          <th class="text-center">Jenis Kelamin</th>
+                                         <th class="text-center">Gol. Darah</th>
                                          <th class="text-center">Alamat</th>
                                          <th class="text-center">Email</th>
                                          <th class="text-center">No.Telp</th>
+                                         <th class="text-center">Status</th>
                                          <th class="text-center">Universitas</th>
                                          <th class="text-center">Fakultas</th>
                                          <th class="text-center">Jurusan/Prodi</th>
                                          <th class="text-center">kelas Santri</th>
                                          <th class="text-center">Angkatan Santri</th>
                                          <th class="text-center">Nama Ayah</th>
-                                         <th class="text-center">No.Telp Orang tua</th>
+                                         <th class="text-center">No.Telp Ayah</th>
+                                         <th class="text-center">Nama Ibu</th>
+                                         <th class="text-center">No.Telp Ibu</th>
                                      </tr>
                                  </thead>
                                  <tbody>
@@ -150,21 +162,25 @@
                                         foreach ($santri as $key => $value) { ?>
                                          <tr>
                                              <td class="text-center"><?= $no++; ?></td>
-                                             <td><?= $value['NIS'] ?></td>
+                                             <td class="text-center"><?= $value['NIS'] ?></td>
                                              <td><?= $value['nama_santri'] ?></td>
-                                             <td><?= $value['tempat_lahir'] ?></td>
-                                             <td><?= $value['tanggal_lahir'] ?></td>
+                                             <td class="text-center"><?= $value['tempat_lahir'] ?></td>
+                                             <td class="text-center"><?= $value['tanggal_lahir'] ?></td>
                                              <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
-                                             <td><?= $value['alamat'] ?></td>
-                                             <td><?= $value['email'] ?></td>
-                                             <td><?= $value['noTelp'] ?></td>
-                                             <td><?= $value['universitas'] ?></td>
-                                             <td><?= $value['fakultas'] ?></td>
-                                             <td><?= $value['jurusan_prodi'] ?></td>
-                                             <td><?= $value['kelas_santri'] ?></td>
-                                             <td><?= $value['angkatan_santri'] ?></td>
+                                             <td class="text-center"><?= $value['gol_darah'] ?></td>
+                                             <td class="text-center"><?= $value['alamat'] ?></td>
+                                             <td class="text-center"><?= $value['email'] ?></td>
+                                             <td class="text-center"><?= $value['noTelp'] ?></td>
+                                             <td class="text-center"><?= $value['status'] ?></td>
+                                             <td class="text-center"><?= $value['universitas'] ?></td>
+                                             <td class="text-center"><?= $value['fakultas'] ?></td>
+                                             <td class="text-center"><?= $value['jurusan_prodi'] ?></td>
+                                             <td class="text-center"><?= $value['kelas_santri'] ?></td>
+                                             <td class="text-center"><?= $value['angkatan_santri'] ?></td>
                                              <td><?= $value['nama_ayah'] ?></td>
-                                             <td><?= $value['noTelp_ortu'] ?></td>
+                                             <td class="text-center"><?= $value['noTelp_ayah'] ?></td>
+                                             <td><?= $value['nama_ibu'] ?></td>
+                                             <td class="text-center"><?= $value['noTelp_ibu'] ?></td>
                                          </tr>
                                      <?php } ?>
                                  </tbody>
@@ -226,6 +242,13 @@
                              </div>
                          </div>
 
+                         <div class="form-group row">
+                             <div class="col-lg-4">
+                                 <label>Gol. Darah</label>
+                                 <input class="form-control" name="gol_darah" placeholder="gol. darah" required>
+                             </div>
+                         </div>
+
                          <div class="form-group">
                              <label>Alamat</label>
                              <textarea class="form-control" id="alamat" name="alamat" style="height: 100px" required></textarea>
@@ -242,6 +265,15 @@
                              <div class="col-lg-6">
                                  <label>NoTelp</label>
                                  <input name="noTelp" type="number" class="form-control" placeholder="noTelp" required>
+                             </div>
+                         </div>
+
+                         <div class="form-group row">
+                             <div class="col-lg-6">
+                                 <label>Status</label>
+                                 <select name="status" class="form-control" id="status" required>
+                                     <option value="Mahasiswa">Mahasiswa</option>
+                                 </select>
                              </div>
                          </div>
 
@@ -267,10 +299,10 @@
                                      <option value="">- Pilih -</option>
                                      <option value="Qiraah">Qiraah</option>
                                      <option value="kitabah">kitabah</option>
-                                     <option value="Reguler">Reguler</option>
+                                     <!-- <option value="Reguler">Reguler</option>
                                      <option value="Mubtadin">Mubtadin</option>
                                      <option value="Mutawasithin">Mutawasithin</option>
-                                     <option value="Muntahin">Muntahin</option>
+                                     <option value="Muntahin">Muntahin</option> -->
                                      <option value="Al-Taannii">Al-Taannii</option>
                                      <option value="Al-Sarii">Al-Sarii</option>
                                      <option value="Al-Idlofi">Al-Idlofi</option>
@@ -293,8 +325,20 @@
 
                          <div class="form-group row">
                              <div class="col-lg-6">
-                                 <label>NoTelp ortu</label>
-                                 <input name="noTelp_ortu" type="number" class="form-control" placeholder="noTelp ortu" required>
+                                 <label>NoTelp Ayah</label>
+                                 <input name="noTelp_ayah" type="number" class="form-control" placeholder="noTelp ayah" required>
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <label>Nama Ibu</label>
+                             <input name="nama_ibu" type="" class="form-control" placeholder="nama ibu" required>
+                         </div>
+
+                         <div class="form-group row">
+                             <div class="col-lg-6">
+                                 <label>NoTelp Ibu</label>
+                                 <input name="noTelp_ibu" type="number" class="form-control" placeholder="noTelp ibu" required>
                              </div>
                          </div>
                      </div>
@@ -358,6 +402,13 @@
                                  </div>
                              </div>
 
+                             <div class="form-group row">
+                                 <div class="col-lg-4">
+                                     <label>Gol. Darah</label>
+                                     <input class="form-control" name="gol_darah" value="<?= $value['gol_darah'] ?>" required>
+                                 </div>
+                             </div>
+
                              <div class="form-group">
                                  <label>Alamat</label>
                                  <textarea id="alamat" name="alamat" class="form-control ckeditor" style="height: 100px" required><?= htmlentities($value['alamat']); ?></textarea>
@@ -374,6 +425,15 @@
                                  <div class="col-lg-6">
                                      <label>NoTelp</label>
                                      <input name="noTelp" type="number" value="<?= $value['noTelp'] ?>" class="form-control" placeholder="noTelp" required>
+                                 </div>
+                             </div>
+
+                             <div class="form-group row">
+                                 <div class="col-lg-6">
+                                     <label>Status</label>
+                                     <select name="status" class="form-control" id="status" value="<?= $value['status'] ?>" required>
+                                         <option value="Mahasiswa">Mahasiswa</option>
+                                     </select>
                                  </div>
                              </div>
 
@@ -397,10 +457,10 @@
                                      <select name="kelas_santri" class="form-control" id="kelas_santri" required>
                                          <option value="Qiraah" <?= $value['kelas_santri'] == "Qiraah" ? "selected" : ""; ?>>Qiraah</option>
                                          <option value="kitabah" <?= $value['kelas_santri'] == "kitabah" ? "selected" : ""; ?>>kitabah</option>
-                                         <option value="Reguler" <?= $value['kelas_santri'] == "Reguler" ? "selected" : ""; ?>>Reguler</option>
+                                         <!-- <option value="Reguler" <?= $value['kelas_santri'] == "Reguler" ? "selected" : ""; ?>>Reguler</option>
                                          <option value="Mubtadin" <?= $value['kelas_santri'] == "Mubtadin" ? "selected" : ""; ?>>Mubtadin</option>
                                          <option value="Mutawasithin" <?= $value['kelas_santri'] == "Mutawasithin" ? "selected" : ""; ?>>Mutawasithin</option>
-                                         <option value="Muntahin" <?= $value['kelas_santri'] == "Muntahin" ? "selected" : ""; ?>>Muntahin</option>
+                                         <option value="Muntahin" <?= $value['kelas_santri'] == "Muntahin" ? "selected" : ""; ?>>Muntahin</option> -->
                                          <option value="Al-Taannii" <?= $value['kelas_santri'] == "Al-Taannii" ? "selected" : ""; ?>>Al-Taannii</option>
                                          <option value="Al-Sarii" <?= $value['kelas_santri'] == "Al-Sarii" ? "selected" : ""; ?>>Al-Sarii</option>
                                          <option value="Al-Idlofi" <?= $value['kelas_santri'] == "Al-Idlofi" ? "selected" : ""; ?>>Al-Idlofi</option>
@@ -423,8 +483,20 @@
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
-                                     <label>NoTelp ortu</label>
-                                     <input name="noTelp_ortu" value="<?= $value['noTelp_ortu'] ?>" class="form-control" placeholder="noTelp ortu" required>
+                                     <label>NoTelp Ayah</label>
+                                     <input name="noTelp_ayah" value="<?= $value['noTelp_ayah'] ?>" class="form-control" placeholder="noTelp ayah" required>
+                                 </div>
+                             </div>
+
+                             <div class="form-group">
+                                 <label>Nama Ibu</label>
+                                 <input name="nama_ibu" value="<?= $value['nama_ibu'] ?>" class="form-control" placeholder="nama ibu" required>
+                             </div>
+
+                             <div class="form-group row">
+                                 <div class="col-lg-6">
+                                     <label>NoTelp Ibu</label>
+                                     <input name="noTelp_ibu" value="<?= $value['noTelp_ibu'] ?>" class="form-control" placeholder="noTelp ibu" required>
                                  </div>
                              </div>
 

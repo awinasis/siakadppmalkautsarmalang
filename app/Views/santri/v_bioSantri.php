@@ -31,21 +31,21 @@
                                                 <?php $no = 1;
                                                 foreach ($santri as $key => $value) { ?>
                                                     <tr>
-                                                        <th width="100px">No</th>
-                                                        <th width="30px">:</th>
-                                                        <td><?= $no++; ?></td>
-                                                        <th width="120px">NIS</th>
+                                                        <th width="100px">NIS</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['NIS'] ?></td>
+                                                        <th width="120px">Nama Santri</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['nama_santri'] ?></td>
                                                     </tr>
 
                                                     <tr>
-                                                        <th width="100px">Nama Santri</th>
-                                                        <th width="30px">:</th>
-                                                        <td><?= $value['nama_santri'] ?></td>
-                                                        <th width="120px">Jenis Kelamin</th>
+                                                        <th width="100px">Jenis Kelamin</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['jenis_kelamin'] ?></td>
+                                                        <th width="120px">Gol. Darah</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['gol_darah'] ?></td>
                                                     </tr>
 
                                                     <tr>
@@ -70,36 +70,48 @@
                                                         <th width="100px">Email</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['email'] ?></td>
-                                                        <th width="120px">Kelas Santri</th>
+                                                        <th width="120px">Status</th>
                                                         <th width="30px">:</th>
-                                                        <td><?= $value['kelas_santri'] ?></td>
+                                                        <td><?= $value['status'] ?></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th width="100px">Universitas</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['universitas'] ?></td>
+                                                        <th width="120px">Fakultas</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['fakultas'] ?></td>
+                                                        <th width="140px">Jurusan/Prodi</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['jurusan_prodi'] ?></td>
                                                     </tr>
 
                                                     <tr>
                                                         <th width="100px">Angkatan Santri</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['angkatan_santri'] ?></td>
-                                                        <th width="120px">Universitas</th>
+                                                        <th width="120px">Kelas Santri</th>
                                                         <th width="30px">:</th>
-                                                        <td><?= $value['universitas'] ?></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th width="100px">Fakultas</th>
-                                                        <th width="30px">:</th>
-                                                        <td><?= $value['fakultas'] ?></td>
-                                                        <th width="120px">Jurusan/Prodi</th>
-                                                        <th width="30px">:</th>
-                                                        <td><?= $value['jurusan_prodi'] ?></td>
+                                                        <td><?= $value['kelas_santri'] ?></td>
                                                     </tr>
 
                                                     <tr>
                                                         <th width="100px">Nama Ayah</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['nama_ayah'] ?></td>
-                                                        <th width="120px">NoTelp Orang Tua</th>
+                                                        <th width="120px">NoTelp Ayah</th>
                                                         <th width="30px">:</th>
-                                                        <td><?= $value['noTelp_ortu'] ?></td>
+                                                        <td><?= $value['noTelp_ayah'] ?></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th width="100px">Nama Ibu</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['nama_ibu'] ?></td>
+                                                        <th width="120px">NoTelp Ibu</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['noTelp_ibu'] ?></td>
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>

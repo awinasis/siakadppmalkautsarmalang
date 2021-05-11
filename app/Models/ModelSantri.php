@@ -9,7 +9,7 @@ class ModelSantri extends Model
     public function allData()
     {
         return $this->db->table('tbl_santri')
-            ->orderBy('id_santri', 'DESC')
+            ->orderBy('NIS', 'ASC')
             ->get()->getResultArray();
     }
 

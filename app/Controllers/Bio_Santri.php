@@ -40,16 +40,20 @@ class Bio_Santri extends BaseController
             'Tempat_lahir' => $this->request->getPost('tempat_lahir'),
             'Tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
             'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'gol_darah' => $this->request->getPost('gol_darah'),
             'alamat' => $this->request->getPost('alamat'),
             'email' => $this->request->getPost('email'),
             'noTelp' => $this->request->getPost('noTelp'),
+            'status' => $this->request->getPost('status'),
             'Universitas' => $this->request->getPost('universitas'),
             'Fakultas' => $this->request->getPost('fakultas'),
             'Jurusan_Prodi' => $this->request->getPost('jurusan_prodi'),
             'Kelas_santri' => $this->request->getPost('kelas_santri'),
             'Angkatan_santri' => $this->request->getPost('angkatan_santri'),
             'Nama_Ayah' => $this->request->getPost('nama_ayah'),
-            'NoTelp_ortu' => $this->request->getPost('noTelp_ortu')
+            'NoTelp_ayah' => $this->request->getPost('noTelp_ayah'),
+            'Nama_Ibu' => $this->request->getPost('nama_ibu'),
+            'NoTelp_ibu' => $this->request->getPost('noTelp_ibu')
         ];
         $this->ModelSantri->addData($data);
 
@@ -66,16 +70,20 @@ class Bio_Santri extends BaseController
             'Tempat_lahir' => $this->request->getPost('tempat_lahir'),
             'Tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
             'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'gol_darah' => $this->request->getPost('gol_darah'),
             'alamat' => $this->request->getPost('alamat'),
             'email' => $this->request->getPost('email'),
             'noTelp' => $this->request->getPost('noTelp'),
+            'status' => $this->request->getPost('status'),
             'Universitas' => $this->request->getPost('universitas'),
             'Fakultas' => $this->request->getPost('fakultas'),
             'Jurusan_prodi' => $this->request->getPost('jurusan_prodi'),
             'Kelas_santri' => $this->request->getPost('kelas_santri'),
             'Angkatan_santri' => $this->request->getPost('angkatan_santri'),
             'Nama_Ayah' => $this->request->getPost('nama_ayah'),
-            'NoTelp_ortu' => $this->request->getPost('noTelp_ortu')
+            'NoTelp_ayah' => $this->request->getPost('noTelp_ayah'),
+            'Nama_Ibu' => $this->request->getPost('nama_ibu'),
+            'NoTelp_ibu' => $this->request->getPost('noTelp_ibu')
         ];
         $this->ModelSantri->editData($data);
         session()->setFlashdata('pesan', 'Data berhasil di update !!');

@@ -242,7 +242,7 @@
                  <div class="col-xs-12">
                      <div class="row">
                          <div class="col-sm-12">
-                             <h2 class="page-header" style="color:MediumSeaGreen; font-family:courier;"><b>Biodata Guru</b></h2>
+                             <h2 class="page-header" style="color:MediumSeaGreen; font-family:timesnewrohman;"><b>Biodata Guru</b></h2>
                              <table class="table table-bordered">
                                  <tbody>
                                      <?php $no = 1;

@@ -6,9 +6,12 @@ use App\Models\ModelAbsensi;
 use App\Models\ModelPengumuman;
 use App\Models\ModelSantri;
 use App\Models\ModelPembayaran;
+use App\Models\ModelPesan;
 
 class Santri extends BaseController
 {
+    protected $ModelPesan;
+
     public function __construct()
     {
         helper('form');
@@ -16,6 +19,7 @@ class Santri extends BaseController
         $this->ModelPengumuman = new ModelPengumuman();
         $this->ModelSantri = new ModelSantri();
         $this->ModelPembayaran = new ModelPembayaran();
+        $this->ModelPesan = new ModelPesan();
     }
 
     public function index()
@@ -90,6 +94,20 @@ class Santri extends BaseController
             'absensi' => $this->ModelAbsensi->allData(),
             'isi'    => 'santri/v_absenSantri',
             // 'reportAbsen' => $reportAbsen
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function pesan()
+    {
+        $nis = session()->get('username');
+        $data = [
+            'title' => 'Message',
+            'isi'    => 'santri/v_pesan',
+            'total_message' => $this->ModelPesan->get_pesan_count(),
+            'pesan' => $this->ModelPesan->get_pesan_by_id($nis),
+            'nis' => $nis
         ];
 
         return view("layout/wrapper", $data);
