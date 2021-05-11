@@ -9,6 +9,7 @@ class ModelPembayaran extends Model
     public function allData()
     {
         return $this->db->table('tbl_pembayaran')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_pembayaran.NIS')
             ->orderBy('id_pembayaran', 'DESC')
             ->get()->getResultArray();
     }
@@ -41,7 +42,7 @@ class ModelPembayaran extends Model
     public function get_pembayaran_by_id($data)
     {
         return $this->db->table('tbl_pembayaran')
-        ->where('NIS', $data)
-        ->get()->getResultArray();
+            ->where('NIS', $data)
+            ->get()->getResultArray();
     }
 }
