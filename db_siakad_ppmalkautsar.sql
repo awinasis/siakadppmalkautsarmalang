@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2021 at 10:48 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Generation Time: May 11, 2021 at 05:10 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_siakad_ppmalkautsar`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_catatansaranpengurus`
+--
+
+CREATE TABLE `tbl_catatansaranpengurus` (
+  `id_cs` int(3) NOT NULL,
+  `NIS` int(12) NOT NULL,
+  `nama_santri` varchar(30) NOT NULL,
+  `jenis_kelamin` enum('L','P') NOT NULL,
+  `catatan_saran` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_catatansaranpengurus`
+--
+
+INSERT INTO `tbl_catatansaranpengurus` (`id_cs`, `NIS`, `nama_santri`, `jenis_kelamin`, `catatan_saran`) VALUES
+(1, 201903002, 'Abdullah Winasis', 'L', '1. Ditingkatkan lagi komunikasinya dalam bersosial (jangan sungkan)\r\n2. Lebih menjaga lagi dalam kesehatan pribadi\r\n3. Terus disemangati dalam mengejar ketercapaian materi mondok dan kuliahnya');
 
 -- --------------------------------------------------------
 
@@ -71,7 +91,7 @@ CREATE TABLE `tbl_guru` (
 --
 
 INSERT INTO `tbl_guru` (`id_guru`, `nama_guru`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `alamat_asal_daerah`, `noTelp`) VALUES
-(1, 'Amir Hamzah', 'Lampung, 12 April 19', NULL, 'L', 'Lampung Utara', '081649293713');
+(1, 'Amir Hamzah', 'Lampung', '1995-05-04', 'L', 'Lampung Utara', '081649293713');
 
 -- --------------------------------------------------------
 
@@ -81,7 +101,7 @@ INSERT INTO `tbl_guru` (`id_guru`, `nama_guru`, `tempat_lahir`, `tanggal_lahir`,
 
 CREATE TABLE `tbl_jk` (
   `id_jk` int(3) NOT NULL,
-  `id_santri` int(3) NOT NULL
+  `NIS` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -250,6 +270,35 @@ INSERT INTO `tbl_nilaiekstrakurikuler` (`id_ne`, `NIS`, `nama_santri`, `jenis_ke
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_nilaiindeksprestasi`
+--
+
+CREATE TABLE `tbl_nilaiindeksprestasi` (
+  `id_ip` int(3) NOT NULL,
+  `NIS` int(12) NOT NULL,
+  `nama_santri` varchar(30) NOT NULL,
+  `jenis_kelamin` enum('L','P') NOT NULL,
+  `nilai_IP1` varchar(5) NOT NULL,
+  `nilai_IP2` varchar(5) NOT NULL,
+  `nilai_IP3` varchar(5) NOT NULL,
+  `nilai_IP4` varchar(5) NOT NULL,
+  `nilai_IP5` varchar(5) NOT NULL,
+  `nilai_IP6` varchar(5) NOT NULL,
+  `nilai_IP7` varchar(5) NOT NULL,
+  `nilai_IP8` varchar(5) NOT NULL,
+  `nilai_IP9` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_nilaiindeksprestasi`
+--
+
+INSERT INTO `tbl_nilaiindeksprestasi` (`id_ip`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai_IP1`, `nilai_IP2`, `nilai_IP3`, `nilai_IP4`, `nilai_IP5`, `nilai_IP6`, `nilai_IP7`, `nilai_IP8`, `nilai_IP9`) VALUES
+(1, 201903002, 'Abdullah Winasis', 'L', '3,95', '3,90', '3,85', '3,80', '3,75', '3,70', '3,65', '3,60', '3,55');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_nilaikonseppraktikum`
 --
 
@@ -324,10 +373,9 @@ INSERT INTO `tbl_nilailimasuksessantri` (`id_lss`, `NIS`, `nama_santri`, `jenis_
 
 CREATE TABLE `tbl_nilaimateri` (
   `id_nm` int(3) NOT NULL,
-  `id_materi` int(3) NOT NULL,
-  `NIS` int(12) NOT NULL,
-  `nama_santri` varchar(30) NOT NULL,
-  `jenis_kelamin` enum('L','P') NOT NULL,
+  `NIS` int(12) DEFAULT NULL,
+  `nama_santri` varchar(30) DEFAULT NULL,
+  `jenis_kelamin` enum('L','P') DEFAULT NULL,
   `nilai1` int(11) NOT NULL,
   `nilai2` int(11) NOT NULL,
   `nilai3` int(11) NOT NULL,
@@ -358,18 +406,15 @@ CREATE TABLE `tbl_nilaimateri` (
   `nilai28` int(11) NOT NULL,
   `nilai29` int(11) NOT NULL,
   `nilai30` int(11) NOT NULL,
-  `nilai31` int(11) NOT NULL,
-  `kelas` enum('Qiraah','kitabah','Reguler','Mubtadin','Mutawasithin','Muntahin','Al-Taannii','Al-Sarii','Al-Idlofi','Hadits Besar') NOT NULL,
-  `prosentase` int(11) NOT NULL
+  `nilai31` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_nilaimateri`
 --
 
-INSERT INTO `tbl_nilaimateri` (`id_nm`, `id_materi`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai1`, `nilai2`, `nilai3`, `nilai4`, `nilai5`, `nilai6`, `nilai7`, `nilai8`, `nilai9`, `nilai10`, `nilai11`, `nilai12`, `nilai13`, `nilai14`, `nilai15`, `nilai16`, `nilai17`, `nilai18`, `nilai19`, `nilai20`, `nilai21`, `nilai22`, `nilai23`, `nilai24`, `nilai25`, `nilai26`, `nilai27`, `nilai28`, `nilai29`, `nilai30`, `nilai31`, `kelas`, `prosentase`) VALUES
-(1, 0, 201903002, 'Abdullah Winasis', 'L', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 'Al-Sarii', 30),
-(3, 1, 201903001, 'Anggun Milenia Rahman', 'P', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 'Hadits Besar', 100);
+INSERT INTO `tbl_nilaimateri` (`id_nm`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai1`, `nilai2`, `nilai3`, `nilai4`, `nilai5`, `nilai6`, `nilai7`, `nilai8`, `nilai9`, `nilai10`, `nilai11`, `nilai12`, `nilai13`, `nilai14`, `nilai15`, `nilai16`, `nilai17`, `nilai18`, `nilai19`, `nilai20`, `nilai21`, `nilai22`, `nilai23`, `nilai24`, `nilai25`, `nilai26`, `nilai27`, `nilai28`, `nilai29`, `nilai30`, `nilai31`) VALUES
+(16, 201903002, 'Abdullah Winasis', 'L', 87, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8);
 
 -- --------------------------------------------------------
 
@@ -423,7 +468,8 @@ CREATE TABLE `tbl_pembayaran` (
 
 INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `NIS`, `nama_santri`, `periode_pembayaran`, `keterangan`, `tagihan`, `terbayar`, `status`) VALUES
 (1, '201903002', 'Abdullah Winasis', 2021, 'Pembayaran Uang KBM', '2.640.000', '2.6.40.000', 'LUNAS'),
-(2, '201903003', 'Muhammad Andy Herdiansyah', 2021, 'Pembayaran Uang PPM', '2.640.000', '0', 'BELUM LUNAS');
+(2, '201903003', 'Mohammad Andy Herdiansyah', 2021, 'Pembayaran Uang PPM', '2.640.000', '0', 'BELUM LUNAS'),
+(4, '201803018', 'Rena Miftakhul Zulfa', 2021, 'Pembayaran Uang KBM PPM', '1.200.000', '1.000.000', 'BELUM LUNAS');
 
 -- --------------------------------------------------------
 
@@ -444,10 +490,7 @@ CREATE TABLE `tbl_pengumuman` (
 --
 
 INSERT INTO `tbl_pengumuman` (`id_pengumuman`, `tgl_dibuat`, `judul_pengumuman`, `isi_pengumuman`, `visible_pengumuman`) VALUES
-(3, '2021-04-08', 'Nasehat Pemantapan', 'Notulen Nasehat Cak Emir \"Alim dan Fakih\", 20 Oktober 2019, Cibubur, Rawa Kuda  1. Orang Alim itu harus ditempuh lewat belajar.  2. Tapi jika orang yang paham, itu setelah belajar/ngaji lalu harus diamalkan. Contoh ada muballegh sdh mengaji bukhori bab nikah namun belum nikah, mungkin pas dikaji bab cerai bisa guys-guyu,,, pasti berbeda dgn muballegh yg sdh nikah, dkaji bab cerai mana berani guys-guyu.  3. Pak H. Nurhasan berbeda, beliau berilmu dan paham, kenapa? Karena beliau brani mempraktekkan ilmunya, apa?? Mendirikan Jamaah, temen2nya yg lulusan Mekkah diajak tidak ada yang brani dan tidak ada yg kuat, orang yg berilmu yang tidak mendirikan jamaah, mereka tidak akan tahu bagaimana prakteknya jamaah.   4. Orang Alim itu belum tentu fakih/paham. Tpi org FAKIH itu pasti BAIK. Jadi jangan heran klo ada org pinter murtad dr jamaah,,, karena sdh ada dalilnya dari zamannya nabi dan shohabat ya sudah ada,   5. Orang pinter/Alim itu belum tentu baik, kenapa?  A. Motivasi dia belajar ilmu: a. Ingin jadi ulama/membandingi ulama b. Ingin bisa selalu menjawab pertanyaan, membodohi org yang bodoh c. Ingin jadi pusat perhatian d. Ingin dpet harta dunia, atau ingin menjadi org2 yang dihormati,,  (4 hal ini yang dilarang nabi menjadi pondasi mencari ilmu),,, 4 hal tsb diatas tidak akan diucapkan org,,, (Hidden Agenda)   B. Cobaannya orang Alim,  dipuji, sombong, pamer, ujub, dibisiki setan,, adapun cobaan orang Alim yang sejati adalah iri dengki,, ada cerita, NYATA, asalnya jamaah biasa, dgn kipok hormat, dengan kides hormat, lalu dia mw jadi muballegh, mondok dan tugas, ngaji HB, tugas lagi, pernah jadi muballegh desa, muballegh daerah, lalu dia mw nikah, mw punya rumah, lantas nikah, pindah sambung jadi jamaah biasa, hari pertama memaklumi, tapi terus dibisiki setan, lama2 mengkritisi, tidak hormat, bahkan gembosi pengurus disitu, lalu dibisiki syeton mw jadi pengurus, akhirnya gk kerasa pindah sambung, smpe 100x pindah sambung, karena merasa pol sendiri, akhirnya murtad,,,  6. Jadilah orang yang alim yang fakih, menghormati imam, orang yang harusnya paling bisa mempraktekkan dalil metaati imam, ya harusnya muballegh itu,   7. Ironi, orang Alim itu tidak akan luntur  tapi fakih itu bisa luntur,, berdasarkan dalil, Allah tidak akan menghilangkan ilmu lewat hilangnya ilmu itu dari ulama, tapi lewat mewafatkan ulama, dan yang kedua, kepahaman orang itu tergantung siapa teman dekatnya (pergaulan), bisa jga lewat cobaan harta (seperti ceritanya bal\'am) , _dalilnya nabi, kebanyakan orang munafiknya golonganku nabi ya ahli quro, ahli baca qur\'an,,, sarah nya apa?? Mereka bisa mengajar tapi tidak bsa mengamalkan, bahkan mereka brani menipu umat,  8. Tanda benarnya jamaah ya ini ditandai dengan munculnya ayat2nya Allah yang tampak: a. Akan ada yang insaf (setiap daerahan ribuan org insof, baik diponde atau dikediri)  b. Akan ada yang murtad/keluar dr jamaah (ini karena memenuhi dalil, tpi jgn sampe kita yg murtad, sdh cycle, sesuatu yang akan terus terjadi setiap generasi) jgn smpe kita membantah ayat Allah dengan mengatakan, saya tidak akan terpengaruh, saya cuman liat2 youtube sbntar, liat blog sbntar, itu jgn smpe nggeh,  c. Akan ada yg munafek (munafek itu sifat, jika kita mengerjakan sifat2 tsb, maka akan menyeret kita menjadi org munafek, setiap org itu aslinya punya sifat munafeq, kita tidak boleh merasa aman dr sifat munafek, karena org yg merasa aman dr sifat munafek itu ya org munafek itu, bbrp ciri ya ada banyak, seperti : Klo solat males, seneng di puji, mau enaknya sndiri, males baca quran, males solat sunnah,  maka selalu Berdoalah agar jauh dr sifat munafek yaitu: Allahumma inni audzubika minannifaaqo, wa su\'il akhlaqo, wadoiqil arzaaqo,,  9. Tentang insaf dan murtad, masing2 ada 2 kategori, insaf dari hum masuk ke jamaah, atau jamaah insaf dari pelanggaran2nya, yang dlu nya gk lancar 5 bab nya lalu kena peringatan tobat dan lancar 5 bab ya, bgitu jg org yg murtad, adakalanya murtad dr jamaah kluar dr jamaah, tapi ada jg yg fisiknya dalam jamaah tapi kepahamannya sdh keluar dr jamaah, contoh tidak menghormati imam, tidak mw persenan, bahkan brani mengajak untuk tidak persenan, itu sebenarnya jg sdh murtad,   10. Kita sebagai suami itu menghadapi istri harus punya kesabaran berlapis-lapis,  11. Kita selama masih hidup pasti terus akan menjumpai cobaan, maka harus ttep sabar menetepi jamaah sampai mati,', 1),
-(4, '2021-04-06', 'Santri comeback to PPM Malang', 'PENGUMUMAN PENTING  السلام عليكم ورحمة الله وبراكاته  Menyampaikan pengumuman kepada seluruh santri khususnya untuk Santri PPM Malang Raya Asal Jawa Timur.  Berdasarkan hasil musyawarah pengurus PPM dengan mempertimbangkan evaluasi kegiatan belajar mengajar santri dan kelancaran program pembinaan PPM dan perkembangan situasi yang ada. Maka PPM Malang Raya akan mencoba memulai kegiatan pondok new normal secara bertahap. yaitu tahap pertama ini santri yang berasal dari Daerah Jawa Timur Diminta Amal sholih Supaya Kembali ke PPM dan kembali mengikuti program pembinaan di PPM. dengan teknis sebagai berikut :  ~~~~~  1. Kedatangan santri Jawa Timur ke PPM paling lambat hari Minggu 11 April 2021  2. Santri yang kembali ke PPM supaya menunjukkan surat keterangan hasil rapid test yang dikirim ke Ketua Siswa Ma\'hadnya masing-masing sebelum berangkat kembali ke PPM.   3. Santri melakukan konfirmasi terlebih dahulu kepada kesiswaan terkait waktu kedatangan.   4. Santri selama perjalanan kembali ke PPM wajib menerapkan protokol kesehatan.   ~~~~~  Demikian, pengumuman ini kami sampaikan mohon dijadikan perhatian.   Hasil musyawarah ini amalsholih bisa ditetapi masing-masing santri dan diniati dengan niat mukhlis lillah karna Allah. Mugo2 Allah paring aman selamat lancar sehat sukses barokah untuk kita semua. Jadi sarjana mubaligh yang barokah.   الحمدلله جزا كم الله خيرا والسلام عليكم ورحمة الله وبرا كته', 1),
-(23, '2021-04-14', 'example', '<p>hello world</p>\r\n', 1),
-(25, '2021-04-15', 'test', '<p>test 123</p>\r\n\r\n<p>Assalamualaikum wr.wb</p>\r\n\r\n<p>Nama : Abdullah Winasis</p>\r\n\r\n<p>NIM&nbsp; &nbsp; : 1831710144</p>\r\n\r\n<p>Kelas : MI - 3C</p>\r\n\r\n<p>&nbsp;</p>\r\n', 1);
+(4, '2021-04-06', 'Santri comeback to PPM Malang', 'PENGUMUMAN PENTING  السلام عليكم ورحمة الله وبراكاته  Menyampaikan pengumuman kepada seluruh santri khususnya untuk Santri PPM Malang Raya Asal Jawa Timur.  Berdasarkan hasil musyawarah pengurus PPM dengan mempertimbangkan evaluasi kegiatan belajar mengajar santri dan kelancaran program pembinaan PPM dan perkembangan situasi yang ada. Maka PPM Malang Raya akan mencoba memulai kegiatan pondok new normal secara bertahap. yaitu tahap pertama ini santri yang berasal dari Daerah Jawa Timur Diminta Amal sholih Supaya Kembali ke PPM dan kembali mengikuti program pembinaan di PPM. dengan teknis sebagai berikut :  ~~~~~  1. Kedatangan santri Jawa Timur ke PPM paling lambat hari Minggu 11 April 2021  2. Santri yang kembali ke PPM supaya menunjukkan surat keterangan hasil rapid test yang dikirim ke Ketua Siswa Ma\'hadnya masing-masing sebelum berangkat kembali ke PPM.   3. Santri melakukan konfirmasi terlebih dahulu kepada kesiswaan terkait waktu kedatangan.   4. Santri selama perjalanan kembali ke PPM wajib menerapkan protokol kesehatan.   ~~~~~  Demikian, pengumuman ini kami sampaikan mohon dijadikan perhatian.   Hasil musyawarah ini amalsholih bisa ditetapi masing-masing santri dan diniati dengan niat mukhlis lillah karna Allah. Mugo2 Allah paring aman selamat lancar sehat sukses barokah untuk kita semua. Jadi sarjana mubaligh yang barokah.   الحمدلله جزا كم الله خيرا والسلام عليكم ورحمة الله وبرا كته', 1);
 
 -- --------------------------------------------------------
 
@@ -468,8 +511,7 @@ CREATE TABLE `tbl_pesan` (
 --
 
 INSERT INTO `tbl_pesan` (`id_pesan`, `NIS`, `nama_santri`, `pesan`, `tanggal`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'Assalamualaikum w.r w.b\r\nMengingatkan kembali perihal pembelaan dibulan ramadhan , krena sekrang sudah tanggal 26 dan terakhir pembelaan ditanggal 27 \r\namal sholih bisa segera diselsaikan perihal pembelaan\'\' yang ada di bulan ramdhan \r\nAlhamdulillahi jazakumullohu khoiro', '2021-04-28'),
-(2, 0, '', 'Assalamualaikum', '2021-04-14');
+(1, 201903002, 'Abdullah Winasis', 'Assalamualaikum w.r w.b\r\nMengingatkan kembali perihal pembelaan dibulan ramadhan , krena sekrang sudah tanggal 26 dan terakhir pembelaan ditanggal 27 \r\namal sholih bisa segera diselsaikan perihal pembelaan\'\' yang ada di bulan ramdhan \r\nAlhamdulillahi jazakumullohu khoiro', '2021-04-28');
 
 -- --------------------------------------------------------
 
@@ -480,15 +522,16 @@ INSERT INTO `tbl_pesan` (`id_pesan`, `NIS`, `nama_santri`, `pesan`, `tanggal`) V
 CREATE TABLE `tbl_rapor` (
   `id_rapor` int(3) NOT NULL,
   `NIS` int(12) NOT NULL,
-  `nama_santri` varchar(30) NOT NULL
+  `nama_santri` varchar(30) NOT NULL,
+  `jenis_kelamin` enum('L','P') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_rapor`
 --
 
-INSERT INTO `tbl_rapor` (`id_rapor`, `NIS`, `nama_santri`) VALUES
-(1, 201903002, 'Abdullah Winasis');
+INSERT INTO `tbl_rapor` (`id_rapor`, `NIS`, `nama_santri`, `jenis_kelamin`) VALUES
+(1, 201903002, 'Abdullah Winasis', 'L');
 
 -- --------------------------------------------------------
 
@@ -503,30 +546,32 @@ CREATE TABLE `tbl_santri` (
   `tempat_lahir` varchar(20) DEFAULT NULL,
   `tanggal_lahir` date DEFAULT NULL,
   `jenis_kelamin` enum('L','P') DEFAULT NULL,
+  `gol_darah` varchar(5) NOT NULL,
   `alamat` text DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `noTelp` varchar(15) DEFAULT NULL,
+  `status` enum('Mahasiswa') NOT NULL,
   `universitas` varchar(30) DEFAULT NULL,
   `fakultas` varchar(20) DEFAULT NULL,
   `jurusan_prodi` varchar(50) DEFAULT NULL,
   `kelas_santri` enum('Qiraah','kitabah','Reguler','Mubtadin','Mutawasithin','Muntahin','Al-Taannii','Al-Sarii','Al-Idlofi','Hadits Besar') NOT NULL,
   `angkatan_santri` year(4) DEFAULT NULL,
   `nama_ayah` varchar(30) NOT NULL,
-  `noTelp_ortu` varchar(15) NOT NULL,
-  `password` varchar(30) DEFAULT NULL,
-  `foto` text DEFAULT NULL
+  `noTelp_ayah` varchar(15) NOT NULL,
+  `nama_ibu` varchar(30) NOT NULL,
+  `noTelp_ibu` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_santri`
 --
 
-INSERT INTO `tbl_santri` (`id_santri`, `NIS`, `nama_santri`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `alamat`, `email`, `noTelp`, `universitas`, `fakultas`, `jurusan_prodi`, `kelas_santri`, `angkatan_santri`, `nama_ayah`, `noTelp_ortu`, `password`, `foto`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'Kediri', '1999-10-22', 'L', 'Jl Supriyadi, Rt/Rw 004/007 Dsn Papar Selatan, Ds Papar, Kab Kediri, Jawa Timur', 'awinasism2p@gmail.com', '2147483647', 'Politeknik Negeri Malang', '-', 'Teknologi Informasi/Manajemen Informatika', 'Al-Sarii', 2018, 'Maskun Bukhori', '2147483647', 'awinasis31354', 'awin.jpg'),
-(10, 201903001, 'Abdillah Yudhatama', 'Malang', '2000-02-02', 'L', 'Jl. Anjasmoro No.35 RT.11 RW.03 Bendo Karang, Pandan Pakisaji, Kabupaten Malang Jawa Timur', 'abdillahyudhatama@gmail.com', '1234567890', 'Brawijaya', 'Pertanian', 'Agroekoteknologi', 'Al-Sarii', 2019, 'X', '0', NULL, NULL),
-(11, 201903003, 'Achmad Koirudin Abdullah', 'Sragen', '2001-07-02', 'L', 'Pungkruk, Doyong RT01/000, Miri, Sragen, Jawa Tengah', 'achmadkhoirudinabdullah@gmail.com', '1234567890', 'Negeri Malang', 'Teknik', 'Pendidikan Teknik Elektro', 'Al-Sarii', 2019, '-', '0', NULL, NULL),
-(17, 201803018, 'Rena Miftakhul Zulfa', 'Kediri', '1999-04-20', 'P', 'Wates, Kediri, Jawa Timur', 'renamiftaqulzulfa@gmail.com', '081234567890', 'STIKES', '-', 'Kebidanan', 'Hadits Besar', 2018, 'xxx', '81098765431', NULL, NULL),
-(18, 201903006, 'Alfeina Zakkya Meriatami', 'Ponorogo', '2000-08-21', 'P', 'Ponorogo', 'alfeinazakkyameriatami@gmail.comm', '081234567865', 'Universitas Negeri Malang', 'Teknik', 'Pendidikan Teknik Informatika', 'Al-Taannii', 2003, 'yyy', '0871234567890', NULL, NULL);
+INSERT INTO `tbl_santri` (`id_santri`, `NIS`, `nama_santri`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `gol_darah`, `alamat`, `email`, `noTelp`, `status`, `universitas`, `fakultas`, `jurusan_prodi`, `kelas_santri`, `angkatan_santri`, `nama_ayah`, `noTelp_ayah`, `nama_ibu`, `noTelp_ibu`) VALUES
+(1, 201903002, 'Abdullah Winasis', 'Kediri', '1999-10-22', 'L', '', 'Jl Supriyadi, Rt/Rw 004/007 Dsn Papar Selatan, Ds Papar, Kab Kediri, Jawa Timur', 'awinasism2p@gmail.com', '2147483647', 'Mahasiswa', 'Politeknik Negeri Malang', '-', 'Teknologi Informasi/Manajemen Informatika', 'Al-Sarii', 2018, 'Maskun Bukhori', '2147483647', '', ''),
+(10, 201903001, 'Abdillah Yudhatama', 'Malang', '2000-02-02', 'L', '', 'Jl. Anjasmoro No.35 RT.11 RW.03 Bendo Karang, Pandan Pakisaji, Kabupaten Malang Jawa Timur', 'abdillahyudhatama@gmail.com', '1234567890', 'Mahasiswa', 'Brawijaya', 'Pertanian', 'Agroekoteknologi', 'Al-Sarii', 2019, 'X', '0', '', ''),
+(11, 201903003, 'Achmad Koirudin Abdullah', 'Sragen', '2001-07-02', 'L', '', 'Pungkruk, Doyong RT01/000, Miri, Sragen, Jawa Tengah', 'achmadkhoirudinabdullah@gmail.com', '1234567890', 'Mahasiswa', 'Negeri Malang', 'Teknik', 'Pendidikan Teknik Elektro', 'Al-Sarii', 2019, '-', '0', '', ''),
+(17, 201803018, 'Rena Miftakhul Zulfa', 'Kediri', '1999-04-20', 'P', 'O', 'Dsn. Ngletih Barat Rt. 03 Ds. Ngletih Kec. Kandat Kab. Kediri ', 'renamiftaqulzulfa@gmail.com', '6281234567890', 'Mahasiswa', 'STIKES Malang', '-', 'D3 - Kebidanan', 'Hadits Besar', 2018, 'Irfa\'i', '6281252960925', 'Nur Hidayati', '-'),
+(18, 201903006, 'Alfeina Zakkya Meriatami', 'Ponorogo', '2000-08-21', 'P', '', 'Ponorogo', 'alfeinazakkyameriatami@gmail.comm', '081234567865', 'Mahasiswa', 'Universitas Negeri Malang', 'Teknik', 'Pendidikan Teknik Informatika', 'Al-Taannii', 2003, 'yyy', '0871234567890', '', '');
 
 -- --------------------------------------------------------
 
@@ -560,9 +605,9 @@ INSERT INTO `tbl_surat` (`id_surat`, `nama_surat`, `kategori`, `tgl_upload`, `tg
 --
 
 CREATE TABLE `tbl_user` (
-  `id_user` int(11) NOT NULL,
+  `id_user` int(3) NOT NULL,
   `nama_user` varchar(25) DEFAULT NULL,
-  `username` varchar(25) DEFAULT NULL,
+  `username` int(12) DEFAULT NULL,
   `password` varchar(25) DEFAULT NULL,
   `level` varchar(10) NOT NULL,
   `foto` varchar(255) DEFAULT NULL
@@ -573,14 +618,22 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `nama_user`, `username`, `password`, `level`, `foto`) VALUES
-(6, 'Abdullah Winasis', '201903002', 'awinasis', 'Admin', '1617705484_c06eb78eb388276be38a.jpg'),
-(7, 'Anggun Milenia Rahman', '201903001', 'anggun123', 'Guru', '1617705534_6ffa7df5d359b78fbdda.jpg'),
-(8, 'Muhammad Andy Herdiansyah', '201903003', 'andy354', 'Santri', '1617705579_20eaef2b33632b17cf96.jpg'),
-(9, 'Rena Miftakhul Zulfa', '201903004', 'renamz31354', 'Santri', '1617705631_e012eb63993e4b1694a3.jpg');
+(1, 'Abdullah Winasis', 201903002, 'awinasis', 'Admin', '1617705484_c06eb78eb388276be38a.jpg'),
+(2, 'Anggun Milenia Rahman', 201903001, 'anggun123', 'Guru', '1617705534_6ffa7df5d359b78fbdda.jpg'),
+(3, 'Muhammad Andy Herdiansyah', 201903003, 'andy354', 'Santri', '1617705579_20eaef2b33632b17cf96.jpg'),
+(4, 'Rena Miftakhul Zulfa', 201803018, 'renamz31354', 'Santri', '1617705631_e012eb63993e4b1694a3.jpg'),
+(5, 'Alfeina Zakkya Meriatami', 201903006, '201903006', 'Santri', '1620724398_5b9fa93610e0e20d738a.jpg');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_catatansaranpengurus`
+--
+ALTER TABLE `tbl_catatansaranpengurus`
+  ADD PRIMARY KEY (`id_cs`),
+  ADD UNIQUE KEY `NIS` (`NIS`);
 
 --
 -- Indexes for table `tbl_chart`
@@ -600,7 +653,7 @@ ALTER TABLE `tbl_guru`
 --
 ALTER TABLE `tbl_jk`
   ADD PRIMARY KEY (`id_jk`),
-  ADD UNIQUE KEY `id_santri` (`id_santri`);
+  ADD UNIQUE KEY `id_santri` (`NIS`);
 
 --
 -- Indexes for table `tbl_kelas`
@@ -630,6 +683,13 @@ ALTER TABLE `tbl_nilaiekstrakurikuler`
   ADD UNIQUE KEY `jenis_kelamin` (`jenis_kelamin`);
 
 --
+-- Indexes for table `tbl_nilaiindeksprestasi`
+--
+ALTER TABLE `tbl_nilaiindeksprestasi`
+  ADD PRIMARY KEY (`id_ip`),
+  ADD UNIQUE KEY `NIS` (`NIS`);
+
+--
 -- Indexes for table `tbl_nilaikonseppraktikum`
 --
 ALTER TABLE `tbl_nilaikonseppraktikum`
@@ -650,7 +710,6 @@ ALTER TABLE `tbl_nilailimasuksessantri`
 --
 ALTER TABLE `tbl_nilaimateri`
   ADD PRIMARY KEY (`id_nm`),
-  ADD UNIQUE KEY `id_materi` (`id_materi`),
   ADD UNIQUE KEY `NIS` (`NIS`);
 
 --
@@ -667,8 +726,7 @@ ALTER TABLE `tbl_nilaisikapperilaku`
 --
 ALTER TABLE `tbl_pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
-  ADD UNIQUE KEY `NIS` (`NIS`),
-  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
+  ADD UNIQUE KEY `NIS` (`NIS`);
 
 --
 -- Indexes for table `tbl_pengumuman`
@@ -715,6 +773,12 @@ ALTER TABLE `tbl_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_catatansaranpengurus`
+--
+ALTER TABLE `tbl_catatansaranpengurus`
+  MODIFY `id_cs` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tbl_chart`
 --
 ALTER TABLE `tbl_chart`
@@ -724,7 +788,7 @@ ALTER TABLE `tbl_chart`
 -- AUTO_INCREMENT for table `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
-  MODIFY `id_guru` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_guru` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_jk`
@@ -757,6 +821,12 @@ ALTER TABLE `tbl_nilaiekstrakurikuler`
   MODIFY `id_ne` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tbl_nilaiindeksprestasi`
+--
+ALTER TABLE `tbl_nilaiindeksprestasi`
+  MODIFY `id_ip` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tbl_nilaikonseppraktikum`
 --
 ALTER TABLE `tbl_nilaikonseppraktikum`
@@ -772,7 +842,7 @@ ALTER TABLE `tbl_nilailimasuksessantri`
 -- AUTO_INCREMENT for table `tbl_nilaimateri`
 --
 ALTER TABLE `tbl_nilaimateri`
-  MODIFY `id_nm` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_nm` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaisikapperilaku`
@@ -784,7 +854,7 @@ ALTER TABLE `tbl_nilaisikapperilaku`
 -- AUTO_INCREMENT for table `tbl_pembayaran`
 --
 ALTER TABLE `tbl_pembayaran`
-  MODIFY `id_pembayaran` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pembayaran` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
@@ -796,13 +866,13 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_pesan`
 --
 ALTER TABLE `tbl_pesan`
-  MODIFY `id_pesan` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pesan` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_rapor`
 --
 ALTER TABLE `tbl_rapor`
-  MODIFY `id_rapor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_rapor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_santri`
@@ -820,7 +890,7 @@ ALTER TABLE `tbl_surat`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
