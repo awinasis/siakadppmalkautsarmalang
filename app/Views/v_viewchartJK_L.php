@@ -6,17 +6,24 @@
             <?= $title; ?>
         </h1>
         <br><br>
-        <ol class="breadcrumb">
-            <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li class="active">Data Santri PPM Al-Kautsar</li>
-        </ol>
+        <?php if (session()->get('level') == "Admin") { ?>
+            <ol class="breadcrumb">
+                <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li class="active">Data Santri PPM Al-Kautsar</li>
+            </ol>
+        <?php } else if (session()->get('level') == "Guru") { ?>
+            <ol class="breadcrumb">
+                <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Home</a></li>
+                <li class="active">Data Santri PPM Al-Kautsar</li>
+            </ol>
+        <?php } ?>
     </section>
 
     <section class="invoice">
         <!-- title row -->
         <div class="row">
             <div class="col-xs-12">
-                <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;"><i class="fa fa-list-alt"></i> Data Santri <b style="color:Black;">JK : Laki-Laki</b></h4>
+                <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;"><i class="fa fa-laptop"></i> Data Santri <b style="color:Black;">JK : Laki-Laki</b></h4>
                 &emsp;<h2 class="page-header"></h2>
                 <table class="table table-bordered">
                     <!-- <div>

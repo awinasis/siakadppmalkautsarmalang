@@ -70,11 +70,11 @@ class Santri extends BaseController
         return view("layout/wrapper", $data);
     }
 
-    public function jadwal_agenda()
+    public function nilai_santri()
     {
         $data = [
-            'title' => 'Jadwal Agenda',
-            'isi'    => 'santri/v_agenda'
+            'title' => 'Transkrip Nilai',
+            'isi'    => 'santri/v_nilaiSantri'
         ];
 
         return view("layout/wrapper", $data);
@@ -94,6 +94,17 @@ class Santri extends BaseController
             'absensi' => $this->ModelAbsensi->allData(),
             'isi'    => 'santri/v_absenSantri',
             // 'reportAbsen' => $reportAbsen
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function do_absen()
+    {
+        $data = [
+            'title' => 'Melakukan Absen',
+            'absen' => $this->ModelAbsensi->allData00(),
+            'isi'    => 'santri/absen santri/do_absen',
         ];
 
         return view("layout/wrapper", $data);

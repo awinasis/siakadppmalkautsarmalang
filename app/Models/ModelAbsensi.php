@@ -12,6 +12,7 @@ class ModelAbsensi extends Model
             ->orderBy('id_chart', 'DESC')
             ->get()->getResultArray();
     }
+
     public function addData($data)
     {
         $this->db->table('tbl_chart')->insert($data);
@@ -42,5 +43,12 @@ class ModelAbsensi extends Model
     {
         $query = $this->db->table('tbl_chart')->countAll();
         return $query;
+    }
+
+    public function allData00()
+    {
+        return $this->db->table('tbl_chart')
+            ->orderBy('id_chart', 'DESC')
+            ->get()->getResultArray();
     }
 }

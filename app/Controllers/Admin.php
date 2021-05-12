@@ -76,7 +76,7 @@ class Admin extends BaseController
         $data = [
             'title' => 'View Chart JK',
             'chartjk' => $this->ModelAdmin->allData(),
-            'isi'    => 'admin/v_viewchartJK_L'
+            'isi'    => 'v_viewchartJK_L'
         ];
 
         return view("layout/wrapper", $data);
@@ -87,7 +87,7 @@ class Admin extends BaseController
         $data = [
             'title' => 'View Chart JK',
             'chartjk' => $this->ModelAdmin->allData(),
-            'isi'    => 'admin/v_viewchartJK_P'
+            'isi'    => 'v_viewchartJK_P'
         ];
 
         return view("layout/wrapper", $data);

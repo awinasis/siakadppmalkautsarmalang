@@ -126,7 +126,7 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         <div class="box box-primary box-solid">
             <div class="box-header with-border">
                 <h3 class="box-title">Data Santri PPM Al-kautsar</h3>
@@ -138,7 +138,7 @@
                         <div class="chart-responsive">
                             <table class="table table-striped">
                                 <div>
-                                    <canvas id="doughnut-chart-santri" height="180"></canvas>
+                                    <canvas id="doughnut-chart-santri" height="90"></canvas>
                                 </div>
                             </table>
                         </div>
@@ -149,8 +149,8 @@
             <!-- /.box-body -->
             <div class="box-footer no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="<?= base_url('admin/viewchartJK/') ?>">Laki-Laki <span class="pull-right text-blue"><i class="fa fa-info-circle fa-2x"></i></span></a></li>
-                    <li><a href="<?= base_url('') ?>">Perempuan <span class="pull-right text-blue"><i class="fa fa-info-circle fa-2x"></i></span></a></li>
+                    <li><a href="<?= base_url('admin/viewchartJK_L/') ?>">Laki-Laki <span class="pull-right text-blue"><i class="fa fa-info-circle fa-2x"></i></span></a></li>
+                    <li><a href="<?= base_url('admin/viewchartJK_P/') ?>">Perempuan <span class="pull-right text-blue"><i class="fa fa-info-circle fa-2x"></i></span></a></li>
                 </ul>
             </div>
         </div>
