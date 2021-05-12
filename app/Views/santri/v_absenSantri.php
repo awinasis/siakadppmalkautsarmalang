@@ -8,7 +8,7 @@
         <br><br>
         <ol class="breadcrumb">
             <li><a href="<?= base_url('santri') ?>"><i class="fa fa-home"></i> Home</a></li>
-            <li class="active">Data Pembayaran</li>
+            <li class="active">Absensi Santri</li>
         </ol>
     </section>
 
