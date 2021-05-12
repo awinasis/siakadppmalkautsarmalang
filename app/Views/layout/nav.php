@@ -81,7 +81,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Akademik <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?= base_url('santri/rps') ?>"><i class="fa fa-file-text"></i> Rencana Pembelajaran Semester (RPS)</a></li>
-                    <li><a href="<?= base_url('santri/jadwal_agenda') ?>"><i class="fa fa-calendar-check-o"></i> Jadwal Agenda PPM</a></li>
+                    <li><a href="<?= base_url('santri/nilai_santri') ?>"><i class="fa fa-folder-open"></i> Nilai Santri</a></li>
                     <li><a href="<?= base_url('santri/absen_kbm') ?>"><i class="fa  fa-pencil"></i> Absensi KBM</a></li>
                 </ul>
             </li>

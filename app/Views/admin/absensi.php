@@ -62,6 +62,7 @@
                                          <td class="text-center">
                                              <a href="<?= base_url('data_absensi/viewchart/' . $value['NIS']) ?>">
                                                  <i class="fa fa-pie-chart fa-4x"></i><br> Detail</a><br>
+                                         </td>
                                          <td class="text-center">
                                              <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['NIS'] ?>"><i class="fa fa-edit"></i></button>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['NIS'] ?>"><i class="fa fa-trash"></i></button>
