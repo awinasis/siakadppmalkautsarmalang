@@ -7,6 +7,7 @@ use App\Models\ModelPengumuman;
 use App\Models\ModelSantri;
 use App\Models\ModelPembayaran;
 use App\Models\ModelPesan;
+use App\Models\ModelSurat;
 
 class Santri extends BaseController
 {
@@ -20,6 +21,7 @@ class Santri extends BaseController
         $this->ModelSantri = new ModelSantri();
         $this->ModelPembayaran = new ModelPembayaran();
         $this->ModelPesan = new ModelPesan();
+        $this->ModelSurat = new ModelSurat();
     }
 
     public function index()
@@ -121,6 +123,16 @@ class Santri extends BaseController
             'nis' => $nis
         ];
 
+        return view("layout/wrapper", $data);
+    }
+
+    public function pengajuan_surat()
+    {
+        $data = [
+            'title' => 'Surat',
+            'surat' => $this->ModelSurat->allData(),
+            'isi'    => 'santri/v_pengajuanSurat',
+        ];
         return view("layout/wrapper", $data);
     }
 }
