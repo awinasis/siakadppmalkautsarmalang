@@ -18,8 +18,8 @@
          <div class="col-sm-12">
              <div class="box box-gray box-solid">
                  <div class="box-header with-border">
-                     <h3 class="box-title"><i class="fa  fa-table"></i></h3>&emsp;
-                     <a href="<?= base_url('data_nilai/index') ?>" class="right"><i class="fa fa-mail-reply"></i> Kembali</a>
+                     <h3 class="box-title"><i class="fa  fa-table"></i></h3>
+                     <a href="<?= base_url('data_nilai/index') ?>" class="left"><i class="fa fa-mail-reply"></i> Kembali</a>
                      <div class="box-body">
                          <div class="table-responsive">
                              <table id="example2" class="table table-bordered table-striped">
@@ -66,13 +66,19 @@
                                      </tr>
                                  </thead>
                                  <tbody>
-                                     <?php $no = 1;
-                                        foreach ($nilai as $key => $value) { ?>
+                                     <?php
+                                        $konek = mysqli_connect("localhost", "root", "", "db_siakad_ppmalkautsar");
+
+                                        $no = 1;
+                                        $jumlah = null;
+                                        $data = mysqli_query($konek, "SELECT * FROM tbl_santri");
+                                        while ($d = mysqli_fetch_array($data)) {
+                                        ?>
                                          <tr>
-                                             <td class="text-center"><?= $no++; ?></td>
-                                             <td class="text-center"><?= $value['NIS'] ?></td>
-                                             <td><?= $value['nama_santri'] ?></td>
-                                             <td><?= $value['jenis_kelamin'] ?></td>
+                                             <td class="text-center"><?php echo $no++; ?></td>
+                                             <td class="text-center"><?php echo $d['NIS']; ?></td>
+                                             <td><?php echo $d['nama_santri']; ?></td>
+                                             <td class="text-center"><?php echo $d['jenis_kelamin'] ?></td>
                                              <td><input name="nilai1" class="form-control" type="number" required>%</td>
                                              <td><input name="nilai2" class="form-control" type="number" required>%</td>
                                              <td><input name="nilai3" class="form-control" type="number" required>%</td>
@@ -110,7 +116,7 @@
                              </table>
                          </div>
                          <div class="modal-footer">
-                             <a href="<?= base_url('data_nilai/index') ?>" type="submit" class="btn btn-primary">Simpan</a>
+                             <a href="<?= base_url('data_nilai/addNilaiMateri') ?>" type="submit" class="btn btn-primary">Simpan</a>
                          </div>
                      </div>
                  </div>

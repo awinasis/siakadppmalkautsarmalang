@@ -166,7 +166,7 @@
                             <a href="<?= base_url('auth/changepassword') ?>" class="btn btn-default btn-flat">Ubah Password</a>
                         </div>
                         <div class="pull-right">
-                            <a href="<?= base_url('auth/logout') ?>" onclick="return confirm('Apakah anda yakin ingin keluar ');" class="btn btn-default btn-flat">Logout</a>
+                            <a href="<?= base_url('auth/logout') ?>" onclick="return confirm('Apakah anda yakin ingin keluar ?');" class="btn btn-default btn-flat">Logout</a>
                         </div>
                     </li>
                 </ul>

@@ -26,7 +26,6 @@
                  <!-- /.box-header -->
                  <div class="box-body">
                      <?php
-
                         $errors = session()->getFlashdata('errors');
                         if (!empty($errors)) { ?>
                          <div class="alert alert-danger" role="alert">
@@ -45,7 +44,6 @@
                             echo '</div>';
                         }
                         ?>
-
                      <div class="table-responsive">
                          <table id="example1" class="table table-bordered table-striped">
                              <thead>
@@ -64,10 +62,10 @@
                                     foreach ($user as $key => $value) { ?>
                                      <tr>
                                          <td class="text-center"><?= $no++; ?></td>
-                                         <td><?= $value['nama_user'] ?></td>
-                                         <td><?= $value['username'] ?></td>
-                                         <td><?= $value['password'] ?></td>
-                                         <td><?= $value['level'] ?></td>
+                                         <td><?= $value['nama_santri'] ?></td>
+                                         <td class="tex-center"><?= $value['username'] ?></td>
+                                         <td class="tex-center"><?= $value['password'] ?></td>
+                                         <td class="tex-center"><?= $value['level'] ?></td>
                                          <td class="text-center"><img src="<?= base_url('foto/' . $value['foto']) ?>" class="img-circle" width="50px" height="50px"></td>
                                          <td class="text-center">
                                              <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_user'] ?>"><i class="fa fa-edit"></i></button>
@@ -92,15 +90,15 @@
                  <div class="modal-header box-header with-border">
                      <h4 class="modal-title">Tambah User</h4>
                  </div>
-
                  <div class="modal-body">
+
                      <?php
                         echo form_open_multipart('data_user/add');
                         ?>
 
                      <div class="form-group">
                          <label>Nama Santri</label>
-                         <input name="nama_user" class="form-control" placeholder="nama user" required>
+                         <input name="nama_santri" class="form-control" placeholder="nama user" required>
                      </div>
 
                      <div class="form-group">
@@ -158,7 +156,7 @@
 
                          <div class="form-group">
                              <label>Nama Santri</label>
-                             <input name="nama_user" value="<?= $value['nama_user'] ?>" class="form-control" placeholder="nama user" required>
+                             <input name="nama_santri" value="<?= $value['nama_santri'] ?>" class="form-control" placeholder="nama user" required>
                          </div>
 
                          <div class="form-group">
@@ -217,7 +215,7 @@
                      </div>
 
                      <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b><?= $value['nama_user'] ?> ?</b>
+                         Apakah anda yakin ingin menghapus <b><?= $value['nama_santri'] ?> ?</b>
                      </div>
 
                      <div class="modal-footer">

@@ -128,7 +128,7 @@
                          <div class="form-group row">
                              <div class="col-lg-6">
                                  <label>NoTelp</label>
-                                 <input name="noTelp" type="number" class="form-control" placeholder="noTelp" required>
+                                 <input name="noTelp" type="number" class="form-control" placeholder="+62 " required>
                              </div>
                          </div>
 

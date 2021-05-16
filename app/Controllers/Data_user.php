@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ModelUserManagement;
+use App\Models\ModelSantri;
 
 class Data_user extends BaseController
 {
@@ -10,12 +11,14 @@ class Data_user extends BaseController
     {
         helper('form');
         $this->ModelUserManagement = new ModelUserManagement();
+        $this->ModelSantri = new ModelSantri();
     }
     public function index()
     {
         $data = [
             'title' => 'User',
             'user' => $this->ModelUserManagement->allData(),
+            'santri' => $this->ModelSantri->allData(),
             'isi'    => 'admin/user_management'
         ];
 
@@ -43,7 +46,7 @@ class Data_user extends BaseController
             $nama_file = $foto->getRandomName();
             //jika valid
             $data = array(
-                'Nama_User' => $this->request->getPost('nama_user'),
+                'nama_santri' => $this->request->getPost('nama_santri'),
                 'Username' => $this->request->getPost('username'),
                 'password' => $this->request->getPost('password'),
                 'level' => $this->request->getPost('level'),
@@ -81,7 +84,7 @@ class Data_user extends BaseController
                 # code...
                 $data = array(
                     'id_user' => $id_user,
-                    'Nama_User' => $this->request->getPost('nama_user'),
+                    'nama_santri' => $this->request->getPost('nama_santri'),
                     'Username' => $this->request->getPost('username'),
                     'password' => $this->request->getPost('password'),
                     'level' => $this->request->getPost('level'),
@@ -100,7 +103,7 @@ class Data_user extends BaseController
                 //jika valid
                 $data = array(
                     'id_user' => $id_user,
-                    'Nama_User' => $this->request->getPost('nama_user'),
+                    'nama_santri' => $this->request->getPost('nama_santri'),
                     'Username' => $this->request->getPost('username'),
                     'password' => $this->request->getPost('password'),
                     'level' => $this->request->getPost('level'),
@@ -116,18 +119,6 @@ class Data_user extends BaseController
             session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
             return redirect()->to(base_url('data_user'));
         }
-
-        // $data = [
-        //     'id_user' => $id_user,
-        //     'Nama_User' => $this->request->getPost('nama_user'),
-        //     'Username' => $this->request->getPost('username'),
-        //     'password' => $this->request->getPost('password'),
-        //     'level' => $this->request->getPost('level'),
-        //     'foto' => $this->request->getPost('foto'),
-        // ];
-        // $this->ModelUserManagement->editData($data);
-        // session()->setFlashdata('pesan', 'Data berhasil di update !!');
-        // return redirect()->to(base_url('data_user'));
     }
 
     public function delete($id_user)
