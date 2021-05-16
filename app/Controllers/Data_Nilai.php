@@ -37,9 +37,7 @@ class Data_Nilai extends BaseController
     public function addNilaiMateri()
     {
         $data = [
-            'NIS' => $this->request->getPost('NIS'),
-            'nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'id_santri' => $this->request->getPost('id_santri'),
             'Nilai1' => $this->request->getPost('nilai1'),
             'Nilai2' => $this->request->getPost('nilai2'),
             'Nilai3' => $this->request->getPost('nilai3'),
@@ -73,7 +71,6 @@ class Data_Nilai extends BaseController
             'Nilai31' => $this->request->getPost('nilai31'),
         ];
         $this->ModelNilai->addData($data);
-
         session()->setFlashdata('pesan', 'Nilai berhasil di tambahkan !!');
         return redirect()->to(base_url('data_nilai/index'));
     }

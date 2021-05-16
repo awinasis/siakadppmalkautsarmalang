@@ -18,7 +18,7 @@
              <div class="box box-gray box-solid">
                  <div class="box-header with-border">
                      <h3 class="box-title"><i class="fa  fa-table"></i></h3>&emsp;
-                     <a href="<?= base_url('data_nilai/konsepPraktikum') ?>" class="right"><i class="fa fa-mail-reply"></i> Kembali</a>
+                     <a href="<?= base_url('data_nilai/konsepPraktikum') ?>" class="left"><i class="fa fa-mail-reply"></i> Kembali</a>
                      <div class="box-body">
                          <div class="table-responsive">
                              <table class="table table-bordered table-striped with-check">
