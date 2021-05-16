@@ -83,6 +83,7 @@
                     <li><a href="<?= base_url('santri/rps') ?>"><i class="fa fa-file-text"></i> Rencana Pembelajaran Semester (RPS)</a></li>
                     <li><a href="<?= base_url('santri/nilai_santri') ?>"><i class="fa fa-folder-open"></i> Nilai Santri</a></li>
                     <li><a href="<?= base_url('santri/absen_kbm') ?>"><i class="fa  fa-pencil"></i> Absensi KBM</a></li>
+                    <li><a href="<?= base_url('santri/pengajuan_surat') ?>"><i class="fa  fa-pencil"></i> Pengajuan Surat</a></li>
                 </ul>
             </li>
 

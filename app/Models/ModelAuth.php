@@ -12,5 +12,17 @@ class ModelAuth extends Model
             'username' => $username,
             'password' => $password
         ])->get()->getRowArray();
+        // $data_session = array(
+        //     'username' => $username,
+        //     'id_user'=> $cek1->id_user,
+        // );
+        // $this->session->set_userdata($data_session);
     }
+
+    // public function bio_santri($id){ 
+    //     $this->db->select('*');
+    //      $this->db->from('tbl_user');
+    //     $this->db->where('id_user', $id);
+    //     return $this->db->get()->row();
+    //     }  
 }
