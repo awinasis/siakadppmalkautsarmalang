@@ -156,7 +156,7 @@
 
                          <div class="form-group">
                              <label>Nama User</label>
-                             <input name="nama_user" value="<?= $value['nama_user'] ?>" class="form-control" placeholder="nama user" required>
+                             <input name="nama_user" value="<?= $value['nama_user'] ?>" class="form-control" placeholder="nama user" required>     
                          </div>
 
                          <div class="form-group">

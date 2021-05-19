@@ -63,7 +63,7 @@ class Auth extends BaseController
                 //jika data benar
                 session()->set('log', true);
                 session()->set('username', $cek_user['username']);
-                session()->set('nama', $cek_user['nama_user']);
+                session()->set('nama', $cek_user['nama_santri']);
                 session()->set('foto', $cek_user['foto']);
                 session()->set('level', $cek_user['level']);
                 //login

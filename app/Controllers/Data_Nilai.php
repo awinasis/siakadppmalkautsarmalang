@@ -40,6 +40,7 @@ class Data_Nilai extends BaseController
             'NIS' => $this->request->getPost('NIS'),
             'Nama_santri' => $this->request->getPost('nama_santri'),
             'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'id_santri' => $this->request->getPost('id_santri'),
             'Nilai1' => $this->request->getPost('nilai1'),
             'Nilai2' => $this->request->getPost('nilai2'),
             'Nilai3' => $this->request->getPost('nilai3'),
