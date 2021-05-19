@@ -21,13 +21,6 @@
                      <h3 class="box-title"><i class="fa  fa-table"></i></h3>&emsp;
                      <a href="<?= base_url('data_nilai/index') ?>" class="left"><i class="fa fa-mail-reply"></i> Kembali</a>
                      <div class="box-body">
-                         <?php
-                            if (session()->getFlashdata('pesan')) {
-                                echo '<div class="alert alert-success" role="alert">';
-                                echo session()->getFlashdata('pesan');
-                                echo '</div>';
-                            }
-                            ?>
                          <div class="table-responsive">
                              <table id="example2" class="table table-bordered table-striped">
                                  <thead>
