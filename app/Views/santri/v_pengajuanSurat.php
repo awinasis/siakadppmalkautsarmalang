@@ -29,13 +29,12 @@
                             <tbody>
                                 <?php foreach ($surat as $key => $value) { ?>
                                     <tr>
-                                    <td><?= $value['nama_surat'] ?></td>
+                                        <td><?= $value['nama_surat'] ?></td>
                                         <td class="text-center">
-                                             <a href="<?= base_url('file_surat/viewpdf/' . $value['id_surat']) ?>">
-                                                 <i class="fa fa-file-pdf-o fa-4x label-danger"></i></a><br>
-                                             <?= number_format($value['ukuran_file']); ?> Byte
-                                         </td>
-                                         <td class="text-center"><?= $value['periode_pembayaran'] ?></td>
+                                            <a href="<?= base_url('file_surat/viewpdf/' . $value['id_surat']) ?>">
+                                                <i class="fa fa-file-pdf-o fa-4x label-danger"></i></a><br>
+                                            <?= number_format($value['ukuran_file']); ?> Byte
+                                        </td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

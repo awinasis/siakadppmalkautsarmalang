@@ -170,12 +170,10 @@
                              </div>
                          </div>
 
-                         <div class="form-group row">
-                             <div class="col-lg-12">
-                                 <label>Ganti File</label>
-                                 <input name="file" type="file" value="<?= $value['file'] ?>" class="form-control">
-                                 <label class="text-danger"><i class="fa fa-file-pdf-o fa label-danger"></i> File harus format .PDF</label>
-                             </div>
+                         <div class="form-group">
+                             <label>Ganti File</label>
+                             <input name="file" type="file" class="form-control"><br><i class="fa fa-file-pdf-o fa-4x label-danger"></i>
+                             <?= $value['nama_surat']; ?>
                          </div>
                      </div>
 

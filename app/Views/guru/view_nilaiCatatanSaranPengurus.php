@@ -22,13 +22,13 @@
                  <br>
                  <div class="box-body">
                      <div class="table-responsive">
-                         <table class="table table-bordered table-striped with-check">
+                         <table id="example2" class="table table-bordered table-striped with-check">
                              <thead>
                                  <tr>
-                                     <th rowspan='2'>No.</th>
-                                     <th rowspan='2'>NIS</th>
-                                     <th rowspan='2'>Nama</th>
-                                     <th rowspan='2'>L/P</th>
+                                     <th rowspan='2' class="text-center">No.</th>
+                                     <th rowspan='2' class="text-center">NIS</th>
+                                     <th rowspan='2' class="text-center">Nama</th>
+                                     <th rowspan='2' class="text-center">L/P</th>
                                      <th class="text-center">Catatan & Saran Pengurus</th>
                                      <th rowspan="2" class="text-center">Action</th>
                                  </tr>
@@ -43,11 +43,11 @@
                                          <td class="text-center"><?= $no++; ?></td>
                                          <td class="text-center"><?= $value['NIS'] ?></td>
                                          <td><?= $value['nama_santri'] ?></td>
-                                         <td><?= $value['jenis_kelamin'] ?></td>
+                                         <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
                                          <td><?= $value['catatan_saran'] ?></td>
                                          <td class="text-center">
-                                             <button class="btn btn-warning btn-sm" <?= $value['id_cs'] ?>><i class="fa fa-edit"> Edit</i></button>
-                                             <button class="btn btn-danger btn-sm" <?= $value['id_cs'] ?>><i class="fa fa-trash"> Delete</i></button>
+                                             <button class="btn btn-warning btn-sm" <?= $value['id_cs'] ?>><i class="fa fa-edit"></i></button>
+                                             <button class="btn btn-danger btn-sm" <?= $value['id_cs'] ?>><i class="fa fa-trash"></i></button>
                                          </td>
                                      </tr>
                                  <?php } ?>

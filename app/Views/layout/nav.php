@@ -83,7 +83,7 @@
                     <li><a href="<?= base_url('santri/rps') ?>"><i class="fa fa-file-text"></i> Rencana Pembelajaran Semester (RPS)</a></li>
                     <li><a href="<?= base_url('santri/nilai_santri') ?>"><i class="fa fa-folder-open"></i> Nilai Santri</a></li>
                     <li><a href="<?= base_url('santri/absen_kbm') ?>"><i class="fa  fa-pencil"></i> Absensi KBM</a></li>
-                    <li><a href="<?= base_url('santri/pengajuan_surat') ?>"><i class="fa  fa-pencil"></i> Pengajuan Surat</a></li>
+                    <li><a href="<?= base_url('santri/pengajuan_surat') ?>"><i class="fa fa-envelope"></i> Pengajuan Surat</a></li>
                 </ul>
             </li>
 
@@ -102,7 +102,7 @@
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-envelope-o"></i>
+                        <i class="fa fa-envelope-open"></i>
                         <!-- <span class="label label-success"><i class="fa fa-circle text-white"></i></span> -->
                     </a>
                     <ul class="dropdown-menu">

@@ -19,19 +19,20 @@
                      <!-- <div class="box-tools pull-left"> -->
                      <a href="<?= base_url('data_nilai/tambahNilaiEkstrakurikuler/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
                  </div>
+                 <br>
                  <div class="box-body">
                      <div class="table-responsive">
-                         <table class="table table-bordered table-striped with-check">
+                         <table id="example2" class="table table-bordered table-striped">
                              <thead>
                                  <tr>
-                                     <th rowspan='2'>No.</th>
-                                     <th rowspan='2'>NIS</th>
-                                     <th rowspan='2'>Nama</th>
-                                     <th rowspan='2'>L/P</th>
-                                     <th rowspan='2'>Pencak Silat</th>
-                                     <th rowspan='2'>Sepakbola/Futsal</th>
-                                     <th rowspan='2'>Senam Pagi</th>
-                                     <th rowspan="2">Action</th>
+                                     <th class="text-center">No.</th>
+                                     <th class="text-center">NIS</th>
+                                     <th class="text-center">Nama</th>
+                                     <th class="text-center">L/P</th>
+                                     <th class="text-center">Pencak Silat</th>
+                                     <th class="text-center">Sepakbola/Futsal</th>
+                                     <th class="text-center">Senam Pagi</th>
+                                     <th class="text-center">Action</th>
                                  </tr>
                              </thead>
                              <tbody>
@@ -41,14 +42,14 @@
                                          <td class="text-center"><?= $no++; ?></td>
                                          <td class="text-center"><?= $value['NIS'] ?></td>
                                          <td><?= $value['nama_santri'] ?></td>
-                                         <td><?= $value['jenis_kelamin'] ?></td>
-                                         <td><?= $value['nilai_1'] ?></td>
-                                         <td><?= $value['nilai_2'] ?></td>
-                                         <td><?= $value['nilai_3'] ?></td>
+                                         <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
+                                         <td class="text-center"><?= $value['nilai_1'] ?></td>
+                                         <td class="text-center"><?= $value['nilai_2'] ?></td>
+                                         <td class="text-center"><?= $value['nilai_3'] ?></td>
 
                                          <td class="text-center">
-                                             <button class="btn btn-warning btn-sm" <?= $value['id_ne'] ?>><i class="fa fa-edit"> Edit</i></button>
-                                             <button class="btn btn-danger btn-sm" <?= $value['id_ne'] ?>><i class="fa fa-trash"> Delete</i></button>
+                                             <button class="btn btn-warning btn-sm" <?= $value['id_ne'] ?>><i class="fa fa-edit"></i></button>
+                                             <button class="btn btn-danger btn-sm" <?= $value['id_ne'] ?>><i class="fa fa-trash"></i></button>
                                          </td>
                                      </tr>
                                  <?php } ?>
@@ -59,5 +60,4 @@
              </div>
          </div>
      </div>
- </div>
  </div>

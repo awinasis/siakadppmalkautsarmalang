@@ -26,12 +26,12 @@ class Data_Pembayaran extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_Santri' => $this->request->getPost('nama_santri'),
+            'Nama_santri' => $this->request->getPost('nama_santri'),
             'Periode_pembayaran' => $this->request->getPost('periode_pembayaran'),
             'Keterangan' => $this->request->getPost('keterangan'),
             'Tagihan' => $this->request->getPost('tagihan'),
             'Terbayar' => $this->request->getPost('terbayar'),
-            'Status' => $this->request->getPost('status'),
+            'Status_pembayaran' => $this->request->getPost('status_pembayaran'),
         ];
         $this->ModelPembayaran->addData($data);
 
@@ -44,12 +44,12 @@ class Data_Pembayaran extends BaseController
         $data = [
             'id_pembayaran' => $id_pembayaran,
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_Santri' => $this->request->getPost('nama_santri'),
+            'Nama_santri' => $this->request->getPost('nama_santri'),
             'Periode_pembayaran' => $this->request->getPost('periode_pembayaran'),
             'Keterangan' => $this->request->getPost('keterangan'),
             'Tagihan' => $this->request->getPost('tagihan'),
             'Terbayar' => $this->request->getPost('terbayar'),
-            'Status' => $this->request->getPost('status'),
+            'Status_pembayaran' => $this->request->getPost('status_pembayaran'),
         ];
         $this->ModelPembayaran->editData($data);
         session()->setFlashdata('pesan', 'Data berhasil di update !!');

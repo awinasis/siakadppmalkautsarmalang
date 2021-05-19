@@ -40,7 +40,7 @@
                                         <td><?= $value['keterangan'] ?></td>
                                         <td class="text-center"><?= $value['tagihan'] ?></td>
                                         <td class="text-center"><?= $value['terbayar'] ?></td>
-                                        <td><?= $value['status'] ?></td>
+                                        <td><?= $value['status_pembayaran'] ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

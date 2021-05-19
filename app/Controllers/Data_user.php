@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\ModelUserManagement;
-use App\Models\ModelSantri;
 
 class Data_user extends BaseController
 {
@@ -11,14 +10,12 @@ class Data_user extends BaseController
     {
         helper('form');
         $this->ModelUserManagement = new ModelUserManagement();
-        $this->ModelSantri = new ModelSantri();
     }
     public function index()
     {
         $data = [
             'title' => 'User',
             'user' => $this->ModelUserManagement->allData(),
-            'santri' => $this->ModelSantri->allData(),
             'isi'    => 'admin/user_management'
         ];
 
@@ -46,7 +43,7 @@ class Data_user extends BaseController
             $nama_file = $foto->getRandomName();
             //jika valid
             $data = array(
-                'nama_santri' => $this->request->getPost('nama_santri'),
+                'nama_user' => $this->request->getPost('nama_user'),
                 'Username' => $this->request->getPost('username'),
                 'password' => $this->request->getPost('password'),
                 'level' => $this->request->getPost('level'),
@@ -84,7 +81,7 @@ class Data_user extends BaseController
                 # code...
                 $data = array(
                     'id_user' => $id_user,
-                    'nama_santri' => $this->request->getPost('nama_santri'),
+                    'nama_user' => $this->request->getPost('nama_user'),
                     'Username' => $this->request->getPost('username'),
                     'password' => $this->request->getPost('password'),
                     'level' => $this->request->getPost('level'),
@@ -103,7 +100,7 @@ class Data_user extends BaseController
                 //jika valid
                 $data = array(
                     'id_user' => $id_user,
-                    'nama_santri' => $this->request->getPost('nama_santri'),
+                    'nama_user' => $this->request->getPost('nama_user'),
                     'Username' => $this->request->getPost('username'),
                     'password' => $this->request->getPost('password'),
                     'level' => $this->request->getPost('level'),
