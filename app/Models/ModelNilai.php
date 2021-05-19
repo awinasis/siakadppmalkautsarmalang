@@ -26,6 +26,13 @@ class ModelNilai extends Model
             ->update($data);
     }
 
+    public function deleteData($data)
+    {
+        $this->db->table('tbl_nilaimateri')
+            ->where('id_nm', $data['id_nm'])
+            ->delete($data);
+    }
+
     //------------------------------------------------ 2 --------------------------------------------------// 
 
     public function allData1()
@@ -39,6 +46,13 @@ class ModelNilai extends Model
     public function addData1($data)
     {
         $this->db->table('tbl_nilaikonseppraktikum')->insert($data);
+    }
+
+    public function deleteData1($data)
+    {
+        $this->db->table('tbl_nilaikonseppraktikum')
+            ->where('id_kp', $data['id_kp'])
+            ->delete($data);
     }
 
     //------------------------------------------------ 3 --------------------------------------------------// 
@@ -56,6 +70,13 @@ class ModelNilai extends Model
         $this->db->table('tbl_nilaisikapperilaku')->insert($data);
     }
 
+    public function deleteData2($data)
+    {
+        $this->db->table('tbl_nilaisikapperilaku')
+            ->where('id_sp', $data['id_sp'])
+            ->delete($data);
+    }
+
     //------------------------------------------------ 4 --------------------------------------------------// 
 
     public function allData3()
@@ -71,6 +92,13 @@ class ModelNilai extends Model
         $this->db->table('tbl_nilailimasuksessantri')->insert($data);
     }
 
+    public function deleteData3($data)
+    {
+        $this->db->table('tbl_nilailimasuksessantri')
+            ->where('id_lss', $data['id_lss'])
+            ->delete($data);
+    }
+
     //------------------------------------------------ 5 --------------------------------------------------// 
 
     public function allData4()
@@ -84,6 +112,13 @@ class ModelNilai extends Model
     public function addData4($data)
     {
         $this->db->table('tbl_nilaiekstrakurikuler')->insert($data);
+    }
+
+    public function deleteData4($data)
+    {
+        $this->db->table('tbl_nilaiekstrakurikuler')
+            ->where('id_ne', $data['id_ne'])
+            ->delete($data);
     }
 
     //------------------------------------------------ 6 --------------------------------------------------// 
@@ -110,6 +145,13 @@ class ModelNilai extends Model
         $this->db->table('tbl_nilaiindeksprestasi')->insert($data);
     }
 
+    public function deleteData6($data)
+    {
+        $this->db->table('tbl_nilaiindeksprestasi')
+            ->where('id_ip', $data['id_ip'])
+            ->delete($data);
+    }
+
     //------------------------------------------------ 8 --------------------------------------------------// 
 
     public function allData7()
@@ -123,6 +165,13 @@ class ModelNilai extends Model
     public function addData7($data)
     {
         $this->db->table('tbl_catatanSaranPengurus')->insert($data);
+    }
+
+    public function deleteData7($data)
+    {
+        $this->db->table('tbl_catatanSaranPengurus')
+            ->where('id_cs', $data['id_cs'])
+            ->delete($data);
     }
 
     //------------------------------------------------ 9 --------------------------------------------------// 
