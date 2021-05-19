@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2021 at 05:10 PM
+-- Generation Time: May 19, 2021 at 06:36 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -40,7 +40,7 @@ CREATE TABLE `tbl_catatansaranpengurus` (
 --
 
 INSERT INTO `tbl_catatansaranpengurus` (`id_cs`, `NIS`, `nama_santri`, `jenis_kelamin`, `catatan_saran`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'L', '1. Ditingkatkan lagi komunikasinya dalam bersosial (jangan sungkan)\r\n2. Lebih menjaga lagi dalam kesehatan pribadi\r\n3. Terus disemangati dalam mengejar ketercapaian materi mondok dan kuliahnya');
+(2, 201903002, 'Abdullah Winasis', 'L', '1. Ditingkatkan lagi komunikasinya dalam bersosial (jangan sungkan) 2. \r\n Lebih menjaga lagi dalam kesehatan pribadi 3. Terus disemangati dalam mengejar ketercapaian materi mondok dan kuliahnya');
 
 -- --------------------------------------------------------
 
@@ -228,7 +228,7 @@ INSERT INTO `tbl_materi` (`id_materi`, `nama_materi`, `kelas`) VALUES
 (68, 'Shahih Bukhari juz 8', 'Hadits Besar'),
 (69, 'Musthalah Hadits', 'Hadits Besar'),
 (70, 'Syarah al-Asma\' al-Husna', 'Hadits Besar'),
-(71, 'Syarah Do\'a ASAD', ''),
+(71, 'Syarah Do\'a ASAD', 'Hadits Besar'),
 (72, 'Hafalan Dalil-dali Lima Bab', 'Hadits Besar'),
 (73, 'Hafalan Dalil-dalil Empat Tali Iman', 'Hadits Besar'),
 (74, 'Hafalan Dalil-dalil Enam Thobi\'at Luhur', 'Hadits Besar'),
@@ -254,7 +254,7 @@ CREATE TABLE `tbl_nilaiekstrakurikuler` (
   `id_ne` int(3) NOT NULL,
   `NIS` int(12) NOT NULL,
   `nama_santri` varchar(30) NOT NULL,
-  `jenis_kelamin` enum('L','P') NOT NULL,
+  `jenis_kelamin` enum('L','P') DEFAULT NULL,
   `nilai_1` enum('A','B+','B','B-','C+','C','C-','D','E') NOT NULL,
   `nilai_2` enum('A','B+','B','B-','C+','C','C-','D','E') DEFAULT NULL,
   `nilai_3` enum('A','B+','B','B-','C+','C','C-','D','E') DEFAULT NULL
@@ -265,7 +265,7 @@ CREATE TABLE `tbl_nilaiekstrakurikuler` (
 --
 
 INSERT INTO `tbl_nilaiekstrakurikuler` (`id_ne`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai_1`, `nilai_2`, `nilai_3`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B', 'B');
+(2, 201903011, 'Anggun Milenia Rahman', 'P', 'B', 'B', 'B');
 
 -- --------------------------------------------------------
 
@@ -276,7 +276,7 @@ INSERT INTO `tbl_nilaiekstrakurikuler` (`id_ne`, `NIS`, `nama_santri`, `jenis_ke
 CREATE TABLE `tbl_nilaiindeksprestasi` (
   `id_ip` int(3) NOT NULL,
   `NIS` int(12) NOT NULL,
-  `nama_santri` varchar(30) NOT NULL,
+  `nama_santri` varchar(30) DEFAULT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
   `nilai_IP1` varchar(5) NOT NULL,
   `nilai_IP2` varchar(5) NOT NULL,
@@ -294,7 +294,7 @@ CREATE TABLE `tbl_nilaiindeksprestasi` (
 --
 
 INSERT INTO `tbl_nilaiindeksprestasi` (`id_ip`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai_IP1`, `nilai_IP2`, `nilai_IP3`, `nilai_IP4`, `nilai_IP5`, `nilai_IP6`, `nilai_IP7`, `nilai_IP8`, `nilai_IP9`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'L', '3,95', '3,90', '3,85', '3,80', '3,75', '3,70', '3,65', '3,60', '3,55');
+(2, 201903002, 'Abdullah Winasis', 'L', '3,95', '3,90', '3,85', '3,80', '3,75', '3,70', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -338,7 +338,8 @@ CREATE TABLE `tbl_nilaikonseppraktikum` (
 --
 
 INSERT INTO `tbl_nilaikonseppraktikum` (`id_kp`, `NIS`, `nama_santri`, `jenis_kelamin`, `n1`, `n2`, `n3`, `n4`, `n5`, `n6`, `n7`, `n8`, `n9`, `n10`, `n11`, `n12`, `n13`, `n14`, `n15`, `n16`, `n17`, `n18`, `n19`, `n20`, `n21`, `n22`, `n23`, `n24`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'L', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80);
+(2, 201903002, 'Abdullah Winasis', 'L', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80),
+(3, 201903001, 'Abdillah Yudhatama', 'L', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80);
 
 -- --------------------------------------------------------
 
@@ -350,7 +351,7 @@ CREATE TABLE `tbl_nilailimasuksessantri` (
   `id_lss` int(3) NOT NULL,
   `NIS` int(12) NOT NULL,
   `nama_santri` varchar(30) NOT NULL,
-  `jenis_kelamin` enum('L','P') NOT NULL,
+  `jenis_kelamin` enum('L','P') DEFAULT NULL,
   `nilai_A` enum('A','B+','B','B-','C+','C','C-','D','E') NOT NULL,
   `nilai_B` enum('A','B+','B','B-','C+','C','C-','D','E') NOT NULL,
   `nilai_C` enum('A','B+','B','B-','C+','C','C-','D','E') NOT NULL,
@@ -363,7 +364,7 @@ CREATE TABLE `tbl_nilailimasuksessantri` (
 --
 
 INSERT INTO `tbl_nilailimasuksessantri` (`id_lss`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai_A`, `nilai_B`, `nilai_C`, `nilai_D`, `nilai_E`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B+', 'B', 'B-', 'B');
+(2, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B+', 'B+', 'B+', 'B+');
 
 -- --------------------------------------------------------
 
@@ -375,46 +376,48 @@ CREATE TABLE `tbl_nilaimateri` (
   `id_nm` int(3) NOT NULL,
   `NIS` int(12) DEFAULT NULL,
   `nama_santri` varchar(30) DEFAULT NULL,
-  `jenis_kelamin` enum('L','P') DEFAULT NULL,
-  `nilai1` int(11) NOT NULL,
-  `nilai2` int(11) NOT NULL,
-  `nilai3` int(11) NOT NULL,
-  `nilai4` int(11) NOT NULL,
-  `nilai5` int(11) NOT NULL,
-  `nilai6` int(11) NOT NULL,
-  `nilai7` int(11) NOT NULL,
-  `nilai8` int(11) NOT NULL,
-  `nilai9` int(11) NOT NULL,
-  `nilai10` int(11) NOT NULL,
-  `nilai11` int(11) NOT NULL,
-  `nilai12` int(11) NOT NULL,
-  `nilai13` int(11) NOT NULL,
-  `nilai14` int(11) NOT NULL,
-  `nilai15` int(11) NOT NULL,
-  `nilai16` int(11) NOT NULL,
-  `nilai17` int(11) NOT NULL,
-  `nilai18` int(11) NOT NULL,
-  `nilai19` int(11) NOT NULL,
-  `nilai20` int(11) NOT NULL,
-  `nilai21` int(11) NOT NULL,
-  `nilai22` int(11) NOT NULL,
-  `nilai23` int(11) NOT NULL,
-  `nilai24` int(11) NOT NULL,
-  `nilai25` int(11) NOT NULL,
-  `nilai26` int(11) NOT NULL,
-  `nilai27` int(11) NOT NULL,
-  `nilai28` int(11) NOT NULL,
-  `nilai29` int(11) NOT NULL,
-  `nilai30` int(11) NOT NULL,
-  `nilai31` int(11) NOT NULL
+  `Jenis_Kelamin` enum('L','P') DEFAULT NULL,
+  `nilai1` int(11) DEFAULT NULL,
+  `nilai2` int(11) DEFAULT NULL,
+  `nilai3` int(11) DEFAULT NULL,
+  `nilai4` int(11) DEFAULT NULL,
+  `nilai5` int(11) DEFAULT NULL,
+  `nilai6` int(11) DEFAULT NULL,
+  `nilai7` int(11) DEFAULT NULL,
+  `nilai8` int(11) DEFAULT NULL,
+  `nilai9` int(11) DEFAULT NULL,
+  `nilai10` int(11) DEFAULT NULL,
+  `nilai11` int(11) DEFAULT NULL,
+  `nilai12` int(11) DEFAULT NULL,
+  `nilai13` int(11) DEFAULT NULL,
+  `nilai14` int(11) DEFAULT NULL,
+  `nilai15` int(11) DEFAULT NULL,
+  `nilai16` int(11) DEFAULT NULL,
+  `nilai17` int(11) DEFAULT NULL,
+  `nilai18` int(11) DEFAULT NULL,
+  `nilai19` int(11) DEFAULT NULL,
+  `nilai20` int(11) DEFAULT NULL,
+  `nilai21` int(11) DEFAULT NULL,
+  `nilai22` int(11) DEFAULT NULL,
+  `nilai23` int(11) DEFAULT NULL,
+  `nilai24` int(11) DEFAULT NULL,
+  `nilai25` int(11) DEFAULT NULL,
+  `nilai26` int(11) DEFAULT NULL,
+  `nilai27` int(11) DEFAULT NULL,
+  `nilai28` int(11) DEFAULT NULL,
+  `nilai29` int(11) DEFAULT NULL,
+  `nilai30` int(11) DEFAULT NULL,
+  `nilai31` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_nilaimateri`
 --
 
-INSERT INTO `tbl_nilaimateri` (`id_nm`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai1`, `nilai2`, `nilai3`, `nilai4`, `nilai5`, `nilai6`, `nilai7`, `nilai8`, `nilai9`, `nilai10`, `nilai11`, `nilai12`, `nilai13`, `nilai14`, `nilai15`, `nilai16`, `nilai17`, `nilai18`, `nilai19`, `nilai20`, `nilai21`, `nilai22`, `nilai23`, `nilai24`, `nilai25`, `nilai26`, `nilai27`, `nilai28`, `nilai29`, `nilai30`, `nilai31`) VALUES
-(16, 201903002, 'Abdullah Winasis', 'L', 87, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8);
+INSERT INTO `tbl_nilaimateri` (`id_nm`, `NIS`, `nama_santri`, `Jenis_Kelamin`, `nilai1`, `nilai2`, `nilai3`, `nilai4`, `nilai5`, `nilai6`, `nilai7`, `nilai8`, `nilai9`, `nilai10`, `nilai11`, `nilai12`, `nilai13`, `nilai14`, `nilai15`, `nilai16`, `nilai17`, `nilai18`, `nilai19`, `nilai20`, `nilai21`, `nilai22`, `nilai23`, `nilai24`, `nilai25`, `nilai26`, `nilai27`, `nilai28`, `nilai29`, `nilai30`, `nilai31`) VALUES
+(1, 201903002, 'Abdullah Winasis', 'L', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80),
+(2, 201903001, 'Abdillah Yudhatama', 'L', 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85),
+(3, 201903006, 'Alfeina Zakkya Meriatami', 'P', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80);
 
 -- --------------------------------------------------------
 
@@ -426,7 +429,7 @@ CREATE TABLE `tbl_nilaisikapperilaku` (
   `id_sp` int(3) NOT NULL,
   `NIS` int(12) NOT NULL,
   `nama_santri` varchar(30) NOT NULL,
-  `jenis_kelamin` enum('L','P') NOT NULL,
+  `Jenis_Kelamin` enum('L','P') DEFAULT NULL,
   `nl1` enum('A','B+','B','B-','C+','C','C-','D','E','') NOT NULL,
   `nl2` enum('A','B+','B','B-','C+','C','C-','D','E','') NOT NULL,
   `nl3` enum('A','B+','B','B-','C+','C','C-','D','E','') NOT NULL,
@@ -442,8 +445,8 @@ CREATE TABLE `tbl_nilaisikapperilaku` (
 -- Dumping data for table `tbl_nilaisikapperilaku`
 --
 
-INSERT INTO `tbl_nilaisikapperilaku` (`id_sp`, `NIS`, `nama_santri`, `jenis_kelamin`, `nl1`, `nl2`, `nl3`, `nl4`, `nl5`, `nl6`, `nl7`, `nl8`, `nl9`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B');
+INSERT INTO `tbl_nilaisikapperilaku` (`id_sp`, `NIS`, `nama_santri`, `Jenis_Kelamin`, `nl1`, `nl2`, `nl3`, `nl4`, `nl5`, `nl6`, `nl7`, `nl8`, `nl9`) VALUES
+(3, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B', 'B', 'A', 'B', 'B', 'B+', 'B+', 'B+');
 
 -- --------------------------------------------------------
 
@@ -453,23 +456,26 @@ INSERT INTO `tbl_nilaisikapperilaku` (`id_sp`, `NIS`, `nama_santri`, `jenis_kela
 
 CREATE TABLE `tbl_pembayaran` (
   `id_pembayaran` int(3) NOT NULL,
-  `NIS` varchar(15) NOT NULL,
-  `nama_santri` varchar(30) NOT NULL,
-  `periode_pembayaran` year(4) NOT NULL,
-  `keterangan` varchar(30) NOT NULL,
-  `tagihan` varchar(25) NOT NULL,
-  `terbayar` varchar(25) NOT NULL,
-  `status` enum('LUNAS','BELUM LUNAS') NOT NULL
+  `NIS` varchar(12) DEFAULT NULL,
+  `nama_santri` varchar(30) DEFAULT NULL,
+  `periode_pembayaran` year(4) DEFAULT NULL,
+  `keterangan` varchar(30) DEFAULT NULL,
+  `tagihan` varchar(25) DEFAULT NULL,
+  `terbayar` varchar(25) DEFAULT NULL,
+  `status_pembayaran` enum('LUNAS','BELUM LUNAS') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_pembayaran`
 --
 
-INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `NIS`, `nama_santri`, `periode_pembayaran`, `keterangan`, `tagihan`, `terbayar`, `status`) VALUES
+INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `NIS`, `nama_santri`, `periode_pembayaran`, `keterangan`, `tagihan`, `terbayar`, `status_pembayaran`) VALUES
 (1, '201903002', 'Abdullah Winasis', 2021, 'Pembayaran Uang KBM', '2.640.000', '2.6.40.000', 'LUNAS'),
-(2, '201903003', 'Mohammad Andy Herdiansyah', 2021, 'Pembayaran Uang PPM', '2.640.000', '0', 'BELUM LUNAS'),
-(4, '201803018', 'Rena Miftakhul Zulfa', 2021, 'Pembayaran Uang KBM PPM', '1.200.000', '1.000.000', 'BELUM LUNAS');
+(2, '201903001', 'Abdillah Yudhatama', 2021, 'Pembayaran Uang PPM', '2.640.000', '0', 'BELUM LUNAS'),
+(4, '201803018', 'Rena Miftakhul Zulfa', 2021, 'Pembayaran Uang KBM PPM', '1.200.000', '1.000.000', 'BELUM LUNAS'),
+(5, '201903011', 'Anggun Milenia Rahman', 2021, 'Pembayaran Uang KBM', '2.640.000', '2.640.000', 'LUNAS'),
+(7, '201903006', 'Alfeina Zakkya Meriatami', 2021, 'Pembayaran Uang KBM', '2.640.000', '2.640.000', 'LUNAS'),
+(15, '201903003', 'Achmad Koirudin Abdullah', 2021, 'Pembayaran Uang KBM', '2.640.000', '1.000.000', 'BELUM LUNAS');
 
 -- --------------------------------------------------------
 
@@ -568,10 +574,11 @@ CREATE TABLE `tbl_santri` (
 
 INSERT INTO `tbl_santri` (`id_santri`, `NIS`, `nama_santri`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `gol_darah`, `alamat`, `email`, `noTelp`, `status`, `universitas`, `fakultas`, `jurusan_prodi`, `kelas_santri`, `angkatan_santri`, `nama_ayah`, `noTelp_ayah`, `nama_ibu`, `noTelp_ibu`) VALUES
 (1, 201903002, 'Abdullah Winasis', 'Kediri', '1999-10-22', 'L', '', 'Jl Supriyadi, Rt/Rw 004/007 Dsn Papar Selatan, Ds Papar, Kab Kediri, Jawa Timur', 'awinasism2p@gmail.com', '2147483647', 'Mahasiswa', 'Politeknik Negeri Malang', '-', 'Teknologi Informasi/Manajemen Informatika', 'Al-Sarii', 2018, 'Maskun Bukhori', '2147483647', '', ''),
-(10, 201903001, 'Abdillah Yudhatama', 'Malang', '2000-02-02', 'L', '', 'Jl. Anjasmoro No.35 RT.11 RW.03 Bendo Karang, Pandan Pakisaji, Kabupaten Malang Jawa Timur', 'abdillahyudhatama@gmail.com', '1234567890', 'Mahasiswa', 'Brawijaya', 'Pertanian', 'Agroekoteknologi', 'Al-Sarii', 2019, 'X', '0', '', ''),
-(11, 201903003, 'Achmad Koirudin Abdullah', 'Sragen', '2001-07-02', 'L', '', 'Pungkruk, Doyong RT01/000, Miri, Sragen, Jawa Tengah', 'achmadkhoirudinabdullah@gmail.com', '1234567890', 'Mahasiswa', 'Negeri Malang', 'Teknik', 'Pendidikan Teknik Elektro', 'Al-Sarii', 2019, '-', '0', '', ''),
-(17, 201803018, 'Rena Miftakhul Zulfa', 'Kediri', '1999-04-20', 'P', 'O', 'Dsn. Ngletih Barat Rt. 03 Ds. Ngletih Kec. Kandat Kab. Kediri ', 'renamiftaqulzulfa@gmail.com', '6281234567890', 'Mahasiswa', 'STIKES Malang', '-', 'D3 - Kebidanan', 'Hadits Besar', 2018, 'Irfa\'i', '6281252960925', 'Nur Hidayati', '-'),
-(18, 201903006, 'Alfeina Zakkya Meriatami', 'Ponorogo', '2000-08-21', 'P', '', 'Ponorogo', 'alfeinazakkyameriatami@gmail.comm', '081234567865', 'Mahasiswa', 'Universitas Negeri Malang', 'Teknik', 'Pendidikan Teknik Informatika', 'Al-Taannii', 2003, 'yyy', '0871234567890', '', '');
+(2, 201903001, 'Abdillah Yudhatama', 'Malang', '2000-02-02', 'L', '', 'Jl. Anjasmoro No.35 RT.11 RW.03 Bendo Karang, Pandan Pakisaji, Kabupaten Malang Jawa Timur', 'abdillahyudhatama@gmail.com', '1234567890', 'Mahasiswa', 'Brawijaya', 'Pertanian', 'Agroekoteknologi', 'Al-Sarii', 2019, 'X', '0', '', ''),
+(3, 201903003, 'Achmad Koirudin Abdullah', 'Sragen', '2001-07-02', 'L', '', 'Pungkruk, Doyong RT01/000, Miri, Sragen, Jawa Tengah', 'achmadkhoirudinabdullah@gmail.com', '1234567890', 'Mahasiswa', 'Negeri Malang', 'Teknik', 'Pendidikan Teknik Elektro', 'Al-Sarii', 2019, '-', '0', '', ''),
+(4, 201803018, 'Rena Miftakhul Zulfa', 'Kediri', '1999-04-20', 'P', 'O', 'Dsn. Ngletih Barat Rt. 03 Ds. Ngletih Kec. Kandat Kab. Kediri ', 'renamiftaqulzulfa@gmail.com', '6281234567890', 'Mahasiswa', 'STIKES Malang', '-', 'D3 - Kebidanan', 'Hadits Besar', 2018, 'Irfa\'i', '6281252960925', 'Nur Hidayati', '-'),
+(5, 201903006, 'Alfeina Zakkya Meriatami', 'Ponorogo', '2000-08-21', 'P', '', 'Ponorogo', 'alfeinazakkyameriatami@gmail.comm', '081234567865', 'Mahasiswa', 'Universitas Negeri Malang', 'Teknik', 'Pendidikan Teknik Informatika', 'Al-Taannii', 2003, 'yyy', '0871234567890', '', ''),
+(6, 201903011, 'Anggun Milenia Rahman', 'Bontang', '1999-11-30', 'P', 'O', 'Bontang, Kalimantan  Timur', 'anggunmrh@gmail.com', '6287753464813', 'Mahasiswa', 'UM', 'FIB', 'PBA', 'Hadits Besar', 2018, 'XXX', '111', 'YYY', '222');
 
 -- --------------------------------------------------------
 
@@ -594,9 +601,7 @@ CREATE TABLE `tbl_surat` (
 --
 
 INSERT INTO `tbl_surat` (`id_surat`, `nama_surat`, `kategori`, `tgl_upload`, `tgl_update`, `file`, `ukuran_file`) VALUES
-(7, 'Surat Pengajuan Pelaksanaan PKL', 'Surat Pengajuan', '2021-04-26', '2021-04-26', '1619489380_ab70e8c5ea99a567ce09.pdf', 411469),
-(8, 'EPBTI', 'Buku Pedoman', '2021-04-26', '2021-04-26', '1619489962_3507fae09adea39e2e4a.pdf', 425761),
-(9, 'Digital Entrepreneur', 'Buku Pedoman', '2021-04-26', '2021-04-26', '1619490014_038df55b2847d8dca01f.pdf', 993749);
+(7, 'Surat Pengajuan Pelaksanaan PKL', 'Surat Pengajuan', '2021-04-26', '2021-04-26', '1619489380_ab70e8c5ea99a567ce09.pdf', 411469);
 
 -- --------------------------------------------------------
 
@@ -606,7 +611,7 @@ INSERT INTO `tbl_surat` (`id_surat`, `nama_surat`, `kategori`, `tgl_upload`, `tg
 
 CREATE TABLE `tbl_user` (
   `id_user` int(3) NOT NULL,
-  `nama_user` varchar(25) DEFAULT NULL,
+  `nama_user` varchar(30) DEFAULT NULL,
   `username` int(12) DEFAULT NULL,
   `password` varchar(25) DEFAULT NULL,
   `level` varchar(10) NOT NULL,
@@ -619,10 +624,9 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id_user`, `nama_user`, `username`, `password`, `level`, `foto`) VALUES
 (1, 'Abdullah Winasis', 201903002, 'awinasis', 'Admin', '1617705484_c06eb78eb388276be38a.jpg'),
-(2, 'Anggun Milenia Rahman', 201903001, 'anggun123', 'Guru', '1617705534_6ffa7df5d359b78fbdda.jpg'),
-(3, 'Muhammad Andy Herdiansyah', 201903003, 'andy354', 'Santri', '1617705579_20eaef2b33632b17cf96.jpg'),
+(2, 'Anggun Milenia Rahman', 201903011, 'anggun123', 'Santri', '1617705534_6ffa7df5d359b78fbdda.jpg'),
 (4, 'Rena Miftakhul Zulfa', 201803018, 'renamz31354', 'Santri', '1617705631_e012eb63993e4b1694a3.jpg'),
-(5, 'Alfeina Zakkya Meriatami', 201903006, '201903006', 'Santri', '1620724398_5b9fa93610e0e20d738a.jpg');
+(7, 'Amir Hamzah', 123456789, 'amir123', 'Guru', '1621215341_b83ba22111c656181e0f.jpg');
 
 --
 -- Indexes for dumped tables
@@ -679,22 +683,23 @@ ALTER TABLE `tbl_materi`
 ALTER TABLE `tbl_nilaiekstrakurikuler`
   ADD PRIMARY KEY (`id_ne`),
   ADD UNIQUE KEY `NIS` (`NIS`),
-  ADD UNIQUE KEY `nama_santri` (`nama_santri`),
-  ADD UNIQUE KEY `jenis_kelamin` (`jenis_kelamin`);
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
 -- Indexes for table `tbl_nilaiindeksprestasi`
 --
 ALTER TABLE `tbl_nilaiindeksprestasi`
   ADD PRIMARY KEY (`id_ip`),
-  ADD UNIQUE KEY `NIS` (`NIS`);
+  ADD UNIQUE KEY `NIS` (`NIS`),
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
 -- Indexes for table `tbl_nilaikonseppraktikum`
 --
 ALTER TABLE `tbl_nilaikonseppraktikum`
   ADD PRIMARY KEY (`id_kp`),
-  ADD UNIQUE KEY `NIS` (`NIS`);
+  ADD UNIQUE KEY `NIS` (`NIS`),
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
 -- Indexes for table `tbl_nilailimasuksessantri`
@@ -702,15 +707,15 @@ ALTER TABLE `tbl_nilaikonseppraktikum`
 ALTER TABLE `tbl_nilailimasuksessantri`
   ADD PRIMARY KEY (`id_lss`),
   ADD UNIQUE KEY `NIS` (`NIS`),
-  ADD UNIQUE KEY `nama_santri` (`nama_santri`),
-  ADD UNIQUE KEY `jenis_kelamin` (`jenis_kelamin`);
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
 -- Indexes for table `tbl_nilaimateri`
 --
 ALTER TABLE `tbl_nilaimateri`
   ADD PRIMARY KEY (`id_nm`),
-  ADD UNIQUE KEY `NIS` (`NIS`);
+  ADD UNIQUE KEY `NIS` (`NIS`),
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
 -- Indexes for table `tbl_nilaisikapperilaku`
@@ -718,15 +723,15 @@ ALTER TABLE `tbl_nilaimateri`
 ALTER TABLE `tbl_nilaisikapperilaku`
   ADD PRIMARY KEY (`id_sp`),
   ADD UNIQUE KEY `NIS` (`NIS`),
-  ADD UNIQUE KEY `nama_santri` (`nama_santri`),
-  ADD UNIQUE KEY `jenis_kelamin` (`jenis_kelamin`);
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
 -- Indexes for table `tbl_pembayaran`
 --
 ALTER TABLE `tbl_pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
-  ADD UNIQUE KEY `NIS` (`NIS`);
+  ADD UNIQUE KEY `NIS` (`NIS`),
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
 -- Indexes for table `tbl_pengumuman`
@@ -776,7 +781,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_catatansaranpengurus`
 --
 ALTER TABLE `tbl_catatansaranpengurus`
-  MODIFY `id_cs` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cs` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_chart`
@@ -812,49 +817,49 @@ ALTER TABLE `tbl_kurikulum`
 -- AUTO_INCREMENT for table `tbl_materi`
 --
 ALTER TABLE `tbl_materi`
-  MODIFY `id_materi` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id_materi` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaiekstrakurikuler`
 --
 ALTER TABLE `tbl_nilaiekstrakurikuler`
-  MODIFY `id_ne` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ne` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaiindeksprestasi`
 --
 ALTER TABLE `tbl_nilaiindeksprestasi`
-  MODIFY `id_ip` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ip` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaikonseppraktikum`
 --
 ALTER TABLE `tbl_nilaikonseppraktikum`
-  MODIFY `id_kp` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kp` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilailimasuksessantri`
 --
 ALTER TABLE `tbl_nilailimasuksessantri`
-  MODIFY `id_lss` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_lss` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaimateri`
 --
 ALTER TABLE `tbl_nilaimateri`
-  MODIFY `id_nm` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_nm` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaisikapperilaku`
 --
 ALTER TABLE `tbl_nilaisikapperilaku`
-  MODIFY `id_sp` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_sp` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_pembayaran`
 --
 ALTER TABLE `tbl_pembayaran`
-  MODIFY `id_pembayaran` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pembayaran` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
@@ -878,7 +883,7 @@ ALTER TABLE `tbl_rapor`
 -- AUTO_INCREMENT for table `tbl_santri`
 --
 ALTER TABLE `tbl_santri`
-  MODIFY `id_santri` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_santri` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_surat`
@@ -890,7 +895,7 @@ ALTER TABLE `tbl_surat`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
