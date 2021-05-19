@@ -13,84 +13,90 @@
              <li class="active">Nilai Santri</li>
          </ol>
      </section>
+
      <div class="row">
          <div class="col-sm-12">
              <div class="box box-gray box-solid">
                  <div class="box-header with-border">
-                     <h3 class="box-title"><i class="fa  fa-table"></i></h3>&emsp;
-                     <a href="<?= base_url('data_nilai/ekstrakurikuler') ?>" class="right"><i class="fa fa-mail-reply"></i> Kembali</a>
+                     <h3 class="box-title"><i class="fa  fa-table"></i></h3>
+                     <a href="<?= base_url('data_nilai/ekstrakurikuler') ?>" class="left"><i class="fa fa-mail-reply"></i> Kembali</a>
                      <div class="box-body">
+                         <?php
+                            echo form_open('data_nilai/addNilaiEkstrakurikuler');
+                            ?>
                          <div class="table-responsive">
-                             <table class="table table-bordered table-striped with-check">
+                             <table id="example2" class="table table-bordered table-striped with-check">
                                  <thead>
                                      <tr>
-                                         <th rowspan='2'>No.</th>
-                                         <th rowspan='2'>NIS</th>
-                                         <th rowspan='2'>Nama</th>
-                                         <th rowspan='2'>L/P</th>
-                                         <th rowspan='2'>Pencak Silat</th>
-                                         <th rowspan='2'>Sepakbola/Futsal</th>
-                                         <th rowspan='2'>Senam Pagi</th>
+                                         <th class="text-center">NIS</th>
+                                         <th class="text-center">Nama</th>
+                                         <th class="text-center">L/P</th>
+                                         <th class="text-center">Pencak Silat</th>
+                                         <th class="text-center">Sepakbola/Futsal</th>
+                                         <th class="text-center">Senam Pagi</th>
                                      </tr>
                                  </thead>
                                  <tbody>
-                                     <?php $no = 1;
-                                        foreach ($nilai as $key => $value) { ?>
-                                         <tr>
-                                             <td class="text-center"><?= $no++; ?></td>
-                                             <td class="text-center"><?= $value['NIS'] ?></td>
-                                             <td><?= $value['nama_santri'] ?></td>
-                                             <td><?= $value['jenis_kelamin'] ?></td>
-                                             <td>
-                                                 <select name="nilai_1" id="nilai_1" class="form-control" required>
-                                                     <option value=""></option>
-                                                     <option value="A">A</option>
-                                                     <option value="B+">B+</option>
-                                                     <option value="B">B</option>
-                                                     <option value="B-">B-</option>
-                                                     <option value="C+">C+</option>
-                                                     <option value="C">C</option>
-                                                     <option value="C-">C-</option>
-                                                     <option value="D">D</option>
-                                                     <option value="E">E</option>
-                                                 </select>
-                                             </td>
-                                             <td>
-                                                 <select name="nilai_2" id="nilai_2" class="form-control" required>
-                                                     <option value=""></option>
-                                                     <option value="A">A</option>
-                                                     <option value="B+">B+</option>
-                                                     <option value="B">B</option>
-                                                     <option value="B-">B-</option>
-                                                     <option value="C+">C+</option>
-                                                     <option value="C">C</option>
-                                                     <option value="C-">C-</option>
-                                                     <option value="D">D</option>
-                                                     <option value="E">E</option>
-                                                 </select>
-                                             </td>
-                                             <td>
-                                                 <select name="nilai_3" id="nilai_1" class="form-control" required>
-                                                     <option value=""></option>
-                                                     <option value="A">A</option>
-                                                     <option value="B+">B+</option>
-                                                     <option value="B">B</option>
-                                                     <option value="B-">B-</option>
-                                                     <option value="C+">C+</option>
-                                                     <option value="C">C</option>
-                                                     <option value="C-">C-</option>
-                                                     <option value="D">D</option>
-                                                     <option value="E">E</option>
-                                                 </select>
-                                             </td>
-                                         </tr>
-                                     <?php } ?>
+                                     <tr>
+                                         <td class="text-center"><input name="NIS" class="form-control" type="number" required></td>
+                                         <td><input name="nama_santri" class="form-control" required></td>
+                                         <td>
+                                             <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
+                                                 <option value="#">-- Pilih --</option>
+                                                 <option value="L">L</option>
+                                                 <option value="P">P</option>
+                                             </select>
+                                         </td>
+                                         <td>
+                                             <select name="nilai_1" id="nilai_1" class="form-control" required>
+                                                 <option value="#">-- Nilai --</option>
+                                                 <option value="A">A</option>
+                                                 <option value="B+">B+</option>
+                                                 <option value="B">B</option>
+                                                 <option value="B-">B-</option>
+                                                 <option value="C+">C+</option>
+                                                 <option value="C">C</option>
+                                                 <option value="C-">C-</option>
+                                                 <option value="D">D</option>
+                                                 <option value="E">E</option>
+                                             </select>
+                                         </td>
+                                         <td>
+                                             <select name="nilai_2" id="nilai_2" class="form-control" required>
+                                                 <option value="#">-- Nilai --</option>
+                                                 <option value="A">A</option>
+                                                 <option value="B+">B+</option>
+                                                 <option value="B">B</option>
+                                                 <option value="B-">B-</option>
+                                                 <option value="C+">C+</option>
+                                                 <option value="C">C</option>
+                                                 <option value="C-">C-</option>
+                                                 <option value="D">D</option>
+                                                 <option value="E">E</option>
+                                             </select>
+                                         </td>
+                                         <td>
+                                             <select name="nilai_3" id="nilai_1" class="form-control" required>
+                                                 <option value="#">-- Nilai --</option>
+                                                 <option value="A">A</option>
+                                                 <option value="B+">B+</option>
+                                                 <option value="B">B</option>
+                                                 <option value="B-">B-</option>
+                                                 <option value="C+">C+</option>
+                                                 <option value="C">C</option>
+                                                 <option value="C-">C-</option>
+                                                 <option value="D">D</option>
+                                                 <option value="E">E</option>
+                                             </select>
+                                         </td>
+                                     </tr>
                                  </tbody>
                              </table>
                          </div>
                          <div class="modal-footer">
-                             <a href="<?= base_url('data_nilai/ekstrakurikuler') ?>" type="submit" class="btn btn-primary">Simpan</a>
+                             <button type="submit" class="btn btn-primary">Simpan</button>
                          </div>
+                         <?php echo form_close() ?>
                      </div>
                  </div>
              </div>

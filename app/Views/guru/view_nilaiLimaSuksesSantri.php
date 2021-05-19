@@ -19,21 +19,22 @@
                      <!-- <div class="box-tools pull-left"> -->
                      <a href="<?= base_url('data_nilai/tambahNilaiLimaSuksesSantri/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
                  </div>
+                 <br>
                  <div class="box-body">
                      <div class="table-responsive">
-                         <table class="table table-bordered table-striped with-check">
+                         <table id="example2" class="table table-bordered table-striped">
                              <thead>
                                  <tr>
-                                     <th rowspan='2'>No.</th>
-                                     <th rowspan='2'>NIS</th>
-                                     <th rowspan='2'>Nama</th>
-                                     <th rowspan='2'>L/P</th>
-                                     <th rowspan='2'>Faham Jamaah</th>
-                                     <th rowspan='2'>Mandiri Ibadah</th>
-                                     <th rowspan='2'>Akhlaqul Karimah</th>
-                                     <th rowspan='2'>Entengan dalam sabilillah</th>
-                                     <th rowspan='2'>Sukses keilmuan</th>
-                                     <th rowspan="2">Action</th>
+                                     <th>No.</th>
+                                     <th>NIS</th>
+                                     <th>Nama Santri</th>
+                                     <th>L/P</th>
+                                     <th>Faham Jamaah</th>
+                                     <th>Mandiri Ibadah</th>
+                                     <th>Akhlaqul Karimah</th>
+                                     <th>Entengan dalam sabilillah</th>
+                                     <th>Sukses keilmuan</th>
+                                     <th>Action</th>
                                  </tr>
                              </thead>
                              <tbody>
@@ -43,16 +44,16 @@
                                          <td class="text-center"><?= $no++; ?></td>
                                          <td class="text-center"><?= $value['NIS'] ?></td>
                                          <td><?= $value['nama_santri'] ?></td>
-                                         <td><?= $value['jenis_kelamin'] ?></td>
-                                         <td><?= $value['nilai_A'] ?></td>
-                                         <td><?= $value['nilai_B'] ?></td>
-                                         <td><?= $value['nilai_C'] ?></td>
-                                         <td><?= $value['nilai_D'] ?></td>
-                                         <td><?= $value['nilai_E'] ?></td>
+                                         <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
+                                         <td class="text-center"><?= $value['nilai_A'] ?></td>
+                                         <td class="text-center"><?= $value['nilai_B'] ?></td>
+                                         <td class="text-center"><?= $value['nilai_C'] ?></td>
+                                         <td class="text-center"><?= $value['nilai_D'] ?></td>
+                                         <td class="text-center"><?= $value['nilai_E'] ?></td>
 
                                          <td class="text-center">
-                                             <button class="btn btn-warning btn-sm" <?= $value['id_lss'] ?>><i class="fa fa-edit"> Edit</i></button>
-                                             <button class="btn btn-danger btn-sm" <?= $value['id_lss'] ?>><i class="fa fa-trash"> Delete</i></button>
+                                             <button class="btn btn-warning btn-sm" <?= $value['id_lss'] ?>><i class="fa fa-edit"></i></button>
+                                             <button class="btn btn-danger btn-sm" <?= $value['id_lss'] ?>><i class="fa fa-trash"></i></button>
                                          </td>
                                      </tr>
                                  <?php } ?>
@@ -63,5 +64,4 @@
              </div>
          </div>
      </div>
- </div>
  </div>

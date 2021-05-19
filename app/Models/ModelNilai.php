@@ -9,7 +9,7 @@ class ModelNilai extends Model
     public function allData()
     {
         return $this->db->table('tbl_nilaiMateri')
-            ->join('tbl_santri', 'tbl_santri.id_santri = tbl_nilaimateri.id_santri', 'left')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri.NIS', 'tbl_santri.nama_santri = tbl_nilaiMateri.nama_santri')
             ->orderBy('id_nm', 'DESC')
             ->get()->getResultArray();
     }
@@ -31,6 +31,7 @@ class ModelNilai extends Model
     public function allData1()
     {
         return $this->db->table('tbl_nilaikonseppraktikum')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum.NIS', 'tbl_santri.nama_santri = tbl_nilaikonseppraktikum.nama_santri')
             ->orderBy('id_kp', 'DESC')
             ->get()->getResultArray();
     }
@@ -45,6 +46,7 @@ class ModelNilai extends Model
     public function allData2()
     {
         return $this->db->table('tbl_nilaisikapperilaku')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaisikapperilaku.NIS', 'tbl_santri.nama_santri = tbl_nilaisikapperilaku.nama_santri')
             ->orderBy('id_sp', 'DESC')
             ->get()->getResultArray();
     }
@@ -59,6 +61,7 @@ class ModelNilai extends Model
     public function allData3()
     {
         return $this->db->table('tbl_nilailimasuksessantri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilailimasuksessantri.NIS', 'tbl_santri.nama_santri = tbl_nilailimasuksessantri.nama_santri')
             ->orderBy('id_lss', 'DESC')
             ->get()->getResultArray();
     }
@@ -73,6 +76,7 @@ class ModelNilai extends Model
     public function allData4()
     {
         return $this->db->table('tbl_nilaiekstrakurikuler')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiekstrakurikuler.NIS', 'tbl_santri.nama_santri = tbl_nilaiekstrakurikuler.nama_santri')
             ->orderBy('id_ne', 'DESC')
             ->get()->getResultArray();
     }
@@ -96,13 +100,14 @@ class ModelNilai extends Model
     public function allData6()
     {
         return $this->db->table('tbl_nilaiindeksprestasi')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiindeksprestasi.NIS', 'tbl_santri.nama_santri = tbl_nilaiindeksprestasi.nama_santri')
             ->orderBy('id_ip', 'DESC')
             ->get()->getResultArray();
     }
 
     public function addData6($data)
     {
-        $this->db->table('tbl_')->insert($data);
+        $this->db->table('tbl_nilaiindeksprestasi')->insert($data);
     }
 
     //------------------------------------------------ 8 --------------------------------------------------// 
@@ -110,6 +115,7 @@ class ModelNilai extends Model
     public function allData7()
     {
         return $this->db->table('tbl_catatanSaranPengurus')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_catatanSaranPengurus.NIS', 'tbl_santri.nama_santri = tbl_catatanSaranPengurus.nama_santri')
             ->orderBy('id_cs', 'DESC')
             ->get()->getResultArray();
     }

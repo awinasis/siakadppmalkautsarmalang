@@ -49,7 +49,7 @@
                              <thead>
                                  <tr>
                                      <th width="50px" class="text-center">No</th>
-                                     <th class="text-center">Nama Santri</th>
+                                     <th class="text-center">Nama User</th>
                                      <th class="text-center">Username</th>
                                      <th class="tex-center">Password</th>
                                      <th class="tex-center">Level</th>
@@ -62,7 +62,7 @@
                                     foreach ($user as $key => $value) { ?>
                                      <tr>
                                          <td class="text-center"><?= $no++; ?></td>
-                                         <td><?= $value['nama_santri'] ?></td>
+                                         <td><?= $value['nama_user'] ?></td>
                                          <td class="tex-center"><?= $value['username'] ?></td>
                                          <td class="tex-center"><?= $value['password'] ?></td>
                                          <td class="tex-center"><?= $value['level'] ?></td>
@@ -97,8 +97,8 @@
                         ?>
 
                      <div class="form-group">
-                         <label>Nama Santri</label>
-                         <input name="nama_santri" class="form-control" placeholder="nama user" required>
+                         <label>Nama User</label>
+                         <input name="nama_user" class="form-control" placeholder="nama user" required>
                      </div>
 
                      <div class="form-group">
@@ -155,8 +155,8 @@
                             ?>
 
                          <div class="form-group">
-                             <label>Nama Santri</label>
-                             <input name="nama_santri" value="<?= $value['nama_santri'] ?>" class="form-control" placeholder="nama user" required>
+                             <label>Nama User</label>
+                             <input name="nama_user" value="<?= $value['nama_user'] ?>" class="form-control" placeholder="nama user" required>     
                          </div>
 
                          <div class="form-group">
@@ -215,7 +215,7 @@
                      </div>
 
                      <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b><?= $value['nama_santri'] ?> ?</b>
+                         Apakah anda yakin ingin menghapus <b><?= $value['nama_user'] ?> ?</b>
                      </div>
 
                      <div class="modal-footer">

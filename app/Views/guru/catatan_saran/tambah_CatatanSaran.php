@@ -21,11 +21,13 @@
                      <h3 class="box-title"><i class="fa  fa-table"></i></h3>&emsp;
                      <a href="<?= base_url('data_nilai/catatanSaranPengurus') ?>" class="right"><i class="fa fa-mail-reply"></i> Kembali</a>
                      <div class="box-body">
+                         <?php
+                            echo form_open('data_nilai/addCatatanSaran');
+                            ?>
                          <div class="table-responsive">
-                             <table class="table table-bordered table-striped with-check">
+                             <table id="example2" class="table table-bordered table-striped with-check">
                                  <thead>
                                      <tr>
-                                         <th rowspan='2' class="text-center">No.</th>
                                          <th rowspan='2' class="text-center">NIS</th>
                                          <th rowspan='2' class="text-center">Nama</th>
                                          <th rowspan='2' class="text-center">L/P</th>
@@ -37,22 +39,25 @@
                                      </tr>
                                  </thead>
                                  <tbody>
-                                     <?php $no = 1;
-                                        foreach ($nilai as $key => $value) { ?>
-                                         <tr>
-                                             <td class="text-center"><?= $no++; ?></td>
-                                             <td class="text-center"><?= $value['NIS'] ?></td>
-                                             <td><?= $value['nama_santri'] ?></td>
-                                             <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
-                                             <td><textarea name="catatan_saran" type="text" class="form-control" required></textarea></td>
-                                         </tr>
-                                     <?php } ?>
+                                     <tr>
+                                         <td class="text-center"><input name="NIS" class="form-control" type="number" required></td>
+                                         <td class="text-center"><input name="nama_santri" class="form-control" required></td>
+                                         <td class="text-center">
+                                             <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
+                                                 <option value="#">-- Pilih --</option>
+                                                 <option value="L">L</option>
+                                                 <option value="P">P</option>
+                                             </select>
+                                         </td>
+                                         <td><textarea name="catatan_saran" type="text" class="form-control" required></textarea></td>
+                                     </tr>
                                  </tbody>
                              </table>
                          </div>
                          <div class="modal-footer">
-                             <a href="<?= base_url('data_nilai/catatanSaranPengurus') ?>" type="submit" class="btn btn-primary">Simpan</a>
+                             <button type="submit" class="btn btn-primary">Simpan</button>
                          </div>
+                         <?php echo form_close() ?>
                      </div>
                  </div>
              </div>

@@ -26,7 +26,7 @@ class Data_Materi extends BaseController
     {
         $data = [
             'Nama_Materi' => $this->request->getPost('nama_materi'),
-            'Kelas' => $this->request->getPost('kelas'),
+            'kelas' => $this->request->getPost('kelas'),
         ];
         $this->ModelMateri->addData($data);
 
@@ -39,7 +39,7 @@ class Data_Materi extends BaseController
         $data = [
             'id_materi' => $id_materi,
             'Nama_Materi' => $this->request->getPost('nama_materi'),
-            'Kelas' => $this->request->getPost('kelas'),
+            'kelas' => $this->request->getPost('kelas'),
         ];
         $this->ModelMateri->editData($data);
         session()->setFlashdata('pesan', 'Data berhasil di update !!');

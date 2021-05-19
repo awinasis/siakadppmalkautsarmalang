@@ -18,61 +18,66 @@
          <div class="col-sm-12">
              <div class="box box-gray box-solid">
                  <div class="box-header with-border">
-                     <h3 class="box-title"><i class="fa  fa-table"></i></h3>&emsp;
-                     <a href="<?= base_url('data_nilai/index') ?>" class="right"><i class="fa fa-mail-reply"></i> Kembali</a>
+                     <h3 class="box-title"><i class="fa  fa-table"></i></h3>
+                     <a href="<?= base_url('data_nilai/index') ?>" class="left"><i class="fa fa-mail-reply"></i> Kembali</a>
                      <div class="box-body">
                          <div class="table-responsive">
                              <table id="example2" class="table table-bordered table-striped">
                                  <thead>
                                      <tr>
-                                         <th rowspan="2">No.</th>
-                                         <th rowspan="2">NIS</th>
-                                         <th rowspan="2">Nama</th>
-                                         <th rowspan="2">L/P</th>
+                                         <th rowspan="2" class="text-center">NIS</th>
+                                         <th rowspan="2" class="text-center">Nama</th>
+                                         <th rowspan="2" class="text-center">L/P</th>
                                          <th class="text-center" colspan=" 31">Pencapaian Materi</th>
                                      </tr>
                                      <tr>
-                                         <th>Bacaan Surah Al-Baqarah</th>
-                                         <th>Bacaan Surah Al-Mulk s/d Al-Nas</th>
-                                         <th>Thaharah</th>
-                                         <th>Tajwid</th>
-                                         <th>Adab Pencari Ilmu</th>
-                                         <th>Huruf Hijaiyah</th>
-                                         <th>Khat wa Imla'</th>
-                                         <th>Kitabah Pegon</th>
-                                         <th>Tuntunan Tata Krama</th>
-                                         <th>Makna Al-Quran Juz 1 s.d 30</th>
-                                         <th>Bacaan Al-Quran</th>
-                                         <th>Kitab Al-Shalat</th>
-                                         <th>Kitab Al-Adab</th>
-                                         <th>Kitab Al-Adillah</th>
-                                         <th>Kitab Al-Shaum</th>
-                                         <th>Kitab Manasik wa Al-Jihad</th>
-                                         <th>Kitab Shifat Al-Jannah wa Al-Nar</th>
-                                         <th>Kitab Al-Da'awat</th>
-                                         <th>Kitab Al-Janaiz</th>
-                                         <th>Kitab Al-Shalat Al-Nawafil</th>
-                                         <th>Kitab Al-Ahkam</th>
-                                         <th>Kitab Al-Imarah</th>
-                                         <th>Kitab Al-Haji</th>
-                                         <th>Kitab Manasik Al-Haji</th>
-                                         <th>Kitab Al-Jihad</th>
-                                         <th>Kitab Al-Imarah min Kanzil Al-'ummal</th>
-                                         <th>Kumpulan Khutbah</th>
-                                         <th>Kitab Al-Faraidl</th>
-                                         <th>Kitab Hidayah Al-Mustafidz fi Al-Tajwid</th>
-                                         <th>Kitab Mabadi Fi al-Sharfi wa al-Nahwi</th>
-                                         <th>Kitab Wujubu Luzumu Al-Jama'ah</th>
+                                         <th class="text-center">Bacaan Surah Al-Baqarah</th>
+                                         <th class="text-center">Bacaan Surah Al-Mulk s/d Al-Nas</th>
+                                         <th class="text-center">Thaharah</th>
+                                         <th class="text-center">Tajwid</th>
+                                         <th class="text-center">Adab Pencari Ilmu</th>
+                                         <th class="text-center">Huruf Hijaiyah</th>
+                                         <th class="text-center">Khat wa Imla'</th>
+                                         <th class="text-center">Kitabah Pegon</th>
+                                         <th class="text-center">Tuntunan Tata Krama</th>
+                                         <th class="text-center">Makna Al-Quran Juz 1 s.d 30</th>
+                                         <th class="text-center">Bacaan Al-Quran</th>
+                                         <th class="text-center">Kitab Al-Shalat</th>
+                                         <th class="text-center">Kitab Al-Adab</th>
+                                         <th class="text-center">Kitab Al-Adillah</th>
+                                         <th class="text-center">Kitab Al-Shaum</th>
+                                         <th class="text-center">Kitab Manasik wa Al-Jihad</th>
+                                         <th class="text-center">Kitab Shifat Al-Jannah wa Al-Nar</th>
+                                         <th class="text-center">Kitab Al-Da'awat</th>
+                                         <th class="text-center">Kitab Al-Janaiz</th>
+                                         <th class="text-center">Kitab Al-Shalat Al-Nawafil</th>
+                                         <th class="text-center">Kitab Al-Ahkam</th>
+                                         <th class="text-center">Kitab Al-Imarah</th>
+                                         <th class="text-center">Kitab Al-Haji</th>
+                                         <th class="text-center">Kitab Manasik Al-Haji</th>
+                                         <th class="text-center">Kitab Al-Jihad</th>
+                                         <th class="text-center">Kitab Al-Imarah min Kanzil Al-'ummal</th>
+                                         <th class="text-center">Kumpulan Khutbah</th>
+                                         <th class="text-center">Kitab Al-Faraidl</th>
+                                         <th class="text-center">Kitab Hidayah Al-Mustafidz fi Al-Tajwid</th>
+                                         <th class="text-center">Kitab Mabadi Fi al-Sharfi wa al-Nahwi</th>
+                                         <th class="text-center">Kitab Wujubu Luzumu Al-Jama'ah</th>
                                      </tr>
                                  </thead>
                                  <tbody>
                                      <?php $no = 1;
-                                        foreach ($nilai as $key => $value) { ?>
+                                        foreach ($nilai as $key => $value) {
+                                            form_open('data_nilai/editNilaiMateri/' . $value['id_nm']);
+                                        ?>
                                          <tr>
-                                             <td class="text-center"><?= $no++; ?></td>
-                                             <td class="text-center"><?= $value['NIS'] ?></td>
-                                             <td><?= $value['nama_santri'] ?></td>
-                                             <td><?= $value['jenis_kelamin'] ?></td>
+                                             <td class="text-center"><input name="NIS" class="form-control" type="number" value="<?= $value['NIS'] ?>"></td>
+                                             <td><input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>"></td>
+                                             <td>
+                                                 <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" value="<?= $value['jenis_kelamin'] ?>">
+                                                     <option value="L" <?= $value['jenis_kelamin'] == "L" ? "selected" : ""; ?>>L</option>
+                                                     <option value="P" <?= $value['jenis_kelamin'] == "P" ? "selected" : ""; ?>>P</option>
+                                                 </select>
+                                             </td>
                                              <td><input name="nilai1" class="form-control" type="number" value="<?= $value['nilai1'] ?>">%</td>
                                              <td><input name="nilai2" class="form-control" type="number" value="<?= $value['nilai2'] ?>">%</td>
                                              <td><input name="nilai3" class="form-control" type="number" value="<?= $value['nilai3'] ?>">%</td>
@@ -108,9 +113,10 @@
                                      <?php } ?>
                                  </tbody>
                              </table>
-                         </div>
-                         <div class="modal-footer">
-                             <a href="<?= base_url('data_nilai/index') ?>" type="submit" class="btn btn-primary">Simpan</a>
+                             <div class="modal-footer">
+                                 <button type="submit" class="btn btn-primary">Simpan</button>
+                                 <?php echo form_close() ?>
+                             </div>
                          </div>
                      </div>
                  </div>

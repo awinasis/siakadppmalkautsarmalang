@@ -20,10 +20,9 @@
                      <a href="<?= base_url('data_nilai/tambahNilaiMateri/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
                  </div>
                  <br>
-
                  <div class="box-body">
                      <div class="table-responsive">
-                         <table class="table table-bordered table-striped">
+                         <table id="example2" class="table table-bordered table-striped">
                              <thead>
                                  <tr>
                                      <th rowspan="2">No.</th>
@@ -34,7 +33,7 @@
                                      <th rowspan="2" class="text-center">Action</th>
                                  </tr>
                                  <tr>
-                                     <th rowspan="2">Bacaan Surah Al-Baqarah</th>
+                                     <th>Bacaan Surah Al-Baqarah</th>
                                      <th>Bacaan Surah Al-Mulk s/d Al-Nas</th>
                                      <th>Thaharah</th>
                                      <th>Tajwid</th>
@@ -70,57 +69,48 @@
                              <tbody>
                                  <?php
                                     foreach ($nilai as $key => $value) { ?>
-                                     <?php
-                                        $konek = mysqli_connect("localhost", "root", "", "db_siakad_ppmalkautsar");
+                                     <tr>
+                                         <td class="text-center"><?= $no++; ?></td>
+                                         <td class="text-center"><?= $value['NIS']; ?></td>
+                                         <td><?= $value['nama_santri']; ?></td>
+                                         <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
+                                         <td class="text-center"><?= $value['nilai1'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai2'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai3'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai4'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai5'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai6'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai7'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai8'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai9'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai10'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai11'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai12'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai13'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai14'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai15'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai16'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai17'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai18'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai19'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai20'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai21'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai22'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai23'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai24'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai25'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai26'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai27'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai28'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai29'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai30'] ?>%</td>
+                                         <td class="text-center"><?= $value['nilai31'] ?>%</td>
 
-                                        $no = 1;
-                                        $jumlah = null;
-                                        $data = mysqli_query($konek, "SELECT * FROM tbl_santri");
-                                        while ($d = mysqli_fetch_array($data)) {
-                                        ?>
-                                         <tr>
-                                             <td class="text-center"><?php echo $no++; ?></td>
-                                             <td class="text-center"><?php echo $d['NIS']; ?></td>
-                                             <td><?php echo $d['nama_santri']; ?></td>
-                                             <td class="text-center"><?php echo $d['jenis_kelamin'] ?></td>
-                                             <td class="text-center"><?= $value['nilai1'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai2'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai3'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai4'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai5'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai6'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai7'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai8'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai9'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai10'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai11'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai12'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai13'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai14'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai15'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai16'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai17'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai18'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai19'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai20'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai21'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai22'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai23'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai24'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai25'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai26'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai27'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai28'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai29'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai30'] ?>%</td>
-                                             <td class="text-center"><?= $value['nilai31'] ?>%</td>
-
-                                             <td class="text-center">
-                                                 <button class="btn btn-warning btn-sm" <?= $value['id_nm'] ?>><i class="fa fa-edit"></i></button>
-                                                 <button class="btn btn-danger btn-sm" <?= $value['id_nm'] ?>><i class="fa fa-trash"></i></button>
-                                             </td>
-                                         </tr>
-                                     <?php } ?>
+                                         <td class="text-center">
+                                             <a href="<?= base_url('data_nilai/ubahNilaiMateri') ?>" class="btn btn-warning btn-sm" <?= $value['id_nm'] ?>><i class="fa fa-edit"></i></a>
+                                             <button class="btn btn-danger btn-sm" <?= $value['id_nm'] ?>><i class="fa fa-trash"></i></button>
+                                         </td>
+                                     </tr>
                                  <?php } ?>
                              </tbody>
                          </table>

@@ -59,7 +59,7 @@
                                              <td><?= $value['keterangan'] ?></td>
                                              <td class="text-center"><?= $value['tagihan'] ?></td>
                                              <td class="text-center"><?= $value['terbayar'] ?></td>
-                                             <td><?= $value['status'] ?></td>
+                                             <td><?= $value['status_pembayaran'] ?></td>
 
                                              <td class="text-center">
                                                  <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_pembayaran'] ?>"><i class="fa fa-edit"></i></button>
@@ -129,7 +129,7 @@
                          <div class="form-group row">
                              <div class="col-lg-8">
                                  <label class="form-control-label">Status</label>
-                                 <select name="status" class="form-control" id="status" required>
+                                 <select name="status_pembayaran" class="form-control" id="status_pembayaran" required>
                                      <option value="">- Pilih -</option>
                                      <option value="Lunas">LUNAS</option>
                                      <option value="Belum Lunas">BELUM LUNAS</option>
@@ -201,7 +201,7 @@
                              <div class="form-group row">
                                  <div class="col-lg-8">
                                      <label class="form-control-label">Status</label>
-                                     <select name="status" class="form-control" id="status" required>
+                                     <select name="status_pembayaran" class="form-control" id="status_pembayaran" required>
                                          <option value="">- Pilih -</option>
                                          <option value="Lunas" <?= $value['status'] == "LUNAS" ? "selected" : ""; ?>>LUNAS</option>
                                          <option value="Belum Lunas" <?= $value['status'] == "BELUM LUNAS" ? "selected" : ""; ?>>BELUM LUNAS</option>
