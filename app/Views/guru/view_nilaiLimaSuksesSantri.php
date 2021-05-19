@@ -21,6 +21,13 @@
                  </div>
                  <br>
                  <div class="box-body">
+                     <?php
+                        if (session()->getFlashdata('pesan')) {
+                            echo '<div class="alert alert-success" role="alert">';
+                            echo session()->getFlashdata('pesan');
+                            echo '</div>';
+                        }
+                        ?>
                      <div class="table-responsive">
                          <table id="example2" class="table table-bordered table-striped">
                              <thead>
@@ -53,7 +60,7 @@
 
                                          <td class="text-center">
                                              <button class="btn btn-warning btn-sm" <?= $value['id_lss'] ?>><i class="fa fa-edit"></i></button>
-                                             <button class="btn btn-danger btn-sm" <?= $value['id_lss'] ?>><i class="fa fa-trash"></i></button>
+                                             <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_lss'] ?>"><i class="fa fa-trash"></i></button>
                                          </td>
                                      </tr>
                                  <?php } ?>
@@ -64,4 +71,28 @@
              </div>
          </div>
      </div>
+
+     <!-- modal delete -->
+     <?php foreach ($nilai as $key => $value) { ?>
+         <div class="modal fade" id="delete<?= $value['id_lss'] ?>">
+             <div class="modal-dialog">
+                 <div class="modal-content box box-black box-solid">
+                     <div class="modal-header box-header with-border">
+                         <h4 class="modal-title">Delete Nilai 5 Sukses Santri</h4>
+                     </div>
+
+                     <div class="modal-body">
+                         Apakah anda yakin ingin menghapus <b><?= $title ?>&nbsp;<?= $value['nama_santri'] ?> ?</b>
+                     </div>
+
+                     <div class="modal-footer">
+                         <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+                         <a href="<?= base_url('data_nilai/delete3/' . $value['id_lss']) ?>" class="btn btn-primary">Delete</a>
+                     </div>
+                 </div>
+                 <!-- /.modal-content -->
+             </div>
+             <!-- /.modal-dialog -->
+         </div>
+     <?php } ?>
  </div>

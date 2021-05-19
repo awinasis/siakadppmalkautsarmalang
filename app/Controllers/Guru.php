@@ -47,4 +47,17 @@ class Guru extends BaseController
 
         return view("layout/wrapper", $data);
     }
+
+    public function biodata_guru()
+    {
+        $id_guru = session()->get('username');
+        $data = [
+            'title' => 'Guru',
+            'isi'    => 'guru/view_bioGuru',
+            'guru' => $this->ModelGuru->get_bioGuru_by_id($id_guru),
+            'id_guru' => $id_guru
+        ];
+
+        return view("layout/wrapper", $data);
+    }
 }

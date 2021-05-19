@@ -49,7 +49,7 @@
                                                  <option value="P">P</option>
                                              </select>
                                          </td>
-                                         <td><textarea name="catatan_saran" type="text" class="form-control" required></textarea></td>
+                                         <td class="text-center"><textarea name="catatan_saran" type="text" class="form-control" required></textarea></td>
                                      </tr>
                                  </tbody>
                              </table>

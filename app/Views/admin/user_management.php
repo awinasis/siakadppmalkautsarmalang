@@ -63,9 +63,9 @@
                                      <tr>
                                          <td class="text-center"><?= $no++; ?></td>
                                          <td><?= $value['nama_user'] ?></td>
-                                         <td class="tex-center"><?= $value['username'] ?></td>
-                                         <td class="tex-center"><?= $value['password'] ?></td>
-                                         <td class="tex-center"><?= $value['level'] ?></td>
+                                         <td class="text-center"><?= $value['username'] ?></td>
+                                         <td class="text-center"><?= $value['password'] ?></td>
+                                         <td class="text-center"><?= $value['level'] ?></td>
                                          <td class="text-center"><img src="<?= base_url('foto/' . $value['foto']) ?>" class="img-circle" width="50px" height="50px"></td>
                                          <td class="text-center">
                                              <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_user'] ?>"><i class="fa fa-edit"></i></button>

@@ -15,7 +15,7 @@ class Data_Nilai extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Nilai Materi Pokok',
+            'title' => 'Nilai Materi',
             'nilai' => $this->ModelNilai->allData(),
             'isi'    => 'guru/view_nilaiMateri',
         ];
@@ -132,6 +132,16 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/index'));
     }
 
+    public function delete($id_nm)
+    {
+        $data = [
+            'id_nm' => $id_nm,
+        ];
+        $this->ModelNilai->deleteData($data);
+        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        return redirect()->to(base_url('data_nilai/index'));
+    }
+
     //------------------------------------------------ 2 --------------------------------------------------// 
 
     public function konsepPraktikum()
@@ -192,6 +202,16 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/konsepPraktikum'));
     }
 
+    public function delete1($id_kp)
+    {
+        $data = [
+            'id_kp' => $id_kp,
+        ];
+        $this->ModelNilai->deleteData1($data);
+        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        return redirect()->to(base_url('data_nilai/konsepPraktikum'));
+    }
+
 
     //------------------------------------------------ 3 --------------------------------------------------// 
 
@@ -238,6 +258,15 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/sikapPerilaku'));
     }
 
+    public function delete2($id_sp)
+    {
+        $data = [
+            'id_sp' => $id_sp,
+        ];
+        $this->ModelNilai->deleteData2($data);
+        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        return redirect()->to(base_url('data_nilai/sikapPerilaku'));
+    }
 
     //------------------------------------------------ 4 --------------------------------------------------// 
 
@@ -280,6 +309,16 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/limaSuksesSantri'));
     }
 
+    public function delete3($id_lss)
+    {
+        $data = [
+            'id_lss' => $id_lss,
+        ];
+        $this->ModelNilai->deleteData3($data);
+        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        return redirect()->to(base_url('data_nilai/limaSuksesSantri'));
+    }
+
     //------------------------------------------------ 5 --------------------------------------------------// 
 
     public function ekstrakurikuler()
@@ -319,6 +358,16 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/ekstrakurikuler'));
     }
 
+    public function delete4($id_ne)
+    {
+        $data = [
+            'id_ne' => $id_ne,
+        ];
+        $this->ModelNilai->deleteData4($data);
+        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        return redirect()->to(base_url('data_nilai/ekstrakurikuler'));
+    }
+
     //------------------------------------------------ 6 --------------------------------------------------// 
 
     public function keaktifanKegiatan()
@@ -337,7 +386,7 @@ class Data_Nilai extends BaseController
     public function prestasiKuliah()
     {
         $data = [
-            'title' => 'Nilai',
+            'title' => 'Nilai Indeks Prestasi',
             'nilai' => $this->ModelNilai->allData6(),
             'isi'    => 'guru/view_nilaiPrestasi',
         ];
@@ -377,12 +426,22 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/prestasiKuliah'));
     }
 
+    public function delete6($id_ip)
+    {
+        $data = [
+            'id_ip' => $id_ip,
+        ];
+        $this->ModelNilai->deleteData6($data);
+        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        return redirect()->to(base_url('data_nilai/prestasiKuliah'));
+    }
+
     //------------------------------------------------ 8 --------------------------------------------------// 
 
     public function catatanSaranPengurus()
     {
         $data = [
-            'title' => 'Catatan & Saran Pengurus',
+            'title' => 'Catatan & Saran',
             'nilai' => $this->ModelNilai->allData7(),
             'isi'    => 'guru/view_nilaiCatatanSaranPengurus',
         ];
@@ -411,6 +470,16 @@ class Data_Nilai extends BaseController
         ];
         $this->ModelNilai->addData7($data);
         session()->setFlashdata('pesan', 'Nilai berhasil di tambahkan !!');
+        return redirect()->to(base_url('data_nilai/catatanSaranPengurus'));
+    }
+
+    public function delete7($id_cs)
+    {
+        $data = [
+            'id_cs' => $id_cs,
+        ];
+        $this->ModelNilai->deleteData7($data);
+        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
         return redirect()->to(base_url('data_nilai/catatanSaranPengurus'));
     }
 

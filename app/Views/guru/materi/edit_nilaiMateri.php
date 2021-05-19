@@ -18,7 +18,7 @@
          <div class="col-sm-12">
              <div class="box box-gray box-solid">
                  <div class="box-header with-border">
-                     <h3 class="box-title"><i class="fa  fa-table"></i></h3>
+                     <h3 class="box-title"><i class="fa  fa-table"></i></h3>&emsp;
                      <a href="<?= base_url('data_nilai/index') ?>" class="left"><i class="fa fa-mail-reply"></i> Kembali</a>
                      <div class="box-body">
                          <div class="table-responsive">
@@ -67,11 +67,11 @@
                                  <tbody>
                                      <?php $no = 1;
                                         foreach ($nilai as $key => $value) {
-                                            form_open('data_nilai/editNilaiMateri/' . $value['id_nm']);
+                                            echo form_open('data_nilai/editNilaiMateri/' . $value['id_nm']);
                                         ?>
                                          <tr>
-                                             <td class="text-center"><input name="NIS" class="form-control" type="number" value="<?= $value['NIS'] ?>"></td>
-                                             <td><input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>"></td>
+                                             <td class="text-center"><input name="NIS" class="form-control" type="number" value="<?= $value['NIS'] ?>" readonly></td>
+                                             <td><input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly></td>
                                              <td>
                                                  <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" value="<?= $value['jenis_kelamin'] ?>">
                                                      <option value="L" <?= $value['jenis_kelamin'] == "L" ? "selected" : ""; ?>>L</option>

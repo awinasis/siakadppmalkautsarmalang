@@ -234,50 +234,5 @@
                  <!-- /.modal-dialog -->
              </div>
          <?php } ?>
-     <?php } else if (session()->get('level') == "Guru") { ?>
-         <!-- Main content -->
-         <section class="invoice">
-             <!-- title row -->
-             <div class="row">
-                 <div class="col-xs-12">
-                     <div class="row">
-                         <div class="col-sm-12">
-                             <h2 class="page-header" style="color:MediumSeaGreen; font-family:timesnewrohman;"><b>Biodata Guru</b></h2>
-                             <table class="table table-bordered">
-                                 <tbody>
-                                     <?php $no = 1;
-                                        foreach ($guru as $key => $value) { ?>
-                                         <tr>
-                                         <tr>
-                                             <th width="100px">Nama Guru</th>
-                                             <th width="30px">:</th>
-                                             <td><?= $value['nama_guru'] ?></td>
-                                         </tr>
-
-                                         <tr>
-                                             <th width="100px">Tempat Lahir</th>
-                                             <th width="30px">:</th>
-                                             <td><?= $value['tempat_lahir'] ?></td>
-                                             <th width="120px">Tanggal Lahir</th>
-                                             <th width="30px">:</th>
-                                             <td><?= $value['tanggal_lahir'] ?></td>
-                                         </tr>
-
-                                         <tr>
-                                             <th width="100px">Alamat Asal Daerah</th>
-                                             <th width="30px">:</th>
-                                             <td><?= $value['alamat_asal_daerah'] ?></td>
-                                             <th width="120px">No Telp</th>
-                                             <th width="30px">:</th>
-                                             <td><?= $value['noTelp'] ?></td>
-                                         </tr>
-                                         </tr>
-                                     <?php } ?>
-                                 </tbody>
-                             </table>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </section>
      <?php } ?>
+ </div>

@@ -44,4 +44,11 @@ class ModelGuru extends Model
         $query = $this->db->table('tbl_guru')->countAll();
         return $query;
     }
+
+    public function get_bioGuru_by_id($data)
+    {
+        return $this->db->table('tbl_guru')
+            ->where('id_guru', $data)
+            ->get()->getResultArray();
+    }
 }
