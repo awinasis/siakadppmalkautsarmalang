@@ -78,11 +78,11 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/index'));
     }
 
-    public function ubahNilaiMateri()
+    public function ubahNilaiMateri($id_nm)
     {
         $data = [
             'title' => 'Ubah Nilai Materi',
-            'nilai' => $this->ModelNilai->allData(),
+            'nilai' => $this->ModelNilai->detail_data($id_nm),
             'isi'    => 'guru/materi/edit_nilaiMateri',
         ];
 
@@ -129,7 +129,7 @@ class Data_Nilai extends BaseController
             'Nilai31' => $this->request->getPost('nilai31'),
         ];
         $this->ModelNilai->editData($data);
-        session()->setFlashdata('pesan', 'Data berhasil di update !!');
+        session()->setFlashdata('pesan', 'Nilai berhasil di update !!');
         return redirect()->to(base_url('data_nilai/index'));
     }
 
@@ -203,6 +203,54 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/konsepPraktikum'));
     }
 
+    public function ubahNilaiKonsepPraktikum($id_kp)
+    {
+        $data = [
+            'title' => 'Ubah Nilai Konsep & Praktikum',
+            'nilai' => $this->ModelNilai->detail_data1($id_kp),
+            'isi'    => 'guru/konsep_praktikum/edit_nilaiKonsepPraktikum',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function editNilaiKonsepPraktikum($id_kp)
+    {
+        $data = [
+            'id_kp' => $id_kp,
+            'NIS' => $this->request->getPost('NIS'),
+            'Nama_santri' => $this->request->getPost('nama_santri'),
+            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'N1' => $this->request->getPost('n1'),
+            'N2' => $this->request->getPost('n2'),
+            'N3' => $this->request->getPost('n3'),
+            'N4' => $this->request->getPost('n4'),
+            'N5' => $this->request->getPost('n5'),
+            'N6' => $this->request->getPost('n6'),
+            'N7' => $this->request->getPost('n7'),
+            'N8' => $this->request->getPost('n8'),
+            'N9' => $this->request->getPost('n9'),
+            'N10' => $this->request->getPost('n10'),
+            'N11' => $this->request->getPost('n11'),
+            'N12' => $this->request->getPost('n12'),
+            'N13' => $this->request->getPost('n13'),
+            'N14' => $this->request->getPost('n14'),
+            'N15' => $this->request->getPost('n15'),
+            'N16' => $this->request->getPost('n16'),
+            'N17' => $this->request->getPost('n17'),
+            'N18' => $this->request->getPost('n18'),
+            'N19' => $this->request->getPost('n19'),
+            'N20' => $this->request->getPost('n20'),
+            'N21' => $this->request->getPost('n21'),
+            'N22' => $this->request->getPost('n22'),
+            'N23' => $this->request->getPost('n23'),
+            'N24' => $this->request->getPost('n24'),
+        ];
+        $this->ModelNilai->editData1($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di update !!');
+        return redirect()->to(base_url('data_nilai/konsepPraktikum'));
+    }
+
     public function delete1($id_kp)
     {
         $data = [
@@ -259,6 +307,39 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/sikapPerilaku'));
     }
 
+    public function ubahNilaiSikapPerilaku($id_sp)
+    {
+        $data = [
+            'title' => 'Ubah Nilai Sikap & Perilaku',
+            'nilai' => $this->ModelNilai->detail_data2($id_sp),
+            'isi'    => 'guru/sikap_perilaku/edit_nilaiSikapPerilaku',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function editNilaiSikapPerilaku($id_sp)
+    {
+        $data = [
+            'id_sp' => $id_sp,
+            'NIS' => $this->request->getPost('NIS'),
+            'Nama_santri' => $this->request->getPost('nama_santri'),
+            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'Nl1' => $this->request->getPost('nl1'),
+            'Nl2' => $this->request->getPost('nl2'),
+            'Nl3' => $this->request->getPost('nl3'),
+            'Nl4' => $this->request->getPost('nl4'),
+            'Nl5' => $this->request->getPost('nl5'),
+            'Nl6' => $this->request->getPost('nl6'),
+            'Nl7' => $this->request->getPost('nl7'),
+            'Nl8' => $this->request->getPost('nl8'),
+            'Nl9' => $this->request->getPost('nl9'),
+        ];
+        $this->ModelNilai->editData2($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di update !!');
+        return redirect()->to(base_url('data_nilai/sikapPerilaku'));
+    }
+
     public function delete2($id_sp)
     {
         $data = [
@@ -310,6 +391,35 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/limaSuksesSantri'));
     }
 
+    public function ubahNilaiLimaSuksesSantri($id_lss)
+    {
+        $data = [
+            'title' => 'Ubah Nilai 5 Sukses Santri',
+            'nilai' => $this->ModelNilai->detail_data3($id_lss),
+            'isi'    => 'guru/5_sukses_santri/edit_nilaiLimaSuksesSantri',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function editNilaiLimaSuksesSantri($id_lss)
+    {
+        $data = [
+            'id_lss' => $id_lss,
+            'NIS' => $this->request->getPost('NIS'),
+            'Nama_santri' => $this->request->getPost('nama_santri'),
+            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'nilai_A' => $this->request->getPost('nilai_A'),
+            'nilai_B' => $this->request->getPost('nilai_B'),
+            'nilai_C' => $this->request->getPost('nilai_C'),
+            'nilai_D' => $this->request->getPost('nilai_D'),
+            'nilai_E' => $this->request->getPost('nilai_E'),
+        ];
+        $this->ModelNilai->editData3($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di update !!');
+        return redirect()->to(base_url('data_nilai/limaSuksesSantri'));
+    }
+
     public function delete3($id_lss)
     {
         $data = [
@@ -356,6 +466,33 @@ class Data_Nilai extends BaseController
         ];
         $this->ModelNilai->addData4($data);
         session()->setFlashdata('pesan', 'Nilai berhasil di tambahkan !!');
+        return redirect()->to(base_url('data_nilai/ekstrakurikuler'));
+    }
+
+    public function ubahNilaiEkstrakurikuler($id_ne)
+    {
+        $data = [
+            'title' => 'Ubah Nilai Ekstrakurikuler',
+            'nilai' => $this->ModelNilai->detail_data4($id_ne),
+            'isi'    => 'guru/ekstrakurikuler/edit_nilaiEkstrakurikuler',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function editNilaiEkstrakurikuler($id_ne)
+    {
+        $data = [
+            'id_ne' => $id_ne,
+            'NIS' => $this->request->getPost('NIS'),
+            'Nama_santri' => $this->request->getPost('nama_santri'),
+            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'Nilai_1' => $this->request->getPost('nilai_1'),
+            'Nilai_2' => $this->request->getPost('nilai_2'),
+            'Nilai_3' => $this->request->getPost('nilai_3'),
+        ];
+        $this->ModelNilai->editData4($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di update !!');
         return redirect()->to(base_url('data_nilai/ekstrakurikuler'));
     }
 
@@ -427,6 +564,39 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/prestasiKuliah'));
     }
 
+    public function ubahNilaiIndeksPrestasi($id_ip)
+    {
+        $data = [
+            'title' => 'Ubah Nilai Indeks Prestasi',
+            'nilai' => $this->ModelNilai->detail_data6($id_ip),
+            'isi'    => 'guru/prestasi/edit_nilaiPrestasi',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function editNilaiIndeksPrestasi($id_ip)
+    {
+        $data = [
+            'id_ip' => $id_ip,
+            'NIS' => $this->request->getPost('NIS'),
+            'Nama_santri' => $this->request->getPost('nama_santri'),
+            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'Nilai_IP1' => $this->request->getPost('nilai_IP1'),
+            'Nilai_IP2' => $this->request->getPost('nilai_IP2'),
+            'Nilai_IP3' => $this->request->getPost('nilai_IP3'),
+            'Nilai_IP4' => $this->request->getPost('nilai_IP4'),
+            'Nilai_IP5' => $this->request->getPost('nilai_IP5'),
+            'Nilai_IP6' => $this->request->getPost('nilai_IP6'),
+            'Nilai_IP7' => $this->request->getPost('nilai_IP7'),
+            'Nilai_IP8' => $this->request->getPost('nilai_IP8'),
+            'Nilai_IP9' => $this->request->getPost('nilai_IP9'),
+        ];
+        $this->ModelNilai->editData6($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di update !!');
+        return redirect()->to(base_url('data_nilai/prestasiKuliah'));
+    }
+
     public function delete6($id_ip)
     {
         $data = [
@@ -471,6 +641,31 @@ class Data_Nilai extends BaseController
         ];
         $this->ModelNilai->addData7($data);
         session()->setFlashdata('pesan', 'Nilai berhasil di tambahkan !!');
+        return redirect()->to(base_url('data_nilai/catatanSaranPengurus'));
+    }
+
+    public function ubahCatatanSaran($id_cs)
+    {
+        $data = [
+            'title' => 'Ubah Catatan & Saran',
+            'nilai' => $this->ModelNilai->detail_data7($id_cs),
+            'isi'    => 'guru/catatan_saran/edit_catatanSaran',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function editCatatanSaran($id_cs)
+    {
+        $data = [
+            'id_cs' => $id_cs,
+            'NIS' => $this->request->getPost('NIS'),
+            'Nama_santri' => $this->request->getPost('nama_santri'),
+            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'Catatan_Saran' => $this->request->getPost('catatan_saran'),
+        ];
+        $this->ModelNilai->editData7($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di update !!');
         return redirect()->to(base_url('data_nilai/catatanSaranPengurus'));
     }
 
