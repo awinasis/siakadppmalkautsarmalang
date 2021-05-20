@@ -53,7 +53,7 @@
                                          <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
                                          <td><?= $value['catatan_saran'] ?></td>
                                          <td class="text-center">
-                                             <button class="btn btn-warning btn-sm" <?= $value['id_cs'] ?>><i class="fa fa-edit"></i></button>
+                                             <a href="<?= base_url('data_nilai/ubahCatatanSaran/' . $value['id_cs']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_cs'] ?>"><i class="fa fa-trash"></i></button>
                                          </td>
                                      </tr>
@@ -70,7 +70,7 @@
      <?php foreach ($nilai as $key => $value) { ?>
          <div class="modal fade" id="delete<?= $value['id_cs'] ?>">
              <div class="modal-dialog">
-                 <div class="modal-content box box-black box-solid">
+                 <div class="modal-content box box-success box-solid">
                      <div class="modal-header box-header with-border">
                          <h4 class="modal-title">Delete Nilai Catatan & Saran</h4>
                      </div>

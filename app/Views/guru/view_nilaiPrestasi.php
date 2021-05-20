@@ -70,7 +70,7 @@
                                          <td><?= $value['nilai_IP9'] ?></td>
 
                                          <td class="text-center">
-                                             <button class="btn btn-warning btn-sm" <?= $value['id_ip'] ?>><i class="fa fa-edit"></i></button>
+                                             <a href="<?= base_url('data_nilai/ubahNilaiIndeksPrestasi/' . $value['id_ip']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_ip'] ?>"><i class="fa fa-trash"></i></button>
                                          </td>
                                      </tr>
@@ -87,7 +87,7 @@
      <?php foreach ($nilai as $key => $value) { ?>
          <div class="modal fade" id="delete<?= $value['id_ip'] ?>">
              <div class="modal-dialog">
-                 <div class="modal-content box box-black box-solid">
+                 <div class="modal-content box box-success box-solid">
                      <div class="modal-header box-header with-border">
                          <h4 class="modal-title">Delete Nilai Indeks Prestasi</h4>
                      </div>

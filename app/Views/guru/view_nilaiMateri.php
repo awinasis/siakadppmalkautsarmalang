@@ -115,7 +115,7 @@
                                          <td class="text-center"><?= $value['nilai31'] ?>%</td>
 
                                          <td class="text-center">
-                                             <a href="<?= base_url('data_nilai/ubahNilaiMateri') ?>" class="btn btn-warning btn-sm" <?= $value['id_nm'] ?>><i class="fa fa-edit"></i></a>
+                                             <a href="<?= base_url('data_nilai/ubahNilaiMateri/' . $value['id_nm']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_nm'] ?>"><i class="fa fa-trash"></i></button>
                                          </td>
                                      </tr>
@@ -132,7 +132,7 @@
      <?php foreach ($nilai as $key => $value) { ?>
          <div class="modal fade" id="delete<?= $value['id_nm'] ?>">
              <div class="modal-dialog">
-                 <div class="modal-content box box-black box-solid">
+                 <div class="modal-content box box-success box-solid">
                      <div class="modal-header box-header with-border">
                          <h4 class="modal-title">Delete Nilai Materi</h4>
                      </div>

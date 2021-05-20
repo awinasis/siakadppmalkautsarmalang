@@ -25,10 +25,12 @@
                              <table id="example2" class="table table-bordered table-striped">
                                  <thead>
                                      <tr>
+                                         <th rowspan="2" class="text-center">No</th>
                                          <th rowspan="2" class="text-center">NIS</th>
                                          <th rowspan="2" class="text-center">Nama</th>
                                          <th rowspan="2" class="text-center">L/P</th>
                                          <th class="text-center" colspan=" 31">Pencapaian Materi</th>
+                                         <th rowspan="2" class="text-center">Action</th>
                                      </tr>
                                      <tr>
                                          <th class="text-center">Bacaan Surah Al-Baqarah</th>
@@ -66,10 +68,10 @@
                                  </thead>
                                  <tbody>
                                      <?php $no = 1;
-                                        foreach ($nilai as $key => $value) {
-                                            echo form_open('data_nilai/editNilaiMateri/' . $value['id_nm']);
-                                        ?>
+                                        foreach ($nilai as $key => $value) { ?>
                                          <tr>
+                                             <?php echo form_open('data_nilai/editNilaiMateri/' . $value['id_nm']); ?>
+                                             <td class="text-center"><?= $no++; ?></td>
                                              <td class="text-center"><input name="NIS" class="form-control" type="number" value="<?= $value['NIS'] ?>" readonly></td>
                                              <td><input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly></td>
                                              <td>
@@ -109,14 +111,14 @@
                                              <td><input name="nilai29" class="form-control" type="number" value="<?= $value['nilai29'] ?>">%</td>
                                              <td><input name="nilai30" class="form-control" type="number" value="<?= $value['nilai30'] ?>">%</td>
                                              <td><input name="nilai31" class="form-control" type="number" value="<?= $value['nilai31'] ?>">%</td>
+                                             <td class="text-center">
+                                                 <button type="submit" class="btn btn-primary">Simpan</button>
+                                             </td>
+                                             <?php echo form_close() ?>
                                          </tr>
                                      <?php } ?>
                                  </tbody>
                              </table>
-                             <div class="modal-footer">
-                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                                 <?php echo form_close() ?>
-                             </div>
                          </div>
                      </div>
                  </div>

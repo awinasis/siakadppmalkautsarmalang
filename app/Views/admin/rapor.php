@@ -180,8 +180,8 @@
          <?php foreach ($rapor as $key => $value) { ?>
              <div class="modal fade" id="delete<?= $value['id_rapor'] ?>">
                  <div class="modal-dialog">
-                     <div class="modal-content">
-                         <div class="modal-header">
+                     <div class="modal-content box box-success box-solid">
+                         <div class="modal-header box-header with-border">
                              <h4 class="modal-title">Delete Rapor</h4>
                          </div>
 
