@@ -34,6 +34,10 @@
                      </div>
                      <!-- /.box-header -->
                      <div class="box-body">
+                         <td>
+                             <button class="btn btn-primary btn-sm">
+                                 <i class="fa fa-file-excel-o"></i> Export to Excel</button><br>
+                         </td><br>
                          <?php
                             if (session()->getFlashdata('pesan')) {
                                 echo '<div class="alert alert-success" role="alert">';
@@ -123,6 +127,10 @@
                      </div>
                      <!-- /.box-header -->
                      <div class="box-body">
+                         <td>
+                             <button class="btn btn-primary btn-sm">
+                                 <i class="fa fa-file-excel-o"></i> Export to Excel</button><br>
+                         </td><br>
                          <?php
                             if (session()->getFlashdata('pesan')) {
                                 echo '<div class="alert alert-success" role="alert">';

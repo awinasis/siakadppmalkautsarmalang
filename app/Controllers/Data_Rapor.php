@@ -59,4 +59,15 @@ class Data_Rapor extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
         return redirect()->to(base_url('data_rapor'));
     }
+
+    public function view_rapor($id_rapor)
+    {
+        $data = [
+            'title' => 'View Rapor',
+            'rapor' => $this->ModelRapor->detail_data($id_rapor),
+            'isi'    => 'admin/v_viewRapor'
+        ];
+
+        return view("layout/wrapper", $data);
+    }
 }

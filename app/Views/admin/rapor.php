@@ -57,7 +57,9 @@
                                          <td><?= $value['nama_santri'] ?></td>
                                          <td class="text-center"><?= $value['jenis_kelamin']; ?></td>
                                          <td class="text-center">
-                                             <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#detail<?= $value['id_rapor'] ?>"><i class="fa fa-file-text"></i> Rapor</button>
+                                             <button type="button" class="btn btn-info btn-sm"><i class="fa  fa-file"></i> Sampul</button>&emsp;
+                                             <a href="<?= base_url('data_rapor/view_rapor/' . $value['id_rapor']) ?>" class="btn btn-success btn-sm">
+                                                 <i class="fa fa-file-text"></i> Rapor</a><br>
                                          </td>
                                          <?php if (session()->get('level') == "Guru") { ?>
                                              <td class="text-center">
@@ -144,13 +146,13 @@
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>NIS</label>
-                                     <input name="NIS" type="number" value="<?= $value['NIS'] ?>" class="form-control">
+                                     <input name="NIS" type="number" value="<?= $value['NIS'] ?>" class="form-control" readonly>
                                  </div>
                              </div>
 
                              <div class="form-group">
                                  <label>Nama Santri</label>
-                                 <input name="nama_santri" value="<?= $value['nama_santri'] ?>" class="form-control">
+                                 <input name="nama_santri" value="<?= $value['nama_santri'] ?>" class="form-control" readonly>
                              </div>
 
                              <div class="form-group row">
@@ -186,7 +188,7 @@
                          </div>
 
                          <div class="modal-body">
-                             Apakah anda yakin ingin menghapus <b><?= $value['nama_santri'] ?> ?</b>
+                             Apakah anda yakin ingin menghapus <b><?= $title; ?>&nbsp;<?= $value['nama_santri'] ?> ?</b>
                          </div>
 
                          <div class="modal-footer">
