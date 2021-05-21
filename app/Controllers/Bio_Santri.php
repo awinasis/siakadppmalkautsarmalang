@@ -43,8 +43,10 @@ class Bio_Santri extends BaseController
             'Kelas_santri' => $this->request->getPost('kelas_santri'),
             'Angkatan_santri' => $this->request->getPost('angkatan_santri'),
             'Nama_Ayah' => $this->request->getPost('nama_ayah'),
+            'Pekerjaan_Ayah' => $this->request->getPost('pekerjaan_ayah'),
             'NoTelp_ayah' => $this->request->getPost('noTelp_ayah'),
             'Nama_Ibu' => $this->request->getPost('nama_ibu'),
+            'Pekerjaan_Ibu' => $this->request->getPost('pekerjaan_ibu'),
             'NoTelp_ibu' => $this->request->getPost('noTelp_ibu')
         ];
         $this->ModelSantri->addData($data);
@@ -73,8 +75,10 @@ class Bio_Santri extends BaseController
             'Kelas_santri' => $this->request->getPost('kelas_santri'),
             'Angkatan_santri' => $this->request->getPost('angkatan_santri'),
             'Nama_Ayah' => $this->request->getPost('nama_ayah'),
+            'Pekerjaan_Ayah' => $this->request->getPost('pekerjaan_ayah'),
             'NoTelp_ayah' => $this->request->getPost('noTelp_ayah'),
             'Nama_Ibu' => $this->request->getPost('nama_ibu'),
+            'Pekerjaan_Ibu' => $this->request->getPost('pekerjaan_ibu'),
             'NoTelp_ibu' => $this->request->getPost('noTelp_ibu')
         ];
         $this->ModelSantri->editData($data);
@@ -91,23 +95,4 @@ class Bio_Santri extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
         return redirect()->to(base_url('bio_santri'));
     }
-
-    // public function viewBiodataSantri($id_santri)
-    // {
-    //     if (session()->get('level') == "Santri") {
-    //         $reportSantri = $this->ModelSantri->orderBy('id_santri', 'desc')->findAll();
-    //     } else {
-    //         $reportSantri = $this->ModelSantri->where('id_santri', session()->get('id_santri'))->orderBy('id_santri', 'desc')->findAll();
-    //     }
-    //     $reportSantri = $this->ModelSantri->findAll();
-
-    //     $data = [
-    //         'title' => 'Biodata Santri',
-    //         'santri' => $this->ModelSantri->detail_data($id_santri),
-    //         'isi'    => 'santri/v_bioSantri',
-    //         'reportSantri' => $reportSantri
-    //     ];
-
-    //     return view("layout/wrapper", $data);
-    // }
 }

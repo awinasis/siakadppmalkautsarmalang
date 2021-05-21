@@ -84,13 +84,6 @@ class Santri extends BaseController
 
     public function absen_kbm()
     {
-        // if (session()->get('level') == "Admin") {
-        //     $reportAbsen = $this->ModelAbsensi->orderBy('NIS', 'desc')->findAll();
-        // } else {
-        //     $reportAbsen = $this->ModelAbsensi->where('NIS', session()->get('id_santri'))->orderBy('id_santri', 'desc')->findAll();
-        // }
-        // $reportAbsen = $this->ModelAbsensi->findAll();
-
         $data = [
             'title' => 'Absensi KBM',
             'absensi' => $this->ModelAbsensi->allData(),

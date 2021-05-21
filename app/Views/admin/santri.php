@@ -67,8 +67,10 @@
                                          <th class="text-center">kelas Santri</th>
                                          <th class="text-center">Angkatan Santri</th>
                                          <th class="text-center">Nama Ayah</th>
+                                         <th class="text-center">Pekerjaan Ayah</th>
                                          <th class="text-center">No.Telp Ayah</th>
                                          <th class="text-center">Nama Ibu</th>
+                                         <th class="text-center">Pekerjaan Ibu</th>
                                          <th class="text-center">No.Telp Ibu</th>
                                          <?php if (session()->get('level') == "Admin") { ?>
                                              <th width="150px" class="text-center">Action</th>
@@ -96,8 +98,10 @@
                                              <td class="text-center"><?= $value['kelas_santri'] ?></td>
                                              <td class="text-center"><?= $value['angkatan_santri'] ?></td>
                                              <td><?= $value['nama_ayah'] ?></td>
+                                             <td class="text-center"><?= $value['pekerjaan_ayah'] ?></td>
                                              <td class="text-center"><?= $value['noTelp_ayah'] ?></td>
                                              <td><?= $value['nama_ibu'] ?></td>
+                                             <td class="text-center"><?= $value['pekerjaan_ibu'] ?></td>
                                              <td class="text-center"><?= $value['noTelp_ibu'] ?></td>
 
                                              <?php if (session()->get('level') == "Admin") { ?>
@@ -160,8 +164,10 @@
                                          <th class="text-center">kelas Santri</th>
                                          <th class="text-center">Angkatan Santri</th>
                                          <th class="text-center">Nama Ayah</th>
+                                         <th class="text-center">Pekerjaan Ayah</th>
                                          <th class="text-center">No.Telp Ayah</th>
                                          <th class="text-center">Nama Ibu</th>
+                                         <th class="text-center">Pekerjaan Ibu</th>
                                          <th class="text-center">No.Telp Ibu</th>
                                      </tr>
                                  </thead>
@@ -186,8 +192,10 @@
                                              <td class="text-center"><?= $value['kelas_santri'] ?></td>
                                              <td class="text-center"><?= $value['angkatan_santri'] ?></td>
                                              <td><?= $value['nama_ayah'] ?></td>
+                                             <td class="text-center"><?= $value['pekerjaan_ayah'] ?></td>
                                              <td class="text-center"><?= $value['noTelp_ayah'] ?></td>
                                              <td><?= $value['nama_ibu'] ?></td>
+                                             <td class="text-center"><?= $value['pekerjaan_ibu'] ?></td>
                                              <td class="text-center"><?= $value['noTelp_ibu'] ?></td>
                                          </tr>
                                      <?php } ?>
@@ -332,6 +340,13 @@
                          </div>
 
                          <div class="form-group row">
+                             <div class="col-lg-8">
+                                 <label>Pekerjaan Ayah</label>
+                                 <input name="pekerjaan_ayah" class="form-control" placeholder="pekerjaan ayah">
+                             </div>
+                         </div>
+
+                         <div class="form-group row">
                              <div class="col-lg-6">
                                  <label>NoTelp Ayah</label>
                                  <input name="noTelp_ayah" type="number" class="form-control" placeholder="+62 " required>
@@ -341,6 +356,13 @@
                          <div class="form-group">
                              <label>Nama Ibu</label>
                              <input name="nama_ibu" type="" class="form-control" placeholder="nama ibu" required>
+                         </div>
+
+                         <div class="form-group row">
+                             <div class="col-lg-8">
+                                 <label>Pekerjaan Ibu</label>
+                                 <input name="pekerjaan_ibu" class="form-control" placeholder="pekerjaan ibu">
+                             </div>
                          </div>
 
                          <div class="form-group row">
@@ -379,24 +401,24 @@
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>NIS</label>
-                                     <input name="NIS" value="<?= $value['NIS'] ?>" class="form-control" placeholder="NIS" required>
+                                     <input name="NIS" value="<?= $value['NIS'] ?>" class="form-control">
                                  </div>
                              </div>
 
                              <div class="form-group">
                                  <label>Nama Santri</label>
-                                 <input name="nama_santri" value="<?= $value['nama_santri'] ?>" class="form-control" placeholder="nama santri" required>
+                                 <input name="nama_santri" value="<?= $value['nama_santri'] ?>" class="form-control">
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>Tempat Lahir</label>
-                                     <input name="tempat_lahir" class="form-control" value="<?= $value['tempat_lahir'] ?>" placeholder="tempat lahir" required>
+                                     <input name="tempat_lahir" class="form-control" value="<?= $value['tempat_lahir'] ?>">
                                  </div>
 
                                  <div class="col-lg-6">
                                      <label>Tanggal Lahir</label>
-                                     <input name="tanggal_lahir" type="date" class="form-control" value="<?= $value['tanggal_lahir'] ?>" placeholder="tanggal lahir" required>
+                                     <input name="tanggal_lahir" type="date" class="form-control" value="<?= $value['tanggal_lahir'] ?>">
                                  </div>
                              </div>
 
@@ -404,8 +426,8 @@
                                  <div class="col-lg-8">
                                      <label class="form-control-label">Jenis Kelamin</label>
                                      <div class="form-group">
-                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" <?= $value['jenis_kelamin'] == "L" ? "checked" : ""; ?> required> L
-                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P" <?= $value['jenis_kelamin'] == "P" ? "checked" : ""; ?> required> P
+                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" <?= $value['jenis_kelamin'] == "L" ? "checked" : ""; ?>> L
+                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P" <?= $value['jenis_kelamin'] == "P" ? "checked" : ""; ?>> P
                                      </div>
                                  </div>
                              </div>
@@ -413,33 +435,33 @@
                              <div class="form-group row">
                                  <div class="col-lg-4">
                                      <label>Gol. Darah</label>
-                                     <input class="form-control" name="gol_darah" value="<?= $value['gol_darah'] ?>" required>
+                                     <input class="form-control" name="gol_darah" value="<?= $value['gol_darah'] ?>">
                                  </div>
                              </div>
 
                              <div class="form-group">
                                  <label>Alamat</label>
-                                 <textarea id="alamat" name="alamat" class="form-control ckeditor" style="height: 100px" required><?= htmlentities($value['alamat']); ?></textarea>
+                                 <textarea id="alamat" name="alamat" class="form-control ckeditor" style="height: 100px"><?= htmlentities($value['alamat']); ?></textarea>
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-8">
                                      <label>Email</label>
-                                     <input name="email" type="email" value="<?= $value['email'] ?>" class="form-control" placeholder="email" required>
+                                     <input name="email" type="email" value="<?= $value['email'] ?>" class="form-control">
                                  </div>
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>NoTelp</label>
-                                     <input name="noTelp" type="number" value="<?= $value['noTelp'] ?>" class="form-control" placeholder="noTelp" required>
+                                     <input name="noTelp" type="number" value="<?= $value['noTelp'] ?>" class="form-control">
                                  </div>
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>Status</label>
-                                     <select name="status" class="form-control" id="status" value="<?= $value['status'] ?>" required>
+                                     <select name="status" class="form-control" id="status" value="<?= $value['status'] ?>">
                                          <option value="Mahasiswa">Mahasiswa</option>
                                      </select>
                                  </div>
@@ -447,22 +469,22 @@
 
                              <div class="form-group">
                                  <label>Universitas</label>
-                                 <input name="universitas" value="<?= $value['universitas'] ?>" class="form-control" placeholder="universitas" required>
+                                 <input name="universitas" value="<?= $value['universitas'] ?>" class="form-control">
                              </div>
 
                              <div class="form-group">
                                  <label>Fakultas</label>
-                                 <input name="fakultas" value="<?= $value['fakultas'] ?>" class="form-control" placeholder="fakultas">
+                                 <input name="fakultas" value="<?= $value['fakultas'] ?>" class="form-control">
                              </div>
                              <div class="form-group">
                                  <label>Jurusan/Prodi</label>
-                                 <input name="jurusan_prodi" value="<?= $value['jurusan_prodi'] ?>" class="form-control" placeholder="jurusan_prodi" required>
+                                 <input name="jurusan_prodi" value="<?= $value['jurusan_prodi'] ?>" class="form-control">
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-8">
                                      <label class="form-control-label">kelas Santri</label>
-                                     <select name="kelas_santri" class="form-control" id="kelas_santri" required>
+                                     <select name="kelas_santri" class="form-control" id="kelas_santri">
                                          <option value="Qiraah" <?= $value['kelas_santri'] == "Qiraah" ? "selected" : ""; ?>>Qiraah</option>
                                          <option value="kitabah" <?= $value['kelas_santri'] == "kitabah" ? "selected" : ""; ?>>kitabah</option>
                                          <!-- <option value="Reguler" <?= $value['kelas_santri'] == "Reguler" ? "selected" : ""; ?>>Reguler</option>
@@ -480,31 +502,45 @@
                              <div class="form-group row">
                                  <div class="col-lg-4">
                                      <label>Angkatan Santri</label>
-                                     <input name="angkatan_santri" type="number" value="<?= $value['angkatan_santri'] ?>" class="form-control" placeholder="angkatan santri" required>
+                                     <input name="angkatan_santri" type="number" value="<?= $value['angkatan_santri'] ?>" class="form-control">
                                  </div>
                              </div>
 
                              <div class="form-group">
                                  <label>Nama Ayah</label>
-                                 <input name="nama_ayah" value="<?= $value['nama_ayah'] ?>" class="form-control" placeholder="nama ayah" required>
+                                 <input name="nama_ayah" value="<?= $value['nama_ayah'] ?>" class="form-control">
+                             </div>
+
+                             <div class="form-group row">
+                                 <div class="col-lg-8">
+                                     <label>Pekerjaan Ayah</label>
+                                     <input name="pekerjaan_ayah" class="form-control" value="<?= $value['pekerjaan_ayah'] ?>">
+                                 </div>
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>NoTelp Ayah</label>
-                                     <input name="noTelp_ayah" value="<?= $value['noTelp_ayah'] ?>" class="form-control" placeholder="noTelp ayah" required>
+                                     <input name="noTelp_ayah" value="<?= $value['noTelp_ayah'] ?>" class="form-control">
                                  </div>
                              </div>
 
                              <div class="form-group">
                                  <label>Nama Ibu</label>
-                                 <input name="nama_ibu" value="<?= $value['nama_ibu'] ?>" class="form-control" placeholder="nama ibu" required>
+                                 <input name="nama_ibu" value="<?= $value['nama_ibu'] ?>" class="form-control">
+                             </div>
+
+                             <div class="form-group row">
+                                 <div class="col-lg-8">
+                                     <label>Pekerjaan Ibu</label>
+                                     <input name="pekerjaan_ibu" class="form-control" value="<?= $value['pekerjaan_ibu'] ?>">
+                                 </div>
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>NoTelp Ibu</label>
-                                     <input name="noTelp_ibu" value="<?= $value['noTelp_ibu'] ?>" class="form-control" placeholder="noTelp ibu" required>
+                                     <input name="noTelp_ibu" value="<?= $value['noTelp_ibu'] ?>" class="form-control">
                                  </div>
                              </div>
 

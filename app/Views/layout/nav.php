@@ -22,11 +22,13 @@
                     <li><a href="<?= base_url('data_rapor') ?>"><i class="fa fa-archive"></i> Rapor</a></a></li>
                     <li><a href="<?= base_url('file_surat') ?>"><i class="fa fa-send"></i> Surat</a></a></li>
                     <li><a href="<?= base_url('data_pesan') ?>"><i class="fa fa-envelope"></i> Pesan</a></a></li>
+                    <li><a href="<?= base_url('tahun_akademik') ?>"><i class="fa fa-calendar-o"></i> Tahun Akademik</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
+                    <li><a href="<?= base_url('tahun_akademik/setting') ?>"><i class="fa fa-cog"></i> TA Management</a></li>
                     <li><a href="<?= base_url('data_user') ?>"><i class="fa fa-cogs"></i> User Management</a></li>
                 </ul>
             </li>

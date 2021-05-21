@@ -67,6 +67,15 @@
                                                     </tr>
 
                                                     <tr>
+                                                        <th width="100px">Angkatan Santri</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['angkatan_santri'] ?></td>
+                                                        <th width="120px">Kelas Santri</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['kelas_santri'] ?></td>
+                                                    </tr>
+
+                                                    <tr>
                                                         <th width="100px">Email</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['email'] ?></td>
@@ -88,19 +97,13 @@
                                                     </tr>
 
                                                     <tr>
-                                                        <th width="100px">Angkatan Santri</th>
-                                                        <th width="30px">:</th>
-                                                        <td><?= $value['angkatan_santri'] ?></td>
-                                                        <th width="120px">Kelas Santri</th>
-                                                        <th width="30px">:</th>
-                                                        <td><?= $value['kelas_santri'] ?></td>
-                                                    </tr>
-
-                                                    <tr>
                                                         <th width="100px">Nama Ayah</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['nama_ayah'] ?></td>
-                                                        <th width="120px">NoTelp Ayah</th>
+                                                        <th width="120px">Pekerjaan Ayah</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['pekerjaan_ayah'] ?></td>
+                                                        <th width="140px">NoTelp Ayah</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['noTelp_ayah'] ?></td>
                                                     </tr>
@@ -109,7 +112,10 @@
                                                         <th width="100px">Nama Ibu</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['nama_ibu'] ?></td>
-                                                        <th width="120px">NoTelp Ibu</th>
+                                                        <th width="120px">Pekerjaan Ibu</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['pekerjaan_ibu'] ?></td>
+                                                        <th width="140px">NoTelp Ibu</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['noTelp_ibu'] ?></td>
                                                     </tr>
