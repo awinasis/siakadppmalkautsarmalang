@@ -15,18 +15,10 @@ class Bio_Santri extends BaseController
     }
     public function index()
     {
-        // if (session()->get('level') == "Guru") {
-        //     $reportSantri = $this->ModelSantri->orderBy('NIS', 'desc')->findAll();
-        // } else {
-        //     $reportSantri = $this->ModelSantri->where('NIS', session()->get('id_santri'))->orderBy('id_santri', 'desc')->findAll();
-        // }
-        // $reportSantri = $this->ModelSantri->findAll();
-
         $data = [
             'title' => 'Santri',
             'santri' => $this->ModelSantri->allData(),
             'isi'    => 'admin/santri',
-            // 'reportSantri' => $reportSantri,
         ];
 
         return view("layout/wrapper", $data);
