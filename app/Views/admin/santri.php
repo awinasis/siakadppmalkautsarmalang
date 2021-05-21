@@ -35,8 +35,8 @@
                      <!-- /.box-header -->
                      <div class="box-body">
                          <td>
-                             <button class="btn btn-primary btn-sm">
-                                 <i class="fa fa-file-excel-o"></i> Export to Excel</button><br>
+                             <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
+                                 <i class="fa fa-file-excel-o"></i> Export to Excel</a><br>
                          </td><br>
                          <?php
                             if (session()->getFlashdata('pesan')) {
@@ -132,8 +132,8 @@
                      <!-- /.box-header -->
                      <div class="box-body">
                          <td>
-                             <button class="btn btn-primary btn-sm">
-                                 <i class="fa fa-file-excel-o"></i> Export to Excel</button><br>
+                             <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
+                                 <i class="fa fa-file-excel-o"></i> Export to Excel</a><br>
                          </td><br>
                          <?php
                             if (session()->getFlashdata('pesan')) {

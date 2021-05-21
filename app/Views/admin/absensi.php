@@ -27,9 +27,7 @@
                      <div class="box-tools pull-right">
                          <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
                      </div>
-                     <!-- /.box-tools -->
                  </div>
-                 <!-- /.box-header -->
                  <div class="box-body">
                      <?php
                         if (session()->getFlashdata('pesan')) {
@@ -75,9 +73,7 @@
                          </table>
                      </div>
                  </div>
-                 <!-- /.box-body -->
              </div>
-             <!-- /.box -->
          </div>
      </div>
 
@@ -142,9 +138,7 @@
                  </div>
                  <?php echo form_close(); ?>
              </div>
-             <!-- /.modal-content -->
          </div>
-         <!-- /.modal-dialog -->
      </div>
 
      <!-- modal edit -->
@@ -208,9 +202,7 @@
                          <?php echo form_close(); ?>
                      </div>
                  </div>
-                 <!-- /.box-body -->
              </div>
-             <!-- /.box -->
          </div>
      <?php } ?>
 
@@ -232,9 +224,7 @@
                          <a href="<?= base_url('data_absensi/delete/' . $value['NIS']) ?>" class="btn btn-primary">Delete</a>
                      </div>
                  </div>
-                 <!-- /.modal-content -->
              </div>
-             <!-- /.modal-dialog -->
          </div>
      <?php } ?>
  </div>

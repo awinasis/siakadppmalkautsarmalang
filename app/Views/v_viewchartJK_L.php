@@ -23,8 +23,12 @@
         <!-- title row -->
         <div class="row">
             <div class="col-xs-12">
-                <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;"><i class="fa fa-laptop"></i> Data Santri <b style="color:Black;">JK : Laki-Laki</b></h4>
-                &emsp;<h2 class="page-header"></h2>
+                <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;"><i class="fa fa-laptop"></i> Data Santri</h4>
+                &emsp;
+                <div class="pull-right">
+                    <h4><b style="color:Black; font-family:timesnewrohman;">JK : Laki-Laki</b></h4>
+                </div>
+                <h2 class="page-header"></h2>
                 <table class="table table-bordered">
                     <!-- <div>
                         <canvas id="doughnut-chart-santri" height="180"></canvas>
@@ -32,7 +36,6 @@
                     <?php
                     $konek = mysqli_connect("localhost", "root", "", "db_siakad_ppmalkautsar");
                     ?>
-                    &emsp;
                     <table width="70%" border="2" align="center" cellpadding="5" cellspacing="0">
                         <thead>
                             <tr>

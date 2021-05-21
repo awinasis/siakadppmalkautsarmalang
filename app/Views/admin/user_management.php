@@ -101,14 +101,18 @@
                          <input name="nama_user" class="form-control" placeholder="nama user" required>
                      </div>
 
-                     <div class="form-group">
-                         <label>Username</label>
-                         <input name="username" type="number" class="form-control" placeholder="Username" required>
+                     <div class="form-group row">
+                         <div class="col-lg-8">
+                             <label>Username</label>
+                             <input name="username" type="number" class="form-control" placeholder="Username" required>
+                         </div>
                      </div>
 
-                     <div class="form-group">
-                         <label>Password</label>
-                         <input name="password" class="form-control" placeholder="password" required>
+                     <div class="form-group row">
+                         <div class="col-lg-8">
+                             <label>Password</label>
+                             <input name="password" class="form-control" placeholder="password" required>
+                         </div>
                      </div>
 
                      <div class="form-group row">
@@ -159,14 +163,18 @@
                              <input name="nama_user" value="<?= $value['nama_user'] ?>" class="form-control" placeholder="nama user" required>
                          </div>
 
-                         <div class="form-group">
-                             <label>Username</label>
-                             <input name="username" value="<?= $value['username'] ?>" class="form-control" placeholder="Username" required>
+                         <div class="form-group row">
+                             <div class="col-lg-8">
+                                 <label>Username</label>
+                                 <input name="username" type="number" value="<?= $value['username'] ?>" class="form-control" placeholder="Username" required>
+                             </div>
                          </div>
 
-                         <div class="form-group">
-                             <label>Password</label>
-                             <input name="password" value="<?= $value['password'] ?>" class="form-control" placeholder="password" required>
+                         <div class="form-group row">
+                             <div class="col-lg-8">
+                                 <label>Password</label>
+                                 <input name="password" value="<?= $value['password'] ?>" class="form-control" placeholder="password" required>
+                             </div>
                          </div>
 
                          <div class="form-group row">
