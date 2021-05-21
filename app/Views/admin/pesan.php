@@ -131,23 +131,23 @@
                          <div class="form-group row">
                              <div class="col-sm-6">
                                  <label>NIS</label>
-                                 <input type="number" class="form-control" id="NIS" name="NIS" value="<?= $value['NIS'] ?>" required>
+                                 <input type="number" class="form-control" id="NIS" name="NIS" value="<?= $value['NIS'] ?>" readonly>
                              </div>
                          </div>
 
                          <div class="form-group">
                              <label>Nama Santri</label>
-                             <input class="form-control" id="nama_santri" name="nama_santri" value="<?= $value['nama_santri'] ?>" required>
+                             <input class="form-control" id="nama_santri" name="nama_santri" value="<?= $value['nama_santri'] ?>" readonly>
                          </div>
 
                          <div class="form-group">
                              <label>Tanggal</label>
-                             <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= $value['tanggal'] ?>" required>
+                             <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= $value['tanggal'] ?>">
                          </div>
 
                          <div class="form-group">
                              <label>Pesan</label>
-                             <textarea class="form-control" id="pesan" name="pesan" style="height: 100px" required><?= htmlentities($value['pesan']); ?></textarea>
+                             <textarea class="form-control" id="pesan" name="pesan" style="height: 100px"><?= htmlentities($value['pesan']); ?></textarea>
                          </div>
 
                          <div class="modal-footer">
@@ -173,7 +173,7 @@
                      </div>
 
                      <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b><?= $value['pesan'] ?> ?</b>
+                         Apakah anda yakin ingin menghapus <b>Pesan ini ?</b>
                      </div>
 
                      <div class="modal-footer">

@@ -46,7 +46,7 @@
                                     foreach ($ta as $key => $value) { ?>
                                      <tr>
                                          <td class="text-center"><?= $no++; ?></td>
-                                         <td><?= $value['tahun_akademik'] ?></td>
+                                         <td class="text-center"><?= $value['tahun_akademik'] ?></td>
                                          <td class="text-center">
                                              <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_ta'] ?>"><i class="fa fa-edit"></i></button>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_ta'] ?>"><i class="fa fa-trash"></i></button>
@@ -108,7 +108,7 @@
                             ?>
                          <div class="form-group">
                              <label>Tahun Akademik</label>
-                             <input name="tahun_akademik" class="form-control" value="<?= $value['tahun_akademik'] ?>" required>
+                             <input name="tahun_akademik" class="form-control" value="<?= $value['tahun_akademik'] ?>">
                          </div>
                      </div>
 

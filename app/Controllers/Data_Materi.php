@@ -14,7 +14,7 @@ class Data_Materi extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'materi',
+            'title' => 'Materi',
             'materi' => $this->ModelMateri->allData(),
             'isi'    => 'admin/materi'
         ];

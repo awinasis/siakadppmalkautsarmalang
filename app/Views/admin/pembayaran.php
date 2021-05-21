@@ -122,7 +122,7 @@
                              </div>
                              <div class="col-lg-6">
                                  <label>Terbayar</label>
-                                 <input name="terbayar" class="form-control" placeholder="terbayar" required>
+                                 <input name="terbayar" class="form-control" placeholder="000" required>
                              </div>
                          </div>
 
@@ -164,47 +164,46 @@
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>NIS</label>
-                                     <input name="NIS" type="number" class="form-control" placeholder="NIS" value="<?= $value['NIS'] ?>" required>
+                                     <input name="NIS" type="number" class="form-control" value="<?= $value['NIS'] ?>">
                                  </div>
                              </div>
 
                              <div class="form-group">
                                  <label>Nama santri</label>
-                                 <input name="nama_santri" class="form-control" placeholder="nama santri" value="<?= $value['nama_santri'] ?>" required>
+                                 <input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>">
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-4">
                                      <label>Periode Pembayaran</label>
-                                     <input type="number" class="form-control" placeholder="periode pembayaran" name="periode_pembayaran" value="<?= $value['periode_pembayaran'] ?>" />
+                                     <input type="number" class="form-control" name="periode_pembayaran" value="<?= $value['periode_pembayaran'] ?>" />
                                  </div>
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>Keterangan</label>
-                                     <input name="keterangan" class="form-control" placeholder="keterangan" value="<?= $value['keterangan'] ?>" required>
+                                     <input name="keterangan" class="form-control" value="<?= $value['keterangan'] ?>">
                                  </div>
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>Tagihan</label>
-                                     <input name="tagihan" class="form-control" placeholder="tagihan" value="<?= $value['tagihan'] ?>" required>
+                                     <input name="tagihan" class="form-control" value="<?= $value['tagihan'] ?>">
                                  </div>
                                  <div class="col-lg-6">
                                      <label>Terbayar</label>
-                                     <input name="terbayar" class="form-control" placeholder="terbayar" value="<?= $value['terbayar'] ?>" required>
+                                     <input name="terbayar" class="form-control" value="<?= $value['terbayar'] ?>">
                                  </div>
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-8">
-                                     <label class="form-control-label">Status</label>
-                                     <select name="status_pembayaran" class="form-control" id="status_pembayaran" required>
-                                         <option value="">- Pilih -</option>
-                                         <option value="Lunas" <?= $value['status'] == "LUNAS" ? "selected" : ""; ?>>LUNAS</option>
-                                         <option value="Belum Lunas" <?= $value['status'] == "BELUM LUNAS" ? "selected" : ""; ?>>BELUM LUNAS</option>
+                                     <label class="form-control-label">Status Pembayaran</label>
+                                     <select name="status_pembayaran" class="form-control" id="status_pembayaran">
+                                         <option value="LUNAS" <?= $value['status_pembayaran'] == "LUNAS" ? "selected" : ""; ?>>LUNAS</option>
+                                         <option value="BELUM LUNAS" <?= $value['status_pembayaran'] == "BELUM LUNAS" ? "selected" : ""; ?>>BELUM LUNAS</option>
                                      </select>
                                  </div>
                              </div>

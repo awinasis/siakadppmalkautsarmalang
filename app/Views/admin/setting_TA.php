@@ -46,7 +46,7 @@
                                          <td class="text-center"><?= $value['tahun_akademik'] ?></td>
                                          <td class="text-center">
                                              <?php if ($value['status_ta'] == 0) {
-                                                    echo '<p class="label text-center bg-red">Non-Aktif</p>';
+                                                    echo '<p class="label text-center bg-red"><i class="fa fa-times-circle"></i>&ensp;Non-Aktif</p>';
                                                 } else {
                                                     echo '<p class="label text-center bg-green">Aktif</p>';
                                                 } ?>
