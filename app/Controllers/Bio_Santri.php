@@ -95,4 +95,14 @@ class Bio_Santri extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
         return redirect()->to(base_url('bio_santri'));
     }
+
+    public function export_excel()
+    {
+        $data = [
+            'title' => 'Santri',
+            'santri' => $this->ModelSantri->allData(),
+            'isi'    => 'admin/export_excel/export_excel',
+        ];
+        return view("layout/excel", $data);
+    }
 }

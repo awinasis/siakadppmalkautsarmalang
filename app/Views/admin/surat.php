@@ -115,7 +115,7 @@
                                  <option value="">-- Pilih --</option>
                                  <option value="Sertifikat">Sertifikat</option>
                                  <option value="Surat Pengajuan">Surat Pengajuan</option>
-                                 <option value="Kartu Pembayaran">Kartu Pembayaran</option>
+                                 <option value="Kartu Pembayaran">Bukti Pembayaran</option>
                                  <option value="Buku Pedoman">Buku Pedoman</option>
                              </select>
                          </div>
@@ -164,7 +164,7 @@
                                  <select name="kategori" id="kategori" class="form-control">
                                      <option value="Sertifikat" <?= $value['kategori'] == "Sertifikat" ? "selected" : ""; ?>>Sertifikat</option>
                                      <option value="Surat Pengajuan" <?= $value['kategori'] == "Surat Pengajuan" ? "selected" : ""; ?>>Surat Pengajuan</option>
-                                     <option value="Kartu Pembayaran" <?= $value['kategori'] == "Kartu Pembayaran" ? "selected" : ""; ?>>Kartu Pembayaran</option>
+                                     <option value="Bukti Pembayaran" <?= $value['kategori'] == "Bukti Pembayaran" ? "selected" : ""; ?>>Bukti Pembayaran</option>
                                      <option value="Buku Pedoman" <?= $value['kategori'] == "Buku Pedoman" ? "selected" : ""; ?>>Buku Pedoman</option>
                                  </select>
                              </div>
@@ -173,7 +173,7 @@
                          <div class="form-group">
                              <label>Ganti File</label>
                              <input name="file" type="file" class="form-control"><br><i class="fa fa-file-pdf-o fa-4x label-danger"></i>
-                             <?= $value['nama_surat']; ?>
+                             &ensp;<?= $value['nama_surat']; ?>
                          </div>
                      </div>
 
