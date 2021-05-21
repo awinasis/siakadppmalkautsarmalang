@@ -155,13 +155,13 @@
 
                          <div class="form-group">
                              <label>Nama Surat</label>
-                             <input name="nama_surat" value="<?= $value['nama_surat'] ?>" class="form-control" required>
+                             <input name="nama_surat" value="<?= $value['nama_surat'] ?>" class="form-control">
                          </div>
 
                          <div class="form-group row">
                              <div class="col-lg-8">
                                  <label>Kategori :</label>
-                                 <select name="kategori" id="kategori" class="form-control" required>
+                                 <select name="kategori" id="kategori" class="form-control">
                                      <option value="Sertifikat" <?= $value['kategori'] == "Sertifikat" ? "selected" : ""; ?>>Sertifikat</option>
                                      <option value="Surat Pengajuan" <?= $value['kategori'] == "Surat Pengajuan" ? "selected" : ""; ?>>Surat Pengajuan</option>
                                      <option value="Kartu Pembayaran" <?= $value['kategori'] == "Kartu Pembayaran" ? "selected" : ""; ?>>Kartu Pembayaran</option>
@@ -200,7 +200,7 @@
                      </div>
 
                      <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b><?= $value['nama_surat'] ?> ?</b>
+                         Apakah anda yakin ingin menghapus <b> Data&nbsp;<?= $value['nama_surat'] ?> ?</b>
                      </div>
 
                      <div class="modal-footer">

@@ -176,7 +176,7 @@
 
                              <div class="form-group">
                                  <label>Kelas</label>
-                                 <input name="kelas" value="<?= $value['kelas'] ?>" class="form-control" placeholder="Kelas" required>
+                                 <input name="kelas" value="<?= $value['kelas'] ?>" class="form-control">
                              </div>
                          </div>
 

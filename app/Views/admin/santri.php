@@ -24,7 +24,7 @@
              <div class="col-sm-12">
                  <div class="box box-success box-solid">
                      <div class="box-header with-border">
-                         <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3>
+                         <h3 class="box-title"><i class="fa  fa-table"></i> <?= $title; ?></h3>
                          <?php if (session()->get('level') == "Admin") { ?>
                              <div class="box-tools pull-right">
                                  <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
@@ -568,7 +568,7 @@
                          </div>
 
                          <div class="modal-body">
-                             Apakah anda yakin ingin menghapus <b><?= $value['nama_santri'] ?> ?</b>
+                             Apakah anda yakin ingin menghapus <b> Data&nbsp;<?= $title; ?>&nbsp;<?= $value['nama_santri'] ?> ?</b>
                          </div>
 
                          <div class="modal-footer">

@@ -237,7 +237,7 @@
                      </div>
 
                      <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b><?= $value['nama_materi'] ?> ?</b>
+                         Apakah anda yakin ingin menghapus <b> Data&nbsp;<?= $title; ?>&nbsp;<?= $value['nama_materi'] ?> ?</b>
                      </div>
 
                      <div class="modal-footer">

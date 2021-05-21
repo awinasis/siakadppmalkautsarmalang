@@ -23,75 +23,53 @@
         <div class="col-sm-12">
             <div class="box box-success box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title"><i class="fa  fa-pie-chart"></i> Chart</h3>
+                    <h3 class="box-title"><i class="fa fa-pie-chart"></i> Chart</h3>
                     <div class="box-tools pull-right">
                         <button onclick="window.print()" class="btn btn-warning"><i class="fa fa-print"></i></button>
                         <!-- <button class="btn btn-danger"><i class="fa fa-download"></i></button> -->
                     </div>
-                    <!-- /.box-tools -->
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <?php
-                    if (session()->getFlashdata('pesan')) {
-                        echo '<div class="alert alert-success" role="alert">';
-                        echo session()->getFlashdata('pesan');
-                        echo '</div>';
-                    }
-                    ?>
-
-                    <div class="box-body table-responsive no-padding">
-                        <table class="table table-hover">
-                            <thead class="box box-success">
-                                <tr>
-                                    <th class="text-center">Laporan Prosentase kehadiran KBM Santri dalam 1 bulan</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <table class="table table-striped">
-                                            <div>
-                                                <canvas id="pie-chart-chart" height="90"></canvas>
-                                            </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="chart-responsive">
+                                <table class="table table-striped">
+                                    <div>
+                                        <canvas id="pie-chart-chart" height="90"></canvas>
+                                    </div>
+                                    <?php
+                                    $konek = mysqli_connect("localhost", "root", "", "db_siakad_ppmalkautsar");
+                                    ?>
+                                    <table width="40%" border="2" align="center" cellpadding="3" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">Keterangan</th>
+                                                <th class="text-center">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                                             <?php
-                                            $konek = mysqli_connect("localhost", "root", "", "db_siakad_ppmalkautsar");
-                                            ?>
-                                            <br><br>
-                                            <table width="30%" border="2" align="center" cellpadding="3" cellspacing="0">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">No</th>
-                                                        <th class="text-center">Keterangan</th>
-                                                        <th class="text-center">Total</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
-                                                    $no = 1;
-                                                    $jumlah = null;
-                                                    $data = mysqli_query($konek, "select keterangan, COUNT(*) as jumlah_kehadiran from tbl_chart GROUP BY keterangan DESC");
-                                                    while ($d = mysqli_fetch_array($data)) {
-                                                    ?>
-                                                        <tr>
-                                                            <td class="text-center"><?php echo $no++; ?></td>
-                                                            <td><?php echo $d['keterangan']; ?></td>
-                                                            <td class="text-center"><?php echo $d['jumlah_kehadiran']; ?></td>
-                                                        </tr>
-                                                    <?php
-                                                    }
-                                                    ?>
-                                                </tbody>
-                                            </table>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                            $no = 1;
+                                            $jumlah = null;
+                                            $data = mysqli_query($konek, "select keterangan, COUNT(*) as jumlah_kehadiran from tbl_chart GROUP BY keterangan DESC");
+                                            while ($d = mysqli_fetch_array($data)) { ?>
+                                                <tr>
+                                                    <td class="text-center"><?php echo $no++; ?></td>
+                                                    <td>&emsp;&emsp;<?php echo $d['keterangan']; ?></td>
+                                                    <td class="text-center"><?php echo $d['jumlah_kehadiran']; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </table>
+                            </div>
+                            <!-- ./chart-responsive -->
+                        </div>
                     </div>
                 </div>
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
         </div>
     </div>
+</div>

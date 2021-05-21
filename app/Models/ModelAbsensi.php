@@ -9,6 +9,7 @@ class ModelAbsensi extends Model
     public function allData()
     {
         return $this->db->table('tbl_chart')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_chart.NIS', 'tbl_santri.nama_santri = tbl_chart.nama_santri')
             ->orderBy('id_chart', 'DESC')
             ->get()->getResultArray();
     }
@@ -43,12 +44,5 @@ class ModelAbsensi extends Model
     {
         $query = $this->db->table('tbl_chart')->countAll();
         return $query;
-    }
-
-    public function allData00()
-    {
-        return $this->db->table('tbl_chart')
-            ->orderBy('id_chart', 'DESC')
-            ->get()->getResultArray();
     }
 }

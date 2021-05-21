@@ -160,18 +160,18 @@
                                 ?>
                              <div class="form-group">
                                  <label>Nama Guru</label>
-                                 <input name="nama_guru" class="form-control" placeholder="nama guru" value="<?= $value['nama_guru'] ?>" required>
+                                 <input name="nama_guru" class="form-control" value="<?= $value['nama_guru'] ?>">
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>Tempat Lahir</label>
-                                     <input name="tempat_lahir" class="form-control" value="<?= $value['tempat_lahir'] ?>" required>
+                                     <input name="tempat_lahir" class="form-control" value="<?= $value['tempat_lahir'] ?>">
                                  </div>
 
                                  <div class="col-lg-6">
                                      <label>Tanggal Lahir</label>
-                                     <input name="tanggal_lahir" type="date" class="form-control" value="<?= $value['tanggal_lahir'] ?>" required>
+                                     <input name="tanggal_lahir" type="date" class="form-control" value="<?= $value['tanggal_lahir'] ?>">
                                  </div>
                              </div>
 
@@ -179,21 +179,21 @@
                                  <div class="col-lg-8">
                                      <label class="form-control-label">Jenis Kelamin</label>
                                      <div class="form-group">
-                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" <?= $value['jenis_kelamin'] == "L" ? "checked" : ""; ?> required> L
-                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P" <?= $value['jenis_kelamin'] == "P" ? "checked" : ""; ?> required> P
+                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" <?= $value['jenis_kelamin'] == "L" ? "checked" : ""; ?>> L
+                                         <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P" <?= $value['jenis_kelamin'] == "P" ? "checked" : ""; ?>> P
                                      </div>
                                  </div>
                              </div>
 
                              <div class="form-group">
                                  <label>Alamat</label>
-                                 <textarea id="alamat_asal_daerah" name="alamat_asal_daerah" class="form-control ckeditor" style="height: 100px" required><?= htmlentities($value['alamat_asal_daerah']); ?></textarea>
+                                 <textarea id="alamat_asal_daerah" name="alamat_asal_daerah" class="form-control ckeditor" style="height: 100px"><?= htmlentities($value['alamat_asal_daerah']); ?></textarea>
                              </div>
 
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>NoTelp</label>
-                                     <input name="noTelp" type="number" class="form-control" placeholder="noTelp" value="<?= $value['noTelp'] ?>" required>
+                                     <input name="noTelp" type="number" class="form-control" value="<?= $value['noTelp'] ?>">
                                  </div>
                              </div>
 
@@ -221,7 +221,7 @@
                          </div>
 
                          <div class="modal-body">
-                             Apakah anda yakin ingin menghapus <b><?= $value['nama_guru'] ?> ?</b>
+                             Apakah anda yakin ingin menghapus <b> Data&nbsp;<?= $title; ?>&nbsp;<?= $value['nama_guru'] ?> ?</b>
                          </div>
 
                          <div class="modal-footer">

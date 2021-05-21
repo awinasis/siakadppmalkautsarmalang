@@ -45,6 +45,7 @@
                                  <tr>
 
                                      <th class="text-center">NIS</th>
+                                     <th class="text-center">Nama Santri</th>
                                      <th class="text-center">Keterangan</th>
                                      <th class="text-center">Sesi Pengajian</th>
                                      <th class="text-center">Tanggal</th>
@@ -56,6 +57,7 @@
                                  <?php foreach ($absensi as $key => $value) { ?>
                                      <tr>
                                          <td class="text-center"><?= $value['NIS'] ?></td>
+                                         <td><?= $value['nama_santri'] ?></td>
                                          <td class="text-center"><?= $value['keterangan'] ?></td>
                                          <td class="text-center"><?= $value['sesi_pengajian'] ?></td>
                                          <td class="text-center"><?= $value['tanggal'] ?></td>
@@ -96,6 +98,11 @@
                              <label>NIS :</label>
                              <input name="NIS" id="NIS" type="number" class="form-control" placeholder="NIS" required>
                          </div>
+                     </div>
+
+                     <div class="form-group">
+                         <label>Nama Santri :</label>
+                         <input name="nama_santri" id="nama_santri" type="number" class="form-control" placeholder="nama santri" required>
                      </div>
 
                      <div class="form-group">
@@ -156,13 +163,18 @@
                          <div class="form-group row">
                              <div class="col-lg-6">
                                  <label>NIS :</label>
-                                 <input name="NIS" id="NIS" type="number" class="form-control" placeholder="NIS" value="<?= $value['NIS'] ?>" required>
+                                 <input name="NIS" id="NIS" type="number" class="form-control" value="<?= $value['NIS'] ?>" readonly>
                              </div>
                          </div>
 
                          <div class="form-group">
+                             <label>Nama Santri :</label>
+                             <input name="nama_santri" id="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly>
+                         </div>
+
+                         <div class="form-group">
                              <label>keterangan :</label>
-                             <select name="keterangan" id="keterangan" class="form-control" placeholder="keterangan" required>
+                             <select name="keterangan" id="keterangan" class="form-control">
                                  <option value="">-- Pilih --</option>
                                  <option value="Hadir" <?= $value['keterangan'] == "Hadir" ? "selected" : ""; ?>>Hadir</option>
                                  <option value="Alpha" <?= $value['keterangan'] == "Alpha" ? "selected" : ""; ?>>Alpha</option>
@@ -178,15 +190,15 @@
                          <div class="mb-4">
                              <label>Sesi Pengajian :</label>
                              <div class="form-group">
-                                 <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="shubuh" <?= $value['sesi_pengajian'] == "Shubuh" ? "checked" : ""; ?> required> Shubuh
+                                 <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="shubuh" <?= $value['sesi_pengajian'] == "Shubuh" ? "checked" : ""; ?>> Shubuh
                                  <br>
-                                 <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="malam" <?= $value['sesi_pengajian'] == "Malam" ? "checked" : ""; ?> required> Malam
+                                 <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="malam" <?= $value['sesi_pengajian'] == "Malam" ? "checked" : ""; ?>> Malam
                              </div>
                          </div>
 
                          <div class="form-group">
                              <label>Tanggal :</label>
-                             <input type="date" name="tanggal" id="tanggal" placeholder="Tanggal" class="form-control" value="<?= $value['tanggal'] ?>" required>
+                             <input type="date" name="tanggal" id="tanggal" class="form-control" value="<?= $value['tanggal'] ?>">
                          </div>
 
                          <div class="modal-footer">
@@ -212,7 +224,7 @@
                      </div>
 
                      <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b><?= $value['NIS'] ?> ?</b>
+                         Apakah anda yakin ingin menghapus <b> Data&nbsp;<?= $title; ?>&nbsp;<?= $value['nama_santri'] ?> ?</b>
                      </div>
 
                      <div class="modal-footer">
