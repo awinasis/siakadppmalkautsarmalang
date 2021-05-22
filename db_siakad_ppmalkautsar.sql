@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2021 at 09:47 AM
+-- Generation Time: May 22, 2021 at 09:44 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -63,9 +63,7 @@ CREATE TABLE `tbl_chart` (
 
 INSERT INTO `tbl_chart` (`id_chart`, `NIS`, `nama_santri`, `tanggal`, `sesi_pengajian`, `keterangan`) VALUES
 (1, '201903001', 'Abdillah Yudhatama', '2021-04-19', 'Shubuh', 'Hadir'),
-(2, '201903002', 'Abdullah Winasis', '2021-04-19', 'Shubuh', 'Nugas'),
-(9, '201903003', 'Achmad Koirudin Abdullah', '2021-04-18', 'Malam', 'Alpha'),
-(12, '201903006', 'Alfeina Zakkya Meriatami', '2021-04-18', 'Malam', 'Izin Terlambat');
+(2, '201903002', 'Abdullah Winasis', '2021-04-19', 'Shubuh', 'Nugas');
 
 -- --------------------------------------------------------
 
@@ -411,7 +409,7 @@ CREATE TABLE `tbl_nilaimateri` (
 --
 
 INSERT INTO `tbl_nilaimateri` (`id_nm`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai1`, `nilai2`, `nilai3`, `nilai4`, `nilai5`, `nilai6`, `nilai7`, `nilai8`, `nilai9`, `nilai10`, `nilai11`, `nilai12`, `nilai13`, `nilai14`, `nilai15`, `nilai16`, `nilai17`, `nilai18`, `nilai19`, `nilai20`, `nilai21`, `nilai22`, `nilai23`, `nilai24`, `nilai25`, `nilai26`, `nilai27`, `nilai28`, `nilai29`, `nilai30`, `nilai31`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'L', 80, 80, 80, 80, 80, 80, 80, 85, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80);
+(1, 201903002, 'Abdullah Winasis', 'L', 90, 80, 80, 80, 80, 80, 80, 85, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80);
 
 -- --------------------------------------------------------
 
@@ -523,15 +521,16 @@ CREATE TABLE `tbl_rapor` (
   `id_rapor` int(3) NOT NULL,
   `NIS` int(12) DEFAULT NULL,
   `nama_santri` varchar(30) DEFAULT NULL,
-  `jenis_kelamin` enum('L','P') DEFAULT NULL
+  `id_nm` int(3) DEFAULT NULL,
+  `id_materi` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_rapor`
 --
 
-INSERT INTO `tbl_rapor` (`id_rapor`, `NIS`, `nama_santri`, `jenis_kelamin`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'P');
+INSERT INTO `tbl_rapor` (`id_rapor`, `NIS`, `nama_santri`, `id_nm`, `id_materi`) VALUES
+(1, 201903002, 'Abdullah Winasis', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -572,7 +571,7 @@ INSERT INTO `tbl_santri` (`id_santri`, `NIS`, `nama_santri`, `tempat_lahir`, `ta
 (1, 201903002, 'Abdullah Winasis', 'Kediri', '1999-10-22', 'L', '', 'Jl Supriyadi, Rt/Rw 004/007 Dsn Papar Selatan, Ds Papar, Kab Kediri, Jawa Timur', 'awinasism2p@gmail.com', '2147483647', 'Mahasiswa', 'Politeknik Negeri Malang', '-', 'Teknologi Informasi/Manajemen Informatika', 'Al-Sarii', 2018, 'Maskun Bukhori', NULL, '2147483647', '', NULL, ''),
 (2, 201903001, 'Abdillah Yudhatama', 'Malang', '2000-02-02', 'L', '', 'Jl. Anjasmoro No.35 RT.11 RW.03 Bendo Karang, Pandan Pakisaji, Kabupaten Malang Jawa Timur', 'abdillahyudhatama@gmail.com', '1234567890', 'Mahasiswa', 'Brawijaya', 'Pertanian', 'Agroekoteknologi', 'Al-Sarii', 2019, 'X', NULL, '0', '', NULL, ''),
 (3, 201903003, 'Achmad Koirudin Abdullah', 'Sragen', '2001-07-02', 'L', '', 'Pungkruk, Doyong RT01/000, Miri, Sragen, Jawa Tengah', 'achmadkhoirudinabdullah@gmail.com', '1234567890', 'Mahasiswa', 'Negeri Malang', 'Teknik', 'Pendidikan Teknik Elektro', 'Al-Sarii', 2019, '-', NULL, '0', '', NULL, ''),
-(4, 201803018, 'Rena Miftakhul Zulfa', 'Kediri', '1999-04-20', 'P', 'O', 'Dsn. Ngletih Barat Rt. 03 Ds. Ngletih Kec. Kandat Kab. Kediri ', 'renamiftaqulzulfa@gmail.com', '6281234567890', 'Mahasiswa', 'STIKES Malang', '-', 'D3 - Kebidanan', 'Hadits Besar', 2018, 'Irfa\'i', NULL, '6281252960925', 'Nur Hidayati', NULL, '-'),
+(4, 201803018, 'Rena Miftakhul Zulfa', 'Kediri', '1999-04-20', 'P', 'O', 'Dsn. Ngletih Barat Rt. 03 Ds. Ngletih Kec. Kandat Kab. Kediri ', 'renamiftaqulzulfa@gmail.com', '6281234567890', 'Mahasiswa', 'STIKES Malang', '-', 'D3 - Kebidanan', 'Hadits Besar', 2018, 'Irfa\'i', '', '6281252960925', 'Nur Hidayati', '', '-'),
 (5, 201903006, 'Alfeina Zakkya Meriatami', 'Ponorogo', '2000-08-21', 'P', '', 'Ponorogo', 'alfeinazakkyameriatami@gmail.comm', '081234567865', 'Mahasiswa', 'Universitas Negeri Malang', 'Teknik', 'Pendidikan Teknik Informatika', 'Al-Taannii', 2003, 'yyy', NULL, '0871234567890', '', NULL, ''),
 (6, 201903011, 'Anggun Milenia Rahman', 'Bontang', '1999-11-30', 'P', 'O', 'Bontang, Kalimantan  Timur', 'anggunmrh@gmail.com', '6287753464813', 'Mahasiswa', 'UM', 'FIB', 'PBA', 'Hadits Besar', 2018, 'XXX', NULL, '111', 'YYY', NULL, '222');
 
@@ -597,7 +596,7 @@ CREATE TABLE `tbl_surat` (
 --
 
 INSERT INTO `tbl_surat` (`id_surat`, `nama_surat`, `kategori`, `tgl_upload`, `tgl_update`, `file`, `ukuran_file`) VALUES
-(7, 'Surat Pengajuan Pelaksanaan PKL', 'Surat Pengajuan', '2021-04-26', '2021-04-26', '1619489380_ab70e8c5ea99a567ce09.pdf', 411469);
+(7, 'Surat Pengajuan Pelaksanaan PKL', 'Surat Pengajuan', '2021-04-26', '2021-05-21', '1619489380_ab70e8c5ea99a567ce09.pdf', 411469);
 
 -- --------------------------------------------------------
 
@@ -750,7 +749,9 @@ ALTER TABLE `tbl_pesan`
 ALTER TABLE `tbl_rapor`
   ADD PRIMARY KEY (`id_rapor`),
   ADD UNIQUE KEY `NIS` (`NIS`),
-  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`),
+  ADD UNIQUE KEY `id_nm` (`id_nm`),
+  ADD UNIQUE KEY `id_materi` (`id_materi`);
 
 --
 -- Indexes for table `tbl_santri`
@@ -814,7 +815,7 @@ ALTER TABLE `tbl_kurikulum`
 -- AUTO_INCREMENT for table `tbl_materi`
 --
 ALTER TABLE `tbl_materi`
-  MODIFY `id_materi` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id_materi` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaiekstrakurikuler`
@@ -874,7 +875,7 @@ ALTER TABLE `tbl_pesan`
 -- AUTO_INCREMENT for table `tbl_rapor`
 --
 ALTER TABLE `tbl_rapor`
-  MODIFY `id_rapor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_rapor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_santri`
@@ -886,7 +887,7 @@ ALTER TABLE `tbl_santri`
 -- AUTO_INCREMENT for table `tbl_surat`
 --
 ALTER TABLE `tbl_surat`
-  MODIFY `id_surat` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_surat` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
