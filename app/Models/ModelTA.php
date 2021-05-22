@@ -36,4 +36,12 @@ class ModelTA extends Model
     {
         $this->db->table('tbl_tahunakademik')->update(['status_ta' => 0]);
     }
+
+    public function ta_aktif()
+    {
+        return $this->db->table('tbl_tahunakademik')
+            ->where('status_ta', 1)
+            ->get()
+            ->getRowArray();
+    }
 }
