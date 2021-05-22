@@ -3,15 +3,19 @@
 namespace App\Controllers;
 
 use App\Models\ModelRapor;
+use App\Models\ModelTA;
+use App\Models\ModelNilai;
+use App\Models\ModelMateri;
 
 class Data_Rapor extends BaseController
 {
-    protected $ModelRapor;
-
     public function __construct()
     {
         helper('form');
         $this->ModelRapor = new ModelRapor();
+        $this->ModelTA = new ModelTA();
+        $this->ModelNilai = new ModelNilai();
+        $this->ModelMateri = new ModelMateri();
     }
     public function index()
     {
@@ -29,24 +33,10 @@ class Data_Rapor extends BaseController
         $data = [
             'NIS' => $this->request->getPost('NIS'),
             'nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_Kelamin' => $this->request->getPost('jenis_kelamin'),
         ];
         $this->ModelRapor->addData($data);
 
         session()->setFlashdata('pesan', 'Data berhasil di tambahkan !!');
-        return redirect()->to(base_url('data_rapor'));
-    }
-
-    public function edit($id_rapor)
-    {
-        $data = [
-            'id_rapor' => $id_rapor,
-            'NIS' => $this->request->getPost('NIS'),
-            'nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_Kelamin' => $this->request->getPost('jenis_kelamin'),
-        ];
-        $this->ModelRapor->editData($data);
-        session()->setFlashdata('pesan', 'Data berhasil di update !!');
         return redirect()->to(base_url('data_rapor'));
     }
 
@@ -65,6 +55,9 @@ class Data_Rapor extends BaseController
         $data = [
             'title' => 'View Rapor',
             'rapor' => $this->ModelRapor->detail_data($id_rapor),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
+            'nilai' => $this->ModelNilai->allData(),
+            'materi' => $this->ModelMateri->allData(),
             'isi'    => 'admin/v_viewRapor'
         ];
 

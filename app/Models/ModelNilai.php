@@ -271,13 +271,4 @@ class ModelNilai extends Model
             ->where('id_cs', $data['id_cs'])
             ->delete($data);
     }
-
-    //------------------------------------------------ 9 --------------------------------------------------// 
-
-    public function allData8()
-    {
-        return $this->db->table('tbl_nilai')
-            ->orderBy('id_', 'DESC')
-            ->get()->getResultArray();
-    }
 }

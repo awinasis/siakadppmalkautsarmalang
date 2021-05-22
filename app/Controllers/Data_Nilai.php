@@ -677,17 +677,4 @@ class Data_Nilai extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
         return redirect()->to(base_url('data_nilai/catatanSaranPengurus'));
     }
-
-    //------------------------------------------------ 9 --------------------------------------------------// 
-
-    public function Keputusan()
-    {
-        $data = [
-            'title' => 'Nilai',
-            'nilai' => $this->ModelNilai->allData8(),
-            'isi'    => 'guru/view_nilaiKeputusan',
-        ];
-
-        return view("layout/wrapper", $data);
-    }
 }

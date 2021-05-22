@@ -65,7 +65,6 @@
                     <li><a href="<?= base_url('data_nilai/keaktifanKegiatan') ?>"><i class="fa fa-circle-o"></i> Keaktifan dalam Kegiatan</a></li>
                     <li><a href="<?= base_url('data_nilai/prestasiKuliah') ?>"><i class="fa fa-circle-o"></i> Prestasi Kuliah</a></li>
                     <li><a href="<?= base_url('data_nilai/catatanSaranPengurus') ?>"><i class="fa fa-circle-o"></i> Catatan dan Saran Pengurus</a></li>
-                    <li><a href="<?= base_url('data_nilai/keputusan') ?>"><i class="fa fa-circle-o"></i> Keputusan</a></li>
                 </ul>
             </li>
 
