@@ -9,7 +9,6 @@ class ModelUserManagement extends Model
     public function allData()
     {
         return $this->db->table('tbl_user')
-            ->join('tbl_santri', 'tbl_santri.nama_santri = tbl_user.nama_santri', 'left')
             ->orderBy('id_user', 'DESC')
             ->get()->getResultArray();
     }

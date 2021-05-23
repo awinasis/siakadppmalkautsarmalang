@@ -9,7 +9,6 @@ class ModelMateri extends Model
     public function allData()
     {
         return $this->db->table('tbl_materi')
-            ->join('tbl_kelas', 'tbl_kelas.id_kelas = tbl_materi.id_kelas', 'left')
             ->orderBy('id_materi', 'ASC')
             ->get()->getResultArray();
     }
