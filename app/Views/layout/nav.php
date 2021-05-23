@@ -62,7 +62,6 @@
                     <li><a href="<?= base_url('data_nilai/sikapPerilaku') ?>"><i class="fa fa-circle-o"></i> Sikap & Perilaku</a></li>
                     <li><a href="<?= base_url('data_nilai/limaSuksesSantri') ?>"><i class="fa fa-circle-o"></i> Lima Sukses Santri</a></li>
                     <li><a href="<?= base_url('data_nilai/ekstrakurikuler') ?>"><i class="fa fa-circle-o"></i> Kegiatan Ekstrakurikuler</a></li>
-                    <li><a href="<?= base_url('data_nilai/keaktifanKegiatan') ?>"><i class="fa fa-circle-o"></i> Keaktifan dalam Kegiatan</a></li>
                     <li><a href="<?= base_url('data_nilai/prestasiKuliah') ?>"><i class="fa fa-circle-o"></i> Prestasi Kuliah</a></li>
                     <li><a href="<?= base_url('data_nilai/catatanSaranPengurus') ?>"><i class="fa fa-circle-o"></i> Catatan dan Saran Pengurus</a></li>
                 </ul>

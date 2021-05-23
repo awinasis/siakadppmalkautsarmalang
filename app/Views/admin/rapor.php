@@ -56,8 +56,8 @@
                                              <td class="text-center"><?= $value['NIS'] ?></td>
                                              <td><?= $value['nama_santri'] ?></td>
                                              <td class="text-center">
-                                                 <button type="button" class="btn btn-info btn-sm"><i class="fa  fa-file"></i> Sampul</button>&emsp;
-                                                 <a href="<?= base_url('data_rapor/view_rapor/' . $value['id_rapor']) ?> " class="btn btn-success btn-sm">
+                                                 <!-- <button type="button" class="btn btn-success btn-sm"><i class="fa  fa-file"></i> Sampul</button>&emsp; -->
+                                                 <a href="<?= base_url('data_rapor/view_rapor/' . $value['id_rapor']) ?> " class="btn btn-info btn-sm">
                                                      <i class="fa fa-file-text"></i> Rapor</a><br>
                                              </td>
                                              <?php if (session()->get('level') == "Guru") { ?>
@@ -96,8 +96,8 @@
                                              <td class="text-center"><?= $value['NIS'] ?></td>
                                              <td><?= $value['nama_santri'] ?></td>
                                              <td class="text-center">
-                                                 <button type="button" class="btn btn-info btn-sm"><i class="fa  fa-file"></i> Sampul</button>&emsp;
-                                                 <a href="<?= base_url('data_rapor/view_rapor/' . $value['id_rapor']) ?>" class="btn btn-success btn-sm">
+                                                 <!-- <button type="button" class="btn btn-success btn-sm"><i class="fa  fa-file"></i> Sampul</button>&emsp; -->
+                                                 <a href="<?= base_url('data_rapor/view_rapor/' . $value['id_rapor']) ?>" class="btn btn-info btn-sm">
                                                      <i class="fa fa-file-text"></i> Rapor</a><br>
                                              </td>
                                          </tr>
