@@ -30,7 +30,12 @@ class ModelRapor extends Model
     {
         return $this->db->table('tbl_rapor')
             ->join('tbl_nilaimateri', 'tbl_nilaimateri.id_nm = tbl_rapor.id_nm', 'left')
-            ->join('tbl_materi', 'tbl_materi.id_materi = tbl_rapor.id_materi', 'left')
+            ->join('tbl_nilaikonseppraktikum', 'tbl_nilaikonseppraktikum.id_kp = tbl_rapor.id_kp', 'left')
+            ->join('tbl_nilaisikapperilaku', 'tbl_nilaisikapperilaku.id_sp = tbl_rapor.id_sp', 'left')
+            ->join('tbl_nilailimasuksessantri', 'tbl_nilailimasuksessantri.id_lss = tbl_rapor.id_lss', 'left')
+            ->join('tbl_nilaiekstrakurikuler', 'tbl_nilaiekstrakurikuler.id_ne = tbl_rapor.id_ne', 'left')
+            ->join('tbl_nilaiindeksprestasi', 'tbl_nilaiindeksprestasi.id_ip = tbl_rapor.id_ip', 'left')
+            ->join('tbl_catatansaranpengurus', 'tbl_catatansaranpengurus.id_cs = tbl_rapor.id_cs', 'left')
             ->where('id_rapor', $id_rapor)
             ->get()->getRowArray();
     }

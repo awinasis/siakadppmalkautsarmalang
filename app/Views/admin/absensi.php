@@ -24,9 +24,11 @@
              <div class="box box-success box-solid">
                  <div class="box-header with-border">
                      <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3>
-                     <div class="box-tools pull-right">
-                         <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
-                     </div>
+                     <?php if (session()->get('level') == "Admin") { ?>
+                         <div class="box-tools pull-right">
+                             <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
+                         </div>
+                     <?php } ?>
                  </div>
                  <div class="box-body">
                      <?php
@@ -48,7 +50,9 @@
                                      <th class="text-center">Sesi Pengajian</th>
                                      <th class="text-center">Tanggal</th>
                                      <th class="text-center">Prosentase</th>
-                                     <th class="text-center">Action</th>
+                                     <?php if (session()->get('level') == "Admin") { ?>
+                                         <th class="text-center">Action</th>
+                                     <?php } ?>
                                  </tr>
                              </thead>
                              <tbody>
@@ -63,10 +67,12 @@
                                              <a href="<?= base_url('data_absensi/viewchart/' . $value['NIS']) ?>">
                                                  <i class="fa fa-pie-chart fa-4x"></i><br> Detail</a><br>
                                          </td>
-                                         <td class="text-center">
-                                             <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['NIS'] ?>"><i class="fa fa-edit"></i></button>
-                                             <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['NIS'] ?>"><i class="fa fa-trash"></i></button>
-                                         </td>
+                                         <?php if (session()->get('level') == "Admin") { ?>
+                                             <td class="text-center">
+                                                 <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['NIS'] ?>"><i class="fa fa-edit"></i></button>
+                                                 <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['NIS'] ?>"><i class="fa fa-trash"></i></button>
+                                             </td>
+                                         <?php } ?>
                                      </tr>
                                  <?php } ?>
                              </tbody>
@@ -77,154 +83,164 @@
          </div>
      </div>
 
-     <!-- modal add -->
-     <div class="modal fade" id="add">
-         <div class="modal-dialog">
-             <div class="modal-content box box-success box-solid">
-                 <div class="modal-header box-header with-border">
-                     <h4 class="modal-title">Tambah Absensi</h4>
-                 </div>
-
-                 <div class="modal-body">
-                     <?php
-                        echo form_open_multipart('data_absensi/add_absensi');
-                        ?>
-                     <div class="form-group row">
-                         <div class="col-lg-6">
-                             <label>NIS :</label>
-                             <input name="NIS" id="NIS" type="number" class="form-control" placeholder="NIS" required>
-                         </div>
-                     </div>
-
-                     <div class="form-group">
-                         <label>Nama Santri :</label>
-                         <input name="nama_santri" id="nama_santri" type="number" class="form-control" placeholder="nama santri" required>
-                     </div>
-
-                     <div class="form-group">
-                         <label>keterangan :</label>
-                         <select name="keterangan" id="keterangan" class="form-control" placeholder="keterangan" required>
-                             <option value="">-- Pilih --</option>
-                             <option value="Hadir">Hadir</option>
-                             <option value="Alpha">Alpha</option>
-                             <option value="Belajar">Belajar</option>
-                             <option value="Izin">Izin</option>
-                             <option value="Izin Terlambat">Izin Terlambat</option>
-                             <option value="Nugas">Nugas</option>
-                             <option value="Sakit">Sakit</option>
-                             <option value="Terlambat">Terlambat</option>
-                         </select>
-                     </div>
-
-                     <div class="mb-4">
-                         <label>Sesi Pengajian :</label>
-                         <div class="form-group">
-                             <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="shubuh" required> Shubuh
-                             <br>
-                             <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="malam" required> Malam
-                         </div>
-                     </div>
-
-                     <div class="form-group">
-                         <label>Tanggal :</label>
-                         <input type="date" class="form-control" id="tanggal" name="tanggal" required>
-                     </div>
-
-                 </div>
-
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
-                     <button type="submit" class="btn btn-primary">Simpan</button>
-                 </div>
-                 <?php echo form_close(); ?>
-             </div>
-         </div>
-     </div>
-
-     <!-- modal edit -->
-     <?php foreach ($absensi as $key => $value) { ?>
-         <div class="modal fade" id="edit<?= $value['NIS'] ?>">
+     <?php if (session()->get('level') == "Admin") { ?>
+         <!-- modal add -->
+         <div class="modal fade" id="add">
              <div class="modal-dialog">
                  <div class="modal-content box box-success box-solid">
                      <div class="modal-header box-header with-border">
-                         <h4 class="modal-title">Edit Absensi</h4>
+                         <h4 class="modal-title">Tambah Absensi</h4>
                      </div>
 
                      <div class="modal-body">
                          <?php
-                            echo form_open('data_absensi/edit_absensi/' . $value['NIS']);
+                            echo form_open_multipart('data_absensi/add_absensi');
                             ?>
                          <div class="form-group row">
                              <div class="col-lg-6">
                                  <label>NIS :</label>
-                                 <input name="NIS" id="NIS" type="number" class="form-control" value="<?= $value['NIS'] ?>" readonly>
+                                 <input name="NIS" id="NIS" type="number" class="form-control" placeholder="NIS" required>
                              </div>
                          </div>
 
                          <div class="form-group">
                              <label>Nama Santri :</label>
-                             <input name="nama_santri" id="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly>
+                             <input name="nama_santri" id="nama_santri" class="form-control" placeholder="nama santri" required>
                          </div>
 
-                         <div class="form-group">
-                             <label>keterangan :</label>
-                             <select name="keterangan" id="keterangan" class="form-control">
-                                 <option value="">-- Pilih --</option>
-                                 <option value="Hadir" <?= $value['keterangan'] == "Hadir" ? "selected" : ""; ?>>Hadir</option>
-                                 <option value="Alpha" <?= $value['keterangan'] == "Alpha" ? "selected" : ""; ?>>Alpha</option>
-                                 <option value="Belajar" <?= $value['keterangan'] == "Belajar" ? "selected" : ""; ?>>Belajar</option>
-                                 <option value="Izin" <?= $value['keterangan'] == "Izin" ? "selected" : ""; ?>>Izin</option>
-                                 <option value="Izin Terlambat" <?= $value['keterangan'] == "Izin Terlambat" ? "selected" : ""; ?>>Izin Terlambat</option>
-                                 <option value="Nugas" <?= $value['keterangan'] == "Nugas" ? "selected" : ""; ?>>Nugas</option>
-                                 <option value="Sakit" <?= $value['keterangan'] == "Sakit" ? "selected" : ""; ?>>Sakit</option>
-                                 <option value="Terlambat" <?= $value['keterangan'] == "Terlambat" ? "selected" : ""; ?>>Terlambat</option>
-                             </select>
+                         <div class="form-group row">
+                             <div class="col-lg-4">
+                                 <label>keterangan :</label>
+                                 <select name="keterangan" id="keterangan" class="form-control" placeholder="keterangan" required>
+                                     <option value="">-- Pilih --</option>
+                                     <option value="Hadir">Hadir</option>
+                                     <option value="Alpha">Alpha</option>
+                                     <option value="Belajar">Belajar</option>
+                                     <option value="Izin">Izin</option>
+                                     <option value="Izin Terlambat">Izin Terlambat</option>
+                                     <option value="Nugas">Nugas</option>
+                                     <option value="Sakit">Sakit</option>
+                                     <option value="Terlambat">Terlambat</option>
+                                 </select>
+                             </div>
                          </div>
 
                          <div class="mb-4">
                              <label>Sesi Pengajian :</label>
                              <div class="form-group">
-                                 <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="shubuh" <?= $value['sesi_pengajian'] == "Shubuh" ? "checked" : ""; ?>> Shubuh
+                                 <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="shubuh" required> Shubuh
                                  <br>
-                                 <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="malam" <?= $value['sesi_pengajian'] == "Malam" ? "checked" : ""; ?>> Malam
+                                 <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="malam" required> Malam
                              </div>
                          </div>
 
-                         <div class="form-group">
-                             <label>Tanggal :</label>
-                             <input type="date" name="tanggal" id="tanggal" class="form-control" value="<?= $value['tanggal'] ?>">
+                         <div class="form-group row">
+                             <div class="col-lg-8">
+                                 <label>Tanggal :</label>
+                                 <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                             </div>
                          </div>
 
-                         <div class="modal-footer">
-                             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
-                             <button type="submit" class="btn btn-primary pull-right">Simpan</button>
-                         </div>
-                         <?php echo form_close(); ?>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     <?php } ?>
-
-     <!-- modal delete -->
-     <?php foreach ($absensi as $key => $value) { ?>
-         <div class="modal fade" id="delete<?= $value['NIS'] ?>">
-             <div class="modal-dialog">
-                 <div class="modal-content box box-success box-solid">
-                     <div class="modal-header box-header with-border">
-                         <h4 class="modal-title">Delete Absensi</h4>
-                     </div>
-
-                     <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b> Data&nbsp;<?= $title; ?>&nbsp;<?= $value['nama_santri'] ?> ?</b>
                      </div>
 
                      <div class="modal-footer">
                          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
-                         <a href="<?= base_url('data_absensi/delete/' . $value['NIS']) ?>" class="btn btn-primary">Delete</a>
+                         <button type="submit" class="btn btn-primary">Simpan</button>
                      </div>
+                     <?php echo form_close(); ?>
                  </div>
              </div>
          </div>
+
+         <!-- modal edit -->
+         <?php foreach ($absensi as $key => $value) { ?>
+             <div class="modal fade" id="edit<?= $value['NIS'] ?>">
+                 <div class="modal-dialog">
+                     <div class="modal-content box box-success box-solid">
+                         <div class="modal-header box-header with-border">
+                             <h4 class="modal-title">Edit Absensi</h4>
+                         </div>
+
+                         <div class="modal-body">
+                             <?php
+                                echo form_open('data_absensi/edit_absensi/' . $value['NIS']);
+                                ?>
+                             <div class="form-group row">
+                                 <div class="col-lg-6">
+                                     <label>NIS :</label>
+                                     <input name="NIS" id="NIS" type="number" class="form-control" value="<?= $value['NIS'] ?>" readonly>
+                                 </div>
+                             </div>
+
+                             <div class="form-group">
+                                 <label>Nama Santri :</label>
+                                 <input name="nama_santri" id="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly>
+                             </div>
+
+                             <div class="form-group row">
+                                 <div class="col-lg-4">
+                                     <label>keterangan :</label>
+                                     <select name="keterangan" id="keterangan" class="form-control">
+                                         <option value="">-- Pilih --</option>
+                                         <option value="Hadir" <?= $value['keterangan'] == "Hadir" ? "selected" : ""; ?>>Hadir</option>
+                                         <option value="Alpha" <?= $value['keterangan'] == "Alpha" ? "selected" : ""; ?>>Alpha</option>
+                                         <option value="Belajar" <?= $value['keterangan'] == "Belajar" ? "selected" : ""; ?>>Belajar</option>
+                                         <option value="Izin" <?= $value['keterangan'] == "Izin" ? "selected" : ""; ?>>Izin</option>
+                                         <option value="Izin Terlambat" <?= $value['keterangan'] == "Izin Terlambat" ? "selected" : ""; ?>>Izin Terlambat</option>
+                                         <option value="Nugas" <?= $value['keterangan'] == "Nugas" ? "selected" : ""; ?>>Nugas</option>
+                                         <option value="Sakit" <?= $value['keterangan'] == "Sakit" ? "selected" : ""; ?>>Sakit</option>
+                                         <option value="Terlambat" <?= $value['keterangan'] == "Terlambat" ? "selected" : ""; ?>>Terlambat</option>
+                                     </select>
+                                 </div>
+                             </div>
+
+                             <div class="mb-4">
+                                 <label>Sesi Pengajian :</label>
+                                 <div class="form-group">
+                                     <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="shubuh" <?= $value['sesi_pengajian'] == "Shubuh" ? "checked" : ""; ?>> Shubuh
+                                     <br>
+                                     <input type="radio" name="sesi_pengajian" id="sesi_pengajian" value="malam" <?= $value['sesi_pengajian'] == "Malam" ? "checked" : ""; ?>> Malam
+                                 </div>
+                             </div>
+
+                             <div class="form-group row">
+                                 <div class="col-lg-8">
+                                     <label>Tanggal :</label>
+                                     <input type="date" name="tanggal" id="tanggal" class="form-control" value="<?= $value['tanggal'] ?>">
+                                 </div>
+                             </div>
+
+                             <div class="modal-footer">
+                                 <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+                                 <button type="submit" class="btn btn-primary pull-right">Simpan</button>
+                             </div>
+                             <?php echo form_close(); ?>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         <?php } ?>
+
+         <!-- modal delete -->
+         <?php foreach ($absensi as $key => $value) { ?>
+             <div class="modal fade" id="delete<?= $value['NIS'] ?>">
+                 <div class="modal-dialog">
+                     <div class="modal-content box box-success box-solid">
+                         <div class="modal-header box-header with-border">
+                             <h4 class="modal-title">Delete Absensi</h4>
+                         </div>
+
+                         <div class="modal-body">
+                             Apakah anda yakin ingin menghapus <b> Data&nbsp;<?= $title; ?>&nbsp;<?= $value['nama_santri'] ?> ?</b>
+                         </div>
+
+                         <div class="modal-footer">
+                             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+                             <a href="<?= base_url('data_absensi/delete/' . $value['NIS']) ?>" class="btn btn-primary">Delete</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         <?php } ?>
      <?php } ?>
  </div>

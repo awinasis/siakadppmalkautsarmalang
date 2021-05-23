@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Models\ModelRapor;
 use App\Models\ModelTA;
 use App\Models\ModelNilai;
-use App\Models\ModelMateri;
 
 class Data_Rapor extends BaseController
 {
@@ -15,7 +14,6 @@ class Data_Rapor extends BaseController
         $this->ModelRapor = new ModelRapor();
         $this->ModelTA = new ModelTA();
         $this->ModelNilai = new ModelNilai();
-        $this->ModelMateri = new ModelMateri();
     }
     public function index()
     {
@@ -57,7 +55,11 @@ class Data_Rapor extends BaseController
             'rapor' => $this->ModelRapor->detail_data($id_rapor),
             'ta_aktif' => $this->ModelTA->ta_aktif(),
             'nilai' => $this->ModelNilai->allData(),
-            'materi' => $this->ModelMateri->allData(),
+            'nilai' => $this->ModelNilai->allData2(),
+            'nilai' => $this->ModelNilai->allData3(),
+            'nilai' => $this->ModelNilai->allData4(),
+            'nilai' => $this->ModelNilai->allData6(),
+            'nilai' => $this->ModelNilai->allData7(),
             'isi'    => 'admin/v_viewRapor'
         ];
 

@@ -505,19 +505,6 @@ class Data_Nilai extends BaseController
         return redirect()->to(base_url('data_nilai/ekstrakurikuler'));
     }
 
-    //------------------------------------------------ 6 --------------------------------------------------// 
-
-    public function keaktifanKegiatan()
-    {
-        $data = [
-            'title' => 'Nilai',
-            'nilai' => $this->ModelNilai->allData5(),
-            'isi'    => 'guru/view_nilaiKeaktifan',
-        ];
-
-        return view("layout/wrapper", $data);
-    }
-
     //------------------------------------------------ 7 --------------------------------------------------// 
 
     public function prestasiKuliah()
@@ -557,6 +544,7 @@ class Data_Nilai extends BaseController
             'Nilai_IP7' => $this->request->getPost('nilai_IP7'),
             'Nilai_IP8' => $this->request->getPost('nilai_IP8'),
             'Nilai_IP9' => $this->request->getPost('nilai_IP9'),
+            'Nilai_IP10' => $this->request->getPost('nilai_IP10'),
         ];
         $this->ModelNilai->addData6($data);
         session()->setFlashdata('pesan', 'Nilai berhasil di tambahkan !!');
@@ -590,6 +578,7 @@ class Data_Nilai extends BaseController
             'Nilai_IP7' => $this->request->getPost('nilai_IP7'),
             'Nilai_IP8' => $this->request->getPost('nilai_IP8'),
             'Nilai_IP9' => $this->request->getPost('nilai_IP9'),
+            'Nilai_IP10' => $this->request->getPost('nilai_IP10'),
         ];
         $this->ModelNilai->editData6($data);
         session()->setFlashdata('pesan', 'Nilai berhasil di update !!');

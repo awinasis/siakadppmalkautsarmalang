@@ -36,7 +36,7 @@
                                      <th class="text-center" rowspan='2'>NIS</th>
                                      <th class="text-center" rowspan='2'>Nama</th>
                                      <th class="text-center" rowspan='2'>L/P</th>
-                                     <th class="text-center" colspan=" 9">Nilai Indeks Prestasi (IP)</th>
+                                     <th class="text-center" colspan=" 10">Nilai Indeks Prestasi (IP)</th>
                                      <th class="text-center" rowspan="2">Action</th>
                                  </tr>
                                  <tr>
@@ -48,7 +48,8 @@
                                      <th class="text-center">Smt 6</th>
                                      <th class="text-center">Smt 7</th>
                                      <th class="text-center">Smt 8</th>
-                                     <th class="text-center">Smt > 8</th>
+                                     <th class="text-center">Smt 9</th>
+                                     <th class="text-center">Smt > 10</th>
                                  </tr>
                              </thead>
                              <tbody>
@@ -68,6 +69,7 @@
                                          <td><?= $value['nilai_IP7'] ?></td>
                                          <td><?= $value['nilai_IP8'] ?></td>
                                          <td><?= $value['nilai_IP9'] ?></td>
+                                         <td><?= $value['nilai_IP10'] ?></td>
 
                                          <td class="text-center">
                                              <a href="<?= base_url('data_nilai/ubahNilaiIndeksPrestasi/' . $value['id_ip']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>

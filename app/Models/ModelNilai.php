@@ -189,15 +189,6 @@ class ModelNilai extends Model
             ->delete($data);
     }
 
-    //------------------------------------------------ 6 --------------------------------------------------// 
-
-    public function allData5()
-    {
-        return $this->db->table('tbl_nilai')
-            ->orderBy('id_', 'DESC')
-            ->get()->getResultArray();
-    }
-
     //------------------------------------------------ 7 --------------------------------------------------// 
 
     public function allData6()
