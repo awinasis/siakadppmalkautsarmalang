@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 09:44 AM
+-- Generation Time: May 23, 2021 at 06:36 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -40,7 +40,7 @@ CREATE TABLE `tbl_catatansaranpengurus` (
 --
 
 INSERT INTO `tbl_catatansaranpengurus` (`id_cs`, `NIS`, `nama_santri`, `jenis_kelamin`, `catatan_saran`) VALUES
-(2, 201903002, 'Abdullah Winasis', 'L', '1. Ditingkatkan lagi komunikasinya dalam bersosial (jangan sungkan) 2. \r\n Lebih menjaga lagi dalam kesehatan pribadi 3. Terus disemangati dalam mengejar ketercapaian materi mondok dan kuliahnya');
+(1, 201903002, 'Abdullah Winasis', 'L', '1. Ditingkatkan lagi komunikasinya dalam bersosial (jangan sungkan) 2. \r\n Lebih menjaga lagi dalam kesehatan pribadi 3. Terus disemangati dalam mengejar ketercapaian materi mondok dan kuliahnya');
 
 -- --------------------------------------------------------
 
@@ -260,7 +260,7 @@ CREATE TABLE `tbl_nilaiekstrakurikuler` (
 --
 
 INSERT INTO `tbl_nilaiekstrakurikuler` (`id_ne`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai_1`, `nilai_2`, `nilai_3`) VALUES
-(3, 201903002, 'Abdullah Winasis', 'L', 'A', 'B', 'B+');
+(1, 201903002, 'Abdullah Winasis', 'L', 'A', 'B', 'B+');
 
 -- --------------------------------------------------------
 
@@ -281,15 +281,16 @@ CREATE TABLE `tbl_nilaiindeksprestasi` (
   `nilai_IP6` varchar(5) NOT NULL,
   `nilai_IP7` varchar(5) NOT NULL,
   `nilai_IP8` varchar(5) NOT NULL,
-  `nilai_IP9` varchar(5) NOT NULL
+  `nilai_IP9` varchar(5) NOT NULL,
+  `nilai_IP10` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_nilaiindeksprestasi`
 --
 
-INSERT INTO `tbl_nilaiindeksprestasi` (`id_ip`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai_IP1`, `nilai_IP2`, `nilai_IP3`, `nilai_IP4`, `nilai_IP5`, `nilai_IP6`, `nilai_IP7`, `nilai_IP8`, `nilai_IP9`) VALUES
-(2, 201903002, 'Abdullah Winasis', 'L', '3,95', '3,90', '3,85', '3,80', '3,75', '3,70', '', '', '');
+INSERT INTO `tbl_nilaiindeksprestasi` (`id_ip`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai_IP1`, `nilai_IP2`, `nilai_IP3`, `nilai_IP4`, `nilai_IP5`, `nilai_IP6`, `nilai_IP7`, `nilai_IP8`, `nilai_IP9`, `nilai_IP10`) VALUES
+(1, 201903002, 'Abdullah Winasis', 'L', '3,90', '3,85', '3,80', '3,75', '3,70', '3,65', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -333,7 +334,7 @@ CREATE TABLE `tbl_nilaikonseppraktikum` (
 --
 
 INSERT INTO `tbl_nilaikonseppraktikum` (`id_kp`, `NIS`, `nama_santri`, `jenis_kelamin`, `n1`, `n2`, `n3`, `n4`, `n5`, `n6`, `n7`, `n8`, `n9`, `n10`, `n11`, `n12`, `n13`, `n14`, `n15`, `n16`, `n17`, `n18`, `n19`, `n20`, `n21`, `n22`, `n23`, `n24`) VALUES
-(2, 201903002, 'Abdullah Winasis', 'L', 85, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80);
+(1, 201903002, 'Abdullah Winasis', 'L', 85, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 90);
 
 -- --------------------------------------------------------
 
@@ -358,7 +359,7 @@ CREATE TABLE `tbl_nilailimasuksessantri` (
 --
 
 INSERT INTO `tbl_nilailimasuksessantri` (`id_lss`, `NIS`, `nama_santri`, `jenis_kelamin`, `nilai_A`, `nilai_B`, `nilai_C`, `nilai_D`, `nilai_E`) VALUES
-(2, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B+', 'B+', 'B+', 'B+');
+(1, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B+', 'B+', 'B+', 'B+');
 
 -- --------------------------------------------------------
 
@@ -418,7 +419,7 @@ INSERT INTO `tbl_nilaimateri` (`id_nm`, `NIS`, `nama_santri`, `jenis_kelamin`, `
 --
 
 CREATE TABLE `tbl_nilaisikapperilaku` (
-  `id_sp` int(3) NOT NULL,
+  `id_sp` int(11) NOT NULL,
   `NIS` int(12) NOT NULL,
   `nama_santri` varchar(30) NOT NULL,
   `Jenis_Kelamin` enum('L','P') DEFAULT NULL,
@@ -438,7 +439,7 @@ CREATE TABLE `tbl_nilaisikapperilaku` (
 --
 
 INSERT INTO `tbl_nilaisikapperilaku` (`id_sp`, `NIS`, `nama_santri`, `Jenis_Kelamin`, `nl1`, `nl2`, `nl3`, `nl4`, `nl5`, `nl6`, `nl7`, `nl8`, `nl9`) VALUES
-(3, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B+', 'B', 'B+', 'B', 'B', 'A', 'B', 'B+');
+(1, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B+', 'B', 'B+', 'B', 'B', 'A', 'B', 'B+');
 
 -- --------------------------------------------------------
 
@@ -522,15 +523,20 @@ CREATE TABLE `tbl_rapor` (
   `NIS` int(12) DEFAULT NULL,
   `nama_santri` varchar(30) DEFAULT NULL,
   `id_nm` int(3) DEFAULT NULL,
-  `id_materi` int(3) DEFAULT NULL
+  `id_kp` int(3) DEFAULT NULL,
+  `id_sp` int(3) DEFAULT NULL,
+  `id_lss` int(3) DEFAULT NULL,
+  `id_ne` int(3) DEFAULT NULL,
+  `id_ip` int(3) DEFAULT NULL,
+  `id_cs` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_rapor`
 --
 
-INSERT INTO `tbl_rapor` (`id_rapor`, `NIS`, `nama_santri`, `id_nm`, `id_materi`) VALUES
-(1, 201903002, 'Abdullah Winasis', 1, 1);
+INSERT INTO `tbl_rapor` (`id_rapor`, `NIS`, `nama_santri`, `id_nm`, `id_kp`, `id_sp`, `id_lss`, `id_ne`, `id_ip`, `id_cs`) VALUES
+(1, 201903002, 'Abdullah Winasis', 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -748,10 +754,15 @@ ALTER TABLE `tbl_pesan`
 --
 ALTER TABLE `tbl_rapor`
   ADD PRIMARY KEY (`id_rapor`),
+  ADD UNIQUE KEY `id_nm_2` (`id_nm`),
+  ADD UNIQUE KEY `id_kp` (`id_kp`),
+  ADD UNIQUE KEY `id_sp` (`id_sp`),
+  ADD UNIQUE KEY `id_lss` (`id_lss`),
+  ADD UNIQUE KEY `id_ne` (`id_ne`),
+  ADD UNIQUE KEY `id_ip` (`id_ip`),
   ADD UNIQUE KEY `NIS` (`NIS`),
   ADD UNIQUE KEY `nama_santri` (`nama_santri`),
-  ADD UNIQUE KEY `id_nm` (`id_nm`),
-  ADD UNIQUE KEY `id_materi` (`id_materi`);
+  ADD UNIQUE KEY `id_nm` (`id_cs`);
 
 --
 -- Indexes for table `tbl_santri`
@@ -779,13 +790,13 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_catatansaranpengurus`
 --
 ALTER TABLE `tbl_catatansaranpengurus`
-  MODIFY `id_cs` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_cs` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_chart`
 --
 ALTER TABLE `tbl_chart`
-  MODIFY `id_chart` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_chart` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbl_guru`
@@ -821,37 +832,37 @@ ALTER TABLE `tbl_materi`
 -- AUTO_INCREMENT for table `tbl_nilaiekstrakurikuler`
 --
 ALTER TABLE `tbl_nilaiekstrakurikuler`
-  MODIFY `id_ne` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_ne` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaiindeksprestasi`
 --
 ALTER TABLE `tbl_nilaiindeksprestasi`
-  MODIFY `id_ip` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_ip` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaikonseppraktikum`
 --
 ALTER TABLE `tbl_nilaikonseppraktikum`
-  MODIFY `id_kp` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kp` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilailimasuksessantri`
 --
 ALTER TABLE `tbl_nilailimasuksessantri`
-  MODIFY `id_lss` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_lss` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaimateri`
 --
 ALTER TABLE `tbl_nilaimateri`
-  MODIFY `id_nm` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_nm` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaisikapperilaku`
 --
 ALTER TABLE `tbl_nilaisikapperilaku`
-  MODIFY `id_sp` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_sp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_pembayaran`

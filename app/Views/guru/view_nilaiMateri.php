@@ -75,7 +75,7 @@
                                  </tr>
                              </thead>
                              <tbody>
-                                 <?php
+                                 <?php $no = 1;
                                     foreach ($nilai as $key => $value) { ?>
                                      <tr>
                                          <td class="text-center"><?= $no++; ?></td>
