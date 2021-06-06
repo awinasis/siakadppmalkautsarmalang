@@ -46,10 +46,11 @@ class ModelAbsensi extends Model
         return $query;
     }
 
-    public function allData00()
-    {
-        return $this->db->table('tbl_chart')
-            ->orderBy('id_chart', 'DESC')
-            ->get()->getResultArray();
-    }
+    // public function allData00()
+    // {
+    //     return $this->db->table('tbl_chart')
+    //         ->join('tbl_santri', 'tbl_santri.id_santri = tbl_chart.id_santri', 'left')
+    //         ->orderBy('id_chart', 'DESC')
+    //         ->get()->getResultArray();
+    // }
 }

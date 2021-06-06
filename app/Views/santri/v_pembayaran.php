@@ -22,8 +22,7 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">NIS</th>
-                                    <th class="text-center">Nama Santri</th>
+                                    <th class="text-center">NO</th>
                                     <th class="text-center">Periode Pembayaran</th>
                                     <th class="text-center">Keterangan</th>
                                     <th class="text-center">Tagihan</th>
@@ -32,15 +31,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($pembayaran as $key => $value) { ?>
+                                <?php $no = 1;
+                                    foreach ($pembayaran as $key => $value) { ?>
                                     <tr>
-                                        <td><?= $value['NIS'] ?></td>
-                                        <td><?= $value['nama_santri'] ?></td>
+                                        <td class="text-center"><?= $no++; ?></td>
                                         <td class="text-center"><?= $value['periode_pembayaran'] ?></td>
-                                        <td><?= $value['keterangan'] ?></td>
+                                        <td class="text-center"><?= $value['keterangan'] ?></td>
                                         <td class="text-center"><?= $value['tagihan'] ?></td>
                                         <td class="text-center"><?= $value['terbayar'] ?></td>
-                                        <td><?= $value['status_pembayaran'] ?></td>
+                                        <td class="text-center"><?= $value['status_pembayaran'] ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -52,3 +51,4 @@
             <!-- /.box -->
         </div>
     </div>
+</div>

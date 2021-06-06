@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\ModelAbsensi;
+use App\Models\ModelSantri;
+use App\Models\ModelTA;
 
 class Data_Absensi extends BaseController
 {
@@ -10,6 +12,8 @@ class Data_Absensi extends BaseController
     {
         helper('form');
         $this->ModelAbsensi = new ModelAbsensi();
+        $this->ModelTA = new ModelTA();
+        $this->ModelSantri = new ModelSantri();
     }
     public function index()
     {
@@ -66,6 +70,8 @@ class Data_Absensi extends BaseController
         $data = [
             'title' => 'View Chart',
             'absensi' => $this->ModelAbsensi->detail_data($NIS),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
+            'santri' => $this->ModelSantri->allData(),
             'isi'    => 'admin/v_viewchart'
         ];
 
