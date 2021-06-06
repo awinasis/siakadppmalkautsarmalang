@@ -10,8 +10,54 @@
              <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Home</a></li>
              <li class="active">Nilai Santri</li>
          </ol>
-     </section>
 
+         <div class="row">
+             <div class="col-sm-12">
+                 <div class="box box-info box-solid">
+                     <div class="box-body">
+                         <div class="table-responsive">
+                             <table class="table table-bordered table-striped">
+                                 <thead>
+                                     <tr>
+                                         <th class="text-center">Kelas Santri</th>
+                                         <th class="text-center">Action</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <?php foreach ($nilai as $key => $value) { ?>
+                                         <tr>
+                                             <td>
+                                                 <div class="form-group row">
+                                                     <div class="col-lg-2"></div>
+                                                     <div class="col-lg-8">
+                                                         <select name="kelas_santri" class="form-control" id="kelas_santri" required>
+                                                             <option value="">- Pilih -</option>
+                                                             <option value="Qiraah">Qiraah</option>
+                                                             <option value="kitabah">kitabah</option>
+                                                             <option value="Al-Taannii">Al-Taannii</option>
+                                                             <option value="Al-Sarii">Al-Sarii</option>
+                                                             <option value="Al-Idlofi">Al-Idlofi</option>
+                                                             <option value="Hadits Besar">Hadits Besar</option>
+                                                         </select>
+                                                     </div>
+                                                     <div class="col-lg-2"></div>
+                                                 </div>
+                                             </td>
+
+                                             <td class="text-center">
+                                                 <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-circle-right"></i> Selengkapnya</button>
+                                             </td>
+                                         </tr>
+                                     <?php } ?>
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+     <br>
      <div class="row">
          <div class="col-sm-12">
              <div class="box box-gray box-solid">
@@ -19,7 +65,7 @@
                      <!-- <div class="box-tools pull-left"> -->
                      <a href="<?= base_url('data_nilai/tambahNilaiMateri/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
                  </div>
-                 <br>
+                 <h4 style="font-family:timesnewrohman;">&ensp;Tahun Ajaran : <b><?= $ta_aktif['tahun_akademik']; ?></b></h4>
                  <div class="box-body">
                      <?php
                         if (session()->getFlashdata('pesan')) {
@@ -28,7 +74,6 @@
                             echo '</div>';
                         }
                         ?>
-
                      <div class="table-responsive">
                          <table id="example2" class="table table-bordered table-striped">
                              <thead>

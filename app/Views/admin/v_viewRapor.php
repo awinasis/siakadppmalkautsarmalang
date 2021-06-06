@@ -30,8 +30,17 @@
             background-color: #f5f5f5;
         }
 
+        @media print {
+
+            .btn,
+            footer {
+                display: none;
+            }
+        }
+
         section {
             width: 210mm;
+            /* height: 330mm; */
             margin-left: auto;
             margin-right: auto;
         }
@@ -116,6 +125,9 @@
     <h4><b>1. Materi Pokok</b></h4>
     <table width="100%" border="2" align="center" cellpadding="5" cellspacing="0">
         <thead>
+            <?php $no = 1;
+            foreach ($rapor as $key => $value) {
+            } ?>
             <tr>
                 <th class="text-center">No</th>
                 <th class="text-center">Materi</th>
@@ -125,10 +137,10 @@
         </thead>
         <tbody>
             <tr>
+                <td class="text-center"><?= $no++; ?></td>
                 <td class="text-center"></td>
                 <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
+                <td class="text-center"><?= $rapor['nilai1']; ?>%</td>
             </tr>
         </tbody>
         <tfoot>
@@ -146,11 +158,14 @@
     <h4><b>2. Pemahaman Konsep & Praktikum</b></h4>
     <table width="100%" border="2" align="center" cellpadding="7" cellspacing="0">
         <thead>
+            <?php $no = 1;
+            foreach ($rapor as $key => $value) {
+            } ?>
             <tr>
                 <th class="text-center" rowspan='2'>No.</th>
                 <th class="text-center" rowspan='2'>Materi</th>
                 <th class="text-center" rowspan='2'>Kelas</th>
-                <th class="text-center" colspan=" 9">Nilai</th>
+                <th class="text-center" colspan="9">Nilai</th>
             </tr>
             <tr>
                 <th class="text-center">Angka</th>
@@ -159,10 +174,10 @@
         </thead>
         <tbody>
             <tr>
+                <td class="text-center"><?= $no++; ?></td>
                 <td class="text-center"></td>
                 <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
+                <td class="text-center"><?= $rapor['n1']; ?></td>
                 <td class="text-center"><input name="huruf" class="form-control" required></td>
             </tr>
         </tbody>
@@ -199,6 +214,9 @@
     <h4><b>4. Lima Sukses Santri</b></h4>
     <table width="50%" border="2" cellpadding="7" cellspacing="0">
         <thead>
+            <?php $no = 1;
+            foreach ($rapor as $key => $value) {
+            } ?>
             <tr>
                 <th class="text-center" rowspan='2'>No.</th>
                 <th class="text-center" rowspan='2'>Jenis</th>
@@ -207,9 +225,9 @@
         </thead>
         <tbody>
             <tr>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
+                <td class="text-center"><?= $no++; ?></td>
+                <td class="text-center">Faham Jama'ah</td>
+                <td class="text-center"><?= $rapor['nilai_A']; ?></td>
             </tr>
         </tbody>
     </table>
@@ -224,14 +242,14 @@
         </thead>
         <tbody>
             <tr>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
+                <td class="text-center">Pencak Silat</td>
+                <td class="text-center"><?= $rapor['nilai_1']; ?></td>
             </tr>
         </tbody>
     </table>
     <br><br>
     <h4><b>6. Absensi/Keaktifan dalam Kegiatan</b></h4>
-    <table width="100%" border="2" align="center" cellpadding="7" cellspacing="0">
+    <table width="100%" border="2" cellpadding="7" cellspacing="0">
         <thead>
             <tr>
                 <th class="text-center" rowspan='2'>Jumlah Kegiatan</th>
@@ -284,8 +302,8 @@
         </thead>
         <tbody>
             <tr>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
+                <td class="text-center">I</td>
+                <td class="text-center"><?= $rapor['nilai_IP1']; ?></td>
                 <td class="text-center"><input name="keterangan" class="form-control"></td>
             </tr>
         </tbody>
