@@ -34,10 +34,6 @@
                      </div>
                      <!-- /.box-header -->
                      <div class="box-body">
-                         <td>
-                             <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
-                                 <i class="fa fa-file-excel-o"></i> Export to Excel</a><br>
-                         </td><br>
                          <?php
                             if (session()->getFlashdata('pesan')) {
                                 echo '<div class="alert alert-success" role="alert">';
@@ -45,6 +41,9 @@
                                 echo '</div>';
                             }
                             ?>
+
+                         <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
+                             <i class="fa fa-file-excel-o"></i> Export to Excel</a><br><br>
 
                          <div class="table-responsive">
                              <table id="example1" class="table table-bordered table-striped">
@@ -131,10 +130,6 @@
                      </div>
                      <!-- /.box-header -->
                      <div class="box-body">
-                         <td>
-                             <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
-                                 <i class="fa fa-file-excel-o"></i> Export to Excel</a><br>
-                         </td><br>
                          <?php
                             if (session()->getFlashdata('pesan')) {
                                 echo '<div class="alert alert-success" role="alert">';
@@ -142,6 +137,9 @@
                                 echo '</div>';
                             }
                             ?>
+
+                         <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
+                             <i class="fa fa-file-excel-o"></i> Export to Excel</a><br><br>
 
                          <div class="table-responsive">
                              <table id="example1" class="table table-bordered table-striped">
@@ -315,10 +313,6 @@
                                      <option value="">- Pilih -</option>
                                      <option value="Qiraah">Qiraah</option>
                                      <option value="kitabah">kitabah</option>
-                                     <!-- <option value="Reguler">Reguler</option>
-                                     <option value="Mubtadin">Mubtadin</option>
-                                     <option value="Mutawasithin">Mutawasithin</option>
-                                     <option value="Muntahin">Muntahin</option> -->
                                      <option value="Al-Taannii">Al-Taannii</option>
                                      <option value="Al-Sarii">Al-Sarii</option>
                                      <option value="Al-Idlofi">Al-Idlofi</option>
@@ -487,10 +481,6 @@
                                      <select name="kelas_santri" class="form-control" id="kelas_santri">
                                          <option value="Qiraah" <?= $value['kelas_santri'] == "Qiraah" ? "selected" : ""; ?>>Qiraah</option>
                                          <option value="kitabah" <?= $value['kelas_santri'] == "kitabah" ? "selected" : ""; ?>>kitabah</option>
-                                         <!-- <option value="Reguler" <?= $value['kelas_santri'] == "Reguler" ? "selected" : ""; ?>>Reguler</option>
-                                         <option value="Mubtadin" <?= $value['kelas_santri'] == "Mubtadin" ? "selected" : ""; ?>>Mubtadin</option>
-                                         <option value="Mutawasithin" <?= $value['kelas_santri'] == "Mutawasithin" ? "selected" : ""; ?>>Mutawasithin</option>
-                                         <option value="Muntahin" <?= $value['kelas_santri'] == "Muntahin" ? "selected" : ""; ?>>Muntahin</option> -->
                                          <option value="Al-Taannii" <?= $value['kelas_santri'] == "Al-Taannii" ? "selected" : ""; ?>>Al-Taannii</option>
                                          <option value="Al-Sarii" <?= $value['kelas_santri'] == "Al-Sarii" ? "selected" : ""; ?>>Al-Sarii</option>
                                          <option value="Al-Idlofi" <?= $value['kelas_santri'] == "Al-Idlofi" ? "selected" : ""; ?>>Al-Idlofi</option>

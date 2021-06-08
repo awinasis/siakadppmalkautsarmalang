@@ -19,7 +19,7 @@
                      <!-- <div class="box-tools pull-left"> -->
                      <a href="<?= base_url('data_nilai/tambahNilaiLimaSuksesSantri/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
                  </div>
-                 <br>
+                 <h4 style="font-family:timesnewrohman;">&ensp;Tahun Ajaran : <b><?= $ta_aktif['tahun_akademik']; ?></b></h4>
                  <div class="box-body">
                      <?php
                         if (session()->getFlashdata('pesan')) {

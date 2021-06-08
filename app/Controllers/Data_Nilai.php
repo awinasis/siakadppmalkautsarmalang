@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\ModelNilai;
+use App\Models\ModelTA;
+use App\Models\ModelSantri;
 
 class Data_Nilai extends BaseController
 {
@@ -11,17 +13,38 @@ class Data_Nilai extends BaseController
     {
         helper('form');
         $this->ModelNilai = new ModelNilai();
+        $this->ModelTA = new ModelTA();
+        $this->ModelSantri = new ModelSantri();
     }
+
+    //------------------------------------------------ 1 --------------------------------------------------// 
+
     public function index()
     {
         $data = [
             'title' => 'Nilai Materi',
             'nilai' => $this->ModelNilai->allData(),
-            'isi'    => 'guru/view_nilaiMateri',
+            'santri' => $this->ModelSantri->allData(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
+            'isi'    => 'guru/view_nilaiMateri.php',
         ];
 
         return view("layout/wrapper", $data);
     }
+
+    public function tampil_nilaiMateriHB()
+    {
+        $data = [
+            'title' => 'Nilai Materi',
+            'nilai' => $this->ModelNilai->allData_HB(),
+            'santri' => $this->ModelSantri->allData(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
+            'isi'    => 'guru/view_nilaiMateri2.php',
+        ];
+
+        echo view("layout/wrapper", $data);
+    }
+
 
     public function tambahNilaiMateri()
     {
@@ -149,6 +172,7 @@ class Data_Nilai extends BaseController
         $data = [
             'title' => 'Nilai Pemahaman Konsep & Praktikum',
             'nilai' => $this->ModelNilai->allData1(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
             'isi'    => 'guru/view_nilaiKonsepPraktikum',
         ];
 
@@ -268,6 +292,7 @@ class Data_Nilai extends BaseController
         $data = [
             'title' => 'Nilai Sikap & Perilaku',
             'nilai' => $this->ModelNilai->allData2(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
             'isi'    => 'guru/view_nilaiSikapPerilaku',
         ];
 
@@ -356,6 +381,7 @@ class Data_Nilai extends BaseController
         $data = [
             'title' => 'Nilai 5 Sukses Santri',
             'nilai' => $this->ModelNilai->allData3(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
             'isi'    => 'guru/view_nilaiLimaSuksesSantri',
         ];
 
@@ -436,6 +462,7 @@ class Data_Nilai extends BaseController
         $data = [
             'title' => 'Nilai Ekstrakurikuler',
             'nilai' => $this->ModelNilai->allData4(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
             'isi'    => 'guru/view_nilaiEkstrakurikuler',
         ];
 
@@ -512,6 +539,7 @@ class Data_Nilai extends BaseController
         $data = [
             'title' => 'Nilai Indeks Prestasi',
             'nilai' => $this->ModelNilai->allData6(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
             'isi'    => 'guru/view_nilaiPrestasi',
         ];
 
@@ -602,6 +630,7 @@ class Data_Nilai extends BaseController
         $data = [
             'title' => 'Catatan & Saran',
             'nilai' => $this->ModelNilai->allData7(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
             'isi'    => 'guru/view_nilaiCatatanSaranPengurus',
         ];
 

@@ -39,6 +39,13 @@ class ModelSurat extends Model
             ->get()->getRowArray();
     }
 
+    public function permintaan_surat()
+    {
+        return $this->db->table('tbl_surat')
+            ->orderBy('id_surat', 'DESC')
+            ->get()->getResultArray();
+    }
+
     public function get_user_count()
     {
         $query = $this->db->table('tbl_surat')->countAll();

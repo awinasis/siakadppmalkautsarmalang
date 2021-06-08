@@ -53,7 +53,6 @@ class Auth extends BaseController
 
         ])) {
             //jika valid
-            // $level = $this->request->getPost('level');
             $username = $this->request->getPost('username');
             $password = $this->request->getPost('password');
 

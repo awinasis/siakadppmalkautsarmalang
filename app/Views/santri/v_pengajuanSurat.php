@@ -18,31 +18,54 @@
                 <div class="with-border"></div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">Nama Surat</th>
-                                    <th class="text-center">File</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($surat as $key => $value) { ?>
-                                    <tr>
-                                        <td><?= $value['nama_surat'] ?></td>
-                                        <td class="text-center">
-                                            <a href="<?= base_url('file_surat/viewpdf/' . $value['id_surat']) ?>">
-                                                <i class="fa fa-file-pdf-o fa-4x label-danger"></i></a><br>
-                                            <?= number_format($value['ukuran_file']); ?> Byte
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
+                    <!-- Main content -->
+                    <section class="invoice">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;">Data Pengajuan Surat</h4>
+                                &emsp;&emsp;&emsp;
+                                <h2 class="page-header"></h2>
+                                <div class="col-sm-8">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td width="100px">NIS</td>
+                                                <td width="30px">:</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="100px">Nama Santri</td>
+                                                <td width="30px">:</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="100px">Tahun Akademik</td>
+                                                <td width="30px">:</td>
+                                                <td><?= $ta_aktif['tahun_akademik']; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="100px">Jenis Surat</td>
+                                                <td width="30px">:</td>
+                                                <td>
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-6">
+                                                            <select name="kategori" id="kategori" class="form-control" placeholder="kategori" required>
+                                                                <option value="">-- Pilih Jenis Surat --</option>
+                                                                <option value="Sertifikat">Sertifikat</option>
+                                                                <option value="Surat Pengajuan">Surat Pengajuan</option>
+                                                                <option value="Kartu Pembayaran">Bukti Pembayaran</option>
+                                                                <option value="Buku Pedoman">Buku Pedoman</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a href="<?= base_url('santri/request_surat') ?>" class="btn btn-primary btn-sm"><i class="fa fa-mail-reply"></i> Kembali</a>
+                                </div>
+                            </div>
+                        </div>
                 </div>
-                <!-- /.box-body -->
+                </section>
             </div>
-            <!-- /.box -->
-        </div>
-    </div>

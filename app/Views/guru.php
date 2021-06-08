@@ -126,7 +126,7 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         <div class="box box-primary box-solid">
             <div class="box-header with-border">
                 <h3 class="box-title">Data Santri PPM Al-kautsar</h3>
@@ -138,7 +138,7 @@
                         <div class="chart-responsive">
                             <table class="table table-striped">
                                 <div>
-                                    <canvas id="doughnut-chart-santri" height="90"></canvas>
+                                    <canvas id="doughnut-chart-santri" height="180"></canvas>
                                 </div>
                             </table>
                         </div>
@@ -155,3 +155,27 @@
             </div>
         </div>
     </div>
+
+    <div class="col-sm-6">
+        <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Grafik Kehadiran KBM Santri</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="chart-responsive">
+                            <table class="table table-striped">
+                                <div>
+                                    <canvas id="line-chart" height="180"></canvas>
+                                </div>
+                            </table>
+                        </div>
+                        <!-- ./chart-responsive -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,7 +9,7 @@ class ModelAbsensi extends Model
     public function allData()
     {
         return $this->db->table('tbl_chart')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_chart.NIS', 'tbl_santri.nama_santri = tbl_chart.nama_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_chart.NIS', 'tbl_santri.nama_santri = tbl_chart.nama_santri', 'left')
             ->orderBy('id_chart', 'DESC')
             ->get()->getResultArray();
     }
@@ -17,13 +17,6 @@ class ModelAbsensi extends Model
     public function addData($data)
     {
         $this->db->table('tbl_chart')->insert($data);
-    }
-
-    public function editData($data)
-    {
-        $this->db->table('tbl_chart')
-            ->where('NIS', $data['NIS'])
-            ->update($data);
     }
 
     public function deleteData($data)
@@ -46,10 +39,29 @@ class ModelAbsensi extends Model
         return $query;
     }
 
-    public function allData00()
+    public function tampilkan_draft()
     {
-        return $this->db->table('tbl_chart')
-            ->orderBy('id_chart', 'DESC')
+        return $this->db->table('tbl_kehadiran')
+            ->orderBy('id_kehadiran', 'DESC')
             ->get()->getResultArray();
+    }
+
+    public function tambah_kehadiran($data)
+    {
+        $this->db->table('tbl_kehadiran')->insert($data);
+    }
+
+    public function edit_kehadiran($data)
+    {
+        $this->db->table('tbl_kehadiran')
+            ->where('id_kehadiran', $data['id_kehadiran'])
+            ->update($data);
+    }
+
+    public function delete_kehadiran($data)
+    {
+        $this->db->table('tbl_kehadiran')
+            ->where('id_kehadiran', $data['id_kehadiran'])
+            ->delete($data);
     }
 }
