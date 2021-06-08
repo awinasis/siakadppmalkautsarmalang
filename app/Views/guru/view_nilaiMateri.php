@@ -10,7 +10,6 @@
              <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Home</a></li>
              <li class="active">Nilai Santri</li>
          </ol>
-     </section>
 
      <!-- <div class="row">
          <div class="col-sm-12">
@@ -197,7 +196,7 @@
                                                      <td class="text-center"><?= $no++; ?></td>
                                                      <td class="text-center"><?= $value['NIS']; ?></td>
                                                      <td><?= $value['nama_santri']; ?></td>
-                                                     <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
+                                                     <td class="text-center"><?= $value['jenis_kelamin'] ?></td>                   
 
                                                      <td class="text-center">
                                                          <a href="<?= base_url('data_nilai/ubahNilaiMateri/' . $value['id_nm']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
@@ -240,4 +239,3 @@
          <!-- /.modal-dialog -->
      </div>
  <?php } ?>
- </div>

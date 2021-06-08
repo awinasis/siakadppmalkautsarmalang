@@ -51,6 +51,7 @@
     </head>
 
     </html>
+
     <div class="text-left">
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <button onclick="window.print()" class="btn btn-warning" class="pull-right"><i class="fa fa-print"></i>&nbsp;Cetak</button>

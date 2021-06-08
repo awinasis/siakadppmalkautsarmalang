@@ -30,15 +30,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($pembayaran as $key => $value) { ?>
-                                    <tr>
+                                   <tr>
                                         <td class="text-center"><?= $value['periode_pembayaran'] ?></td>
-                                        <td><?= $value['keterangan'] ?></td>
+                                        <td class="text-center"><?= $value['keterangan'] ?></td>
                                         <td class="text-center"><?= $value['tagihan'] ?></td>
                                         <td class="text-center"><?= $value['terbayar'] ?></td>
                                         <td class="text-center"><?= $value['status_pembayaran'] ?></td>
-                                    </tr>
-                                <?php } ?>
+                              </tr>
                             </tbody>
                         </table>
                     </div>
