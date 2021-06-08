@@ -240,4 +240,3 @@
          <!-- /.modal-dialog -->
      </div>
  <?php } ?>
- </div>
