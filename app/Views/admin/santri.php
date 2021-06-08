@@ -34,10 +34,6 @@
                      </div>
                      <!-- /.box-header -->
                      <div class="box-body">
-                         <td>
-                             <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
-                                 <i class="fa fa-file-excel-o"></i> Export to Excel</a><br>
-                         </td><br>
                          <?php
                             if (session()->getFlashdata('pesan')) {
                                 echo '<div class="alert alert-success" role="alert">';
@@ -45,6 +41,9 @@
                                 echo '</div>';
                             }
                             ?>
+
+                         <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
+                             <i class="fa fa-file-excel-o"></i> Export to Excel</a><br><br>
 
                          <div class="table-responsive">
                              <table id="example1" class="table table-bordered table-striped">
@@ -131,10 +130,6 @@
                      </div>
                      <!-- /.box-header -->
                      <div class="box-body">
-                         <td>
-                             <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
-                                 <i class="fa fa-file-excel-o"></i> Export to Excel</a><br>
-                         </td><br>
                          <?php
                             if (session()->getFlashdata('pesan')) {
                                 echo '<div class="alert alert-success" role="alert">';
@@ -142,6 +137,9 @@
                                 echo '</div>';
                             }
                             ?>
+
+                         <a href="<?= base_url('bio_santri/export_excel/') ?>" class="btn btn-primary btn-sm">
+                             <i class="fa fa-file-excel-o"></i> Export to Excel</a><br><br>
 
                          <div class="table-responsive">
                              <table id="example1" class="table table-bordered table-striped">

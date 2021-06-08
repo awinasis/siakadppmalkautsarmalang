@@ -39,14 +39,6 @@
             <input id="username" type="text" name="username" class="form-control" placeholder="Username">
             <span class="fa fa-user form-control-feedback"></span>
         </div>
-        <!-- <div class="form-group has-feedback">
-            <select name="level" class="form-control">
-                <option value="">--Level--</option>
-                <option value="1">Admin</option>
-                <option value="2">Guru</option>
-                <option value="3">Santri</option>
-            </select>
-        </div> -->
         <div class="form-group has-feedback">
             <input id="password" type="password" name="password" class="form-control" placeholder="Password">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>

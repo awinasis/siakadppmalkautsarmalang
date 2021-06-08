@@ -23,11 +23,7 @@
         <!-- title row -->
         <div class="row">
             <div class="col-xs-12">
-                <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;"><i class="fa fa-laptop"></i> Data Santri</h4>
-                &emsp;
-                <div class="pull-right">
-                    <h4><b style="color:Black; font-family:timesnewrohman;">JK : Laki-Laki</b></h4>
-                </div>
+                <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;"><i class="fa fa-laptop"></i> Data Santri : &nbsp;<b style="color:Black; font-family:timesnewrohman;">Laki-Laki</b></h4>&emsp;
                 <h2 class="page-header"></h2>
                 <table class="table table-bordered">
                     <!-- <div>

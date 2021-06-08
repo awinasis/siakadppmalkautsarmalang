@@ -53,10 +53,16 @@
                                          <td><?= $value['judul_pengumuman'] ?></td>
                                          <td><?= $value['isi_pengumuman'] ?></td>
 
-                                         <td align="center">
-                                             <a class="btn btn-primary btn-sm" href="/pengumuman/change_visible/<?= $value['id_pengumuman']; ?>">
-                                                 <?= $value['visible_pengumuman'] == "1" ? '<i class="fa fa-eye"></i>' : '<i class="fa fa-eye-slash"></i>' ?>
+                                         <td class="text-center">
+                                             <a href="<?= base_url('pengumuman/change_visible/' . $value['id_pengumuman']) ?>" class="btn btn-primary btn-sm">
+                                                 <?php if ($value['visible_pengumuman'] == 0) {
+                                                        echo '<i class="fa fa-eye-slash"></i>';
+                                                    } else {
+                                                        echo '<i class="fa fa-eye"></i>';
+                                                    }
+                                                    ?>
                                              </a>
+
                                          </td>
 
                                          <td class="text-center">

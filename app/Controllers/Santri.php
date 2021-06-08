@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\ModelAbsensi;
+use App\Models\ModelTA;
 use App\Models\ModelPengumuman;
 use App\Models\ModelSantri;
 use App\Models\ModelPembayaran;
@@ -16,7 +16,7 @@ class Santri extends BaseController
     public function __construct()
     {
         helper('form');
-        $this->ModelAbsensi = new ModelAbsensi();
+        $this->ModelTA = new ModelTA();
         $this->ModelPengumuman = new ModelPengumuman();
         $this->ModelSantri = new ModelSantri();
         $this->ModelPembayaran = new ModelPembayaran();
@@ -26,12 +26,10 @@ class Santri extends BaseController
 
     public function index()
     {
-        // $pengumuman = $this->ModelPengumuman->where('visible_news', "1")->orderBy('tgl_dibuat', 'desc')->findAll();
         $data = [
             'title' => 'Pengumuman',
             'pengumuman' => $this->ModelPengumuman->allData(),
             'isi'    => 'santri',
-            // 'pengumuman' => $pengumuman
         ];
         return view("layout/wrapper", $data);
     }
@@ -82,29 +80,6 @@ class Santri extends BaseController
         return view("layout/wrapper", $data);
     }
 
-    public function absen_kbm()
-    {
-        $data = [
-            'title' => 'Absensi KBM',
-            'absensi' => $this->ModelAbsensi->allData(),
-            'isi'    => 'santri/v_absenSantri',
-            // 'reportAbsen' => $reportAbsen
-        ];
-
-        return view("layout/wrapper", $data);
-    }
-
-    public function do_absen()
-    {
-        $data = [
-            'title' => 'Melakukan Absen',
-            'absen' => $this->ModelAbsensi->allData00(),
-            'isi'    => 'santri/absen santri/do_absen',
-        ];
-
-        return view("layout/wrapper", $data);
-    }
-
     public function pesan()
     {
         $nis = session()->get('username');
@@ -119,11 +94,25 @@ class Santri extends BaseController
         return view("layout/wrapper", $data);
     }
 
+    public function request_surat()
+    {
+        $data = [
+            'title' => 'Surat',
+            'surat' => $this->ModelSurat->permintaan_surat(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
+            'santri' => $this->ModelSantri->allData(),
+            'isi'    => 'santri/surat_santri/v_request',
+        ];
+        return view("layout/wrapper", $data);
+    }
+
     public function pengajuan_surat()
     {
         $data = [
             'title' => 'Surat',
-            'surat' => $this->ModelSurat->allData(),
+            'surat' => $this->ModelSurat->permintaan_surat(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
+            'santri' => $this->ModelSantri->allData(),
             'isi'    => 'santri/v_pengajuanSurat',
         ];
         return view("layout/wrapper", $data);

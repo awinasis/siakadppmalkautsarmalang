@@ -15,7 +15,7 @@
                     <li><a href="<?= base_url('data_kelas') ?>"><i class="fa fa-institution"></i> Kelas</a></li>
                     <li><a href="<?= base_url('data_materi') ?>"><i class="fa fa-book"></i> Materi</a></li>
                     <li><a href="<?= base_url('data_rps') ?>"><i class="fa fa-file-text"></i> Rencana Pembelajaran Semester (RPS)</a></li>
-                    <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Rekap Absensi</a></li>
+                    <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Data Absensi</a></li>
                     <li><a href="<?= base_url('data_pembayaran') ?>"><i class="fa fa-money"></i> Pembayaran</a></li>
                     <li><a href="<?= base_url('bio_guru') ?>"><i class="fa fa-user"></i> Dewan Guru</a></a></li>
                     <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Santri</a></a></li>
@@ -32,7 +32,7 @@
                     <li><a href="<?= base_url('data_user') ?>"><i class="fa fa-cogs"></i> User Management</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="fa fa-info-circle"></i> About</a></li>
+            <!-- <li><a href="#"><i class="fa fa-info-circle"></i> About</a></li> -->
         <?php } elseif (session()->get('level') == "Guru") { ?>
             <!-----Menu Halaman Guru------>
             <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Beranda</a></li>
@@ -48,7 +48,7 @@
                     <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Data Santri</a></li>
                     <li><a href="<?= base_url('data_kelas') ?>"><i class="fa fa-institution"></i> Kelas</a></li>
                     <li><a href="<?= base_url('data_materi') ?>"><i class="fa fa-book"></i> Materi</a></li>
-                    <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Rekap Absensi</a></li>
+                    <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Data Absensi</a></li>
                     <li><a href="<?= base_url('data_rps') ?>"><i class="fa fa-file-text"></i> RPS</a></li>
                     <li><a href="<?= base_url('data_rapor') ?>"><i class="fa fa-archive"></i> Rapor</a></li>
                 </ul>
@@ -58,6 +58,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nilai <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?= base_url('data_nilai/index') ?>"><i class="fa fa-circle-o"></i> Materi Pokok</a></li>
+                    <li><a href="<?= base_url('data_nilai/tampil_nilaiMateriHB') ?>"><i class="fa fa-circle-o"></i> Materi HB</a></li>
                     <li><a href="<?= base_url('data_nilai/konsepPraktikum') ?>"><i class="fa fa-circle-o"></i> Pemahaman Konsep & Praktikum</a></li>
                     <li><a href="<?= base_url('data_nilai/sikapPerilaku') ?>"><i class="fa fa-circle-o"></i> Sikap & Perilaku</a></li>
                     <li><a href="<?= base_url('data_nilai/limaSuksesSantri') ?>"><i class="fa fa-circle-o"></i> Lima Sukses Santri</a></li>
@@ -82,7 +83,7 @@
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?= base_url('santri/rps') ?>"><i class="fa fa-file-text"></i> Rencana Pembelajaran Semester (RPS)</a></li>
                     <li><a href="<?= base_url('santri/nilai_santri') ?>"><i class="fa fa-folder-open"></i> Nilai Santri</a></li>
-                    <li><a href="<?= base_url('santri/pengajuan_surat') ?>"><i class="fa fa-envelope"></i> Pengajuan Surat</a></li>
+                    <li><a href="<?= base_url('santri/request_surat') ?>"><i class="fa fa-envelope"></i> Pengajuan Surat</a></li>
                 </ul>
             </li>
 

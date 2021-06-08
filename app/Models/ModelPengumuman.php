@@ -25,12 +25,6 @@ class ModelPengumuman extends Model
             ->update($data);
     }
 
-    public function updateData($data, $id_pengumuman)
-    {
-        $query = $this->db->table("tbl_pengumuman")->update($data, array('id_pengumuman' => $id_pengumuman));
-        return $query;
-    }
-
     public function deleteData($data)
     {
         $this->db->table('tbl_pengumuman')
@@ -42,5 +36,10 @@ class ModelPengumuman extends Model
     {
         $query = $this->db->table('tbl_pengumuman')->countAll();
         return $query;
+    }
+
+    public function reset_visiblePengumuman()
+    {
+        $this->db->table('tbl_pengumuman')->update(['visible_pengumuman' => 0]);
     }
 }

@@ -4,6 +4,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
 
+<!-- Ionicons -->
+<link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+
 <!DOCTYPE html>
 <html>
 
@@ -224,7 +228,7 @@
         <div class="col-sm-6">
             <div class="box box-primary box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Data </h3>
+                    <h3 class="box-title">Grafik Kehadiran KBM Santri</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -241,7 +245,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.box-body -->
             </div>
         </div>
     </div>
+</div>

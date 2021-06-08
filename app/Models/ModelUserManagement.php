@@ -9,7 +9,7 @@ class ModelUserManagement extends Model
     public function allData()
     {
         return $this->db->table('tbl_user')
-            ->orderBy('id_user', 'DESC')
+            ->orderBy('level', 'DESC')
             ->get()->getResultArray();
     }
 

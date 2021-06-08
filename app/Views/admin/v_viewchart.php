@@ -14,7 +14,7 @@
         <br><br>
         <ol class="breadcrumb">
             <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="<?= base_url('data_absensi') ?>">Rekap Absensi</a></li>
+            <li><a href="<?= base_url('data_absensi') ?>">Data Absensi</a></li>
             <li class="active">View Chart</li>
         </ol>
     </section>
@@ -52,43 +52,16 @@
 
     </html>
 
+    <div class="text-left">
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <button onclick="window.print()" class="btn btn-warning" class="pull-right"><i class="fa fa-print"></i>&nbsp;Cetak</button>
+    </div>
     <section class="invoice">
         <!-- title row -->
         <div class="row">
             <div class="col-xs-12">
-                <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;"><i class="fa fa-pie-chart"></i> Chart</h4>
-                &emsp;
-                <div class="pull-right">
-                    <button onclick="window.print()" class="btn btn-warning" class="pull-right"><i class="fa fa-print"></i>&nbsp;Print</button>
-                </div>
-                <h2 class="page-header"></h2>
-                <h4 style="color:black; font-family:timesnewrohman;">
-                    Prosentase Kehadiran KBM Santri PPM Al-Kautsar, <b>Bulan :</b>
-                    <?php $bulan = array(
-                        '01' => 'JANUARI',
-                        '02' => 'FEBRUARI',
-                        '03' => 'MARET',
-                        '04' => 'APRIL',
-                        '05' => 'MEI',
-                        '06' => 'JUNI',
-                        '07' => 'JULI',
-                        '08' => 'AGUSTUS',
-                        '09' => 'SEPTEMBER',
-                        '10' => 'OKTOBER',
-                        '11' => 'NOVEMBER',
-                        '12' => 'DESEMBER',
-                    );
-                    ?>
-                    <b><?php echo $bulan[date('m')] ?></b>
-                    <b>
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                    </b>
-                </h4>
-                <br>
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-sm-6">
                         <table class="table table-bordered">
                             <tr>
                                 <td width="100px">Tahun Akademik :</td>
@@ -109,8 +82,32 @@
                         </table>
                     </div>
                 </div>
-                <br><br>
+                <br>
                 <table class="table table-bordered">
+                    <h4 style="color:black; font-family:timesnewrohman;">
+                        Prosentase Kehadiran KBM Santri PPM Al-Kautsar, <b>Bulan :</b>
+                        <?php $bulan = array(
+                            '01' => 'JANUARI',
+                            '02' => 'FEBRUARI',
+                            '03' => 'MARET',
+                            '04' => 'APRIL',
+                            '05' => 'MEI',
+                            '06' => 'JUNI',
+                            '07' => 'JULI',
+                            '08' => 'AGUSTUS',
+                            '09' => 'SEPTEMBER',
+                            '10' => 'OKTOBER',
+                            '11' => 'NOVEMBER',
+                            '12' => 'DESEMBER',
+                        );
+                        ?>
+                        <b><?php echo $bulan[date('m')] ?></b>
+                        <b>
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                        </b>
+                    </h4>
                     <div>
                         <canvas id="pie-chart-chart" height="130"></canvas>
                     </div>
@@ -129,7 +126,7 @@
                             <?php
                             $no = 1;
                             $jumlah = null;
-                            $data = mysqli_query($konek, "select keterangan, COUNT(*) as jumlah_kehadiran from tbl_chart GROUP BY keterangan DESC");
+                            $data = mysqli_query($konek, "select keterangan, COUNT(*) as jumlah_kehadiran from tbl_kehadiran GROUP BY keterangan DESC");
                             while ($d = mysqli_fetch_array($data)) { ?>
                                 <tr>
                                     <td class="text-center"><?php echo $no++; ?></td>
@@ -143,3 +140,4 @@
             </div>
         </div>
     </section>
+</div>

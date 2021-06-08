@@ -16,6 +16,9 @@ class Data_Nilai extends BaseController
         $this->ModelTA = new ModelTA();
         $this->ModelSantri = new ModelSantri();
     }
+
+    //------------------------------------------------ 1 --------------------------------------------------// 
+
     public function index()
     {
         $data = [
@@ -23,11 +26,25 @@ class Data_Nilai extends BaseController
             'nilai' => $this->ModelNilai->allData(),
             'santri' => $this->ModelSantri->allData(),
             'ta_aktif' => $this->ModelTA->ta_aktif(),
-            'isi'    => 'guru/view_nilaiMateri',
+            'isi'    => 'guru/view_nilaiMateri.php',
         ];
 
         return view("layout/wrapper", $data);
     }
+
+    public function tampil_nilaiMateriHB()
+    {
+        $data = [
+            'title' => 'Nilai Materi',
+            'nilai' => $this->ModelNilai->allData_HB(),
+            'santri' => $this->ModelSantri->allData(),
+            'ta_aktif' => $this->ModelTA->ta_aktif(),
+            'isi'    => 'guru/view_nilaiMateri2.php',
+        ];
+
+        echo view("layout/wrapper", $data);
+    }
+
 
     public function tambahNilaiMateri()
     {
