@@ -85,7 +85,7 @@
                 <br>
                 <table class="table table-bordered">
                     <h4 style="color:black; font-family:timesnewrohman;">
-                        Prosentase Kehadiran KBM Santri PPM Al-Kautsar, <b>Bulan :</b>
+                        Presentase Kehadiran KBM Santri PPM Al-Kautsar, <b>Bulan :</b>
                         <?php $bulan = array(
                             '01' => 'JANUARI',
                             '02' => 'FEBRUARI',
