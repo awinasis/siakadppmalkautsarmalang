@@ -63,6 +63,9 @@
                                      <tr>
                                          <td class="text-center"><?= $value['NIS'] ?></td>
                                          <td><?= $value['nama_santri'] ?></td>
+                                         <td class="text-center"><?= $value['keterangan'] ?></td>
+                                         <td class="text-center"><?= $value['sesi_pengajian'] ?></td>
+                                         <td><?= $value['tanggal'] ?></td>
                                          <td class="text-center">
                                              <a href="<?= base_url('data_absensi/viewchart/' . $value['NIS']) ?>">
                                                  <i class="fa fa-pie-chart fa-4x"></i><br> Detail</a><br>
