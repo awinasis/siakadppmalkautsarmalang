@@ -117,7 +117,7 @@
                     <table width="50%" border="2" align="center" cellpadding="3" cellspacing="0">
                         <thead>
                             <tr>
-                                <th class="text-center">No</th>
+                                <th class="text-center">No</th> 
                                 <th class="text-center">Keterangan</th>
                                 <th class="text-center">Total</th>
                             </tr>
@@ -126,12 +126,63 @@
                             <?php
                             $no = 1;
                             $jumlah = null;
-                            $data = mysqli_query($konek, "select keterangan, COUNT(*) as jumlah_kehadiran from tbl_kehadiran GROUP BY keterangan DESC");
+                            $NIS_santri = $absensi['NIS'];
+                            $data = mysqli_query($konek, "SELECT *, sum(keterangan='Hadir') AS Hadir, sum(keterangan='Alpha') AS Alpha,
+                            sum(keterangan='Belajar') AS Belajar, sum(keterangan='Izin') AS Izin, sum(keterangan='Izin_Terlambat') AS Izin_Terlambat,
+                            sum(keterangan='Jaga') AS Jaga, sum(keterangan='Kuliah') AS Kuliah, sum(keterangan='Nugas') AS Nugas,
+                            sum(keterangan='Sakit') AS Sakit, sum(keterangan='Terlambat') AS Terlambat
+                            from tbl_kehadiran where NIS = '$NIS_santri'");
                             while ($d = mysqli_fetch_array($data)) { ?>
                                 <tr>
                                     <td class="text-center"><?php echo $no++; ?></td>
-                                    <td>&emsp;&emsp;<?php echo $d['keterangan']; ?></td>
-                                    <td class="text-center"><?php echo $d['jumlah_kehadiran']; ?></td>
+                                    <td>&emsp;&emsp;Hadir</td>
+                                    <td class="text-center"><?php echo $d['Hadir']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><?php echo $no++; ?></td>
+                                    <td>&emsp;&emsp;Alpha</td>
+                                    <td class="text-center"><?php echo $d['Alpha']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><?php echo $no++; ?></td>
+                                    <td>&emsp;&emsp;Belajar</td>
+                                    <td class="text-center"><?php echo $d['Belajar']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><?php echo $no++; ?></td>
+                                    <td>&emsp;&emsp;Izin</td>
+                                    <td class="text-center"><?php echo $d['Izin']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><?php echo $no++; ?></td>
+                                    <td>&emsp;&emsp;Izin Terlambat</td>
+                                    <td class="text-center"><?php echo $d['Izin_Terlambat']; ?></td>
+                                </tr>
+                                <tr>
+                                <td class="text-center"><?php echo $no++; ?></td>
+                                    <td>&emsp;&emsp;Jaga</td>
+                                    <td class="text-center"><?php echo $d['Jaga']; ?></td>
+                                </tr>
+                                <tr>
+                                <td class="text-center"><?php echo $no++; ?></td>
+                                    <td>&emsp;&emsp;Kuliah</td>
+                                    <td class="text-center"><?php echo $d['Kuliah']; ?></td>
+                                </tr>
+                                <tr>
+                                <td class="text-center"><?php echo $no++; ?></td>
+                                    <td>&emsp;&emsp;Nugas</td>
+                                    <td class="text-center"><?php echo $d['Nugas']; ?></td>
+                                </tr>
+                                <tr>
+                                </tr>
+                                    <td class="text-center"><?php echo $no++; ?></td>
+                                    <td>&emsp;&emsp;Sakit</td>
+                                    <td class="text-center"><?php echo $d['Sakit']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><?php echo $no++; ?></td>
+                                    <td>&emsp;&emsp;Terlambat</td>
+                                    <td class="text-center"><?php echo $d['Terlambat']; ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>

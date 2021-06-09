@@ -20,7 +20,7 @@ class Data_Absensi extends BaseController
         $data = [
             'title' => 'Absensi',
             'absensi' => $this->ModelAbsensi->allData(),
-            'santri' => $this->ModelSantri->allData(),
+            'santri' => $this->ModelAbsensi->tampilkan_chart(),
             'isi'    => 'admin/absensi'
         ];
 
