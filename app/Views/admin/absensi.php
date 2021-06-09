@@ -49,7 +49,6 @@
 
                                      <th class="text-center">NIS</th>
                                      <th class="text-center">Nama Santri</th>
-                                     <th class="text-center">Prosentase</th>
                                      <th class="text-center">Keterangan</th>
                                      <th class="text-center">Sesi Pengajian</th>
                                      <th class="text-center">Tanggal</th>

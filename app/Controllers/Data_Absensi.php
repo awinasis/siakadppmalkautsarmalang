@@ -75,7 +75,7 @@ class Data_Absensi extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_Santri' => $this->request->getPost('nama_santri'),
+            'nama_Santri' => $this->request->getPost('nama_santri'),
             'keterangan' => $this->request->getPost('keterangan'),
             'sesi_pengajian' => $this->request->getPost('sesi_pengajian'),
             'kelas' => $this->request->getPost('kelas'),
