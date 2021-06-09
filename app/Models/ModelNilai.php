@@ -9,7 +9,7 @@ class ModelNilai extends Model
     public function allData()
     {
         return $this->db->table('tbl_nilaiMateri')
-            ->join('tbl_santri', 'tbl_santri.id_santri = tbl_nilaiMateri.id_santri')
+            // ->join('tbl_santri', 'tbl_santri.id_santri = tbl_nilaiMateri.id_santri')
             ->orderBy('id_nm', 'DESC')
             ->get()->getResultArray();
     }

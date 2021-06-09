@@ -28,7 +28,7 @@ class ModelAbsensi extends Model
 
     public function detail_data($NIS)
     {
-        return $this->db->table('tbl_chart')
+        return $this->db->table('tbl_santri')
             ->where('NIS', $NIS)
             ->get()->getRowArray();
     }
@@ -37,6 +37,13 @@ class ModelAbsensi extends Model
     {
         $query = $this->db->table('tbl_chart')->countAll();
         return $query;
+    }
+
+    public function tampilkan_chart()
+    {
+        return $this->db->table('tbl_santri')
+        ->orderBy('NIS', 'ASC')
+        ->get()->getResultArray();
     }
 
     public function tampilkan_draft()
