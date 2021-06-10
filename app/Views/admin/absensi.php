@@ -49,26 +49,27 @@
 
                                      <th class="text-center">NIS</th>
                                      <th class="text-center">Nama Santri</th>
-                                     <th class="text-center">Prosentase</th>
+                                     <th class="text-center">Presentase</th>
                                      <?php if (session()->get('level') == "Admin") { ?>
-                                         <th class="text-center">Action</th>
+                                         
                                      <?php } ?>
                                  </tr>
                              </thead>
                              <tbody>
-                                 <?php foreach ($absensi as $key => $value) { ?>
+                                 <?php foreach ($santri as $key => $value) { ?>
                                      <tr>
                                          <td class="text-center"><?= $value['NIS'] ?></td>
                                          <td><?= $value['nama_santri'] ?></td>
+
                                          <td class="text-center">
                                              <a href="<?= base_url('data_absensi/viewchart/' . $value['NIS']) ?>">
                                                  <i class="fa fa-pie-chart fa-4x"></i><br> Detail</a><br>
                                          </td>
 
                                          <?php if (session()->get('level') == "Admin") { ?>
-                                             <td class="text-center">
+                                             <!-- <td class="text-center">
                                                  <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['NIS'] ?>"><i class="fa fa-trash"></i></button>
-                                             </td>
+                                             </td> -->
                                          <?php } ?>
                                      </tr>
                                  <?php } ?>
@@ -104,6 +105,8 @@
                          <input name="nama_santri" class="form-control" placeholder="nama santri" required>
                      </div>
                  </div>
+
+
 
                  <div class="modal-footer">
                      <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>

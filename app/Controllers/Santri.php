@@ -117,4 +117,16 @@ class Santri extends BaseController
         ];
         return view("layout/wrapper", $data);
     }
+
+    // public function edit_absensi_santri()
+    // {
+    //     $data = [
+    //         'absensi' =>$this->ModelAbsensi->editData();
+    //         'NIS' => $NIS,
+    //         'NIS' => $this->request->getPost('NIS'),
+    //         'keterangan' => $this->request->getPost('keterangan'),
+    //         'isi'    => 'santri/absen santri/do_absen',
+    //     ];
+    //     return view("layout/wrapper", $data);
+    // }
 }

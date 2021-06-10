@@ -22,23 +22,26 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">Periode Pembayaran</th>
-                                    <th class="text-center">Keterangan</th>
-                                    <th class="text-center">Tagihan</th>
-                                    <th class="text-center">Terbayar</th>
-                                    <th class="text-center">Status</th>
+                                    <th class="text-center">NO</th>
+                                    <th class="text-center">PERIODE PEMBAYARAN</th>
+                                    <th class="text-center">KETERANGAN</th>
+                                    <th class="text-center">TAGIHAN</th>
+                                    <th class="text-center">TERBAYAR</th>
+                                    <th class="text-center">STATUS</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($pembayaran as $key => $value) { ?>
-                                    <tr>
+                                 <?php $no = 1;
+                                    foreach ($pembayaran as $key => $value) { ?>
+                                   <tr>
+                                        <td class="text-center"><?= $no++; ?></td>
                                         <td class="text-center"><?= $value['periode_pembayaran'] ?></td>
-                                        <td><?= $value['keterangan'] ?></td>
+                                        <td class="text-center"><?= $value['keterangan'] ?></td>
                                         <td class="text-center"><?= $value['tagihan'] ?></td>
                                         <td class="text-center"><?= $value['terbayar'] ?></td>
                                         <td class="text-center"><?= $value['status_pembayaran'] ?></td>
-                                    </tr>
-                                <?php } ?>
+                              </tr>
+                              <?php } ?>
                             </tbody>
                         </table>
                     </div>

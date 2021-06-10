@@ -35,11 +35,10 @@
             footer {
                 display: none;
             }
-
         }
 
         section {
-            /* width: 210mm; */
+            /*width: 210mm;*/
             /* height: 330mm; */
             margin-left: auto;
             margin-right: auto;
