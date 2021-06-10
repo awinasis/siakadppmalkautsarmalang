@@ -105,7 +105,7 @@
                                 <option value="Alpha">Alpha</option>
                                 <option value="Belajar">Belajar</option>
                                 <option value="Izin">Izin</option>
-                                <option value="Izin Terlambat">Izin Terlambat</option>
+                                <option value="IzinTerlambat">Izin Terlambat</option>
                                 <option value="Jaga">Jaga</option>
                                 <option value="Kuliah">Kuliah</option>
                                 <option value="Nugas">Nugas</option>
@@ -190,7 +190,7 @@
                                     <option value="Alpha" <?= $value['keterangan'] == "Alpha" ? "selected" : ""; ?>>Alpha</option>
                                     <option value="Belajar" <?= $value['keterangan'] == "Belajar" ? "selected" : ""; ?>>Belajar</option>
                                     <option value="Izin" <?= $value['keterangan'] == "Izin" ? "selected" : ""; ?>>Izin</option>
-                                    <option value="Izin Terlambat" <?= $value['keterangan'] == "Izin Terlambat" ? "selected" : ""; ?>>Izin Terlambat</option>
+                                    <option value="IzinTerlambat" <?= $value['keterangan'] == "IzinTerlambat" ? "selected" : ""; ?>>Izin Terlambat</option>
                                     <option value="Jaga" <?= $value['keterangan'] == "Jaga" ? "selected" : ""; ?>>Jaga</option>
                                     <option value="Kuliah" <?= $value['keterangan'] == "Kuliah" ? "selected" : ""; ?>>Kuliah</option>
                                     <option value="Nugas" <?= $value['keterangan'] == "Nugas" ? "selected" : ""; ?>>Nugas</option>
