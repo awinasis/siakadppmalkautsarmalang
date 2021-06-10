@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\ModelAbsensi;
+use App\Models\ModelRapor;
 use App\Models\ModelSantri;
 use App\Models\ModelKelas;
 use App\Models\ModelMateri;
@@ -13,13 +13,13 @@ class Guru extends BaseController
 
     protected $ModelSantri;
     protected $ModelKelas;
-    protected $ModelAbsensi;
+    protected $ModelRapor;
     protected $ModelMateri;
     protected $ModelGuru;
 
     public function __construct()
     {
-        $this->ModelAbsensi = new ModelAbsensi();
+        $this->ModelRapor = new ModelRapor();
         $this->ModelSantri = new ModelSantri();
         $this->ModelKelas = new ModelKelas();
         $this->ModelMateri = new ModelMateri();
@@ -28,21 +28,13 @@ class Guru extends BaseController
 
     public function index()
     {
-        // if (session()->get('level') == "Guru") {
-        //     $reportSantri = $this->ModelSantri->orderBy('NIS', 'desc')->findAll();
-        // } else {
-        //     $reportSantri = $this->ModelSantri->where('NIS', session()->get('id_santri'))->orderBy('id_santri', 'desc')->findAll();
-        // }
-        // $reportSantri = $this->ModelSantri->findAll();
-
         $data = [
             'title' => 'Guru',
             'isi'    => 'guru',
             "total_santri" => $this->ModelSantri->get_santri_count(),
             "total_kelas" => $this->ModelKelas->get_kelas_count(),
-            "total_absensi" => $this->ModelAbsensi->get_absensi_count(),
+            "total_rapor" => $this->ModelRapor->get_rapor_count(),
             "total_materi" => $this->ModelMateri->get_materi_count(),
-            // 'reportSantri' => $reportSantri
         ];
 
         return view("layout/wrapper", $data);

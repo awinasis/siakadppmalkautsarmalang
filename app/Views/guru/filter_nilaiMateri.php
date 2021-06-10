@@ -96,3 +96,85 @@
 
      </html>
  </div>
+
+ <div class="content-wrapper">
+     <div class="content-header">
+         <div class="container-fluid">
+             <div class="row mb-2">
+                 <div class="col-sm-6">
+                     <h4 class="m-0 text-dark">Data Nilai </h4>
+                 </div>
+                 <div class="col-sm-6">
+                     <ol class="breadcrumb float-sm-right">
+                         <a href="javascript:history.back()" class="btn btn-default btn-sm">Kembali</a> &nbsp; &nbsp; &nbsp;
+                         <div class="dropdown">
+                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-filter" aria-hidden="true"></i>
+                                 <?php
+                                    if (!empty($_GET)) {
+                                        if (!empty($_GET['filter_time'])) {
+                                            echo ($_GET['filter_time']) == 'asc' ? 'Reguler' : 'Hadits Besar';
+                                        } else {
+                                            echo 'Reguler';
+                                        }
+                                    } else {
+                                        echo 'Reguler';
+                                    }
+                                    ?>
+                             </button>
+                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                 <a class="dropdown-item" href="?filter_time=desc">Reguler</a>
+                                 <a class="dropdown-item" href="?filter_time=asc">Hadits Besar</a>
+                             </div>
+                         </div>
+                     </ol>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <section class="content">
+         <div class="container-fluid">
+             <?php if ($rapat['status_rapat'] == 2) : ?>
+                 <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#add-forum">
+                     <i class="fa fa-plus-square" aria-hidden="true"></i> Tambah
+                 </button>
+             <?php endif; ?>
+             <?php foreach ($forum as $itemforum) : ?>
+                 <div class="row">
+                     <div class="col-md-12">
+                         <div class="card card-primary card-outline">
+                             <div class="card-header">
+                                 <?= $itemforum['nama']; ?>
+
+                             </div>
+                             <div class="card-body">
+                                 <?= $itemforum['isi']; ?>
+
+                             </div>
+                             <div class="card-footer">
+                                 <div class="d-flex justify-content-between">
+                                     <div>
+                                         <div class="btn-group mr-2" role="group" aria-label="First group">
+                                             <button type="button" disabled class="btn btn-sm btn-danger"><?= count($itemforum['likes']) ?></button>
+                                             <?php if (in_array($user['id_user'], $itemforum['likes'])) : ?>
+                                                 <a href="<?= base_url('/peserta/likeForum/' . $itemforum['id'] . '/' . $user['id_user']) ?>" class="btn btn-sm btn-danger"><i class="fas fa-heart"></i></a>
+                                             <?php else : ?>
+                                                 <a href="<?= base_url('/peserta/likeForum/' . $itemforum['id'] . '/' . $user['id_user']) ?>" class="btn btn-sm btn-danger"><i class="far fa-heart"></i></a>
+                                             <?php endif; ?>
+                                         </div>
+                                         <div class="btn-group mr-2" role="group" aria-label="First group">
+                                             <button type="button" disabled class="btn btn-sm btn-success"><?= $itemforum['total_reply'] ?></button>
+                                             <a href="<?= base_url('/peserta/forum/' . $rapat['id_rapat'] . '/' . $itemforum['id']) ?>" class="btn btn-sm btn-success"><i class="fas fa-reply"></i> Balasan </a>
+                                         </div>
+                                     </div>
+                                     <div>
+                                         <p class="font-italic"><?= date('d-m-Y H:i:s', strtotime($itemforum['waktu'])); ?></p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             <?php endforeach; ?>
+         </div>
+     </section>
+ </div>
