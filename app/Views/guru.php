@@ -114,14 +114,14 @@
 <div class="col-lg-3 col-xs-6">
     <div class="small-box bg-maroon">
         <div class="inner">
-            <h3>#</h3>
+            <h3><?= $total_rapor; ?></h3>
 
-            <p>Absensi</p>
+            <p>Data Rapor</p>
         </div>
         <div class="icon">
-            <i class="fa fa-pencil"></i>
+            <i class="fa fa-archive"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?= base_url('data_rapor') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
     </div>
 </div>
 

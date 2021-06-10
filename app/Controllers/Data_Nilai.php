@@ -16,6 +16,118 @@ class Data_Nilai extends BaseController
         $this->ModelTA = new ModelTA();
         $this->ModelSantri = new ModelSantri();
     }
+    //------------------------------------------------ Filter Data Nilai --------------------------------------------------// 
+    public function forum($id_rapat, $id_forum = '')
+    {
+        $filter_time = $this->input->get('filter_time');
+        $filter_like = $this->input->get('filter_like');
+        $filter_reply = $this->input->get('filter_reply');
+        if ($filter_time == 'asc') {
+            $filter_time = ['waktu', 'ASC'];
+        } elseif ($filter_time == 'desc') {
+            $filter_time = ['waktu', 'DESC'];
+        } else {
+            $filter_time = ['waktu', 'DESC'];
+        }
+
+        if (!empty($id_forum)) {
+            $data['title'] = 'Detail Forum';
+            $data['user'] = $this->db->get_where('mst_user', ['email' => $this->session->userdata('email')])->row_array();
+            $data['rapat'] = $this->db->get_where('tb_rapat', ['id_rapat' => $id_rapat])->row_array();
+            $data['forum'] = $this->peserta->singleJoin('forum', 'mst_user', 'id_user', 'id_user', 'id = ' . $id_forum)->row_array();
+            $data['forum_reply'] = $this->peserta->singleJoin('forum_reply', 'mst_user', 'id_user', 'id_user', 'id_forum = ' . $id_forum)->result_array();
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar_peserta', $data);
+            $this->load->view('peserta/forum_view', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $data['forum'] = [];
+            $data['title'] = 'Forum';
+            $data['user'] = $this->db->get_where('mst_user', ['email' => $this->session->userdata('email')])->row_array();
+            $data['rapat'] = $this->db->get_where('tb_rapat', ['id_rapat' => $id_rapat])->row_array();
+            $dataforum = $this->peserta->singleJoin('forum', 'mst_user', 'id_user', 'id_user', 'id_rapat = ' . $id_rapat, $filter_time)->result_array();
+            foreach ($dataforum as $keyforum => $itemforum) {
+                $itemforum['likes'] = array_column($this->db->get_where('forum_like', ['id_forum' => $itemforum['id']])->result_array(), 'id_user');
+                $itemforum['likes_count'] = count($itemforum['likes']);
+                $itemforum['total_reply'] = $this->db->get_where('forum_reply', ['id_forum' => $itemforum['id']])->num_rows();
+                $data['forum'][] = $itemforum;
+            }
+
+            if (!empty($filter_like)) {
+                $likeorder = $filter_like == 'asc' ? SORT_ASC : SORT_DESC;
+                array_multisort(array_map(
+                    function ($element) {
+                        return $element['likes_count'];
+                    },
+                    $data['forum']
+                ), $likeorder, $data['forum']);
+            }
+
+            if (!empty($filter_reply)) {
+                $replyorder = $filter_reply == 'asc' ? SORT_ASC : SORT_DESC;
+                array_multisort(array_map(
+                    function ($element) {
+                        return $element['total_reply'];
+                    },
+                    $data['forum']
+                ), $replyorder, $data['forum']);
+            }
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar_peserta', $data);
+            $this->load->view('peserta/forum', $data);
+            $this->load->view('templates/footer');
+        }
+    }
+
+    public function forumAdd()
+    {
+        $id_rapat = $this->input->post('id_rapat');
+        $id_user = $this->input->post('id_user');
+        $data = array(
+            'isi' => $this->input->post('isi'),
+            'waktu' => date('Y-m-d H:i:s'),
+            'id_user' => $id_user,
+            'id_rapat' => $id_rapat
+        );
+        $this->db->insert('forum', $data);
+        $this->session->set_flashdata('message', 'Tambah Pertanyaan');
+        redirect('peserta/forum/' . $id_rapat);
+    }
+
+    public function forumReplyAdd()
+    {
+        $id_user = $this->input->post('id_user');
+        $id_forum = $this->input->post('id_forum');
+        $id_rapat = $this->input->post('id_rapat');
+
+        $data = array(
+            'isi' => $this->input->post('isi'),
+            'waktu' => date('Y-m-d H:i:s'),
+            'id_user' => $id_user,
+            'id_forum' => $id_forum
+        );
+        $this->db->insert('forum_reply', $data);
+        $this->session->set_flashdata('message', 'Tambah Pertanyaan');
+        redirect('peserta/forum/' . $id_rapat . '/' . $id_forum);
+    }
+
+    public function likeForum($id_forum, $id_user)
+    {
+        $data_forum = $this->db->get_where('forum', ['id' => $id_forum])->row_array();
+        $liked = $this->db->get_where('forum_like', ['id_forum' => $id_forum, 'id_user' => $id_user])->num_rows();
+
+        if ($liked) {
+            $this->db->where(['id_forum' => $id_forum, 'id_user' => $id_user]);
+            $this->db->delete('forum_like');
+            redirect('peserta/forum/' . $data_forum['id_rapat']);
+        } else {
+            $this->db->insert('forum_like', ['id_forum' => $id_forum, 'id_user' => $id_user]);
+            redirect('peserta/forum/' . $data_forum['id_rapat']);
+        }
+    }
+
 
     //------------------------------------------------ 1 --------------------------------------------------// 
 
@@ -161,7 +273,7 @@ class Data_Nilai extends BaseController
             'id_nm' => $id_nm,
         ];
         $this->ModelNilai->deleteData($data);
-        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        session()->setFlashdata('pesan', 'Nilai berhasil di hapus !!');
         return redirect()->to(base_url('data_nilai/index'));
     }
 
@@ -280,7 +392,7 @@ class Data_Nilai extends BaseController
             'id_kp' => $id_kp,
         ];
         $this->ModelNilai->deleteData1($data);
-        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        session()->setFlashdata('pesan', 'Nilai berhasil di hapus !!');
         return redirect()->to(base_url('data_nilai/konsepPraktikum'));
     }
 
@@ -370,7 +482,7 @@ class Data_Nilai extends BaseController
             'id_sp' => $id_sp,
         ];
         $this->ModelNilai->deleteData2($data);
-        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        session()->setFlashdata('pesan', 'Nilai berhasil di hapus !!');
         return redirect()->to(base_url('data_nilai/sikapPerilaku'));
     }
 
@@ -451,7 +563,7 @@ class Data_Nilai extends BaseController
             'id_lss' => $id_lss,
         ];
         $this->ModelNilai->deleteData3($data);
-        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        session()->setFlashdata('pesan', 'Nilai berhasil di hapus !!');
         return redirect()->to(base_url('data_nilai/limaSuksesSantri'));
     }
 
@@ -528,7 +640,7 @@ class Data_Nilai extends BaseController
             'id_ne' => $id_ne,
         ];
         $this->ModelNilai->deleteData4($data);
-        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        session()->setFlashdata('pesan', 'Nilai berhasil di hapus !!');
         return redirect()->to(base_url('data_nilai/ekstrakurikuler'));
     }
 
@@ -619,7 +731,7 @@ class Data_Nilai extends BaseController
             'id_ip' => $id_ip,
         ];
         $this->ModelNilai->deleteData6($data);
-        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        session()->setFlashdata('pesan', 'Nilai berhasil di hapus !!');
         return redirect()->to(base_url('data_nilai/prestasiKuliah'));
     }
 
@@ -692,7 +804,7 @@ class Data_Nilai extends BaseController
             'id_cs' => $id_cs,
         ];
         $this->ModelNilai->deleteData7($data);
-        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        session()->setFlashdata('pesan', 'Nilai berhasil di hapus !!');
         return redirect()->to(base_url('data_nilai/catatanSaranPengurus'));
     }
 }

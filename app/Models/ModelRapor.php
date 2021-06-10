@@ -39,4 +39,10 @@ class ModelRapor extends Model
             ->where('id_rapor', $id_rapor)
             ->get()->getRowArray();
     }
+
+    public function get_rapor_count()
+    {
+        $query = $this->db->table('tbl_rapor')->countAll();
+        return $query;
+    }
 }
