@@ -105,6 +105,7 @@
 
                                              <?php if (session()->get('level') == "Admin") { ?>
                                                  <td class="text-center">
+                                                     <a href="<?= base_url('bio_santri/tampil_detail/' . $value['id_santri']) ?>" class="btn btn-primary btn-sm"><i class="fa fa-info-circle"></i></a>
                                                      <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_santri'] ?>"><i class="fa fa-edit"></i></button>
                                                      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_santri'] ?>"><i class="fa fa-trash"></i></button>
                                                  </td>

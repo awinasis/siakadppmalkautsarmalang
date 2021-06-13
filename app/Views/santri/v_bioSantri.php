@@ -132,3 +132,98 @@
             </div>
         </div>
     </div>
+</div>
+
+
+
+<tr>
+    <th width="100px">NIS</th>
+    <th width="30px">:</th>
+    <td><?= $santri['NIS']; ?></td>
+    <th width="120px">Nama Santri</th>
+    <th width="30px">:</th>
+    <td><?= $santri['nama_santri']; ?></td>
+</tr>
+
+<tr>
+    <th width="100px">Tempat Lahir</th>
+    <th width="30px">:</th>
+    <td><?= $santri['tempat_lahir']; ?></td>
+    <th width="120px">Tanggal Lahir</th>
+    <th width="30px">:</th>
+    <td><?= $santri['tanggal_lahir']; ?></td>
+</tr>
+
+<tr>
+    <th width="100px">Jenis Kelamin</th>
+    <th width="30px">:</th>
+    <td><?= $santri['jenis_kelamin']; ?></td>
+    <th width="120px">Golongan Darah</th>
+    <th width="30px">:</th>
+    <td><?= $santri['gol_darah']; ?></td>
+</tr>
+
+<tr>
+    <th width="100px">Alamat</th>
+    <th width="30px">:</th>
+    <td><?= $santri['alamat']; ?></td>
+    <th width="120px">Email</th>
+    <th width="30px">:</th>
+    <td><?= $santri['email']; ?></td>
+</tr>
+
+<tr>
+    <th width="100px">Status</th>
+    <th width="30px">:</th>
+    <td><?= $santri['status']; ?></td>
+    <th width="120px">Universitas</th>
+    <th width="30px">:</th>
+    <td><?= $santri['universitas']; ?></td>
+</tr>
+
+<p class="card-text">
+    <label for="noTelp"><b>No.Telp : </b></label>
+    <?= $santri['noTelp']; ?>
+</p>
+
+<tr>
+    <th width="100px">Fakultas</th>
+    <th width="30px">:</th>
+    <td><?= $santri['fakultas']; ?></td>
+    <th width="120px">Jurusan/Prodi</th>
+    <th width="30px">:</th>
+    <td><?= $santri['jurusan_prodi']; ?></td>
+</tr>
+
+<tr>
+    <th width="100px">Kelas Santri</th>
+    <th width="30px">:</th>
+    <td><?= $santri['kelas_santri']; ?></td>
+    <th width="120px">Angkatan Santri</th>
+    <th width="30px">:</th>
+    <td><?= $santri['angkatan_santri']; ?></td>
+</tr>
+
+<tr>
+    <th width="100px">Nama Ayah</th>
+    <th width="30px">:</th>
+    <td><?= $santri['nama_ayah']; ?></td>
+    <th width="120px">Pekerjaan Ayah</th>
+    <th width="30px">:</th>
+    <td><?= $santri['pekerjaan_ayah']; ?></td>
+    <th width="150px">No.Telp Ayah</th>
+    <th width="30px">:</th>
+    <td><?= $santri['noTelp_ayah']; ?></td>
+</tr>
+
+<tr>
+    <th width="100px">Nama Ibu</th>
+    <th width="30px">:</th>
+    <td><?= $santri['nama_ibu']; ?></td>
+    <th width="120px">Pekerjaan Ibu</th>
+    <th width="30px">:</th>
+    <td><?= $santri['pekerjaan_ibu']; ?></td>
+    <th width="150px">No.Telp Ibu</th>
+    <th width="30px">:</th>
+    <td><?= $santri['noTelp_ibu']; ?></td>
+</tr>

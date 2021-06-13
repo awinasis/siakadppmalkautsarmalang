@@ -42,8 +42,8 @@ class ModelAbsensi extends Model
     public function tampilkan_chart()
     {
         return $this->db->table('tbl_santri')
-        ->orderBy('NIS', 'ASC')
-        ->get()->getResultArray();
+            ->orderBy('NIS', 'ASC')
+            ->get()->getResultArray();
     }
 
     public function tampilkan_draft()

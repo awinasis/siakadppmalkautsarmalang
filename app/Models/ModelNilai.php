@@ -59,6 +59,15 @@ class ModelNilai extends Model
             ->get()->getResultArray();
     }
 
+    public function allData1_HB()
+    {
+        return $this->db->table('tbl_nilaikonseppraktikum2')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum2.NIS', 'tbl_santri.nama_santri = tbl_nilaikonseppraktikum2.nama_santri')
+            ->orderBy('id_kp2', 'DESC')
+            ->get()->getResultArray();
+    }
+
+
     public function detail_data1($id_kp)
     {
         return $this->db->table('tbl_nilaikonseppraktikum')
