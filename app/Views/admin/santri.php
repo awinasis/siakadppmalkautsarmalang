@@ -344,7 +344,7 @@
                          <div class="form-group row">
                              <div class="col-lg-6">
                                  <label>NoTelp Ayah</label>
-                                 <input name="noTelp_ayah" type="number" class="form-control" placeholder="+62 " required>
+                                 <input name="noTelp_ayah" class="form-control" placeholder="+62 " required>
                              </div>
                          </div>
 
@@ -363,7 +363,7 @@
                          <div class="form-group row">
                              <div class="col-lg-6">
                                  <label>NoTelp Ibu</label>
-                                 <input name="noTelp_ibu" type="number" class="form-control" placeholder="+62 " required>
+                                 <input name="noTelp_ibu" class="form-control" placeholder="+62 " required>
                              </div>
                          </div>
                      </div>
