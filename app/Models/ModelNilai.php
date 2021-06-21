@@ -9,7 +9,7 @@ class ModelNilai extends Model
     public function allData()
     {
         return $this->db->table('tbl_nilaiMateri')
-            // ->join('tbl_santri', 'tbl_santri.id_santri = tbl_nilaiMateri.id_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri.NIS', 'tbl_santri.nama_santri = tbl_nilaiMateri.nama_santri')
             ->orderBy('id_nm', 'DESC')
             ->get()->getResultArray();
     }
@@ -25,7 +25,7 @@ class ModelNilai extends Model
     public function detail_data($id_nm)
     {
         return $this->db->table('tbl_nilaiMateri')
-            ->join('tbl_santri', 'tbl_santri.id_santri = tbl_nilaiMateri.id_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri.NIS', 'tbl_santri.nama_santri = tbl_nilaiMateri.nama_santri')
             ->where('id_nm', $id_nm)
             ->get()->getResultArray();
     }
@@ -58,6 +58,15 @@ class ModelNilai extends Model
             ->orderBy('id_kp', 'DESC')
             ->get()->getResultArray();
     }
+
+    public function allData1_HB()
+    {
+        return $this->db->table('tbl_nilaikonseppraktikum2')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum2.NIS', 'tbl_santri.nama_santri = tbl_nilaikonseppraktikum2.nama_santri')
+            ->orderBy('id_kp2', 'DESC')
+            ->get()->getResultArray();
+    }
+
 
     public function detail_data1($id_kp)
     {

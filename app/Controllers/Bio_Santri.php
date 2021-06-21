@@ -96,6 +96,28 @@ class Bio_Santri extends BaseController
         return redirect()->to(base_url('bio_santri'));
     }
 
+    public function tampil_detail($id_santri)
+    {
+        $data = [
+            'title' => 'Detail Data Santri',
+            'santri' => $this->ModelSantri->detailData($id_santri),
+            'isi'    => 'admin/detail/detail_santri',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function detail($id_santri)
+    {
+
+        $data = [
+            'id_santri' => $id_santri,
+        ];
+        $this->ModelSantri->detailData($data);
+        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
+        return redirect()->to(base_url('bio_santri'));
+    }
+
     public function export_excel()
     {
         $data = [

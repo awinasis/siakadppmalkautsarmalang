@@ -160,9 +160,6 @@ class Santri extends BaseController
         return view("layout/wrapper", $data);
     }
 
-
-
-
     // public function edit_absensi_santri()
     // {
     //     $data = [
@@ -174,4 +171,5 @@ class Santri extends BaseController
     //     ];
     //     return view("layout/wrapper", $data);
     // }
+
 }
