@@ -57,9 +57,9 @@
             <!-- /.col -->
         </div>
         <br>
-        <div class="text-center">
+        <!-- <div class="text-center">
             <a href="#">Forgot Password?</a>
-        </div>
+        </div> -->
 
     </div>
     <!-- /.login-box-body -->

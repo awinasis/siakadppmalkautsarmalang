@@ -29,7 +29,7 @@
                         }
                         ?>
                      <div class="table-responsive">
-                         <table id="example2" class="table table-bordered table-striped with-check">
+                         <table id="example1" class="table table-bordered table-striped with-check">
                              <thead>
                                  <tr>
                                      <th rowspan='2' class="text-center">No.</th>

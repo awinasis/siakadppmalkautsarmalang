@@ -32,6 +32,13 @@ class ModelSantri extends Model
             ->delete($data);
     }
 
+    public function detailData($id_santri)
+    {
+        return $this->db->table('tbl_santri')
+            ->where('id_santri', $id_santri)
+            ->get()->getRowArray();;
+    }
+
     public function get_santri_count()
     {
         $query = $this->db->table('tbl_santri')->countAll();
