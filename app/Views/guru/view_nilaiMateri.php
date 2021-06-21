@@ -132,7 +132,6 @@
                                                      <td class="text-center"><?= $value['nilai29'] ?>%</td>
                                                      <td class="text-center"><?= $value['nilai30'] ?>%</td>
                                                      <td class="text-center"><?= $value['nilai31'] ?>%</td>
-
                                                      <td class="text-center">
                                                          <a href="<?= base_url('data_nilai/ubahNilaiMateri/' . $value['id_nm']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                                          <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_nm'] ?>"><i class="fa fa-trash"></i></button>

@@ -31,14 +31,14 @@
                                         <table class="table table-bordered">
                                             <tbody>
                                             <div class="table-responsive">
-                                     <table id="example2" class="table table-bordered table-striped">
+
                                          <thead>
                                              <tr>
                                                  <th class="text-center">No.</th>
                                                  <th class="text-center">NIS</th>
                                                  <th class="text-center">Nama</th>
                                                  <th  class="text-center">Tahun Ajaran</th>
-                                                 <th class="text-center" >Jenis Suratt</th>
+                                                 <th class="text-center" >Jenis Surat</th>
                                                  <th  class="text-center">Status</th>
                                              </tr>
                                     
@@ -60,7 +60,7 @@
                                  </div>
                                             </tbody>
                                         </table>
-                                        <a href="<?= base_url('santri/pengajuan_surat') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
+                                        <a href="<?= base_url('santri/pengajuan_surat') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Data Baru</i></a>
                                     </div>
                                 </div>
                             </div>
