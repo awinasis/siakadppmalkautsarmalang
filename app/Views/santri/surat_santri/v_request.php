@@ -30,11 +30,34 @@
                                         <h2 class="page-header"></h2>
                                         <table class="table table-bordered">
                                             <tbody>
-                                                <div class="box box-default collapsed-box box-solid">
-                                                    <div class="box-header with-border">
-                                                        <h5 class="box-title" style="color:blue; font-family:timesnewrohman;">Maaf, data saat ini belum ada</h5>
-                                                    </div>
-                                                </div>
+                                            <div class="table-responsive">
+                                     <table id="example2" class="table table-bordered table-striped">
+                                         <thead>
+                                             <tr>
+                                                 <th class="text-center">No.</th>
+                                                 <th class="text-center">NIS</th>
+                                                 <th class="text-center">Nama</th>
+                                                 <th  class="text-center">Tahun Ajaran</th>
+                                                 <th class="text-center" >Jenis Suratt</th>
+                                                 <th  class="text-center">Status</th>
+                                             </tr>
+                                    
+                                         </thead>
+                                         <tbody>
+                                             <?php $no = 1;
+                                                foreach ($pengajuan as $key => $value) { ?>
+                                                 <tr>
+                                                     <td class="text-center"><?= $no++; ?></td>
+                                                     <td class="text-center"><?= $value['NIS']; ?></td>
+                                                     <td><?= $value['nama_santri']; ?></td>
+                                                     <td class="text-center"><?= $value['tahun_ajaran'] ?></td>
+                                                     <td class="text-center"><?= $value['jenis_surat'] ?></td>
+                                                     <td class="text-center"><?= $value['status'] ?></td>
+                                                 </tr>
+                                             <?php } ?>
+                                         </tbody>
+                                     </table>
+                                 </div>
                                             </tbody>
                                         </table>
                                         <a href="<?= base_url('santri/pengajuan_surat') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>

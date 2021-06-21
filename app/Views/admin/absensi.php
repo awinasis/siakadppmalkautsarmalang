@@ -26,7 +26,7 @@
                      <h3 class="box-title"><i class="fa  fa-table"></i> Data <?= $title; ?></h3>
                      <?php if (session()->get('level') == "Admin") { ?>
                          <div class="box-tools pull-right">
-                             <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button>
+                             <!-- <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add"><i class="fa fa-plus"> Tambah</i></button> -->
                          </div>
                      <?php } ?>
                  </div>

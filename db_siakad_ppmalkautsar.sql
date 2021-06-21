@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 12:16 PM
+-- Generation Time: Jun 13, 2021 at 11:24 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -62,7 +62,7 @@ CREATE TABLE `tbl_chart` (
 INSERT INTO `tbl_chart` (`id_chart`, `NIS`, `nama_santri`) VALUES
 (2, 201903002, 'Abdullah Winasis'),
 (4, 201903001, 'Abdillah Yudhatama'),
-(5, 201903003, 'Achmad Khoirudin Abdullah');
+(6, 201903003, 'Achmad Khoirudin Abdullah');
 
 -- --------------------------------------------------------
 
@@ -97,6 +97,39 @@ CREATE TABLE `tbl_jk` (
   `id_jk` int(3) NOT NULL,
   `NIS` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_kehadiran`
+--
+
+CREATE TABLE `tbl_kehadiran` (
+  `id_kehadiran` int(3) NOT NULL,
+  `NIS` int(12) DEFAULT NULL,
+  `nama_santri` varchar(30) DEFAULT NULL,
+  `keterangan` enum('Hadir','Alpha','Belajar','Izin','IzinTerlambat','Jaga','Kuliah','Nugas','Sakit','Terlambat') DEFAULT NULL,
+  `sesi_pengajian` enum('Malam','Shubuh') DEFAULT NULL,
+  `kelas` enum('Qiraah','kitabah','Al-Taannii','Al-Sarii','Reguler','Al-Idlofi','Hadits Besar') DEFAULT NULL,
+  `tanggal` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_kehadiran`
+--
+
+INSERT INTO `tbl_kehadiran` (`id_kehadiran`, `NIS`, `nama_santri`, `keterangan`, `sesi_pengajian`, `kelas`, `tanggal`) VALUES
+(1, 201903002, 'Abdullah Winasis', 'Hadir', 'Malam', 'Reguler', '2021-06-02'),
+(2, 201903001, 'Abdillah Yudhatama', 'Belajar', 'Shubuh', 'Al-Sarii', '2021-06-01'),
+(3, 201903002, 'Abdullah Winasis', 'Kuliah', 'Shubuh', 'Al-Sarii', '2021-06-01'),
+(4, 201903001, 'Abdillah Yudhatama', 'Hadir', 'Shubuh', 'Al-Sarii', '2021-06-04'),
+(5, 201903001, 'Abdillah Yudhatama', 'IzinTerlambat', 'Shubuh', 'Al-Sarii', '2021-06-04'),
+(6, 201903003, 'Achmad Khoirudin Abdullah', 'Kuliah', 'Malam', 'Reguler', '2021-06-03'),
+(8, 201903011, 'anggun milenia rahman', 'Izin', 'Malam', 'Hadits Besar', '2021-06-04'),
+(9, 201903001, 'Abdillah Yudhatama', 'Jaga', 'Malam', 'Reguler', '2021-06-08'),
+(10, 201903006, 'Alfeina Zakkya Meriatami', 'Hadir', 'Malam', 'Reguler', '2021-06-08'),
+(11, 201903003, 'Achmad Khoirudin Abdullah', 'Hadir', 'Malam', 'Reguler', '2021-06-09'),
+(12, 201903001, 'Abdillah Yudhatama', 'Hadir', 'Malam', 'Reguler', '2021-06-08');
 
 -- --------------------------------------------------------
 
@@ -341,6 +374,43 @@ INSERT INTO `tbl_nilaikonseppraktikum` (`id_kp`, `NIS`, `nama_santri`, `jenis_ke
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_nilaikonseppraktikum2`
+--
+
+CREATE TABLE `tbl_nilaikonseppraktikum2` (
+  `id_kp2` int(3) NOT NULL,
+  `NIS` int(12) DEFAULT NULL,
+  `nama_santri` varchar(30) DEFAULT NULL,
+  `jenis_kelamin` enum('L','P') DEFAULT NULL,
+  `n_1` int(11) DEFAULT NULL,
+  `n_2` int(11) DEFAULT NULL,
+  `n_3` int(11) DEFAULT NULL,
+  `n_4` int(11) DEFAULT NULL,
+  `n_5` int(11) DEFAULT NULL,
+  `n_6` int(11) DEFAULT NULL,
+  `n_7` int(11) DEFAULT NULL,
+  `n_8` int(11) DEFAULT NULL,
+  `n_9` int(11) DEFAULT NULL,
+  `n_10` int(11) DEFAULT NULL,
+  `n_11` int(11) DEFAULT NULL,
+  `n_12` int(11) DEFAULT NULL,
+  `n_13` int(11) DEFAULT NULL,
+  `n_14` int(11) DEFAULT NULL,
+  `n_15` int(11) DEFAULT NULL,
+  `n_16` int(11) DEFAULT NULL,
+  `n_17` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_nilaikonseppraktikum2`
+--
+
+INSERT INTO `tbl_nilaikonseppraktikum2` (`id_kp2`, `NIS`, `nama_santri`, `jenis_kelamin`, `n_1`, `n_2`, `n_3`, `n_4`, `n_5`, `n_6`, `n_7`, `n_8`, `n_9`, `n_10`, `n_11`, `n_12`, `n_13`, `n_14`, `n_15`, `n_16`, `n_17`) VALUES
+(1, 201903020, 'Ikbar Nasrullah', 'L', 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_nilailimasuksessantri`
 --
 
@@ -419,6 +489,43 @@ INSERT INTO `tbl_nilaimateri` (`id_nm`, `NIS`, `nama_santri`, `jenis_kelamin`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_nilaimateri2`
+--
+
+CREATE TABLE `tbl_nilaimateri2` (
+  `id_nm2` int(3) NOT NULL,
+  `NIS` int(12) NOT NULL,
+  `nama_santri` varchar(30) NOT NULL,
+  `jenis_kelamin` enum('L','P') NOT NULL,
+  `n_A` int(11) DEFAULT NULL,
+  `n_B` int(11) DEFAULT NULL,
+  `n_C` int(11) DEFAULT NULL,
+  `n_D` int(11) DEFAULT NULL,
+  `n_E` int(11) DEFAULT NULL,
+  `n_F` int(11) DEFAULT NULL,
+  `n_G` int(11) DEFAULT NULL,
+  `n_H` int(11) DEFAULT NULL,
+  `n_I` int(11) DEFAULT NULL,
+  `n_J` int(11) DEFAULT NULL,
+  `n_K` int(11) DEFAULT NULL,
+  `n_L` int(11) DEFAULT NULL,
+  `n_M` int(11) DEFAULT NULL,
+  `n_N` int(11) DEFAULT NULL,
+  `n_O` int(11) DEFAULT NULL,
+  `n_P` int(11) DEFAULT NULL,
+  `n_Q` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_nilaimateri2`
+--
+
+INSERT INTO `tbl_nilaimateri2` (`id_nm2`, `NIS`, `nama_santri`, `jenis_kelamin`, `n_A`, `n_B`, `n_C`, `n_D`, `n_E`, `n_F`, `n_G`, `n_H`, `n_I`, `n_J`, `n_K`, `n_L`, `n_M`, `n_N`, `n_O`, `n_P`, `n_Q`) VALUES
+(1, 201803018, 'Rena Miftakhul Zulfa', 'P', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_nilaisikapperilaku`
 --
 
@@ -443,8 +550,8 @@ CREATE TABLE `tbl_nilaisikapperilaku` (
 --
 
 INSERT INTO `tbl_nilaisikapperilaku` (`id_sp`, `NIS`, `nama_santri`, `Jenis_Kelamin`, `nl1`, `nl2`, `nl3`, `nl4`, `nl5`, `nl6`, `nl7`, `nl8`, `nl9`) VALUES
-(1, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B+', 'B', 'B+', 'B', 'B', 'A', 'B', 'B+'),
-(2, 201903001, 'Abdillah Yudhatama', 'L', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A');
+(1, 201903002, 'Abdullah Winasis', 'L', 'B+', 'B+', 'B', 'B+', 'B', 'B', 'A', 'B', 'D'),
+(2, 201903001, 'Abdillah Yudhatama', 'P', 'B+', 'E', 'A', 'A', 'A', 'A', 'A', 'A', 'A');
 
 -- --------------------------------------------------------
 
@@ -542,7 +649,8 @@ CREATE TABLE `tbl_rapor` (
 --
 
 INSERT INTO `tbl_rapor` (`id_rapor`, `NIS`, `nama_santri`, `id_nm`, `id_kp`, `id_sp`, `id_lss`, `id_ne`, `id_ip`, `id_cs`) VALUES
-(1, 201903002, 'Abdullah Winasis', 1, 1, 1, 1, 1, 1, 1);
+(1, 201903002, 'Abdullah Winasis', 1, 1, 1, 1, 1, 1, 1),
+(8, 201903001, 'Abdillah Yudhatama', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -585,7 +693,7 @@ INSERT INTO `tbl_santri` (`id_santri`, `NIS`, `nama_santri`, `tempat_lahir`, `ta
 (3, 201903003, 'Achmad Koirudin Abdullah', 'Sragen', '2001-07-02', 'L', 'O', 'Pungkruk, Doyong RT01/000, Miri, Sragen, Jawa Tengah', 'achmadkhoirudinabdullah@gmail.com', '1234567890', 'Mahasiswa', 'Negeri Malang', 'Teknik', 'Pendidikan Teknik Elektro', 'Qiraah', 2019, '-', '-', '-', '-', '-', '-'),
 (4, 201803018, 'Rena Miftakhul Zulfa', 'Kediri', '1999-04-20', 'P', 'O', 'Dsn. Ngletih Barat Rt. 03 Ds. Ngletih Kec. Kandat Kab. Kediri ', 'renamiftaqulzulfa@gmail.com', '6281234567890', 'Mahasiswa', 'STIKES Malang', '-', 'D3 - Kebidanan', 'Qiraah', 2018, 'Irfa\'i', 'Petani', '6281252960925', 'Nur Hidayati', 'IRT', '-'),
 (5, 201903006, 'Alfeina Zakkya Meriatami', 'Ponorogo', '2000-08-21', 'P', 'O', 'Ponorogo', 'alfeinazakkyameriatami@gmail.comm', '081234567865', 'Mahasiswa', 'Universitas Negeri Malang', 'Teknik', 'Pendidikan Teknik Informatika', 'Qiraah', 2003, 'X', '-', '0871234567890', 'Y', '-', '-'),
-(6, 201903011, 'Anggun Milenia Rahman', 'Bontang', '1999-11-30', 'P', 'O', 'Bontang, Kalimantan  Timur', 'anggunmrh@gmail.com', '6287753464813', 'Mahasiswa', 'UM', 'FIB', 'PBA', 'Qiraah', 2018, 'XXX', '-', '-', 'YYY', '-', '-');
+(10, 201903020, 'Ikbar Nasrullah', 'Ponorogo', '1999-10-17', 'L', 'AB', 'Ds. Sambeng RT01 RW 01 Ds. Bringin, Kec. Kauman, Kab. Ponorogo', 'ikbarnasrullah@gmail.com', '6281354123851', 'Mahasiswa', 'STMIK Asia', '-', 'Desain Komunikasi Visual', 'Hadits Besar', 2019, 'Kusnadi', 'Swasta', '6285235060602', 'Siti Umi Hanik', 'IRT', '6285230758300');
 
 -- --------------------------------------------------------
 
@@ -615,6 +723,29 @@ INSERT INTO `tbl_surat` (`id_surat`, `NIS`, `nama_santri`, `nama_surat`, `katego
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_tahunakademik`
+--
+
+CREATE TABLE `tbl_tahunakademik` (
+  `id_ta` int(3) NOT NULL,
+  `tahun_akademik` varchar(10) DEFAULT NULL,
+  `status_ta` int(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_tahunakademik`
+--
+
+INSERT INTO `tbl_tahunakademik` (`id_ta`, `tahun_akademik`, `status_ta`) VALUES
+(1, '2019/2020', 0),
+(2, '2020/2021', 1),
+(3, '2021/2022', 0),
+(4, '2022/2023', 0),
+(5, '2023/2024', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_user`
 --
 
@@ -633,11 +764,11 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id_user`, `nama_user`, `username`, `password`, `level`, `foto`) VALUES
 (1, 'Abdullah Winasis', 201903002, 'awinasis', 'Admin', '1617705484_c06eb78eb388276be38a.jpg'),
-(2, 'Anggun Milenia Rahman', 201903011, '201903011', 'Santri', '1617705534_6ffa7df5d359b78fbdda.jpg'),
 (4, 'Rena Miftakhul Zulfa', 201803018, '201803018', 'Santri', '1617705631_e012eb63993e4b1694a3.jpg'),
 (7, 'Amir Hamzah', 1, 'amir123', 'Guru', '1621215341_b83ba22111c656181e0f.jpg'),
 (9, 'Abdillah Yudhatama', 201903001, '201903001', 'Santri', '1621783709_ebcc5f4f30e85b5b7e6f.jpg'),
-(10, 'Alfeina Zakkya Meriatami', 201903006, '201903006', 'Santri', '1623025041_79ca2d3f3fe65fbd48b6.jpg');
+(10, 'Alfeina Zakkya Meriatami', 201903006, '201903006', 'Santri', '1623025041_79ca2d3f3fe65fbd48b6.jpg'),
+(11, 'Ikbar Nasrullah', 201903020, '201903020', 'Santri', '1623490056_943542dbc007395b6a94.jpg');
 
 --
 -- Indexes for dumped tables
@@ -670,6 +801,12 @@ ALTER TABLE `tbl_guru`
 ALTER TABLE `tbl_jk`
   ADD PRIMARY KEY (`id_jk`),
   ADD UNIQUE KEY `id_santri` (`NIS`);
+
+--
+-- Indexes for table `tbl_kehadiran`
+--
+ALTER TABLE `tbl_kehadiran`
+  ADD PRIMARY KEY (`id_kehadiran`);
 
 --
 -- Indexes for table `tbl_kelas`
@@ -714,6 +851,14 @@ ALTER TABLE `tbl_nilaikonseppraktikum`
   ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
+-- Indexes for table `tbl_nilaikonseppraktikum2`
+--
+ALTER TABLE `tbl_nilaikonseppraktikum2`
+  ADD PRIMARY KEY (`id_kp2`),
+  ADD UNIQUE KEY `NIS` (`NIS`),
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
+
+--
 -- Indexes for table `tbl_nilailimasuksessantri`
 --
 ALTER TABLE `tbl_nilailimasuksessantri`
@@ -726,6 +871,14 @@ ALTER TABLE `tbl_nilailimasuksessantri`
 --
 ALTER TABLE `tbl_nilaimateri`
   ADD PRIMARY KEY (`id_nm`),
+  ADD UNIQUE KEY `NIS` (`NIS`),
+  ADD UNIQUE KEY `nama_santri` (`nama_santri`);
+
+--
+-- Indexes for table `tbl_nilaimateri2`
+--
+ALTER TABLE `tbl_nilaimateri2`
+  ADD PRIMARY KEY (`id_nm2`),
   ADD UNIQUE KEY `NIS` (`NIS`),
   ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
@@ -789,6 +942,12 @@ ALTER TABLE `tbl_surat`
   ADD UNIQUE KEY `nama_santri` (`nama_santri`);
 
 --
+-- Indexes for table `tbl_tahunakademik`
+--
+ALTER TABLE `tbl_tahunakademik`
+  ADD PRIMARY KEY (`id_ta`);
+
+--
 -- Indexes for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
@@ -808,7 +967,7 @@ ALTER TABLE `tbl_catatansaranpengurus`
 -- AUTO_INCREMENT for table `tbl_chart`
 --
 ALTER TABLE `tbl_chart`
-  MODIFY `id_chart` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_chart` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_guru`
@@ -821,6 +980,12 @@ ALTER TABLE `tbl_guru`
 --
 ALTER TABLE `tbl_jk`
   MODIFY `id_jk` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_kehadiran`
+--
+ALTER TABLE `tbl_kehadiran`
+  MODIFY `id_kehadiran` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_kelas`
@@ -859,6 +1024,12 @@ ALTER TABLE `tbl_nilaikonseppraktikum`
   MODIFY `id_kp` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `tbl_nilaikonseppraktikum2`
+--
+ALTER TABLE `tbl_nilaikonseppraktikum2`
+  MODIFY `id_kp2` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tbl_nilailimasuksessantri`
 --
 ALTER TABLE `tbl_nilailimasuksessantri`
@@ -868,7 +1039,13 @@ ALTER TABLE `tbl_nilailimasuksessantri`
 -- AUTO_INCREMENT for table `tbl_nilaimateri`
 --
 ALTER TABLE `tbl_nilaimateri`
-  MODIFY `id_nm` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_nm` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tbl_nilaimateri2`
+--
+ALTER TABLE `tbl_nilaimateri2`
+  MODIFY `id_nm2` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaisikapperilaku`
@@ -898,13 +1075,13 @@ ALTER TABLE `tbl_pesan`
 -- AUTO_INCREMENT for table `tbl_rapor`
 --
 ALTER TABLE `tbl_rapor`
-  MODIFY `id_rapor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_rapor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_santri`
 --
 ALTER TABLE `tbl_santri`
-  MODIFY `id_santri` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_santri` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_surat`
@@ -913,10 +1090,16 @@ ALTER TABLE `tbl_surat`
   MODIFY `id_surat` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT for table `tbl_tahunakademik`
+--
+ALTER TABLE `tbl_tahunakademik`
+  MODIFY `id_ta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

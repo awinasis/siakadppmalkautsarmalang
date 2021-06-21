@@ -270,4 +270,28 @@ class ModelNilai extends Model
             ->where('id_cs', $data['id_cs'])
             ->delete($data);
     }
+
+    public function NilaiSantriMateri($data)
+    {
+        $nis = session()->get('username');
+        // $tahun = $this->request->getPost('tahun_ajaran');
+        $ajaran = ($data['tahun_ajaran']);
+        return $this->db->table('tbl_nilaiMateri')
+        ->where('NIS', $nis)
+        ->where('tahun_ajaran', $ajaran)
+        ->orderBy('id_nm', 'DESC')
+        ->get()->getResultArray();
+    }
+
+    public function NilaiSantriPraktikum($data)
+    {
+        $nis = session()->get('username');
+        // $tahun = $this->request->getPost('tahun_ajaran');
+        $ajaran = ($data['tahun_ajaran']);
+        return $this->db->table('tbl_nilaikonseppraktikum')
+        ->where('NIS', $nis)
+        ->where('tahun_ajaran', $ajaran)
+        ->orderBy('id_kp', 'DESC')
+        ->get()->getResultArray();
+    }
 }

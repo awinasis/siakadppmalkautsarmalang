@@ -54,6 +54,7 @@
                                                  <th rowspan="2" class="text-center">NIS</th>
                                                  <th rowspan="2" class="text-center">Nama</th>
                                                  <th rowspan="2" class="text-center">L/P</th>
+                                                 <th rowspan="2" class="text-center">Tahun Ajaran</th>
                                                  <th class="text-center" colspan=" 31">Pencapaian Materi</th>
                                                  <th rowspan="2" class="text-center">Action</th>
                                              </tr>
@@ -99,6 +100,7 @@
                                                      <td class="text-center"><?= $value['NIS']; ?></td>
                                                      <td><?= $value['nama_santri']; ?></td>
                                                      <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
+                                                     <td class="text-center"><?= $value['tahun_ajaran'] ?></td>
                                                      <td class="text-center"><?= $value['nilai1'] ?>%</td>
                                                      <td class="text-center"><?= $value['nilai2'] ?>%</td>
                                                      <td class="text-center"><?= $value['nilai3'] ?>%</td>

@@ -64,11 +64,6 @@
                     <div class="col-sm-6">
                         <table class="table table-bordered">
                             <tr>
-                                <td width="100px">Tahun Akademik :</td>
-                                <td width="30px">:</td>
-                                <td><?= $ta_aktif['tahun_akademik']; ?></td>
-                            </tr>
-                            <tr>
                                 <td width="100px">NIS</td>
                                 <td width="30px">:</td>
                                 <td><?= $absensi['NIS']; ?></td>
@@ -78,6 +73,12 @@
                                 <td width="100px">Nama Santri</td>
                                 <td width="30px">:</td>
                                 <td><?= $absensi['nama_santri']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td width="100px">Tahun Akademik :</td>
+                                <td width="30px">:</td>
+                                <td><?= $ta_aktif['tahun_akademik']; ?></td>
                             </tr>
                         </table>
                     </div>

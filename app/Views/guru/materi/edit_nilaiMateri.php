@@ -29,6 +29,7 @@
                                          <th rowspan="2" class="text-center">NIS</th>
                                          <th rowspan="2" class="text-center">Nama</th>
                                          <th rowspan="2" class="text-center">L/P</th>
+                                         <th rowspan="2" class="text-center">Tahun Ajaran</th>
                                          <th class="text-center" colspan=" 31">Pencapaian Materi</th>
                                          <th rowspan="2" class="text-center">Action</th>
                                      </tr>
@@ -80,6 +81,7 @@
                                                      <option value="P" <?= $value['jenis_kelamin'] == "P" ? "selected" : ""; ?>>P</option>
                                                  </select>
                                              </td>
+                                             <td><input name="tahun_ajaran" class="form-control" value="<?= $value['tahun_ajaran'] ?>" readonly></td>
                                              <td><input name="nilai1" class="form-control" type="number" value="<?= $value['nilai1'] ?>">%</td>
                                              <td><input name="nilai2" class="form-control" type="number" value="<?= $value['nilai2'] ?>">%</td>
                                              <td><input name="nilai3" class="form-control" type="number" value="<?= $value['nilai3'] ?>">%</td>

@@ -31,6 +31,7 @@
                                          <th rowspan="2" class="text-center">NIS</th>
                                          <th rowspan="2" class="text-center">Nama</th>
                                          <th rowspan="2" class="text-center">L/P</th>
+                                         <th rowspan="2" class="text-center">Tahun Ajaran</th>
                                          <th class="text-center" colspan=" 31">Pencapaian Materi</th>
                                      </tr>
                                      <tr>
@@ -78,6 +79,7 @@
                                                  <option value="P">P</option>
                                              </select>
                                          </td>
+                                         <td><input name="tahun_ajaran" class="form-control" required></td>
                                          <td><input name="nilai1" class="form-control" type="number" required>%</td>
                                          <td><input name="nilai2" class="form-control" type="number" required>%</td>
                                          <td><input name="nilai3" class="form-control" type="number" required>%</td>
