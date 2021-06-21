@@ -27,18 +27,15 @@
                                     <div class="col-sm-12">
                                         <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;">Data Transkrip Nilai Tahun Ajaran <?php echo $tahun_ajaran ?></h4>
                                         &emsp;&emsp;&emsp;
-                                        <h4>Nilai Materi</h4>
-
+                                        <h3>Nilai Materi</h3>
                                         <div class="table-responsive">
-                                     <table id="example2" class="table table-bordered table-striped">
-                                         <thead>
+                                        <table id="example2" class="table table-bordered table-striped">
+                                        <thead>
                                              <tr>
                                                  <th rowspan="2" class="text-center">No.</th>
                                                  <th rowspan="2" class="text-center">NIS</th>
                                                  <th rowspan="2" class="text-center">Nama</th>
                                                  <th rowspan="2" class="text-center">L/P</th>
-                                                 <th class="text-center" colspan=" 31">Pencapaian Materi</th>
-                                                 <th rowspan="2" class="text-center">Action</th>
                                              </tr>
                                              <tr>
                                                  <th>Bacaan Surah Al-Baqarah</th>
@@ -113,8 +110,6 @@
                                                      <td class="text-center"><?= $value['nilai29'] ?>%</td>
                                                      <td class="text-center"><?= $value['nilai30'] ?>%</td>
                                                      <td class="text-center"><?= $value['nilai31'] ?>%</td>
-
-                                                     
                                                  </tr>
                                              <?php } ?>
                                          </tbody>
@@ -122,8 +117,8 @@
                                  </div>
                                  <h3>Nilai Konsep Praktikum</h3>
                                  <div class="table-responsive">
-                         <table id="example2" class="table table-bordered table-striped">
-                             <thead>
+                                <table id="example2" class="table table-bordered table-striped">
+                                <thead>
                                  <tr>
                                      <th class="text-center">No.</th>
                                      <th class="text-center">NIS</th>
@@ -153,7 +148,6 @@
                                      <th class="text-center">Khutbah/Ceramah</th>
                                      <th class="text-center">Adzan dan Iqamah</th>
                                      <th class="text-center">Latihan Mengajar</th>
-                                     <th class="text-center">Action</th>
                                  </tr>
                              </thead>
                              <tbody>

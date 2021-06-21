@@ -146,4 +146,15 @@ class File_Surat extends BaseController
 
         return view("layout/wrapper", $data);
     }
+
+    public function detail_pengajuansurat()
+    {
+        $data = [
+            'title' => 'Surat',
+            'surat' => $this->ModelSurat->allData(),
+            'isi'    => 'admin/surat'
+        ];
+
+        return view("layout/wrapper", $data);
+    }
 }

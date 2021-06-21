@@ -21,6 +21,7 @@
                     <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Santri</a></a></li>
                     <li><a href="<?= base_url('data_rapor') ?>"><i class="fa fa-archive"></i> Rapor</a></a></li>
                     <li><a href="<?= base_url('file_surat') ?>"><i class="fa fa-send"></i> Surat</a></a></li>
+                    <li><a href="<?= base_url('data_surat') ?>"><i class="fa fa-send"></i> Pengajuan Surat Santri</a></a></li>
                     <li><a href="<?= base_url('data_pesan') ?>"><i class="fa fa-envelope"></i> Pesan</a></a></li>
                     <li><a href="<?= base_url('tahun_akademik') ?>"><i class="fa fa-calendar-o"></i> Tahun Akademik</a></li>
                 </ul>

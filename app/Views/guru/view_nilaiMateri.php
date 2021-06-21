@@ -132,6 +132,19 @@
                                                      <td class="text-center"><?= $value['nilai29'] ?>%</td>
                                                      <td class="text-center"><?= $value['nilai30'] ?>%</td>
                                                      <td class="text-center"><?= $value['nilai31'] ?>%</td>
+<<<<<<< HEAD
+                                                     <td class="text-center">
+                                                         <a href="<?= base_url('data_nilai/ubahNilaiMateri/' . $value['id_nm']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                                         <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_nm'] ?>"><i class="fa fa-trash"></i></button>
+                                                     </td>
+                                                 </tr>
+                                             <?php } ?>
+                                         </tbody>
+                                     </table>
+                                 </div>
+                             </div>
+                         </div>
+=======
          </div> -->
          <div class="row">
              <div class="col-sm-12">
@@ -139,6 +152,7 @@
                      <div class="box-header with-border">
                          <!-- <div class="box-tools pull-left"> -->
                          <a href="<?= base_url('data_nilai/tambahNilaiMateri/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
+>>>>>>> 790d3ebb23e2b516769519c7b870a40e9d6802d4
                      </div>
                      <h4 style="font-family:timesnewrohman;">&ensp;Tahun Ajaran : <b><?= $ta_aktif['tahun_akademik']; ?></b></h4>
                      <div class="box-body">
