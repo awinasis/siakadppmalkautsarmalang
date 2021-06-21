@@ -30,24 +30,17 @@
                                         <h2 class="page-header"></h2>
                                         <table class="table table-bordered">
                                             <tbody>
-                                                <form method="POST" action="">
+                                                <form method="POST" action="<?php echo base_url('santri/detail_nilai_santri') ?>">
                                                     <div class="row mb-3">
+                                                    <input type="hidden" name="NIS" value="<?php echo session()->get('username') ?>">
                                                         <div class="col-sm-3">
                                                             <div class="form-group">
-                                                                <select name="nilai" id="nilai" class="form-control">
-                                                                    <option value=""></option>
-                                                                    <option value=""></option>
+                                                                <select name="tahun_ajaran" class="form-control">
+                                                                    <option value="2020/2021 Ganjil">2020/2021 Ganjil</option>
+                                                                    <option value="2020/2021 Genap">2020/2021 Genap</option>
                                                                 </select>
                                                             </div>
-                                                        </div>
-
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <select name="nilai" id="nilai" class="form-control">
-                                                                    <option value=""></option>
-                                                                    <option value=""></option>
-                                                                </select>
-                                                            </div>
+                                                        
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <button id="search" name="search" class="btn btn-warning">Tampilkan</button>

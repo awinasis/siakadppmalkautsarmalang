@@ -57,7 +57,6 @@
                                         <td class="text-center"><?= $value['sesi_pengajian']; ?></td>
                                         <td class="text-center"><?= $value['kelas']; ?></td>
                                         <td class="text-center"><?= $value['tanggal']; ?></td>
-
                                         <td class="text-center">
                                             <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_kehadiran'] ?>"><i class="fa fa-edit"></i></button>
                                             <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_kehadiran'] ?>"><i class="fa fa-trash"></i></button>
