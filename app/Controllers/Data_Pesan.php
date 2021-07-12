@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ModelPesan;
+use App\Models\ModelSantri;
 
 class Data_Pesan extends BaseController
 {
@@ -10,12 +11,14 @@ class Data_Pesan extends BaseController
     {
         helper('form');
         $this->ModelPesan = new ModelPesan();
+        $this->ModelSantri = new ModelSantri();
     }
     public function index()
     {
         $data = [
             'title' => 'Pesan',
             'pesan' => $this->ModelPesan->allData(),
+            'santri' => $this->ModelSantri->allData(),
             'isi'    => 'admin/pesan',
         ];
 
@@ -26,9 +29,9 @@ class Data_Pesan extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'nama_santri' => $this->request->getPost('nama_santri'),
             'Pesan' => $this->request->getPost('pesan'),
-            'Tanggal' => $this->request->getPost('tanggal'),
+            'date_created' => date('Y-m-d'),
+            'date_updated' => date('Y-m-d'),
         ];
         $this->ModelPesan->addData($data);
 
@@ -41,9 +44,8 @@ class Data_Pesan extends BaseController
         $data = [
             'id_pesan' => $id_pesan,
             'NIS' => $this->request->getPost('NIS'),
-            'nama_santri' => $this->request->getPost('nama_santri'),
             'Pesan' => $this->request->getPost('pesan'),
-            'Tanggal' => $this->request->getPost('tanggal'),
+            'date_updated' => date('Y-m-d'),
         ];
         $this->ModelPesan->editData($data);
         session()->setFlashdata('pesan', 'Data berhasil di update !!');

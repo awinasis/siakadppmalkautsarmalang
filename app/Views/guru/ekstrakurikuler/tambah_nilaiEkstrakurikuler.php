@@ -29,8 +29,6 @@
                                  <thead>
                                      <tr>
                                          <th class="text-center">NIS</th>
-                                         <th class="text-center">Nama</th>
-                                         <th class="text-center">L/P</th>
                                          <th class="text-center">Pencak Silat</th>
                                          <th class="text-center">Sepakbola/Futsal</th>
                                          <th class="text-center">Senam Pagi</th>
@@ -39,14 +37,6 @@
                                  <tbody>
                                      <tr>
                                          <td class="text-center"><input name="NIS" class="form-control" type="number" required></td>
-                                         <td><input name="nama_santri" class="form-control" required></td>
-                                         <td>
-                                             <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
-                                                 <option value="#">-- Pilih --</option>
-                                                 <option value="L">L</option>
-                                                 <option value="P">P</option>
-                                             </select>
-                                         </td>
                                          <td>
                                              <select name="nilai_1" id="nilai_1" class="form-control" required>
                                                  <option value="#">-- Nilai --</option>

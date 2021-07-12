@@ -5,15 +5,17 @@ namespace App\Controllers;
 use App\Models\ModelRapor;
 use App\Models\ModelTA;
 use App\Models\ModelNilai;
+use App\Models\ModelSantri;
 
 class Data_Rapor extends BaseController
 {
     public function __construct()
     {
-        helper('form');
+        helper('form', 'url');
         $this->ModelRapor = new ModelRapor();
         $this->ModelTA = new ModelTA();
         $this->ModelNilai = new ModelNilai();
+        $this->ModelSantri = new ModelSantri();
     }
     public function index()
     {
@@ -30,7 +32,6 @@ class Data_Rapor extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'nama_santri' => $this->request->getPost('nama_santri'),
         ];
         $this->ModelRapor->addData($data);
 
@@ -60,6 +61,7 @@ class Data_Rapor extends BaseController
             'nilai' => $this->ModelNilai->allData4(),
             'nilai' => $this->ModelNilai->allData6(),
             'nilai' => $this->ModelNilai->allData7(),
+            'santri' => $this->ModelNilai->allData(),
             'isi'    => 'admin/v_viewRapor'
         ];
 

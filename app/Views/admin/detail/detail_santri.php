@@ -103,8 +103,8 @@
                                      </p>
 
                                      <p class="card-text">
-                                         <label for="kelas_santri"><b>Kelas Santri &emsp;&ensp;&emsp;: </b></label>
-                                         <?= $santri['kelas_santri']; ?>
+                                         <label for="kelas"><b>Kelas&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;: </b></label>
+                                         <?= $santri['kelas']; ?>
                                      </p>
 
                                      <p class="card-text">

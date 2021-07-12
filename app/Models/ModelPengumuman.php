@@ -25,6 +25,12 @@ class ModelPengumuman extends Model
             ->update($data);
     }
 
+    // public function update_data($data, $id_pengumuman)
+    // {
+    //     $query = $this->db->table("tbl_pengumuman")->update($data, array('id_pengumuman' => $id_pengumuman));
+    //     return $query;
+    // }
+
     public function deleteData($data)
     {
         $this->db->table('tbl_pengumuman')
@@ -38,8 +44,8 @@ class ModelPengumuman extends Model
         return $query;
     }
 
-    public function reset_visiblePengumuman()
-    {
-        $this->db->table('tbl_pengumuman')->update(['visible_pengumuman' => 0]);
-    }
+    // public function reset_visiblePengumuman()
+    // {
+    //     $this->db->table('tbl_pengumuman')->update(['visible_pengumuman' => 0]);
+    // }
 }

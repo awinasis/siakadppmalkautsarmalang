@@ -40,7 +40,8 @@
                                      <th class="text-center">NIS</th>
                                      <th class="text-center">Nama Santri</th>
                                      <th class="text-center">Pesan</th>
-                                     <th class="text-center">Tanggal</th>
+                                     <th class="tex-center">Date Created</th>
+                                     <th class="tex-center">Date Updated</th>
                                      <th width="150px" class="text-center">Action</th>
                                  </tr>
                              </thead>
@@ -52,8 +53,8 @@
                                          <td><?= $value['NIS'] ?></td>
                                          <td><?= $value['nama_santri'] ?></td>
                                          <td><?= $value['pesan'] ?></td>
-                                         <td><?= $value['tanggal'] ?></td>
-
+                                         <td class="text-center"><?= $value['date_created'] ?></td>
+                                         <td class="text-center"><?= $value['date_updated'] ?></td>
                                          <td class="text-center">
                                              <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_pesan'] ?>"><i class="fa fa-edit"></i></button>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_pesan'] ?>"><i class="fa fa-trash"></i></button>
@@ -85,16 +86,6 @@
                              <label>NIS</label>
                              <input type="number" class="form-control" id="NIS" name="NIS" required>
                          </div>
-                     </div>
-
-                     <div class="form-group">
-                         <label>Nama Santri</label>
-                         <input class="form-control" id="nama_santri" name="nama_santri" required>
-                     </div>
-
-                     <div class="form-group">
-                         <label>Tanggal</label>
-                         <input type="date" class="form-control" id="tanggal" name="tanggal" required>
                      </div>
 
                      <div class="form-group">
@@ -138,11 +129,6 @@
                          <div class="form-group">
                              <label>Nama Santri</label>
                              <input class="form-control" id="nama_santri" name="nama_santri" value="<?= $value['nama_santri'] ?>" readonly>
-                         </div>
-
-                         <div class="form-group">
-                             <label>Tanggal</label>
-                             <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= $value['tanggal'] ?>">
                          </div>
 
                          <div class="form-group">

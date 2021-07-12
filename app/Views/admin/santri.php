@@ -63,8 +63,8 @@
                                          <th class="text-center">Universitas</th>
                                          <th class="text-center">Fakultas</th>
                                          <th class="text-center">Jurusan/Prodi</th>
-                                         <th class="text-center">kelas Santri</th>
-                                         <th class="text-center">Angkatan Santri</th>
+                                         <th class="text-center">kelas</th>
+                                         <th class="text-center">Tahun Angkatan</th>
                                          <th class="text-center">Nama Ayah</th>
                                          <th class="text-center">Pekerjaan Ayah</th>
                                          <th class="text-center">No.Telp Ayah</th>
@@ -94,7 +94,7 @@
                                              <td class="text-center"><?= $value['universitas'] ?></td>
                                              <td class="text-center"><?= $value['fakultas'] ?></td>
                                              <td class="text-center"><?= $value['jurusan_prodi'] ?></td>
-                                             <td class="text-center"><?= $value['kelas_santri'] ?></td>
+                                             <td class="text-center"><?= $value['kelas'] ?></td>
                                              <td class="text-center"><?= $value['angkatan_santri'] ?></td>
                                              <td><?= $value['nama_ayah'] ?></td>
                                              <td class="text-center"><?= $value['pekerjaan_ayah'] ?></td>
@@ -160,8 +160,8 @@
                                          <th class="text-center">Universitas</th>
                                          <th class="text-center">Fakultas</th>
                                          <th class="text-center">Jurusan/Prodi</th>
-                                         <th class="text-center">kelas Santri</th>
-                                         <th class="text-center">Angkatan Santri</th>
+                                         <th class="text-center">kelas</th>
+                                         <th class="text-center">Tahun Angkatan</th>
                                          <th class="text-center">Nama Ayah</th>
                                          <th class="text-center">Pekerjaan Ayah</th>
                                          <th class="text-center">No.Telp Ayah</th>
@@ -188,7 +188,7 @@
                                              <td class="text-center"><?= $value['universitas'] ?></td>
                                              <td class="text-center"><?= $value['fakultas'] ?></td>
                                              <td class="text-center"><?= $value['jurusan_prodi'] ?></td>
-                                             <td class="text-center"><?= $value['kelas_santri'] ?></td>
+                                             <td class="text-center"><?= $value['kelas'] ?></td>
                                              <td class="text-center"><?= $value['angkatan_santri'] ?></td>
                                              <td><?= $value['nama_ayah'] ?></td>
                                              <td class="text-center"><?= $value['pekerjaan_ayah'] ?></td>
@@ -309,22 +309,19 @@
 
                          <div class="form-group row">
                              <div class="col-lg-8">
-                                 <label class="form-control-label">kelas Santri</label>
-                                 <select name="kelas_santri" class="form-control" id="kelas_santri" required>
+                                 <label class="form-control-label">kelas</label>
+                                 <select name="id_kelas" class="form-control" required>
                                      <option value="">- Pilih -</option>
-                                     <option value="Qiraah">Qiraah</option>
-                                     <option value="kitabah">kitabah</option>
-                                     <option value="Al-Taannii">Al-Taannii</option>
-                                     <option value="Al-Sarii">Al-Sarii</option>
-                                     <option value="Al-Idlofi">Al-Idlofi</option>
-                                     <option value="Hadits Besar">Hadits Besar</option>
+                                     <?php foreach ($kelas as $key => $value) { ?>
+                                         <option value="<?= $value['id_kelas'] ?>"><?= $value['kelas'] ?></option>
+                                     <?php } ?>
                                  </select>
                              </div>
                          </div>
 
                          <div class="form-group row">
                              <div class="col-lg-4">
-                                 <label class="form-control-label">Angkatan Santri</label>
+                                 <label class="form-control-label">Tahun Angkatan</label>
                                  <input type="number" class="form-control" placeholder="angkatan santri" name="angkatan_santri" value="<?php echo date('Y'); ?>" />
                              </div>
                          </div>
@@ -471,28 +468,15 @@
                                  <label>Fakultas</label>
                                  <input name="fakultas" value="<?= $value['fakultas'] ?>" class="form-control">
                              </div>
+
                              <div class="form-group">
                                  <label>Jurusan/Prodi</label>
                                  <input name="jurusan_prodi" value="<?= $value['jurusan_prodi'] ?>" class="form-control">
                              </div>
 
                              <div class="form-group row">
-                                 <div class="col-lg-8">
-                                     <label class="form-control-label">kelas Santri</label>
-                                     <select name="kelas_santri" class="form-control" id="kelas_santri">
-                                         <option value="Qiraah" <?= $value['kelas_santri'] == "Qiraah" ? "selected" : ""; ?>>Qiraah</option>
-                                         <option value="kitabah" <?= $value['kelas_santri'] == "kitabah" ? "selected" : ""; ?>>kitabah</option>
-                                         <option value="Al-Taannii" <?= $value['kelas_santri'] == "Al-Taannii" ? "selected" : ""; ?>>Al-Taannii</option>
-                                         <option value="Al-Sarii" <?= $value['kelas_santri'] == "Al-Sarii" ? "selected" : ""; ?>>Al-Sarii</option>
-                                         <option value="Al-Idlofi" <?= $value['kelas_santri'] == "Al-Idlofi" ? "selected" : ""; ?>>Al-Idlofi</option>
-                                         <option value="Hadits Besar" <?= $value['kelas_santri'] == "Hadits Besar" ? "selected" : ""; ?>>Hadits Besar</option>
-                                     </select>
-                                 </div>
-                             </div>
-
-                             <div class="form-group row">
                                  <div class="col-lg-4">
-                                     <label>Angkatan Santri</label>
+                                     <label>Tahun Angkatan</label>
                                      <input name="angkatan_santri" type="number" value="<?= $value['angkatan_santri'] ?>" class="form-control">
                                  </div>
                              </div>
@@ -535,6 +519,17 @@
                                  </div>
                              </div>
 
+                             <div class="form-group row">
+                                 <div class="col-lg-8">
+                                     <label class="form-control-label">kelas</label>
+                                     <select name="id_kelas" class="form-control" required>
+                                         <option value="<?= $value['id_kelas'] ?>"><?= $value['kelas']; ?></option>
+                                         <?php foreach ($kelas as $key => $value) { ?>
+                                             <option value="<?= $value['id_kelas'] ?>"><?= $value['kelas']; ?></option>
+                                         <?php } ?>
+                                     </select>
+                                 </div>
+                             </div>
                          </div>
 
                          <div class="modal-footer">

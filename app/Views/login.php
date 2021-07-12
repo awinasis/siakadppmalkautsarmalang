@@ -36,18 +36,18 @@
         ?>
 
         <div class="form-group has-feedback">
-            <input id="username" type="text" name="username" class="form-control" placeholder="Username">
+            <input id="username" type="text" name="username" class="form-control" placeholder="Username" required>
             <span class="fa fa-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-            <input id="password" type="password" name="password" class="form-control" placeholder="Password">
+            <input id="password" type="password" name="password" class="form-control" placeholder="Password" required>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
-        <div class="col-xs-8 ml-8">
+        <!-- <div class="col-xs-8 ml-8">
             <div class="checkbox icheck">&nbsp;
                 <label><input type="checkbox">Remember Me </label>
             </div>
-        </div>
+        </div> -->
         <br>
         <div class="row">
             <!-- /.col -->

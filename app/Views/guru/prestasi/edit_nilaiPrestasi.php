@@ -51,14 +51,9 @@
                                          <tr>
                                              <?php echo form_open('data_nilai/editNilaiIndeksPrestasi/' . $value['id_ip']); ?>
                                              <td class="text-center"><?= $no++; ?></td>
-                                             <td class="text-center"><input name="NIS" class="form-control" type="number" value="<?= $value['NIS'] ?>" readonly></td>
+                                             <td><input name="NIS" class="form-control text-center" type="number" value="<?= $value['NIS'] ?>" readonly></td>
                                              <td><input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly></td>
-                                             <td>
-                                                 <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" value="<?= $value['jenis_kelamin'] ?>">
-                                                     <option value="L" <?= $value['jenis_kelamin'] == "L" ? "selected" : ""; ?>>L</option>
-                                                     <option value="P" <?= $value['jenis_kelamin'] == "P" ? "selected" : ""; ?>>P</option>
-                                                 </select>
-                                             </td>
+                                             <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
                                              <td class="text-center"><input name="nilai_IP1" class="form-control" value="<?= $value['nilai_IP1'] ?>"></td>
                                              <td class="text-center"><input name="nilai_IP2" class="form-control" value="<?= $value['nilai_IP2'] ?>"></td>
                                              <td class="text-center"><input name="nilai_IP3" class="form-control" value="<?= $value['nilai_IP3'] ?>"></td>

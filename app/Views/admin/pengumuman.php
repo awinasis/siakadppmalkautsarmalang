@@ -2,9 +2,9 @@
  <div class="content-wrapper">
      <!-- Content Header (Page header) -->
      <section class="content-header">
-         <h1 style="color:MediumSeaGreen; font-family:timesnewrohman;">
+         <h2 style="color:MediumSeaGreen; font-family:timesnewrohman;">
              <?= $title; ?>
-         </h1>
+         </h2>
          <br><br>
          <ol class="breadcrumb">
              <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -37,9 +37,10 @@
                              <thead>
                                  <tr>
                                      <th width="50px" class="text-center">No</th>
-                                     <th class="text-center">Tanggal Dibuat</th>
                                      <th class="text-center">Judul Pengumuman</th>
                                      <th class="text-center">Deskripsi Pengumuman</th>
+                                     <th class="text-center">Tanggal Dibuat</th>
+                                     <th class="text-center">Tanggal Diubah</th>
                                      <th class="text-center">Tampil</th>
                                      <th width="150px" class="text-center">Action</th>
                                  </tr>
@@ -49,20 +50,15 @@
                                     foreach ($pengumuman as $key => $value) { ?>
                                      <tr>
                                          <td class="text-center"><?= $no++; ?></td>
-                                         <td><?= $value['tgl_dibuat'] ?></td>
                                          <td><?= $value['judul_pengumuman'] ?></td>
                                          <td><?= $value['isi_pengumuman'] ?></td>
+                                         <td><?= $value['tgl_dibuat'] ?></td>
+                                         <td><?= $value['tgl_diubah'] ?></td>
 
                                          <td class="text-center">
                                              <a href="<?= base_url('pengumuman/change_visible/' . $value['id_pengumuman']) ?>" class="btn btn-primary btn-sm">
-                                                 <?php if ($value['visible_pengumuman'] == 0) {
-                                                        echo '<i class="fa fa-eye-slash"></i>';
-                                                    } else {
-                                                        echo '<i class="fa fa-eye"></i>';
-                                                    }
-                                                    ?>
+                                                 <?= $value['visible_pengumuman'] == "1" ? '<i class="fa fa-eye"></i>' : '<i class="fa fa-eye-slash"></i>' ?>
                                              </a>
-
                                          </td>
 
                                          <td class="text-center">
@@ -93,13 +89,8 @@
                         ?>
 
                      <div class="form-group">
-                         <label>Tanggal Dibuat</label>
-                         <input type="date" class="form-control" id="tgl_dibuat" name="tgl_dibuat" required>
-                     </div>
-
-                     <div class="form-group">
                          <label>Judul Pengumuman</label>
-                         <input name="judul_pengumuman" class="form-control" placeholder="type the title of the announcement" required>
+                         <input name="judul_pengumuman" class="form-control" placeholder="type the title ..." required>
                      </div>
 
                      <!DOCTYPE html>
@@ -148,11 +139,6 @@
                             ?>
 
                          <div class="form-group">
-                             <label>Tanggal Dibuat</label>
-                             <input type="date" class="form-control" id="tgl_dibuat" name="tgl_dibuat" value="<?= $value['tgl_dibuat'] ?>">
-                         </div>
-
-                         <div class="form-group">
                              <label>Judul Pengumuman</label>
                              <input name="judul_pengumuman" class="form-control" value="<?= $value['judul_pengumuman'] ?>">
                          </div>
@@ -197,7 +183,7 @@
                      </div>
 
                      <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b> Info&nbsp;<?= $title; ?>&nbsp;<?= $value['judul_pengumuman'] ?> ?</b>
+                         Apakah anda yakin ingin menghapus <b><?= $title; ?>&nbsp;<?= $value['judul_pengumuman'] ?> ?</b>
                      </div>
 
                      <div class="modal-footer">

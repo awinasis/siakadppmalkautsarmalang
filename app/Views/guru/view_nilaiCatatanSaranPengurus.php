@@ -28,15 +28,17 @@
                             echo '</div>';
                         }
                         ?>
+
                      <div class="table-responsive">
-                         <table id="example1" class="table table-bordered table-striped with-check">
+                         <table id="example1" class="table table-bordered table-striped">
                              <thead>
                                  <tr>
-                                     <th rowspan='2' class="text-center">No.</th>
-                                     <th rowspan='2' class="text-center">NIS</th>
-                                     <th rowspan='2' class="text-center">Nama</th>
-                                     <th rowspan='2' class="text-center">L/P</th>
-                                     <th class="text-center">Catatan & Saran Pengurus</th>
+                                     <th rowspan="2" class="text-center">No.</th>
+                                     <th rowspan="2" class="text-center">NIS</th>
+                                     <th rowspan="2" class="text-center">Nama</th>
+                                     <th rowspan="2" class="text-center">L/P</th>
+                                     <th class="text-center" colspan=" 1">Catatan & Saran Pengurus</th>
+                                     <th rowspan="2" class="text-center">Keputusan</th>
                                      <th rowspan="2" class="text-center">Action</th>
                                  </tr>
                                  <tr>
@@ -48,10 +50,12 @@
                                     foreach ($nilai as $key => $value) { ?>
                                      <tr>
                                          <td class="text-center"><?= $no++; ?></td>
-                                         <td class="text-center"><?= $value['NIS'] ?></td>
-                                         <td><?= $value['nama_santri'] ?></td>
+                                         <td class="text-center"><?= $value['NIS']; ?></td>
+                                         <td><?= $value['nama_santri']; ?></td>
                                          <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
                                          <td><?= $value['catatan_saran'] ?></td>
+                                         <td class="text-center"><?= $value['keputusan'] ?></td>
+
                                          <td class="text-center">
                                              <a href="<?= base_url('data_nilai/ubahCatatanSaran/' . $value['id_cs']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_cs'] ?>"><i class="fa fa-trash"></i></button>
@@ -65,6 +69,7 @@
              </div>
          </div>
      </div>
+
 
      <!-- modal delete -->
      <?php foreach ($nilai as $key => $value) { ?>

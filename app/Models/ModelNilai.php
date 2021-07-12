@@ -9,23 +9,15 @@ class ModelNilai extends Model
     public function allData()
     {
         return $this->db->table('tbl_nilaiMateri')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri.NIS', 'tbl_santri.nama_santri = tbl_nilaiMateri.nama_santri')
-            ->orderBy('id_nm', 'DESC')
-            ->get()->getResultArray();
-    }
-
-    public function allData_HB()
-    {
-        return $this->db->table('tbl_nilaiMateri2')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri2.NIS', 'tbl_santri.nama_santri = tbl_nilaiMateri2.nama_santri')
-            ->orderBy('id_nm2', 'DESC')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
             ->get()->getResultArray();
     }
 
     public function detail_data($id_nm)
     {
         return $this->db->table('tbl_nilaiMateri')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri.NIS', 'tbl_santri.nama_santri = tbl_nilaiMateri.nama_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri.NIS', 'left')
             ->where('id_nm', $id_nm)
             ->get()->getResultArray();
     }
@@ -49,29 +41,55 @@ class ModelNilai extends Model
             ->delete($data);
     }
 
+    public function allData_HB()
+    {
+        return $this->db->table('tbl_nilaiMateri2')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri2.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
+            ->get()->getResultArray();
+    }
+
+    public function addDataHB($data)
+    {
+        $this->db->table('tbl_nilaimateri2')->insert($data);
+    }
+
+    public function detail_dataHB($id_nm2)
+    {
+        return $this->db->table('tbl_nilaiMateri2')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiMateri2.NIS', 'left')
+            ->where('id_nm2', $id_nm2)
+            ->get()->getResultArray();
+    }
+
+    public function editDataHB($data)
+    {
+        $this->db->table('tbl_nilaimateri2')
+            ->where('id_nm2', $data['id_nm2'])
+            ->update($data);
+    }
+
+    public function deleteDataHB($data)
+    {
+        $this->db->table('tbl_nilaimateri2')
+            ->where('id_nm2', $data['id_nm2'])
+            ->delete($data);
+    }
+
     //------------------------------------------------ 2 --------------------------------------------------// 
 
     public function allData1()
     {
         return $this->db->table('tbl_nilaikonseppraktikum')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum.NIS', 'tbl_santri.nama_santri = tbl_nilaikonseppraktikum.nama_santri')
-            ->orderBy('id_kp', 'DESC')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
             ->get()->getResultArray();
     }
-
-    public function allData1_HB()
-    {
-        return $this->db->table('tbl_nilaikonseppraktikum2')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum2.NIS', 'tbl_santri.nama_santri = tbl_nilaikonseppraktikum2.nama_santri')
-            ->orderBy('id_kp2', 'DESC')
-            ->get()->getResultArray();
-    }
-
 
     public function detail_data1($id_kp)
     {
         return $this->db->table('tbl_nilaikonseppraktikum')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum.NIS', 'tbl_santri.nama_santri = tbl_nilaikonseppraktikum.nama_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum.NIS', 'left')
             ->where('id_kp', $id_kp)
             ->get()->getResultArray();
     }
@@ -95,20 +113,56 @@ class ModelNilai extends Model
             ->delete($data);
     }
 
+    public function allData1_HB()
+    {
+        return $this->db->table('tbl_nilaikonseppraktikum2')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum2.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
+            ->get()->getResultArray();
+    }
+
+    public function addData1_HB($data)
+    {
+        $this->db->table('tbl_nilaikonseppraktikum2')->insert($data);
+    }
+
+    public function detail_data1HB($id_kp2)
+    {
+        return $this->db->table('tbl_nilaikonseppraktikum2')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaikonseppraktikum2.NIS', 'left')
+            ->where('id_kp2', $id_kp2)
+            ->get()->getResultArray();
+    }
+
+    public function editData1_HB($data)
+    {
+        $this->db->table('tbl_nilaikonseppraktikum2')
+            ->where('id_kp2', $data['id_kp2'])
+            ->update($data);
+    }
+
+    public function deleteData1_HB($data)
+    {
+        $this->db->table('tbl_nilaikonseppraktikum2')
+            ->where('id_kp2', $data['id_kp2'])
+            ->delete($data);
+    }
+
+
     //------------------------------------------------ 3 --------------------------------------------------// 
 
     public function allData2()
     {
         return $this->db->table('tbl_nilaisikapperilaku')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaisikapperilaku.NIS', 'tbl_santri.nama_santri = tbl_nilaisikapperilaku.nama_santri')
-            ->orderBy('id_sp', 'DESC')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaisikapperilaku.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
             ->get()->getResultArray();
     }
 
     public function detail_data2($id_sp)
     {
         return $this->db->table('tbl_nilaisikapperilaku')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaisikapperilaku.NIS', 'tbl_santri.nama_santri = tbl_nilaisikapperilaku.nama_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaisikapperilaku.NIS', 'left')
             ->where('id_sp', $id_sp)
             ->get()->getResultArray();
     }
@@ -137,15 +191,15 @@ class ModelNilai extends Model
     public function allData3()
     {
         return $this->db->table('tbl_nilailimasuksessantri')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilailimasuksessantri.NIS', 'tbl_santri.nama_santri = tbl_nilailimasuksessantri.nama_santri')
-            ->orderBy('id_lss', 'DESC')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilailimasuksessantri.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
             ->get()->getResultArray();
     }
 
     public function detail_data3($id_lss)
     {
         return $this->db->table('tbl_nilailimasuksessantri')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilailimasuksessantri.NIS', 'tbl_santri.nama_santri = tbl_nilailimasuksessantri.nama_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilailimasuksessantri.NIS', 'left')
             ->where('id_lss', $id_lss)
             ->get()->getResultArray();
     }
@@ -174,15 +228,15 @@ class ModelNilai extends Model
     public function allData4()
     {
         return $this->db->table('tbl_nilaiekstrakurikuler')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiekstrakurikuler.NIS', 'tbl_santri.nama_santri = tbl_nilaiekstrakurikuler.nama_santri')
-            ->orderBy('id_ne', 'DESC')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiekstrakurikuler.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
             ->get()->getResultArray();
     }
 
     public function detail_data4($id_ne)
     {
         return $this->db->table('tbl_nilaiekstrakurikuler')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiekstrakurikuler.NIS', 'tbl_santri.nama_santri = tbl_nilaiekstrakurikuler.nama_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiekstrakurikuler.NIS', 'left')
             ->where('id_ne', $id_ne)
             ->get()->getResultArray();
     }
@@ -211,15 +265,15 @@ class ModelNilai extends Model
     public function allData6()
     {
         return $this->db->table('tbl_nilaiindeksprestasi')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiindeksprestasi.NIS', 'tbl_santri.nama_santri = tbl_nilaiindeksprestasi.nama_santri')
-            ->orderBy('id_ip', 'DESC')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiindeksprestasi.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
             ->get()->getResultArray();
     }
 
     public function detail_data6($id_ip)
     {
         return $this->db->table('tbl_nilaiindeksprestasi')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiindeksprestasi.NIS', 'tbl_santri.nama_santri = tbl_nilaiindeksprestasi.nama_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_nilaiindeksprestasi.NIS', 'left')
             ->where('id_ip', $id_ip)
             ->get()->getResultArray();
     }
@@ -248,15 +302,15 @@ class ModelNilai extends Model
     public function allData7()
     {
         return $this->db->table('tbl_catatanSaranPengurus')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_catatanSaranPengurus.NIS', 'tbl_santri.nama_santri = tbl_catatanSaranPengurus.nama_santri')
-            ->orderBy('id_cs', 'DESC')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_catatanSaranPengurus.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
             ->get()->getResultArray();
     }
 
     public function detail_data7($id_cs)
     {
         return $this->db->table('tbl_catatanSaranPengurus')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_catatanSaranPengurus.NIS', 'tbl_santri.nama_santri = tbl_catatanSaranPengurus.nama_santri')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_catatanSaranPengurus.NIS', 'left')
             ->where('id_cs', $id_cs)
             ->get()->getResultArray();
     }

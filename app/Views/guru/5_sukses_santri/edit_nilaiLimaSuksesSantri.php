@@ -43,15 +43,11 @@
                                          <tr>
                                              <?php echo form_open('data_nilai/editNilaiLimaSuksesSantri/' . $value['id_lss']); ?>
                                              <td class="text-center"><?= $no++; ?></td>
-                                             <td class="text-center"><input name="NIS" class="form-control" type="number" value="<?= $value['NIS'] ?>" readonly></td>
+                                             <td><input name="NIS" class="form-control text-center" type="number" value="<?= $value['NIS'] ?>" readonly></td>
                                              <td><input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly></td>
-                                             <td>
-                                                 <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" value="<?= $value['jenis_kelamin'] ?>">
-                                                     <option value="L" <?= $value['jenis_kelamin'] == "L" ? "selected" : ""; ?>>L</option>
-                                                     <option value="P" <?= $value['jenis_kelamin'] == "P" ? "selected" : ""; ?>>P</option>
-                                                 </select>
-                                             </td>
-                                             <td>
+                                             <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
+
+                                             <td class="text-center">
                                                  <select name="nilai_A" id="nilai_A" class="form-control" value="<?= $value['nilai_A'] ?>">
                                                      <option value="A" <?= $value['nilai_A'] == "A" ? "selected" : ""; ?>>A</option>
                                                      <option value="B+" <?= $value['nilai_A'] == "B+" ? "selected" : ""; ?>>B+</option>
@@ -65,7 +61,7 @@
                                                  </select>
                                              </td>
 
-                                             <td>
+                                             <td class="text-center">
                                                  <select name="nilai_B" id="nilai_B" class="form-control" value="<?= $value['nilai_B'] ?>">
                                                      <option value="A" <?= $value['nilai_B'] == "A" ? "selected" : ""; ?>>A</option>
                                                      <option value="B+" <?= $value['nilai_B'] == "B+" ? "selected" : ""; ?>>B+</option>
@@ -79,7 +75,7 @@
                                                  </select>
                                              </td>
 
-                                             <td>
+                                             <td class="text-center">
                                                  <select name="nilai_C" id="nilai_C" class="form-control" value="<?= $value['nilai_C'] ?>">
                                                      <option value="A" <?= $value['nilai_C'] == "A" ? "selected" : ""; ?>>A</option>
                                                      <option value="B+" <?= $value['nilai_C'] == "B+" ? "selected" : ""; ?>>B+</option>
@@ -93,7 +89,7 @@
                                                  </select>
                                              </td>
 
-                                             <td>
+                                             <td class="text-center">
                                                  <select name="nilai_D" id="nilai_D" class="form-control" value="<?= $value['nilai_D'] ?>">
                                                      <option value="A" <?= $value['nilai_D'] == "A" ? "selected" : ""; ?>>A</option>
                                                      <option value="B+" <?= $value['nilai_D'] == "B+" ? "selected" : ""; ?>>B+</option>
@@ -107,7 +103,7 @@
                                                  </select>
                                              </td>
 
-                                             <td>
+                                             <td class="text-center">
                                                  <select name="nilai_E" id="nilai_E" class="form-control" value="<?= $value['nilai_E'] ?>">
                                                      <option value="A" <?= $value['nilai_E'] == "A" ? "selected" : ""; ?>>A</option>
                                                      <option value="B+" <?= $value['nilai_E'] == "B+" ? "selected" : ""; ?>>B+</option>

@@ -27,7 +27,8 @@ class Pengumuman extends BaseController
     public function add()
     {
         $data = [
-            'Tgl_dibuat' => $this->request->getPost('tgl_dibuat'),
+            'tgl_dibuat' => date('Y-m-d'),
+            'tgl_diubah' => date('Y-m-d'),
             'Judul_pengumuman' => $this->request->getPost('judul_pengumuman'),
             'Isi_pengumuman' => $this->request->getPost('isi_pengumuman'),
         ];
@@ -41,7 +42,7 @@ class Pengumuman extends BaseController
     {
         $data = [
             'id_pengumuman' => $id_pengumuman,
-            'Tgl_dibuat' => $this->request->getPost('tgl_dibuat'),
+            'tgl_diubah' => date('Y-m-d'),
             'Judul_pengumuman' => $this->request->getPost('judul_pengumuman'),
             'Isi_pengumuman' => $this->request->getPost('isi_pengumuman'),
         ];
@@ -62,12 +63,28 @@ class Pengumuman extends BaseController
 
     public function change_visible($id_pengumuman)
     {
-        $data = [
-            'id_pengumuman' => $id_pengumuman,
-            'visible_pengumuman' => 1
-        ];
-        $this->ModelPengumuman->editData($data);
-        session()->setFlashdata('pesan', 'Status Visible Pengumuman berhasil di ubah !!');
-        return redirect()->to(base_url('pengumuman'));
+        $DataPengumuman = $this->ModelPengumuman->where('id_pengumuman', $id_pengumuman)->first();
+
+        $visible = $DataPengumuman['visible_pengumuman'];
+        $newVisible = $visible == "1" ? "0" : "1";
+
+        $this->ModelPengumuman->editData([
+            'visible_pengumuman' => $newVisible
+        ], $id_pengumuman);
+
+        return redirect()->to(base_url('santri/index'));
     }
+
+    // public function change_visible($id_pengumuman)
+    // {
+    //     $this->ModelPengumuman->reset_visiblePengumuman();
+
+    //     $data = [
+    //         'id_pengumuman' => $id_pengumuman,
+    //         'visible_pengumuman' => 1
+    //     ];
+    //     $this->ModelPengumuman->editData($data);
+    //     session()->setFlashdata('pesan', 'Status Visible Pengumuman berhasil di ubah !!');
+    //     return redirect()->to(base_url('pengumuman'));
+    // }
 }

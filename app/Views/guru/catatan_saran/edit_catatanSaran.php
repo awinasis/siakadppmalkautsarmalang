@@ -30,6 +30,7 @@
                                          <th rowspan='2' class="text-center">Nama</th>
                                          <th rowspan='2' class="text-center">L/P</th>
                                          <th class="text-center">Catatan & Saran Pengurus</th>
+                                         <th rowspan="2" class="text-center">Keputusan</th>
                                          <th rowspan="2" class="text-center">Action</th>
                                      </tr>
                                      <tr>
@@ -42,15 +43,17 @@
                                          <tr>
                                              <?php echo form_open('data_nilai/editCatatanSaran/' . $value['id_cs']); ?>
                                              <td class="text-center"><?= $no++; ?></td>
-                                             <td class="text-center"><input name="NIS" class="form-control" type="number" value="<?= $value['NIS'] ?>" readonly></td>
+                                             <td><input name="NIS" class="form-control text-center" type="number" value="<?= $value['NIS'] ?>" readonly></td>
                                              <td><input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly></td>
-                                             <td>
-                                                 <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" value="<?= $value['jenis_kelamin'] ?>">
-                                                     <option value="L" <?= $value['jenis_kelamin'] == "L" ? "selected" : ""; ?>>L</option>
-                                                     <option value="P" <?= $value['jenis_kelamin'] == "P" ? "selected" : ""; ?>>P</option>
+                                             <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
+                                             <td class="text-center"><textarea id="catatan_saran" name="catatan_saran" class="form-control ckeditor"><?= htmlentities($value['catatan_saran']); ?></textarea></td>
+                                             <td class="text-center">
+                                                 <select name="keputusan" id="keputusan" class="form-control" value="<?= $value['keputusan'] ?>">
+                                                     <option value="Sangat Baik" <?= $value['keputusan'] == "Sangat Baik" ? "selected" : ""; ?>>Sangat Baik</option>
+                                                     <option value="Baik" <?= $value['keputusan'] == "Baik" ? "selected" : ""; ?>>Baik</option>
+                                                     <option value="Cukup" <?= $value['keputusan'] == "Cukup" ? "selected" : ""; ?>>Cukup</option>
                                                  </select>
                                              </td>
-                                             <td class="text-center"><textarea id="catatan_saran" name="catatan_saran" class="form-control ckeditor"><?= htmlentities($value['catatan_saran']); ?></textarea></td>
 
                                              <td class="text-center">
                                                  <button type="submit" class="btn btn-primary">Simpan</button>

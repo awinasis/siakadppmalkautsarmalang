@@ -42,6 +42,7 @@ class ModelSurat extends Model
     public function permintaan_surat()
     {
         return $this->db->table('tbl_surat')
+            ->join('tbl_santri', 'tbl_santri.id_santri=tbl_surat.id_santri', 'left')
             ->orderBy('id_surat', 'DESC')
             ->get()->getResultArray();
     }

@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Models\ModelAbsensi;
 use App\Models\ModelSantri;
-use App\Models\ModelTA;
 
 class Data_Absensi extends BaseController
 {
@@ -12,103 +11,77 @@ class Data_Absensi extends BaseController
     {
         helper('form');
         $this->ModelAbsensi = new ModelAbsensi();
-        $this->ModelTA = new ModelTA();
         $this->ModelSantri = new ModelSantri();
     }
+
     public function index()
     {
         $data = [
-            'title' => 'Absensi',
+            'title' => 'Absen Kelas',
             'absensi' => $this->ModelAbsensi->allData(),
-            'santri' => $this->ModelAbsensi->tampilkan_chart(),
-            'isi'    => 'admin/absensi'
+            'santri' => $this->ModelSantri->allData(),
+            'isi'    => 'guru/absenkelas/view_absensi'
         ];
 
         return view("layout/wrapper", $data);
     }
 
-    public function add_absensi()
+    public function detailAbsensi()
     {
         $data = [
-            'NIS' => $this->request->getPost('NIS'),
-            'nama_santri' => $this->request->getPost('nama_santri'),
+            'title' => 'Based on date',
+            'detailabsen' => $this->ModelAbsensi->detail_absensi(),
+            'isi'    => 'guru/absenkelas/based_on_date'
         ];
-        $this->ModelAbsensi->addData($data);
-        session()->setFlashdata('pesan', 'Data berhasil di tambahkan !!');
-        return redirect()->to(base_url('data_absensi'));
+
+        return view("layout/wrapper", $data);
     }
 
-    public function delete($NIS)
+    public function add()
     {
         $data = [
-            'NIS' => $NIS,
+            'tanggal' => $this->request->getPost('tanggal'),
+            'sesi_pengajian' => $this->request->getPost('sesi_pengajian'),
+        ];
+        $this->ModelAbsensi->addData($data);
+
+        session()->setFlashdata('pesan', 'Data berhasil di tambahkan !!');
+        return redirect()->to(base_url('data_absensi/detailAbsensi'));
+    }
+
+
+    public function delete($id_detailabsensi)
+    {
+        $data = [
+            'id_detailabsensi' => $id_detailabsensi,
         ];
         $this->ModelAbsensi->deleteData($data);
         session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
-        return redirect()->to(base_url('data_absensi'));
+        return redirect()->to(base_url('data_absensi/detailAbsensi'));
     }
 
-    public function viewchart($NIS)
+    public function SimpanAbsen()
+    {
+        $absen = $this->ModelAbsensi->mhs();
+        foreach ($absen as $key => $value) {
+            $data = [
+                'id_absensi' => $this->request->getPost($value['id_absensi'] . 'id_absensi'),
+                'keterangan' => $this->request->getPost($value['id_absensi'] . 'keterangan'),
+            ];
+            $this->ModelAbsensi->SimpanAbsen($data);
+        }
+        session()->setFlashdata('pesan', 'Absen berhasil di update !!');
+        return redirect()->to(base_url('data_absensi/'));
+    }
+
+    public function rekapAbsensi()
     {
         $data = [
-            'title' => 'View Chart',
-            'absensi' => $this->ModelAbsensi->detail_data($NIS),
-            'ta_aktif' => $this->ModelTA->ta_aktif(),
-            'santri' => $this->ModelSantri->allData(),
-            'isi'    => 'admin/v_viewchart'
+            'title' => 'Rekap Absensi',
+            'rekap' => $this->ModelAbsensi->detail_data(),
+            'isi'    => 'guru/absenkelas/tampilkanAbsen'
         ];
 
         return view("layout/wrapper", $data);
-    }
-
-    public function draft_kehadiran()
-    {
-        $data = [
-            'title' => 'Draft Kehadiran',
-            'draft' => $this->ModelAbsensi->tampilkan_draft(),
-            'isi' => 'admin/absen_santri/daftar_kehadiran'
-        ];
-        return view("layout/wrapper", $data);
-    }
-
-    public function add_draft()
-    {
-        $data = [
-            'NIS' => $this->request->getPost('NIS'),
-            'nama_Santri' => $this->request->getPost('nama_santri'),
-            'keterangan' => $this->request->getPost('keterangan'),
-            'sesi_pengajian' => $this->request->getPost('sesi_pengajian'),
-            'kelas' => $this->request->getPost('kelas'),
-            'tanggal' => $this->request->getPost('tanggal'),
-        ];
-        $this->ModelAbsensi->tambah_kehadiran($data);
-        session()->setFlashdata('pesan', 'Data berhasil di tambahkan !!');
-        return redirect()->to(base_url('data_absensi/draft_kehadiran'));
-    }
-
-    public function edit_draft($id_kehadiran)
-    {
-        $data = [
-            'id_kehadiran' => $id_kehadiran,
-            'NIS' => $this->request->getPost('NIS'),
-            'Nama_Santri' => $this->request->getPost('nama_santri'),
-            'keterangan' => $this->request->getPost('keterangan'),
-            'sesi_pengajian' => $this->request->getPost('sesi_pengajian'),
-            'kelas' => $this->request->getPost('kelas'),
-            'tanggal' => $this->request->getPost('tanggal'),
-        ];
-        $this->ModelAbsensi->edit_kehadiran($data);
-        session()->setFlashdata('pesan', 'Data berhasil di update !!');
-        return redirect()->to(base_url('data_absensi/draft_kehadiran'));
-    }
-
-    public function delete_draft($id_kehadiran)
-    {
-        $data = [
-            'id_kehadiran' => $id_kehadiran,
-        ];
-        $this->ModelAbsensi->delete_kehadiran($data);
-        session()->setFlashdata('pesan', 'Data berhasil di hapus !!');
-        return redirect()->to(base_url('data_absensi/draft_kehadiran'));
     }
 }

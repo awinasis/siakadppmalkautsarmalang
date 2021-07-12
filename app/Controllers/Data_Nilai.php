@@ -47,8 +47,6 @@ class Data_Nilai extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Nilai1' => $this->request->getPost('nilai1'),
             'Nilai2' => $this->request->getPost('nilai2'),
             'Nilai3' => $this->request->getPost('nilai3'),
@@ -102,8 +100,6 @@ class Data_Nilai extends BaseController
         $data = [
             'id_nm' => $id_nm,
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Nilai1' => $this->request->getPost('nilai1'),
             'Nilai2' => $this->request->getPost('nilai2'),
             'Nilai3' => $this->request->getPost('nilai3'),
@@ -164,6 +160,94 @@ class Data_Nilai extends BaseController
         echo view("layout/wrapper", $data);
     }
 
+    public function tambahNilaiMateriHB()
+    {
+        $data = [
+            'title' => 'Tambah Nilai Materi HB',
+            'nilai' => $this->ModelNilai->allData_HB(),
+            'isi'    => 'guru/materi/tambah_nilaiMateriHB',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function addNilaiMateriHB()
+    {
+        $data = [
+            'NIS' => $this->request->getPost('NIS'),
+            'n_A' => $this->request->getPost('n_A'),
+            'n_B' => $this->request->getPost('n_B'),
+            'n_C' => $this->request->getPost('n_C'),
+            'n_D' => $this->request->getPost('n_D'),
+            'n_E' => $this->request->getPost('n_E'),
+            'n_F' => $this->request->getPost('n_F'),
+            'n_G' => $this->request->getPost('n_G'),
+            'n_H' => $this->request->getPost('n_H'),
+            'n_I' => $this->request->getPost('n_I'),
+            'n_J' => $this->request->getPost('n_J'),
+            'n_K' => $this->request->getPost('n_K'),
+            'n_L' => $this->request->getPost('n_L'),
+            'n_M' => $this->request->getPost('n_M'),
+            'n_N' => $this->request->getPost('n_N'),
+            'n_O' => $this->request->getPost('n_O'),
+            'n_P' => $this->request->getPost('n_P'),
+            'n_Q' => $this->request->getPost('n_Q'),
+        ];
+        $this->ModelNilai->addDataHB($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di tambahkan !!');
+        return redirect()->to(base_url('data_nilai/tampil_nilaiMateriHB'));
+    }
+
+    public function ubahNilaiMateriHB($id_nm2)
+    {
+        $data = [
+            'title' => 'Ubah Nilai Materi HB',
+            'nilai' => $this->ModelNilai->detail_dataHB($id_nm2),
+            'isi'    => 'guru/materi/edit_nilaiMateriHB',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function editNilaiMateriHB($id_nm2)
+    {
+        $data = [
+            'id_nm2' => $id_nm2,
+            'NIS' => $this->request->getPost('NIS'),
+            'n_A' => $this->request->getPost('n_A'),
+            'n_B' => $this->request->getPost('n_B'),
+            'n_C' => $this->request->getPost('n_C'),
+            'n_D' => $this->request->getPost('n_D'),
+            'n_E' => $this->request->getPost('n_E'),
+            'n_F' => $this->request->getPost('n_F'),
+            'n_G' => $this->request->getPost('n_G'),
+            'n_H' => $this->request->getPost('n_H'),
+            'n_I' => $this->request->getPost('n_I'),
+            'n_J' => $this->request->getPost('n_J'),
+            'n_K' => $this->request->getPost('n_K'),
+            'n_L' => $this->request->getPost('n_L'),
+            'n_M' => $this->request->getPost('n_M'),
+            'n_N' => $this->request->getPost('n_N'),
+            'n_O' => $this->request->getPost('n_O'),
+            'n_P' => $this->request->getPost('n_P'),
+            'n_Q' => $this->request->getPost('n_Q'),
+        ];
+        $this->ModelNilai->editDataHB($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di update !!');
+        return redirect()->to(base_url('data_nilai/tampil_nilaiMateriHB'));
+    }
+
+
+    public function deleteHB($id_nm2)
+    {
+        $data = [
+            'id_nm2' => $id_nm2,
+        ];
+        $this->ModelNilai->deleteDataHB($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di hapus !!');
+        return redirect()->to(base_url('data_nilai/tampil_nilaiMateriHB'));
+    }
+
     //------------------------------------------------ 2 --------------------------------------------------// 
 
     public function konsepPraktikum()
@@ -193,8 +277,6 @@ class Data_Nilai extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'N1' => $this->request->getPost('n1'),
             'N2' => $this->request->getPost('n2'),
             'N3' => $this->request->getPost('n3'),
@@ -241,8 +323,6 @@ class Data_Nilai extends BaseController
         $data = [
             'id_kp' => $id_kp,
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'N1' => $this->request->getPost('n1'),
             'N2' => $this->request->getPost('n2'),
             'N3' => $this->request->getPost('n3'),
@@ -296,6 +376,94 @@ class Data_Nilai extends BaseController
         echo view("layout/wrapper", $data);
     }
 
+    public function tambahNilaikonsepPraktikum_HB()
+    {
+        $data = [
+            'title' => 'Tambah Nilai Konsep Praktikum HB',
+            'nilai' => $this->ModelNilai->allData1_HB(),
+            'isi'    => 'guru/konsep_praktikum/tambah_nilaikonsepPraktikumHB',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function addNilaikonsepPraktikum_HB()
+    {
+        $data = [
+            'NIS' => $this->request->getPost('NIS'),
+            'n_1' => $this->request->getPost('n_1'),
+            'n_2' => $this->request->getPost('n_2'),
+            'n_3' => $this->request->getPost('n_3'),
+            'n_4' => $this->request->getPost('n_4'),
+            'n_5' => $this->request->getPost('n_5'),
+            'n_6' => $this->request->getPost('n_6'),
+            'n_7' => $this->request->getPost('n_7'),
+            'n_8' => $this->request->getPost('n_8'),
+            'n_9' => $this->request->getPost('n_9'),
+            'n_10' => $this->request->getPost('n_10'),
+            'n_11' => $this->request->getPost('n_11'),
+            'n_12' => $this->request->getPost('n_12'),
+            'n_13' => $this->request->getPost('n_13'),
+            'n_14' => $this->request->getPost('n_14'),
+            'n_15' => $this->request->getPost('n_15'),
+            'n_16' => $this->request->getPost('n_16'),
+            'n_17' => $this->request->getPost('n_17'),
+        ];
+        $this->ModelNilai->addData1_HB($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di tambahkan !!');
+        return redirect()->to(base_url('data_nilai/konsepPraktikum_HB'));
+    }
+
+    public function ubahNilaikonsepPraktikum_HB($id_kp2)
+    {
+        $data = [
+            'title' => 'Ubah Nilai Konsep Praktikum HB',
+            'nilai' => $this->ModelNilai->detail_data1HB($id_kp2),
+            'isi'    => 'guru/konsep_praktikum/edit_nilaikonsepPraktikumHB',
+        ];
+
+        return view("layout/wrapper", $data);
+    }
+
+    public function editNilaikonsepPraktikum_HB($id_kp2)
+    {
+        $data = [
+            'id_kp2' => $id_kp2,
+            'NIS' => $this->request->getPost('NIS'),
+            'n_1' => $this->request->getPost('n_1'),
+            'n_2' => $this->request->getPost('n_2'),
+            'n_3' => $this->request->getPost('n_3'),
+            'n_4' => $this->request->getPost('n_4'),
+            'n_5' => $this->request->getPost('n_5'),
+            'n_6' => $this->request->getPost('n_6'),
+            'n_7' => $this->request->getPost('n_7'),
+            'n_8' => $this->request->getPost('n_8'),
+            'n_9' => $this->request->getPost('n_9'),
+            'n_10' => $this->request->getPost('n_10'),
+            'n_11' => $this->request->getPost('n_11'),
+            'n_12' => $this->request->getPost('n_12'),
+            'n_13' => $this->request->getPost('n_13'),
+            'n_14' => $this->request->getPost('n_14'),
+            'n_15' => $this->request->getPost('n_15'),
+            'n_16' => $this->request->getPost('n_16'),
+            'n_17' => $this->request->getPost('n_17'),
+        ];
+        $this->ModelNilai->editData1_HB($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di update !!');
+        return redirect()->to(base_url('data_nilai/konsepPraktikum_HB'));
+    }
+
+
+    public function delete1_HB($id_kp2)
+    {
+        $data = [
+            'id_kp2' => $id_kp2,
+        ];
+        $this->ModelNilai->deleteData1_HB($data);
+        session()->setFlashdata('pesan', 'Nilai berhasil di hapus !!');
+        return redirect()->to(base_url('data_nilai/konsepPraktikum_HB'));
+    }
+
     //------------------------------------------------ 3 --------------------------------------------------// 
 
     public function sikapPerilaku()
@@ -325,8 +493,6 @@ class Data_Nilai extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Nl1' => $this->request->getPost('nl1'),
             'Nl2' => $this->request->getPost('nl2'),
             'Nl3' => $this->request->getPost('nl3'),
@@ -358,8 +524,6 @@ class Data_Nilai extends BaseController
         $data = [
             'id_sp' => $id_sp,
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Nl1' => $this->request->getPost('nl1'),
             'Nl2' => $this->request->getPost('nl2'),
             'Nl3' => $this->request->getPost('nl3'),
@@ -414,8 +578,6 @@ class Data_Nilai extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'nilai_A' => $this->request->getPost('nilai_A'),
             'nilai_B' => $this->request->getPost('nilai_B'),
             'nilai_C' => $this->request->getPost('nilai_C'),
@@ -443,8 +605,6 @@ class Data_Nilai extends BaseController
         $data = [
             'id_lss' => $id_lss,
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'nilai_A' => $this->request->getPost('nilai_A'),
             'nilai_B' => $this->request->getPost('nilai_B'),
             'nilai_C' => $this->request->getPost('nilai_C'),
@@ -495,8 +655,6 @@ class Data_Nilai extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Nilai_1' => $this->request->getPost('nilai_1'),
             'Nilai_2' => $this->request->getPost('nilai_2'),
             'Nilai_3' => $this->request->getPost('nilai_3'),
@@ -522,8 +680,6 @@ class Data_Nilai extends BaseController
         $data = [
             'id_ne' => $id_ne,
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Nilai_1' => $this->request->getPost('nilai_1'),
             'Nilai_2' => $this->request->getPost('nilai_2'),
             'Nilai_3' => $this->request->getPost('nilai_3'),
@@ -572,8 +728,6 @@ class Data_Nilai extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Nilai_IP1' => $this->request->getPost('nilai_IP1'),
             'Nilai_IP2' => $this->request->getPost('nilai_IP2'),
             'Nilai_IP3' => $this->request->getPost('nilai_IP3'),
@@ -606,8 +760,6 @@ class Data_Nilai extends BaseController
         $data = [
             'id_ip' => $id_ip,
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Nilai_IP1' => $this->request->getPost('nilai_IP1'),
             'Nilai_IP2' => $this->request->getPost('nilai_IP2'),
             'Nilai_IP3' => $this->request->getPost('nilai_IP3'),
@@ -663,9 +815,8 @@ class Data_Nilai extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Catatan_Saran' => $this->request->getPost('catatan_saran'),
+            'keputusan' => $this->request->getPost('keputusan'),
         ];
         $this->ModelNilai->addData7($data);
         session()->setFlashdata('pesan', 'Nilai berhasil di tambahkan !!');
@@ -688,9 +839,8 @@ class Data_Nilai extends BaseController
         $data = [
             'id_cs' => $id_cs,
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
-            'Jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'Catatan_Saran' => $this->request->getPost('catatan_saran'),
+            'keputusan' => $this->request->getPost('keputusan'),
         ];
         $this->ModelNilai->editData7($data);
         session()->setFlashdata('pesan', 'Nilai berhasil di update !!');

@@ -9,6 +9,7 @@ class ModelSantri extends Model
     public function allData()
     {
         return $this->db->table('tbl_santri')
+            ->join('tbl_kelas', 'tbl_kelas.id_kelas=tbl_santri.id_kelas', 'left')
             ->orderBy('NIS', 'ASC')
             ->get()->getResultArray();
     }
@@ -35,7 +36,9 @@ class ModelSantri extends Model
     public function detailData($id_santri)
     {
         return $this->db->table('tbl_santri')
+            ->join('tbl_kelas', 'tbl_kelas.id_kelas=tbl_santri.id_kelas', 'left')
             ->where('id_santri', $id_santri)
+
             ->get()->getRowArray();;
     }
 
@@ -48,6 +51,7 @@ class ModelSantri extends Model
     public function get_bioSantri_by_id($data)
     {
         return $this->db->table('tbl_santri')
+            ->join('tbl_kelas', 'tbl_kelas.id_kelas=tbl_santri.id_kelas', 'left')
             ->where('NIS', $data)
             ->get()->getResultArray();
     }

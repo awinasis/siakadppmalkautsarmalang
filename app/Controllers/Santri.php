@@ -8,6 +8,8 @@ use App\Models\ModelSantri;
 use App\Models\ModelPembayaran;
 use App\Models\ModelPesan;
 use App\Models\ModelSurat;
+use App\Models\ModelKelas;
+use App\Models\ModelAbsensi;
 
 class Santri extends BaseController
 {
@@ -22,13 +24,17 @@ class Santri extends BaseController
         $this->ModelPembayaran = new ModelPembayaran();
         $this->ModelPesan = new ModelPesan();
         $this->ModelSurat = new ModelSurat();
+        $this->ModelKelas = new ModelKelas();
+        $this->ModelAbsensi = new ModelAbsensi();
     }
 
     public function index()
     {
+        // $announcement = $this->ModelPengumuman->orderBy('id_pengumuman', 'desc')->findAll();
         $data = [
             'title' => 'Pengumuman',
             'pengumuman' => $this->ModelPengumuman->allData(),
+            // 'pengumuman' => $announcement,
             'isi'    => 'santri',
         ];
         return view("layout/wrapper", $data);
@@ -40,6 +46,7 @@ class Santri extends BaseController
         $data = [
             'title' => 'Santri',
             'isi'    => 'santri/v_bioSantri',
+            'kelas' => $this->ModelKelas->allData(),
             'santri' => $this->ModelSantri->get_bioSantri_by_id($nis),
             'nis' => $nis
         ];
@@ -47,15 +54,15 @@ class Santri extends BaseController
         return view("layout/wrapper", $data);
     }
 
-    public function RPS()
-    {
-        $data = [
-            'title' => 'rps',
-            'isi'    => 'santri/v_rps'
-        ];
+    // public function RPS()
+    // {
+    //     $data = [
+    //         'title' => 'rps',
+    //         'isi'    => 'santri/v_rps'
+    //     ];
 
-        return view("layout/wrapper", $data);
-    }
+    //     return view("layout/wrapper", $data);
+    // }
 
     public function pembayaran_ppm()
     {
@@ -108,12 +115,14 @@ class Santri extends BaseController
 
     public function pengajuan_surat()
     {
+        $nis = session()->get('username');
         $data = [
             'title' => 'Surat',
             'surat' => $this->ModelSurat->permintaan_surat(),
             'ta_aktif' => $this->ModelTA->ta_aktif(),
-            'santri' => $this->ModelSantri->allData(),
+            'santri' => $this->ModelSantri->get_bioSantri_by_id($nis),
             'isi'    => 'santri/v_pengajuanSurat',
+            'nis' => $nis,
         ];
         return view("layout/wrapper", $data);
     }

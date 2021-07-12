@@ -9,7 +9,7 @@ class ModelRapor extends Model
     public function allData()
     {
         return $this->db->table('tbl_rapor')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_rapor.NIS', 'tbl_santri.nama_santri = tbl_rapor.nama_santri', 'left')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_rapor.NIS', 'left')
             ->orderBy('id_rapor', 'DESC')
             ->get()->getResultArray();
     }
@@ -36,6 +36,7 @@ class ModelRapor extends Model
             ->join('tbl_nilaiekstrakurikuler', 'tbl_nilaiekstrakurikuler.id_ne = tbl_rapor.id_ne', 'left')
             ->join('tbl_nilaiindeksprestasi', 'tbl_nilaiindeksprestasi.id_ip = tbl_rapor.id_ip', 'left')
             ->join('tbl_catatansaranpengurus', 'tbl_catatansaranpengurus.id_cs = tbl_rapor.id_cs', 'left')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_rapor.NIS', 'left')
             ->where('id_rapor', $id_rapor)
             ->get()->getRowArray();
     }

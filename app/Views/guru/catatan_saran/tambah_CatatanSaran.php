@@ -29,9 +29,8 @@
                                  <thead>
                                      <tr>
                                          <th rowspan='2' class="text-center">NIS</th>
-                                         <th rowspan='2' class="text-center">Nama</th>
-                                         <th rowspan='2' class="text-center">L/P</th>
-                                         <th class="text-center" colspan="8">Catatan & Saran Pengurus</th>
+                                         <th class="text-center" colspan="1">Catatan & Saran Pengurus</th>
+                                         <th rowspan='2' class="text-center">keputusan</th>
                                      </tr>
                                      <tr>
                                          <th class="text-center">Deskripsi</th>
@@ -41,15 +40,16 @@
                                  <tbody>
                                      <tr>
                                          <td class="text-center"><input name="NIS" class="form-control" type="number" required></td>
-                                         <td class="text-center"><input name="nama_santri" class="form-control" required></td>
+                                         <td class="text-center"><textarea name="catatan_saran" type="text" class="form-control" required></textarea></td>
                                          <td class="text-center">
-                                             <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
-                                                 <option value="#">-- Pilih --</option>
-                                                 <option value="L">L</option>
-                                                 <option value="P">P</option>
+                                             <select name="keputusan" id="keputusan" class="form-control" required>
+                                                 <option value="#">-- Penilaian --</option>
+                                                 <option value="Sangat Baik">Sangat Baik</option>
+                                                 <option value="Baik">Baik</option>
+                                                 <option value="Cukup">Cukup</option>
                                              </select>
                                          </td>
-                                         <td class="text-center"><textarea name="catatan_saran" type="text" class="form-control" required></textarea></td>
+
                                      </tr>
                                  </tbody>
                              </table>

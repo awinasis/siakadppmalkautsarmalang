@@ -6,10 +6,17 @@
              <?= $title; ?>
          </h1>
          <br><br>
-         <ol class="breadcrumb">
-             <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-             <li class="active">Data Rapor</li>
-         </ol>
+         <?php if (session()->get('level') == "Guru") { ?>
+             <ol class="breadcrumb">
+                 <li><a href="<?= base_url('guru') ?>"><i class="fa fa-home"></i> Home</a></li>
+                 <li class="active">Data Rapor</li>
+             </ol>
+         <?php } elseif (session()->get('level') == "Admin") { ?>
+             <ol class="breadcrumb">
+                 <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                 <li class="active">Data Rapor</li>
+             </ol>
+         <?php } ?>
      </section>
 
      <div class="row">
@@ -56,8 +63,7 @@
                                              <td class="text-center"><?= $value['NIS'] ?></td>
                                              <td><?= $value['nama_santri'] ?></td>
                                              <td class="text-center">
-                                                 <!-- <button type="button" class="btn btn-success btn-sm"><i class="fa  fa-file"></i> Sampul</button>&emsp; -->
-                                                 <a href="<?= base_url('data_rapor/view_rapor/' . $value['id_rapor']) ?> " class="btn btn-info btn-sm">
+                                                 <a href="<?= base_url('data_rapor/view_rapor/' . $value['id_rapor']) ?> " class="btn btn-info btn-sm" target="_blank">
                                                      <i class="fa fa-file-text"></i> Rapor</a><br>
                                              </td>
                                              <?php if (session()->get('level') == "Guru") { ?>
@@ -117,8 +123,6 @@
              <div class="modal-dialog">
                  <div class="modal-content box box-success box-solid">
                      <div class="modal-header box-header with-border">
-                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                             <span aria-hidden="true">&times;</span></button>
                          <h4 class="modal-title">Tambah Rapor</h4>
                      </div>
 
@@ -126,17 +130,11 @@
                          <?php
                             echo form_open('data_rapor/add');
                             ?>
-
                          <div class="form-group row">
                              <div class="col-lg-6">
                                  <label>NIS</label>
                                  <input name="NIS" type="number" class="form-control" placeholder="NIS" required>
                              </div>
-                         </div>
-
-                         <div class="form-group">
-                             <label>Nama Santri</label>
-                             <input name="nama_santri" class="form-control" placeholder="nama_santri" required>
                          </div>
                      </div>
 
@@ -146,33 +144,34 @@
                      </div>
                      <?php echo form_close(); ?>
                  </div>
-                 <!-- /.modal-content -->
              </div>
-             <!-- /.modal-dialog -->
+             <!-- /.modal-content -->
          </div>
+         <!-- /.modal-dialog -->
+ </div>
 
-         <!-- modal delete -->
-         <?php foreach ($rapor as $key => $value) { ?>
-             <div class="modal fade" id="delete<?= $value['id_rapor'] ?>">
-                 <div class="modal-dialog">
-                     <div class="modal-content box box-success box-solid">
-                         <div class="modal-header box-header with-border">
-                             <h4 class="modal-title">Delete Rapor</h4>
-                         </div>
-
-                         <div class="modal-body">
-                             Apakah anda yakin ingin menghapus <b><?= $title; ?>&nbsp;<?= $value['nama_santri'] ?> ?</b>
-                         </div>
-
-                         <div class="modal-footer">
-                             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
-                             <a href="<?= base_url('data_rapor/delete/' . $value['id_rapor']) ?>" class="btn btn-primary">Delete</a>
-                         </div>
-                     </div>
-                     <!-- /.modal-content -->
+ <!-- modal delete -->
+ <?php foreach ($rapor as $key => $value) { ?>
+     <div class="modal fade" id="delete<?= $value['id_rapor'] ?>">
+         <div class="modal-dialog">
+             <div class="modal-content box box-success box-solid">
+                 <div class="modal-header box-header with-border">
+                     <h4 class="modal-title">Delete Rapor</h4>
                  </div>
-                 <!-- /.modal-dialog -->
+
+                 <div class="modal-body">
+                     Apakah anda yakin ingin menghapus <b><?= $title; ?>&nbsp;<?= $value['nama_santri'] ?> ?</b>
+                 </div>
+
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+                     <a href="<?= base_url('data_rapor/delete/' . $value['id_rapor']) ?>" class="btn btn-primary">Delete</a>
+                 </div>
              </div>
-         <?php } ?>
-     <?php } ?>
+             <!-- /.modal-content -->
+         </div>
+         <!-- /.modal-dialog -->
+     </div>
+ <?php } ?>
+ <?php } ?>
  </div>

@@ -77,99 +77,10 @@
 
  <body>
      <?php
-        $konek = mysqli_connect("localhost", "root", "", "db_siakad_ppmalkautsar");
+        $koneksi = mysqli_connect("localhost", "root", "", "db_siakad_ppmalkautsar");
         ?>
 
      <!-- chart laporan -->
-     <script>
-         (jQuery);
-         $(function() {
-             //Laporan absensi
-             var data = [{
-                 data: [
-                     <?php
-                        $jumlah_hadir = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='hadir'");
-                        echo mysqli_num_rows($jumlah_hadir);
-                        ?>,
-                     <?php
-                        $jumlah_alpha = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='alpha'");
-                        echo mysqli_num_rows($jumlah_alpha);
-                        ?>,
-                     <?php
-                        $jumlah_belajar = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='belajar'");
-                        echo mysqli_num_rows($jumlah_belajar);
-                        ?>,
-                     <?php
-                        $jumlah_izin = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='izin'");
-                        echo mysqli_num_rows($jumlah_izin);
-                        ?>,
-                     <?php
-                        $jumlah_izinTerlambat = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='izin terlambat'");
-                        echo mysqli_num_rows($jumlah_izinTerlambat);
-                        ?>,
-                     <?php
-                        $jumlah_jaga = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='jaga'");
-                        echo mysqli_num_rows($jumlah_jaga);
-                        ?>,
-                     <?php
-                        $jumlah_kuliah = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='kuliah'");
-                        echo mysqli_num_rows($jumlah_kuliah);
-                        ?>,
-                     <?php
-                        $jumlah_nugas = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='nugas'");
-                        echo mysqli_num_rows($jumlah_nugas);
-                        ?>,
-                     <?php
-                        $jumlah_sakit = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='sakit'");
-                        echo mysqli_num_rows($jumlah_sakit);
-                        ?>,
-                     <?php
-                        $jumlah_terlambat = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='terlambat'");
-                        echo mysqli_num_rows($jumlah_terlambat);
-                        ?>
-                 ],
-                 backgroundColor: ['rgb(242, 28, 17)',
-                     'rgb(250, 238, 12)',
-                     'rgb(99, 250, 12)',
-                     'rgb(245, 149, 66)',
-                     'rgb(25, 20, 90)',
-                     'rgb(16, 40, 222)',
-                     'rgb(227, 5, 123)',
-                     'rgb(19, 203, 209)',
-                     'rgb(129, 132, 133)',
-                 ],
-                 borderColor: "#fff"
-             }];
-
-             var options = {
-                 tooltips: {
-                     enabled: true
-                 },
-                 options: {
-                     responsive: true,
-                     maintainAspectRatio: true,
-                     plugins: {
-                         labels: {
-                             render: 'percentage',
-                             precision: 2
-                         }
-                     },
-                 }
-             };
-
-             var ctx = document.getElementById("pie-chart-chart").getContext('2d');
-             var myChart = new Chart(ctx, {
-                 type: 'pie',
-                 data: {
-                     labels: ['Hadir', 'Alpha', 'Belajar', 'Izin', 'Izin Terlambat', 'Jaga', 'Kuliah', 'Nugas', 'Sakit', 'Terlambat'],
-                     datasets: data
-                 },
-                 options: options
-             });
-
-         })
-     </script>
-
      <script>
          (jQuery);
          $(function() {
@@ -177,11 +88,11 @@
              var data = [{
                  data: [
                      <?php
-                        $jumlah_lakilaki = mysqli_query($konek, "select * from tbl_santri where jenis_kelamin='L'");
+                        $jumlah_lakilaki = mysqli_query($koneksi, "select * from tbl_santri where jenis_kelamin='L'");
                         echo mysqli_num_rows($jumlah_lakilaki);
                         ?>,
                      <?php
-                        $jumlah_perempuan = mysqli_query($konek, "select * from tbl_santri where jenis_kelamin='P'");
+                        $jumlah_perempuan = mysqli_query($koneksi, "select * from tbl_santri where jenis_kelamin='P'");
                         echo mysqli_num_rows($jumlah_perempuan);
                         ?>,
                  ],
@@ -226,44 +137,20 @@
              var data = [{
                  data: [
                      <?php
-                        $jumlah_hadir = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='hadir'");
+                        $jumlah_hadir = mysqli_query($koneksi, "select * from tbl_absensi where keterangan='Hadir'");
                         echo mysqli_num_rows($jumlah_hadir);
                         ?>,
                      <?php
-                        $jumlah_alpha = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='alpha'");
+                        $jumlah_alpha = mysqli_query($koneksi, "select * from tbl_absensi where keterangan='Alpha'");
                         echo mysqli_num_rows($jumlah_alpha);
                         ?>,
                      <?php
-                        $jumlah_belajar = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='belajar'");
-                        echo mysqli_num_rows($jumlah_belajar);
-                        ?>,
-                     <?php
-                        $jumlah_izin = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='izin'");
+                        $jumlah_izin = mysqli_query($koneksi, "select * from tbl_absensi where keterangan='Izin'");
                         echo mysqli_num_rows($jumlah_izin);
                         ?>,
                      <?php
-                        $jumlah_izinTerlambat = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='izin terlambat'");
-                        echo mysqli_num_rows($jumlah_izinTerlambat);
-                        ?>,
-                     <?php
-                        $jumlah_jaga = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='jaga'");
-                        echo mysqli_num_rows($jumlah_jaga);
-                        ?>,
-                     <?php
-                        $jumlah_kuliah = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='kuliah'");
-                        echo mysqli_num_rows($jumlah_kuliah);
-                        ?>,
-                     <?php
-                        $jumlah_nugas = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='nugas'");
-                        echo mysqli_num_rows($jumlah_nugas);
-                        ?>,
-                     <?php
-                        $jumlah_sakit = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='sakit'");
+                        $jumlah_sakit = mysqli_query($koneksi, "select * from tbl_absensi where keterangan='Sakit'");
                         echo mysqli_num_rows($jumlah_sakit);
-                        ?>,
-                     <?php
-                        $jumlah_terlambat = mysqli_query($konek, "select * from tbl_kehadiran where keterangan='terlambat'");
-                        echo mysqli_num_rows($jumlah_terlambat);
                         ?>
                  ],
                  backgroundColor: ['rgb(242, 28, 17)',
@@ -301,7 +188,7 @@
                  type: 'line',
                  data: {
 
-                     labels: ['Hadir', 'Alpha', 'Belajar', 'Izin', 'Izin Terlambat', 'Jaga', 'Kuliah', 'Nugas', 'Sakit', 'Terlambat'],
+                     labels: ['Hadir', 'Alpha', 'Izin', 'Sakit'],
                      datasets: data
                  },
                  options: options

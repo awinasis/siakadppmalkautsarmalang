@@ -9,7 +9,8 @@ class ModelPesan extends Model
     public function allData()
     {
         return $this->db->table('tbl_pesan')
-            ->orderBy('id_pesan', 'DESC')
+            ->join('tbl_santri', 'tbl_santri.NIS=tbl_pesan.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'ASC')
             ->get()->getResultArray();
     }
 

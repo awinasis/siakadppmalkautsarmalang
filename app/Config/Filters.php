@@ -60,6 +60,7 @@ class Filters extends BaseConfig
 				'data_pesan', 'data_pesan/*',
 				'data_rapor', 'data_rapor/*',
 				'data_nilai', 'data_nilai/*',
+				'anggota_kelas', 'anggota_kelas/*',
 			]],
 
 			'toolbar',

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ModelSantri;
+use App\Models\ModelKelas;
 
 class Bio_Santri extends BaseController
 {
@@ -12,12 +13,14 @@ class Bio_Santri extends BaseController
     {
         helper('form');
         $this->ModelSantri = new ModelSantri();
+        $this->ModelKelas = new ModelKelas();
     }
     public function index()
     {
         $data = [
             'title' => 'Santri',
             'santri' => $this->ModelSantri->allData(),
+            'kelas' => $this->ModelKelas->allData(),
             'isi'    => 'admin/santri',
         ];
 
@@ -40,7 +43,7 @@ class Bio_Santri extends BaseController
             'Universitas' => $this->request->getPost('universitas'),
             'Fakultas' => $this->request->getPost('fakultas'),
             'Jurusan_Prodi' => $this->request->getPost('jurusan_prodi'),
-            'kelas_santri' => $this->request->getPost('kelas_santri'),
+            'id_kelas' => $this->request->getPost('id_kelas'),
             'Angkatan_santri' => $this->request->getPost('angkatan_santri'),
             'Nama_Ayah' => $this->request->getPost('nama_ayah'),
             'Pekerjaan_Ayah' => $this->request->getPost('pekerjaan_ayah'),
@@ -72,7 +75,7 @@ class Bio_Santri extends BaseController
             'Universitas' => $this->request->getPost('universitas'),
             'Fakultas' => $this->request->getPost('fakultas'),
             'Jurusan_prodi' => $this->request->getPost('jurusan_prodi'),
-            'kelas_santri' => $this->request->getPost('kelas_santri'),
+            'id_kelas' => $this->request->getPost('id_kelas'),
             'Angkatan_santri' => $this->request->getPost('angkatan_santri'),
             'Nama_Ayah' => $this->request->getPost('nama_ayah'),
             'Pekerjaan_Ayah' => $this->request->getPost('pekerjaan_ayah'),
@@ -101,6 +104,7 @@ class Bio_Santri extends BaseController
         $data = [
             'title' => 'Detail Data Santri',
             'santri' => $this->ModelSantri->detailData($id_santri),
+            'kelas' => $this->ModelKelas->allData(),
             'isi'    => 'admin/detail/detail_santri',
         ];
 

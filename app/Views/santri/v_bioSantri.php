@@ -70,9 +70,9 @@
                                                         <th width="100px">Angkatan Santri</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['angkatan_santri'] ?></td>
-                                                        <th width="120px">Kelas Santri</th>
+                                                        <th width="120px">Kelas</th>
                                                         <th width="30px">:</th>
-                                                        <td><?= $value['kelas_santri'] ?></td>
+                                                        <td><?= $value['kelas'] ?></td>
                                                     </tr>
 
                                                     <tr>

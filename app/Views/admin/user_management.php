@@ -51,8 +51,8 @@
                                      <th width="50px" class="text-center">No</th>
                                      <th class="text-center">Nama User</th>
                                      <th class="text-center">Username</th>
-                                     <th class="tex-center">Password</th>
-                                     <th class="tex-center">Level</th>
+                                     <th class="text-center">Password</th>
+                                     <th class="text-center">Level</th>
                                      <th class="text-center">Foto</th>
                                      <th width="150px" class="text-center">Action</th>
                                  </tr>
@@ -66,7 +66,7 @@
                                          <td class="text-center"><?= $value['username'] ?></td>
                                          <td class="text-center"><?= $value['password'] ?></td>
                                          <td class="text-center"><?= $value['level'] ?></td>
-                                         <td class="text-center"><img src="<?= base_url('foto/' . $value['foto']) ?>" class="img-circle" width="50px" height="50px"></td>
+                                         <td class="text-center"><img src="<?= base_url('foto/' . $value['foto']) ?>" class="img-circle" width="60px" height="60px"></td>
                                          <td class="text-center">
                                              <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_user'] ?>"><i class="fa fa-edit"></i></button>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_user'] ?>"><i class="fa fa-trash"></i></button>
@@ -160,7 +160,7 @@
 
                          <div class="form-group">
                              <label>Nama User</label>
-                             <input name="nama_user" value="<?= $value['nama_user'] ?>" class="form-control" placeholder="nama user" required>     
+                             <input name="nama_user" value="<?= $value['nama_user'] ?>" class="form-control" placeholder="nama user" required>
                          </div>
 
                          <div class="form-group row">
@@ -223,7 +223,7 @@
                      </div>
 
                      <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b><?= $value['nama_user'] ?> ?</b>
+                         Apakah anda yakin ingin menghapus <b>user <?= $value['nama_user'] ?> ?</b>
                      </div>
 
                      <div class="modal-footer">
