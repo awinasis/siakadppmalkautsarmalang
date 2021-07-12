@@ -29,8 +29,6 @@
                                  <thead>
                                      <tr>
                                          <th class="text-center" rowspan='2'>NIS</th>
-                                         <th rowspan='2' class="text-center">Nama</th>
-                                         <th class="text-center" rowspan='2'>L/P</th>
                                          <th class="text-center" colspan=" 10">Nilai Indeks Prestasi (IP)</th>
                                      </tr>
                                      <tr>
@@ -49,14 +47,6 @@
                                  <tbody>
                                      <tr>
                                          <td class="text-center"><input name="NIS" class="form-control" type="number" required></td>
-                                         <td><input name="nama_santri" class="form-control" required></td>
-                                         <td>
-                                             <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
-                                                 <option value="#">-- Pilih --</option>
-                                                 <option value="L">L</option>
-                                                 <option value="P">P</option>
-                                             </select>
-                                         </td>
                                          <td><input name="nilai_IP1" class="form-control"></td>
                                          <td><input name="nilai_IP2" class="form-control"></td>
                                          <td><input name="nilai_IP3" class="form-control"></td>

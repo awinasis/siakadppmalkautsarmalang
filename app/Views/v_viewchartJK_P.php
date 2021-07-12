@@ -26,9 +26,6 @@
                 <h4 class="pull-left" style=" color:MediumSeaGreen; font-family:timesnewrohman;"><i class="fa fa-laptop"></i> Data Santri : &nbsp;<b style="color:Black; font-family:timesnewrohman;">Perempuan</b></h4>&emsp;
                 <h2 class="page-header"></h2>
                 <table class="table table-bordered">
-                    <!-- <div>
-                        <canvas id="doughnut-chart-santri" height="180"></canvas>
-                    </div> -->
                     <?php
                     $konek = mysqli_connect("localhost", "root", "", "db_siakad_ppmalkautsar");
                     ?>

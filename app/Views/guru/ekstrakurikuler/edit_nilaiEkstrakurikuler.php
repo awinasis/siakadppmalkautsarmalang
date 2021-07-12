@@ -41,14 +41,9 @@
                                          <tr>
                                              <?php echo form_open('data_nilai/editNilaiEkstrakurikuler/' . $value['id_ne']); ?>
                                              <td class="text-center"><?= $no++; ?></td>
-                                             <td class="text-center"><input name="NIS" class="form-control" type="number" value="<?= $value['NIS'] ?>" readonly></td>
+                                             <td><input name="NIS" class="form-control text-center" type="number" value="<?= $value['NIS'] ?>" readonly></td>
                                              <td><input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly></td>
-                                             <td>
-                                                 <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" value="<?= $value['jenis_kelamin'] ?>">
-                                                     <option value="L" <?= $value['jenis_kelamin'] == "L" ? "selected" : ""; ?>>L</option>
-                                                     <option value="P" <?= $value['jenis_kelamin'] == "P" ? "selected" : ""; ?>>P</option>
-                                                 </select>
-                                             </td>
+                                             <td class="text-center"><?= $value['jenis_kelamin'] ?></td>
                                              <td>
                                                  <select name="nilai_1" id="nilai_1" class="form-control" value="<?= $value['nilai_1'] ?>">
                                                      <option value="A" <?= $value['nilai_1'] == "A" ? "selected" : ""; ?>>A</option>

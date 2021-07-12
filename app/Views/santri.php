@@ -12,7 +12,6 @@
             <section class="content">
                 <div>
                     <?php foreach ($pengumuman as $key => $value) { ?>
-
                         <?= $value['isi_pengumuman'] ?>
                     <?php } ?>
                 </div>

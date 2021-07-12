@@ -18,7 +18,7 @@
              <div class="box box-gray box-solid">
                  <div class="box-header with-border">
                      <!-- <div class="box-tools pull-left"> -->
-                     <a href="<?= base_url('data_nilai/tambahNilaiKonsepPraktikum2/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
+                     <a href="<?= base_url('data_nilai/tambahNilaikonsepPraktikum_HB/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
                  </div>
                  <h4 style="font-family:timesnewrohman;">&ensp;Tahun Ajaran : <b><?= $ta_aktif['tahun_akademik']; ?></b></h4>
                  <div class="box-body">
@@ -53,6 +53,7 @@
                                      <th class="text-center">Fiqih Puasa</th>
                                      <th class="text-center">Fiqih Haji & Umrah</th>
                                      <th class="text-center">Wujub Luzum al-Jama'ah</th>
+                                     <th class="text-center">Faraidl</th>
                                      <th class="text-center">Action</th>
                                  </tr>
                              </thead>
@@ -83,7 +84,7 @@
                                          <td class="text-center"><?= $value['n_17'] ?></td>
 
                                          <td class="text-center">
-                                             <a href="<?= base_url('data_nilai/ubahNilaiKonsepPraktikum2/' . $value['id_kp2']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                             <a href="<?= base_url('data_nilai/ubahNilaikonsepPraktikum_HB/' . $value['id_kp2']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_kp2'] ?>"><i class="fa fa-trash"></i></button>
                                          </td>
                                      </tr>
@@ -102,7 +103,7 @@
              <div class="modal-dialog">
                  <div class="modal-content box box-success box-solid">
                      <div class="modal-header box-header with-border">
-                         <h4 class="modal-title">Delete Nilai Konsep & Praktikum</h4>
+                         <h4 class="modal-title">Delete Nilai Konsep & Praktikum HB</h4>
                      </div>
 
                      <div class="modal-body">
@@ -111,7 +112,7 @@
 
                      <div class="modal-footer">
                          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
-                         <a href="<?= base_url('data_nilai/delete1/' . $value['id_kp2']) ?>" class="btn btn-primary">Delete</a>
+                         <a href="<?= base_url('data_nilai/delete1_HB/' . $value['id_kp2']) ?>" class="btn btn-primary">Delete</a>
                      </div>
                  </div>
                  <!-- /.modal-content -->

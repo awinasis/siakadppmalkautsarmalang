@@ -64,6 +64,7 @@ class Auth extends BaseController
                 session()->set('username', $cek_user['username']);
                 session()->set('nama', $cek_user['nama_user']);
                 session()->set('foto', $cek_user['foto']);
+                session()->set('password', $cek_user['password']);
                 session()->set('level', $cek_user['level']);
                 //login
                 if ($cek_user["level"] == "Admin") {

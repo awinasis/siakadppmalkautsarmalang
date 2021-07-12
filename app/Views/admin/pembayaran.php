@@ -41,6 +41,7 @@
                                          <th class="text-center">NIS</th>
                                          <th class="text-center">Nama Santri</th>
                                          <th class="text-center">Periode Pembayaran</th>
+                                         <th class="text-center">Tanggal pembayaran</th>
                                          <th class="text-center">Keterangan</th>
                                          <th class="text-center">Tagihan</th>
                                          <th class="text-center">Terbayar</th>
@@ -56,6 +57,7 @@
                                              <td><?= $value['NIS'] ?></td>
                                              <td><?= $value['nama_santri'] ?></td>
                                              <td class="text-center"><?= $value['periode_pembayaran'] ?></td>
+                                             <td class="text-center"><?= $value['tgl_pembayaran']; ?></td>
                                              <td><?= $value['keterangan'] ?></td>
                                              <td class="text-center"><?= $value['tagihan'] ?></td>
                                              <td class="text-center"><?= $value['terbayar'] ?></td>
@@ -96,33 +98,33 @@
                              </div>
                          </div>
 
-                         <div class="form-group">
-                             <label>Nama santri</label>
-                             <input name="nama_santri" class="form-control" placeholder="nama santri" required>
-                         </div>
-
                          <div class="form-group row">
-                             <div class="col-lg-4">
+                             <div class="col-lg-6">
                                  <label>Periode Pembayaran</label>
                                  <input type="number" class="form-control" placeholder="periode pembayaran" name="periode_pembayaran" value="<?php echo date('Y'); ?>" />
+                             </div>
+
+                             <div class="col-lg-6">
+                                 <label>Tanggal Pembayaran</label>
+                                 <input type="date" class="form-control" placeholder="tgl pembayaran" name="tgl_pembayaran" />
                              </div>
                          </div>
 
                          <div class="form-group row">
                              <div class="col-lg-6">
                                  <label>Keterangan</label>
-                                 <input name="keterangan" class="form-control" placeholder="keterangan" required>
+                                 <input name="keterangan" class="form-control" placeholder="text" required>
                              </div>
                          </div>
 
                          <div class="form-group row">
                              <div class="col-lg-6">
                                  <label>Tagihan</label>
-                                 <input name="tagihan" class="form-control" placeholder="tagihan" required>
+                                 <input name="tagihan" class="form-control" placeholder="0" required>
                              </div>
                              <div class="col-lg-6">
                                  <label>Terbayar</label>
-                                 <input name="terbayar" class="form-control" placeholder="000" required>
+                                 <input name="terbayar" class="form-control" placeholder="0" required>
                              </div>
                          </div>
 
@@ -164,19 +166,24 @@
                              <div class="form-group row">
                                  <div class="col-lg-6">
                                      <label>NIS</label>
-                                     <input name="NIS" type="number" class="form-control" value="<?= $value['NIS'] ?>">
+                                     <input name="NIS" type="number" class="form-control" value="<?= $value['NIS'] ?>" readonly>
                                  </div>
                              </div>
 
                              <div class="form-group">
                                  <label>Nama santri</label>
-                                 <input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>">
+                                 <input name="nama_santri" class="form-control" value="<?= $value['nama_santri'] ?>" readonly>
                              </div>
 
                              <div class="form-group row">
-                                 <div class="col-lg-4">
+                                 <div class="col-lg-6">
                                      <label>Periode Pembayaran</label>
                                      <input type="number" class="form-control" name="periode_pembayaran" value="<?= $value['periode_pembayaran'] ?>" />
+                                 </div>
+
+                                 <div class="col-lg-6">
+                                     <label>Tanggal Pembayaran</label>
+                                     <input type="date" class="form-control" placeholder="tgl pembayaran" name="tgl_pembayaran" value="<?= $value['tgl_pembayaran'] ?>" />
                                  </div>
                              </div>
 

@@ -28,38 +28,40 @@
                                 <div class="col-sm-8">
                                     <table class="table table-bordered">
                                         <tbody>
-                                            <tr>
-                                                <td width="100px">NIS</td>
-                                                <td width="30px">:</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="100px">Nama Santri</td>
-                                                <td width="30px">:</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="100px">Tahun Akademik</td>
-                                                <td width="30px">:</td>
-                                                <td><?= $ta_aktif['tahun_akademik']; ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="100px">Jenis Surat</td>
-                                                <td width="30px">:</td>
-                                                <td>
-                                                    <div class="form-group row">
-                                                        <div class="col-lg-6">
-                                                            <select name="kategori" id="kategori" class="form-control" placeholder="kategori" required>
-                                                                <option value="">-- Pilih Jenis Surat --</option>
-                                                                <option value="Sertifikat">Sertifikat</option>
-                                                                <option value="Surat Pengajuan">Surat Pengajuan</option>
-                                                                <option value="Kartu Pembayaran">Bukti Pembayaran</option>
-                                                                <option value="Buku Pedoman">Buku Pedoman</option>
-                                                            </select>
+                                            <?php foreach ($surat as $key => $value) { ?>
+                                                <tr>
+                                                    <td width="100px">NIS</td>
+                                                    <td width="30px">:</td>
+                                                    <td><?= $value['NIS']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="100px">Nama Santri</td>
+                                                    <td width="30px">:</td>
+                                                    <td><?= $value['nama_santri']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="100px">Tahun Akademik</td>
+                                                    <td width="30px">:</td>
+                                                    <td><?= $ta_aktif['tahun_akademik']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="100px">Jenis Surat</td>
+                                                    <td width="30px">:</td>
+                                                    <td>
+                                                        <div class="form-group row">
+                                                            <div class="col-lg-6">
+                                                                <select name="kategori" id="kategori" class="form-control" placeholder="kategori" required>
+                                                                    <option value="">-- Pilih Jenis Surat --</option>
+                                                                    <option value="Sertifikat">Sertifikat</option>
+                                                                    <option value="Surat Pengajuan">Surat Pengajuan</option>
+                                                                    <option value="Kartu Pembayaran">Bukti Pembayaran</option>
+                                                                    <option value="Buku Pedoman">Buku Pedoman</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                     <a href="<?= base_url('santri/request_surat') ?>" class="btn btn-primary btn-sm"><i class="fa fa-mail-reply"></i> Kembali</a>

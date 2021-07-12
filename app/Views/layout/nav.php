@@ -13,9 +13,9 @@
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?= base_url('pengumuman') ?>"><i class="fa fa-bullhorn"></i> Pengumuman</a></li>
                     <li><a href="<?= base_url('data_kelas') ?>"><i class="fa fa-institution"></i> Kelas</a></li>
+                    <li><a href="<?= base_url('anggota_kelas') ?>"><i class="fa  fa-user-plus"></i> Anggota Kelas</a></li>
                     <li><a href="<?= base_url('data_materi') ?>"><i class="fa fa-book"></i> Materi</a></li>
                     <!-- <li><a href="<?= base_url('data_rps') ?>"><i class="fa fa-file-text"></i> Rencana Pembelajaran Semester (RPS)</a></li> -->
-                    <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Data Absensi</a></li>
                     <li><a href="<?= base_url('data_pembayaran') ?>"><i class="fa fa-money"></i> Pembayaran</a></li>
                     <li><a href="<?= base_url('bio_guru') ?>"><i class="fa fa-user"></i> Dewan Guru</a></a></li>
                     <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Santri</a></a></li>
@@ -47,9 +47,9 @@
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?= base_url('bio_santri') ?>"><i class="fa fa-users"></i> Data Santri</a></li>
                     <li><a href="<?= base_url('data_kelas') ?>"><i class="fa fa-institution"></i> Kelas</a></li>
+                    <li><a href="<?= base_url('anggota_kelas') ?>"><i class="fa  fa-user-plus"></i> Anggota Kelas</a></li>
                     <li><a href="<?= base_url('data_materi') ?>"><i class="fa fa-book"></i> Materi</a></li>
-                    <li><a href="<?= base_url('data_absensi') ?>"><i class="fa  fa-pencil"></i> Data Absensi</a></li>
-                    <!-- <li><a href="<?= base_url('data_rps') ?>"><i class="fa fa-file-text"></i> RPS</a></li> -->
+                    <li><a href="<?= base_url('data_absensi/detailAbsensi') ?>"><i class="fa  fa-pencil"></i> Absensi</a></li>
                     <li><a href="<?= base_url('data_rapor') ?>"><i class="fa fa-archive"></i> Rapor</a></li>
                 </ul>
             </li>
@@ -152,7 +152,7 @@
 
                         <p>
                             <?php if (session()->get('level') == "Admin") {
-                                echo "Admin";
+                                echo session()->get('username');
                             } else if (session()->get('level') == "Guru") {
                                 echo "Guru";
                             } else if (session()->get('level') == "Santri") {
@@ -164,21 +164,78 @@
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
+                        <div class="pull-left">
+                            <button type="button" class="btn btn-default btn-flat" data-toggle="modal" data-target="#detail"><i class="fa fa-address-book"></i> Profile</button>
+                        </div>
                         <div class="pull-right">
-                            <a href="<?= base_url('auth/logout') ?>" onclick="return confirm('Apakah anda yakin ingin keluar ?');" class="btn btn-default btn-flat">Logout</a>
+                            <a href="<?= base_url('auth/logout') ?>" onclick="return confirm('Apakah anda yakin ingin keluar ?');" class="btn btn-default btn-flat"><i class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </li>
                 </ul>
             </li>
         <?php } ?>
-
     </ul>
 </div>
+
+
 <!-- /.navbar-custom-menu -->
 </div>
 <!-- /.container-fluid -->
 </nav>
 </header>
+
+<!-- modal profile -->
+<div class="modal fade" id="detail">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-body">
+            <div class="modal-content box box-success box-solid">
+                <div class="modal-header box-header with-border">
+                    <h4 class="modal-title"><i class="fa fa-newspaper-o"></i></h4>
+                    <div class="box-body box-profile">
+                        <img src="<?= base_url('foto/' . session()->get('foto')) ?>" class="profile-user-img img-responsive img-circle">
+                        <h3 class="profile-username text-center"><?= session()->get('nama')  ?></h3>
+                    </div>
+                    <div class="tab-pane" id="timeline">
+                        <!-- The timeline -->
+                        <ul class="timeline timeline-inverse">
+                            <li>
+                                <i class="fa fa-user-circle bg-yellow"></i>
+                                &emsp;&emsp;&emsp;&emsp;&nbsp;username :
+                                <div class="timeline-item">
+                                    <div class="timeline-body">
+                                        <?= session()->get('username'); ?>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- END timeline item -->
+                            <br>
+                            <!-- timeline item -->
+                            <li>
+                                <i class="fa fa-key bg-blue"></i>
+                                &emsp;&emsp;&emsp;&emsp;&nbsp;password :
+                                <div class="timeline-item">
+                                    <div class="timeline-body">
+                                        <?= session()->get('password'); ?>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- END timeline item -->
+                            <li>
+                                <i class="fa fa-eject"></i>
+                            </li>
+                            <br>
+                        </ul>
+                        <div align="center">
+                            <i class="fa fa-circle-o text-red"></i>
+                            <i class="fa fa-circle-o text-red"></i>
+                            <i class="fa fa-circle-o text-red"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Full Width Column -->
 <div class="content-wrapper">

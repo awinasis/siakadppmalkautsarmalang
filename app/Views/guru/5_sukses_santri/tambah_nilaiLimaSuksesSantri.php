@@ -29,8 +29,6 @@
                                  <thead>
                                      <tr>
                                          <th class="text-center">NIS</th>
-                                         <th class="text-center">Nama</th>
-                                         <th class="text-center">L/P</th>
                                          <th class="text-center">Faham Jamaah</th>
                                          <th class="text-center">Mandiri Ibadah</th>
                                          <th class="text-center">Akhlaqul Karimah</th>
@@ -41,15 +39,7 @@
                                  <tbody>
                                      <tr>
                                          <td class="text-center"><input name="NIS" class="form-control" type="number" required></td>
-                                         <td><input name="nama_santri" class="form-control" required></td>
-                                         <td>
-                                             <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
-                                                 <option value="#">-- Pilih --</option>
-                                                 <option value="L">L</option>
-                                                 <option value="P">P</option>
-                                             </select>
-                                         </td>
-                                         <td>
+                                         <td class="text-center">
                                              <select name="nilai_A" id="nilai_A" class="form-control" required>
                                                  <option value="#">-- Nilai --</option>
                                                  <option value="A">A</option>
@@ -63,7 +53,8 @@
                                                  <option value="E">E</option>
                                              </select>
                                          </td>
-                                         <td>
+
+                                         <td class="text-center">
                                              <select name="nilai_B" id="nilai_B" class="form-control" required>
                                                  <option value="#">-- Nilai --</option>
                                                  <option value="A">A</option>
@@ -77,7 +68,8 @@
                                                  <option value="E">E</option>
                                              </select>
                                          </td>
-                                         <td>
+
+                                         <td class="text-center">
                                              <select name="nilai_C" id="nilai_C" class="form-control" required>
                                                  <option value="#">-- Nilai --</option>
                                                  <option value="A">A</option>
@@ -91,7 +83,8 @@
                                                  <option value="E">E</option>
                                              </select>
                                          </td>
-                                         <td>
+
+                                         <td class="text-center">
                                              <select name="nilai_D" id="nilai_D" class="form-control" required>
                                                  <option value="#">-- Nilai --</option>
                                                  <option value="A">A</option>
@@ -105,7 +98,8 @@
                                                  <option value="E">E</option>
                                              </select>
                                          </td>
-                                         <td>
+
+                                         <td class="text-center">
                                              <select name="nilai_E" id="nilai_E" class="form-control" required>
                                                  <option value="#">-- Nilai --</option>
                                                  <option value="A">A</option>

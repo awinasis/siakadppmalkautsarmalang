@@ -17,7 +17,7 @@
              <div class="box box-gray box-solid">
                  <div class="box-header with-border">
                      <!-- <div class="box-tools pull-left"> -->
-                     <a href="<?= base_url('data_nilai/tambahNilaiMateri2/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
+                     <a href="<?= base_url('data_nilai/tambahNilaiMateriHB/') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"> Tambah</i></a>
                  </div>
                  <br>
                  <div class="box-body">
@@ -86,7 +86,7 @@
                                          <td class="text-center"><?= $value['n_Q'] ?>%</td>
 
                                          <td class="text-center">
-                                             <a href="<?= base_url('data_nilai/ubahNilaiMateri2/' . $value['id_nm2']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                             <a href="<?= base_url('data_nilai/ubahNilaiMateriHB/' . $value['id_nm2']) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_nm2'] ?>"><i class="fa fa-trash"></i></button>
                                          </td>
                                      </tr>
@@ -114,7 +114,7 @@
 
                      <div class="modal-footer">
                          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
-                         <a href="<?= base_url('data_nilai/delete/' . $value['id_nm2']) ?>" class="btn btn-primary">Delete</a>
+                         <a href="<?= base_url('data_nilai/deleteHB/' . $value['id_nm2']) ?>" class="btn btn-primary">Delete</a>
                      </div>
                  </div>
                  <!-- /.modal-content -->

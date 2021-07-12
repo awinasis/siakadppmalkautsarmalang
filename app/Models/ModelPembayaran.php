@@ -9,8 +9,8 @@ class ModelPembayaran extends Model
     public function allData()
     {
         return $this->db->table('tbl_pembayaran')
-            ->join('tbl_santri', 'tbl_santri.NIS = tbl_pembayaran.NIS', 'tbl_santri.nama_santri = tbl_pembayaran.nama_santri')
-            ->orderBy('id_pembayaran', 'DESC')
+            ->join('tbl_santri', 'tbl_santri.NIS = tbl_pembayaran.NIS', 'left')
+            ->orderBy('tbl_santri.NIS', 'DESC')
             ->get()->getResultArray();
     }
 

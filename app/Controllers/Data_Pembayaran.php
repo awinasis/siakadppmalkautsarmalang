@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ModelPembayaran;
+use App\Models\ModelSantri;
 
 class Data_Pembayaran extends BaseController
 {
@@ -10,12 +11,14 @@ class Data_Pembayaran extends BaseController
     {
         helper('form');
         $this->ModelPembayaran = new ModelPembayaran();
+        $this->ModelSantri = new ModelSantri();
     }
     public function index()
     {
         $data = [
             'title' => 'Pembayaran',
             'pembayaran' => $this->ModelPembayaran->allData(),
+            'santri' => $this->ModelSantri->allData(),
             'isi'    => 'admin/pembayaran'
         ];
 
@@ -26,8 +29,8 @@ class Data_Pembayaran extends BaseController
     {
         $data = [
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
             'Periode_pembayaran' => $this->request->getPost('periode_pembayaran'),
+            'Tgl_pembayaran' => $this->request->getPost('tgl_pembayaran'),
             'Keterangan' => $this->request->getPost('keterangan'),
             'Tagihan' => $this->request->getPost('tagihan'),
             'Terbayar' => $this->request->getPost('terbayar'),
@@ -44,8 +47,8 @@ class Data_Pembayaran extends BaseController
         $data = [
             'id_pembayaran' => $id_pembayaran,
             'NIS' => $this->request->getPost('NIS'),
-            'Nama_santri' => $this->request->getPost('nama_santri'),
             'Periode_pembayaran' => $this->request->getPost('periode_pembayaran'),
+            'Tgl_pembayaran' => $this->request->getPost('tgl_pembayaran'),
             'Keterangan' => $this->request->getPost('keterangan'),
             'Tagihan' => $this->request->getPost('tagihan'),
             'Terbayar' => $this->request->getPost('terbayar'),

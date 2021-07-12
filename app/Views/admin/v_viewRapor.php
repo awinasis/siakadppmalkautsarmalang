@@ -111,17 +111,9 @@
                 </tr>
 
                 <tr>
-                    <td width="100px">Tgl. Masuk PPM</td>
+                    <td width="100px">Angkatan</td>
                     <td width="30px">:</td>
-                    <td>
-                        <input class="col-lg-8" name="tanggal" type="date" class="form-control" placeholder="date" required>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td width="100px">Semester/Angkatan</td>
-                    <td width="30px">:</td>
-                    <td><input class="col-lg-8" name="smt_angkatan" class="form-control" placeholder="Ex: Dua/2019" required></td>
+                    <td><?= $rapor['angkatan_santri']; ?></td>
                 </tr>
             </table>
         </div>
@@ -524,9 +516,34 @@
         <tfoot>
             <tr>
                 <th colspan="3" class="text-center">&emsp; Jumlah</th>
+                <td class="text-center"><?php $nilai = ($rapor['n1'] +
+                                            $rapor['n2'] +
+                                            $rapor['n3'] +
+                                            $rapor['n4'] +
+                                            $rapor['n5'] +
+                                            $rapor['n6'] +
+                                            $rapor['n7'] +
+                                            $rapor['n8'] +
+                                            $rapor['n9'] +
+                                            $rapor['n10'] +
+                                            $rapor['n11'] +
+                                            $rapor['n12'] +
+                                            $rapor['n13'] +
+                                            $rapor['n14'] +
+                                            $rapor['n15'] +
+                                            $rapor['n16'] +
+                                            $rapor['n17'] +
+                                            $rapor['n18'] +
+                                            $rapor['n19'] +
+                                            $rapor['n20'] +
+                                            $rapor['n21'] +
+                                            $rapor['n22'] +
+                                            $rapor['n23'] +
+                                            $rapor['n24']);
+                                        echo number_format($nilai, 0);
+                                        ?></td>
                 <td class="text-center"></td>
-                <td class="text-center"></td>
-            </tr>1
+            </tr>
             <tr>
                 <th colspan="3" class="text-center">&emsp; Rata-rata</th>
                 <td class="text-center"></td>
@@ -650,7 +667,7 @@
         <thead>
             <tr>
                 <th class="text-center" rowspan='2'>Jumlah Kegiatan</th>
-                <th class="text-center" colspan=" 4">Keterangan</th>
+                <th class="text-center" colspan="4">Keterangan</th>
                 <th class="text-center" rowspan='2'>Prosentase</th>
             </tr>
             <tr>
@@ -758,15 +775,7 @@
     <br><br>
     <h4><b>9. Keputusan</b></h4>
     <div class="form-group">
-        <h5>&emsp;Berdasarkan hasil pencapaian tersebut, maka santri yang bersangkutan dinilai</h5>
-        <div class="col-lg-2">
-            <select name="nilai" class="form-control" required>
-                <option value="#">-- Nilai --</option>
-                <option value="Sangat Baik">Sangat Baik</option>
-                <option value="Baik">Baik</option>
-                <option value="Cukup">Cukup</option>
-            </select>
-        </div>
+        <h5>&emsp;Berdasarkan hasil pencapaian tersebut, maka santri yang bersangkutan dinilai <b><?= $rapor['keputusan']; ?></b></h5>
     </div>
     <br><br><br>
     <div class="row pull-right">

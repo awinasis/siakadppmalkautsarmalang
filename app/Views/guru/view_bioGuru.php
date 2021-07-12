@@ -34,6 +34,9 @@
                                                         <th width="100px">Nama Guru</th>
                                                         <th width="30px">:</th>
                                                         <td><?= $value['nama_guru'] ?></td>
+                                                        <th width="120px">Jenis Kelamin</th>
+                                                        <th width="30px">:</th>
+                                                        <td><?= $value['jenis_kelamin'] ?></td>
                                                     </tr>
 
                                                     <tr>

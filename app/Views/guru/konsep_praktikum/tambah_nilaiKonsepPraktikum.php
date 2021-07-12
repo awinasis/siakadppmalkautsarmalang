@@ -29,8 +29,6 @@
                                  <thead>
                                      <tr>
                                          <th class="text-center">NIS</th>
-                                         <th class="text-center">Nama</th>
-                                         <th class="text-center">L/P</th>
                                          <th class="text-center">Qira'ah Al-Quran</th>
                                          <th class="text-center">Hafalan Surat-surat Pendek</th>
                                          <th class="text-center">Hafalan Do'a</th>
@@ -60,38 +58,30 @@
                                  <tbody>
                                      <tr>
                                          <td class="text-center"><input name="NIS" class="form-control" type="number" required></td>
-                                         <td><input name="nama_santri" class="form-control" required></td>
-                                         <td>
-                                             <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
-                                                 <option value="#">-- Pilih --</option>
-                                                 <option value="L">L</option>
-                                                 <option value="P">P</option>
-                                             </select>
-                                         </td>
-                                         <td><input name="n1" class="form-control" type="number" required></td>
-                                         <td><input name="n2" class="form-control" type="number" required></td>
-                                         <td><input name="n3" class="form-control" type="number" required></td>
-                                         <td><input name="n4" class="form-control" type="number" required></td>
-                                         <td><input name="n5" class="form-control" type="number" required></td>
-                                         <td><input name="n6" class="form-control" type="number" required></td>
-                                         <td><input name="n7" class="form-control" type="number" required></td>
-                                         <td><input name="n8" class="form-control" type="number" required></td>
-                                         <td><input name="n9" class="form-control" type="number" required></td>
-                                         <td><input name="n10" class="form-control" type="number" required></td>
-                                         <td><input name="n11" class="form-control" type="number" required></td>
-                                         <td><input name="n12" class="form-control" type="number" required></td>
-                                         <td><input name="n13" class="form-control" type="number" required></td>
-                                         <td><input name="n14" class="form-control" type="number" required></td>
-                                         <td><input name="n15" class="form-control" type="number" required></td>
-                                         <td><input name="n16" class="form-control" type="number" required></td>
-                                         <td><input name="n17" class="form-control" type="number" required></td>
-                                         <td><input name="n18" class="form-control" type="number" required></td>
-                                         <td><input name="n19" class="form-control" type="number" required></td>
-                                         <td><input name="n20" class="form-control" type="number" required></td>
-                                         <td><input name="n21" class="form-control" type="number" required></td>
-                                         <td><input name="n22" class="form-control" type="number" required></td>
-                                         <td><input name="n23" class="form-control" type="number" required></td>
-                                         <td><input name="n24" class="form-control" type="number" required></td>
+                                         <td><input name="n1" class="form-control" type="number"></td>
+                                         <td><input name="n2" class="form-control" type="number"></td>
+                                         <td><input name="n3" class="form-control" type="number"></td>
+                                         <td><input name="n4" class="form-control" type="number"></td>
+                                         <td><input name="n5" class="form-control" type="number"></td>
+                                         <td><input name="n6" class="form-control" type="number"></td>
+                                         <td><input name="n7" class="form-control" type="number"></td>
+                                         <td><input name="n8" class="form-control" type="number"></td>
+                                         <td><input name="n9" class="form-control" type="number"></td>
+                                         <td><input name="n10" class="form-control" type="number"></td>
+                                         <td><input name="n11" class="form-control" type="number"></td>
+                                         <td><input name="n12" class="form-control" type="number"></td>
+                                         <td><input name="n13" class="form-control" type="number"></td>
+                                         <td><input name="n14" class="form-control" type="number"></td>
+                                         <td><input name="n15" class="form-control" type="number"></td>
+                                         <td><input name="n16" class="form-control" type="number"></td>
+                                         <td><input name="n17" class="form-control" type="number"></td>
+                                         <td><input name="n18" class="form-control" type="number"></td>
+                                         <td><input name="n19" class="form-control" type="number"></td>
+                                         <td><input name="n20" class="form-control" type="number"></td>
+                                         <td><input name="n21" class="form-control" type="number"></td>
+                                         <td><input name="n22" class="form-control" type="number"></td>
+                                         <td><input name="n23" class="form-control" type="number"></td>
+                                         <td><input name="n24" class="form-control" type="number"></td>
                                      </tr>
                                  </tbody>
                              </table>
