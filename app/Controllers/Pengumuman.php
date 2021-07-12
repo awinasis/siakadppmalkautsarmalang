@@ -61,19 +61,19 @@ class Pengumuman extends BaseController
         return redirect()->to(base_url('pengumuman'));
     }
 
-    public function change_visible($id_pengumuman)
-    {
-        $DataPengumuman = $this->ModelPengumuman->where('id_pengumuman', $id_pengumuman)->first();
+    // public function change_visible($id_pengumuman)
+    // {
+    //     $DataPengumuman = $this->ModelPengumuman->where('id_pengumuman', $id_pengumuman)->first();
 
-        $visible = $DataPengumuman['visible_pengumuman'];
-        $newVisible = $visible == "1" ? "0" : "1";
+    //     $visible = $DataPengumuman['visible_pengumuman'];
+    //     $newVisible = $visible == "1" ? "0" : "1";
 
-        $this->ModelPengumuman->editData([
-            'visible_pengumuman' => $newVisible
-        ], $id_pengumuman);
+    //     $this->ModelPengumuman->editData([
+    //         'visible_pengumuman' => $newVisible
+    //     ], $id_pengumuman);
 
-        return redirect()->to(base_url('santri/index'));
-    }
+    //     return redirect()->to(base_url('santri/index'));
+    // }
 
     // public function change_visible($id_pengumuman)
     // {

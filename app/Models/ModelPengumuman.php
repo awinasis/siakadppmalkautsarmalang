@@ -25,12 +25,6 @@ class ModelPengumuman extends Model
             ->update($data);
     }
 
-    // public function update_data($data, $id_pengumuman)
-    // {
-    //     $query = $this->db->table("tbl_pengumuman")->update($data, array('id_pengumuman' => $id_pengumuman));
-    //     return $query;
-    // }
-
     public function deleteData($data)
     {
         $this->db->table('tbl_pengumuman')
