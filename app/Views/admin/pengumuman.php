@@ -52,8 +52,8 @@
                                          <td class="text-center"><?= $no++; ?></td>
                                          <td><?= $value['judul_pengumuman'] ?></td>
                                          <td><?= $value['isi_pengumuman'] ?></td>
-                                         <td><?= $value['tgl_dibuat'] ?></td>
-                                         <td><?= $value['tgl_diubah'] ?></td>
+                                         <td class="text-center"><?= $value['tgl_dibuat'] ?></td>
+                                         <td class="text-center"><?= $value['tgl_diubah'] ?></td>
 
                                          <td class="text-center">
                                              <a href="<?= base_url('pengumuman/change_visible/' . $value['id_pengumuman']) ?>" class="btn btn-primary btn-sm">
