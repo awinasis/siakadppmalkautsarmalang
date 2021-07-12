@@ -53,9 +53,14 @@
                                          <td><?= $value['judul_pengumuman'] ?></td>
                                          <td><?= $value['isi_pengumuman'] ?></td>
 
-                                         <td align="center">
-                                             <a class="btn btn-primary btn-sm" href="/pengumuman/change_visible/<?= $value['id_pengumuman']; ?>">
-                                                 <?= $value['visible_pengumuman'] == "1" ? '<i class="fa fa-eye"></i>' : '<i class="fa fa-eye-slash"></i>' ?>
+                                         <td class="text-center">
+                                             <a href="<?= base_url('pengumuman/change_visible/' . $value['id_pengumuman']) ?>" class="btn btn-primary btn-sm">
+                                                 <?php if ($value['visible_pengumuman'] == 0) {
+                                                        echo '<i class="fa fa-eye-slash"></i>';
+                                                    } else {
+                                                        echo '<i class="fa fa-eye"></i>';
+                                                    }
+                                                    ?>
                                              </a>
                                          </td>
 
@@ -143,12 +148,12 @@
 
                          <div class="form-group">
                              <label>Tanggal Dibuat</label>
-                             <input type="date" class="form-control" id="tgl_dibuat" name="tgl_dibuat" value="<?= $value['tgl_dibuat'] ?>" required>
+                             <input type="date" class="form-control" id="tgl_dibuat" name="tgl_dibuat" value="<?= $value['tgl_dibuat'] ?>">
                          </div>
 
                          <div class="form-group">
                              <label>Judul Pengumuman</label>
-                             <input name="judul_pengumuman" class="form-control" placeholder="type the title of the announcement" value="<?= $value['judul_pengumuman'] ?>" required>
+                             <input name="judul_pengumuman" class="form-control" value="<?= $value['judul_pengumuman'] ?>">
                          </div>
 
                          <!DOCTYPE html>
@@ -191,7 +196,7 @@
                      </div>
 
                      <div class="modal-body">
-                         Apakah anda yakin ingin menghapus <b><?= $value['judul_pengumuman'] ?> ?</b>
+                         Apakah anda yakin ingin menghapus <b> Info&nbsp;<?= $title; ?>&nbsp;<?= $value['judul_pengumuman'] ?> ?</b>
                      </div>
 
                      <div class="modal-footer">
